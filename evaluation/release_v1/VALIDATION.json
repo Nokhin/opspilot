@@ -1,17 +1,25 @@
 {
-  "status": "local_checks_verified",
+  "status": "published_snapshot_verified",
   "repository": {
     "url": "https://github.com/Nokhin/opspilot",
     "history": "fresh reviewed public tree",
-    "identity_email": "GitHub noreply"
+    "identity_email": "GitHub noreply",
+    "id": 1410548081,
+    "node_id": "R_kgDOVBNBcQ",
+    "visibility": "public"
   },
   "release": {
     "tag": "v1.0-rag-tools-evals",
-    "url": "https://github.com/Nokhin/opspilot/releases/tag/v1.0-rag-tools-evals"
+    "url": "https://github.com/Nokhin/opspilot/releases/tag/v1.0-rag-tools-evals",
+    "id": 406984267,
+    "root_commit": "2f80e1727579b4e09eb6109a8b970092c2980b55",
+    "annotated_tag_object": "fc2b18e115034f922a4b3e63fbd0e20b769c7fa7",
+    "draft": false,
+    "prerelease": false
   },
   "application_source_matches_recorded_acceptance": true,
   "paid_inference_performed_during_publication": false,
-  "record_scope": "Publication validation is separate from the preserved functional/live acceptance.",
+  "record_scope": "The released root and its CI/assets are verified here. This receipt is a subsequent documentation commit; it does not move the published tag or rerun paid inference.",
   "local_checks": {
     "pytest": {
       "passed": 79,
@@ -44,5 +52,107 @@
     "local_markdown_links": {
       "missing": 0
     }
+  },
+  "checked_at_utc": "2026-10-08T15:41:04.543423Z",
+  "hosted_ci": [
+    {
+      "run_id": 37799042311,
+      "scope": "released root on main",
+      "conclusion": "success",
+      "url": "https://github.com/Nokhin/opspilot/actions/runs/37799042311"
+    },
+    {
+      "run_id": 37800105771,
+      "scope": "annotated release tag",
+      "conclusion": "success",
+      "url": "https://github.com/Nokhin/opspilot/actions/runs/37800105771"
+    }
+  ],
+  "downloaded_ci_artifacts": [
+    {
+      "group": "main",
+      "artifact": "offline-python-3.11-retry1",
+      "files": 7,
+      "tests": 79,
+      "offline_suites": "50/50 current and legacy",
+      "sensitive_matches": 0,
+      "hostname_removed": true,
+      "timestamps_utc": true
+    },
+    {
+      "group": "main",
+      "artifact": "offline-python-3.13",
+      "files": 7,
+      "tests": 79,
+      "offline_suites": "50/50 current and legacy",
+      "sensitive_matches": 0,
+      "hostname_removed": true,
+      "timestamps_utc": true
+    },
+    {
+      "group": "tag",
+      "artifact": "offline-python-3.11",
+      "files": 7,
+      "tests": 79,
+      "offline_suites": "50/50 current and legacy",
+      "sensitive_matches": 0,
+      "hostname_removed": true,
+      "timestamps_utc": true
+    },
+    {
+      "group": "tag",
+      "artifact": "offline-python-3.13",
+      "files": 7,
+      "tests": 79,
+      "offline_suites": "50/50 current and legacy",
+      "sensitive_matches": 0,
+      "hostname_removed": true,
+      "timestamps_utc": true
+    }
+  ],
+  "independent_remote_history_check": {
+    "passed": true,
+    "commits": 1,
+    "reachable_commits": 1,
+    "objects": 222,
+    "historical_paths": 177,
+    "violations": []
+  },
+  "archive_checks": [
+    {
+      "name": "opspilot-v1.0-rag-tools-evals.tar.gz",
+      "files": 177,
+      "sha256": "51a8e265d8754cc103089bbcf1987f19f441ebc236f9d8edca09449cde5316f0",
+      "matches_tagged_blobs": true,
+      "sensitive_matches": 0
+    },
+    {
+      "name": "opspilot-v1.0-rag-tools-evals-evidence.tar.gz",
+      "files": 22,
+      "sha256": "6c846a4fa6ee226ad928edb74dc50f5d833ec738c9dc1d2ecb8ae272f20c3c4d",
+      "matches_tagged_blobs": true,
+      "sensitive_matches": 0
+    }
+  ],
+  "downloaded_release_asset_checks": {
+    "release_id": 406984267,
+    "assets": [
+      {
+        "name": "opspilot-v1.0-rag-tools-evals-evidence.tar.gz",
+        "sha256": "6c846a4fa6ee226ad928edb74dc50f5d833ec738c9dc1d2ecb8ae272f20c3c4d",
+        "matches_local_bytes_and_github_digest": true
+      },
+      {
+        "name": "opspilot-v1.0-rag-tools-evals.tar.gz",
+        "sha256": "51a8e265d8754cc103089bbcf1987f19f441ebc236f9d8edca09449cde5316f0",
+        "matches_local_bytes_and_github_digest": true
+      },
+      {
+        "name": "SHA256SUMS",
+        "sha256": "cfc6bd9f3a6d95b2be93e5a3768763b392fed817fa9fd007abb85c6ef0376cd5",
+        "matches_local_bytes_and_github_digest": true
+      }
+    ],
+    "checksum_file_verified": true
   }
 }
