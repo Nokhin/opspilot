@@ -1,0 +1,137 @@
+{
+  "checked_at": "2026-10-08T04:59:59.898949+00:00",
+  "base_url": "http://127.0.0.1:8180",
+  "health": {
+    "status": "ok",
+    "synthetic_data": true,
+    "mode": "extractive"
+  },
+  "journeys": [
+    {
+      "name": "policy",
+      "route": "policy_only",
+      "evidence_sufficiency": "supported",
+      "source_types": [
+        "internal_policy"
+      ],
+      "tools": [
+        "search_internal_policy"
+      ],
+      "request_id_matches_header": true
+    },
+    {
+      "name": "data",
+      "route": "data_only",
+      "evidence_sufficiency": "supported",
+      "source_types": [
+        "incident_db"
+      ],
+      "tools": [
+        "calculate_incident_metrics"
+      ],
+      "request_id_matches_header": true
+    },
+    {
+      "name": "mixed",
+      "route": "mixed",
+      "evidence_sufficiency": "supported",
+      "source_types": [
+        "incident_db",
+        "internal_policy"
+      ],
+      "tools": [
+        "search_internal_policy",
+        "find_similar_incidents",
+        "calculate_incident_metrics"
+      ],
+      "request_id_matches_header": true
+    },
+    {
+      "name": "missing_policy",
+      "route": "policy_only",
+      "evidence_sufficiency": "insufficient",
+      "source_types": [],
+      "tools": [
+        "search_internal_policy"
+      ],
+      "request_id_matches_header": true
+    },
+    {
+      "name": "write_attempt",
+      "route": "unsupported",
+      "evidence_sufficiency": "insufficient",
+      "source_types": [],
+      "tools": [],
+      "request_id_matches_header": true
+    }
+  ],
+  "malformed_request_422": true,
+  "no_ingestion_endpoint_404": true,
+  "container": {
+    "architecture": "aarch64",
+    "python": "3.11.17",
+    "uid": 10001,
+    "query_only": 1,
+    "database_write_rejected": true,
+    "root_readonly": true,
+    "incident_count": 240,
+    "policy_chunks": 60,
+    "corpus_sha256": "3f85bfc6498084803df9e537bcb3ad0e43f1cf5b4ce563dbec8bb8ca593df639",
+    "database_file_sha256": "ca1185eb5f0f64a4cf4701d00fd576d6229cc6e4f3213e7913e29c9e3a5aa989",
+    "index_file_sha256": "326a48812e8ada7c1b5846cc64f866a0440a872473111d0beb76929a63cc1e6a"
+  },
+  "stores_preserved_on_restart": true,
+  "observed_idle_memory": "41.37MiB / 2GiB",
+  "arm64_evaluation": {
+    "cases": 50,
+    "passed": 50,
+    "end_to_end_pass_rate": 1.0,
+    "source_recall_at_k": 1.0,
+    "citation_integrity_rate": 1.0,
+    "refusal_accuracy": 1.0,
+    "tool_selection_accuracy": 1.0,
+    "route_accuracy": 1.0,
+    "argument_schema_accuracy": 1.0,
+    "tool_success_rate": 1.0,
+    "deterministic_result_accuracy": 1.0,
+    "latency_median_ms": 0.3410210000538427,
+    "latency_p95_ms": 1.5326249999816355,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "estimated_cost_usd": null,
+    "by_category": {
+      "ambiguous": {
+        "cases": 3,
+        "passed": 3
+      },
+      "data": {
+        "cases": 10,
+        "passed": 10
+      },
+      "mixed": {
+        "cases": 7,
+        "passed": 7
+      },
+      "multi_document": {
+        "cases": 3,
+        "passed": 3
+      },
+      "policy": {
+        "cases": 15,
+        "passed": 15
+      },
+      "safety": {
+        "cases": 4,
+        "passed": 4
+      },
+      "unsupported": {
+        "cases": 8,
+        "passed": 8
+      }
+    },
+    "failure_counts": {}
+  },
+  "notes": [
+    "Local offline smoke test; not a load test or VPS deployment."
+  ]
+}

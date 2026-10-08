@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-10-08T08:37:29.597281+00:00",
+  "publishable_files_checked": 183,
+  "actual_api_key_found": false,
+  "private_env_mode": "0o600",
+  "broken_local_markdown_links": [],
+  "golden_progress_csv_and_response_records_match": true,
+  "application_and_evidence_hashes_unchanged": true,
+  "scope": "Current source/config/docs/results excluding private env, generated stores, virtual environments, caches and Git metadata; not a full security/history audit."
+}

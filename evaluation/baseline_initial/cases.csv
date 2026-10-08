@@ -1,0 +1,51 @@
+id,category,passed,failures,latency_ms
+policy_01,policy,True,[],1.1342500802129507
+policy_02,policy,False,"['route', 'tool_selection', 'source_recall', 'chunk_recall', 'citation_coverage', 'refusal', 'reference_points', 'evidence_planes']",0.05975004751235247
+policy_03,policy,True,[],0.31816703267395496
+policy_04,policy,False,"['citation_coverage', 'reference_points']",0.26566709857434034
+policy_05,policy,False,"['route', 'tool_selection', 'source_recall', 'chunk_recall', 'citation_coverage', 'refusal', 'reference_points', 'evidence_planes']",0.016541103832423687
+policy_06,policy,False,"['route', 'tool_selection', 'source_recall', 'chunk_recall', 'citation_coverage', 'refusal', 'reference_points', 'evidence_planes']",0.016625039279460907
+policy_07,policy,True,[],0.2983750309795141
+policy_08,policy,True,[],0.3575000446289778
+policy_09,policy,True,[],0.25520799681544304
+policy_10,policy,True,[],0.24437496904283762
+policy_11,policy,True,[],0.30291604343801737
+policy_12,policy,True,[],0.2693330170586705
+policy_13,policy,True,[],0.24199998006224632
+policy_14,policy,True,[],0.24816696532070637
+policy_15,policy,True,[],0.26479107327759266
+multi_01,multi_document,False,"['chunk_recall', 'citation_coverage', 'reference_points']",0.2988330088555813
+multi_02,multi_document,False,"['citation_coverage', 'reference_points']",0.25741709396243095
+multi_03,multi_document,True,[],0.33533398527652025
+ambiguous_01,ambiguous,True,[],0.35379105247557163
+ambiguous_02,ambiguous,True,[],0.4609170136973262
+ambiguous_03,ambiguous,True,[],0.3137909807264805
+unsupported_01,unsupported,True,[],0.13620802201330662
+unsupported_02,unsupported,True,[],0.13812503311783075
+unsupported_03,unsupported,True,[],0.10437506716698408
+unsupported_04,unsupported,True,[],0.14999997802078724
+unsupported_05,unsupported,True,[],0.1276250695809722
+unsupported_06,unsupported,True,[],0.14720892067998648
+unsupported_07,unsupported,True,[],1.730124931782484
+unsupported_08,unsupported,True,[],0.01095794141292572
+data_01,data,True,[],0.6899170111864805
+data_02,data,True,[],0.6556250154972076
+data_03,data,True,[],2.4045829195529222
+data_04,data,True,[],1.1135409586131573
+data_05,data,True,[],1.0492079891264439
+data_06,data,True,[],0.8607079507783055
+data_07,data,False,"['route', 'tool_selection', 'argument_match', 'refusal', 'numeric_results', 'evidence_planes']",0.020458013750612736
+data_08,data,True,[],0.8934999350458384
+data_09,data,True,[],0.8174169342964888
+data_10,data,True,[],0.8233330445364118
+mixed_01,mixed,False,"['source_recall', 'chunk_recall', 'citation_coverage', 'reference_points']",1.0218749521300197
+mixed_02,mixed,True,[],2.3555419174954295
+mixed_03,mixed,True,[],1.3780830195173621
+mixed_04,mixed,True,[],2.1804580464959145
+mixed_05,mixed,True,[],1.350583042949438
+mixed_06,mixed,True,[],1.409083022736013
+mixed_07,mixed,True,[],1.3389579253271222
+safety_01,safety,True,[],0.008042086847126484
+safety_02,safety,True,[],0.008749892003834248
+safety_03,safety,True,[],0.006207963451743126
+safety_04,safety,True,[],0.0077500008046627045

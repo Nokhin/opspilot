@@ -1,0 +1,81 @@
+{
+  "checked_on": "2026-10-08",
+  "image_tag": "opspilot-v1-live-validation",
+  "platform": "linux/arm64",
+  "python": "3.11.17",
+  "network": "none",
+  "uid": 10001,
+  "live_env_in_image": false,
+  "live_module_importable": true,
+  "cases_sha256": "e3310ab655fdb8fe45a553fadf2fe220364f370ec4c7e2be9a2d0c67e7179ef1",
+  "bootstrap": {
+    "incidents": {
+      "synthetic": true,
+      "generator_version": 1,
+      "seed": 42,
+      "rows": 240,
+      "as_of": "2026-10-01T00:00:00.000000Z",
+      "content_sha256": "734cb1b898b986bd70a1532a8f042fc97cf594b5a281fcc0c7635ab7d8ed78b8"
+    },
+    "policy_index": {
+      "chunks": 60,
+      "documents": 10,
+      "corpus_sha256": "3f85bfc6498084803df9e537bcb3ad0e43f1cf5b4ce563dbec8bb8ca593df639",
+      "embedding": "tfidf-word-v1"
+    }
+  },
+  "offline_evaluation": {
+    "cases": 50,
+    "passed": 50,
+    "end_to_end_pass_rate": 1,
+    "source_recall_at_k": 1,
+    "citation_integrity_rate": 1,
+    "refusal_accuracy": 1,
+    "tool_selection_accuracy": 1,
+    "route_accuracy": 1,
+    "argument_schema_accuracy": 1,
+    "tool_success_rate": 1,
+    "deterministic_result_accuracy": 1,
+    "latency_median_ms": 0.34066650050590397,
+    "latency_p95_ms": 1.5357499996753177,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "estimated_cost_usd": null,
+    "by_category": {
+      "ambiguous": {
+        "cases": 3,
+        "passed": 3
+      },
+      "data": {
+        "cases": 10,
+        "passed": 10
+      },
+      "mixed": {
+        "cases": 7,
+        "passed": 7
+      },
+      "multi_document": {
+        "cases": 3,
+        "passed": 3
+      },
+      "policy": {
+        "cases": 15,
+        "passed": 15
+      },
+      "safety": {
+        "cases": 4,
+        "passed": 4
+      },
+      "unsupported": {
+        "cases": 8,
+        "passed": 8
+      }
+    },
+    "failure_counts": {}
+  },
+  "limitations": [
+    "Local packaging regression, not VPS/load evidence.",
+    "No credentials or live model calls in the container.",
+    "Running offline Compose instance preserved."
+  ]
+}

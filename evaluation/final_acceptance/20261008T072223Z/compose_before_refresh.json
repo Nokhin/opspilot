@@ -1,0 +1,7 @@
+{
+  "mode": "extractive",
+  "files": {
+    "/app/var/incidents.sqlite": "ca1185eb5f0f64a4cf4701d00fd576d6229cc6e4f3213e7913e29c9e3a5aa989",
+    "/app/var/policy_index.json": "326a48812e8ada7c1b5846cc64f866a0440a872473111d0beb76929a63cc1e6a"
+  }
+}

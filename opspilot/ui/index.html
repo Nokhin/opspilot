@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpsPilot · Operational intelligence</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/">OP<span>OpsPilot</span></a><div id="health" class="badge">Checking evidence stores</div></header>
+  <main>
+    <section class="intro">
+      <p class="eyebrow">OPERATIONAL INCIDENT INTELLIGENCE</p>
+      <h1>Investigate with evidence.</h1>
+      <p class="subtitle">Internal procedures and incident history, brought together in one investigation.</p>
+      <p class="disclosure">Fictional demo · HarbourLink Services · Synthetic policies and incidents · Read-only</p>
+    </section>
+    <section class="workspace">
+      <div class="investigation">
+        <div class="section-top"><h2>Your investigation</h2><span class="muted">V1</span></div>
+        <form id="question-form">
+          <label for="question">Ask about a procedure, incident, or historical pattern</label>
+          <textarea id="question" required minlength="2" maxlength="3000" rows="4" placeholder="What escalation does policy require for a payment outage, and how does its duration compare with incident history?"></textarea>
+          <div class="form-footer"><span class="muted">Sources and tool activity accompany every answer.</span><button id="submit" type="submit">Investigate <span aria-hidden="true">↗</span></button></div>
+        </form>
+        <div class="examples" aria-label="Example questions">
+          <button type="button" data-example="policy">Policy · SEV1 escalation</button>
+          <button type="button" data-example="data">Data · payment downtime</button>
+          <button type="button" data-example="mixed">Mixed · current vs history</button>
+          <button type="button" data-example="refusal">Missing evidence</button>
+        </div>
+        <div id="answer-state" role="status" class="muted initial">Choose an example or start your own investigation.</div>
+        <div id="answer" hidden>
+          <div class="answer-top"><h2>Findings</h2><span id="outcome" class="badge"></span></div>
+          <div id="facts"></div>
+          <details id="limitations"><summary>Limitations & scope</summary><ul></ul></details>
+          <details><summary>Full structured response</summary><pre id="raw-response"></pre></details>
+          <p id="request-meta" class="muted"></p>
+        </div>
+      </div>
+      <aside>
+        <section class="sources-card"><div class="section-top"><h2>Evidence</h2><span id="source-count" class="muted">—</span></div><div id="sources" class="empty">Sources appear here after retrieval.</div></section>
+        <section class="trace-card"><h2>Tool activity</h2><p class="muted">Actions and results, with validated filters.</p><div id="trace" class="empty">No tools called yet.</div></section>
+      </aside>
+    </section>
+    <footer>HarbourLink is invented for this portfolio project. Current policy effective 1 July 2026. Incident snapshot reference: 1 October 2026 (UTC).</footer>
+  </main>
+</body>
+</html>

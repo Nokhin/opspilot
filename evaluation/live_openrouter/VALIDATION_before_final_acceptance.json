@@ -1,0 +1,246 @@
+{
+  "checked_on": "2026-10-08",
+  "provider": "OpenRouter",
+  "model": "x-ai/grok-4.7",
+  "transport": "http",
+  "runs": [
+    {
+      "name": "diagnose_multi_plan",
+      "scope": "targeted",
+      "completed": true,
+      "requested_cases": 1,
+      "executed_cases": 1,
+      "passed": 0,
+      "model": "x-ai/grok-4.7",
+      "cases_sha256": "02f648f314b1dd0789d02ab95a6a7ea080a4c987ce4ede5e267ddee87a3c178a",
+      "http_attempts": 1,
+      "input_tokens": 3198,
+      "output_tokens": 411,
+      "reported_cost_usd": 0.004254
+    },
+    {
+      "name": "full_final",
+      "scope": "curated_regression",
+      "completed": true,
+      "requested_cases": 50,
+      "executed_cases": 50,
+      "passed": 49,
+      "model": "x-ai/grok-4.7",
+      "cases_sha256": "e3310ab655fdb8fe45a553fadf2fe220364f370ec4c7e2be9a2d0c67e7179ef1",
+      "http_attempts": 74,
+      "input_tokens": 240537,
+      "output_tokens": 46275,
+      "reported_cost_usd": 0.597828
+    },
+    {
+      "name": "full_initial",
+      "scope": "curated_regression",
+      "completed": false,
+      "requested_cases": 50,
+      "executed_cases": 18,
+      "passed": 13,
+      "model": "x-ai/grok-4.7",
+      "cases_sha256": "02f648f314b1dd0789d02ab95a6a7ea080a4c987ce4ede5e267ddee87a3c178a",
+      "http_attempts": 33,
+      "input_tokens": 90519,
+      "output_tokens": 12253,
+      "reported_cost_usd": 0.186012
+    },
+    {
+      "name": "full_refined",
+      "scope": "curated_regression",
+      "completed": true,
+      "requested_cases": 50,
+      "executed_cases": 50,
+      "passed": 47,
+      "model": "x-ai/grok-4.7",
+      "cases_sha256": "02f648f314b1dd0789d02ab95a6a7ea080a4c987ce4ede5e267ddee87a3c178a",
+      "http_attempts": 74,
+      "input_tokens": 221847,
+      "output_tokens": 44691,
+      "reported_cost_usd": 0.532704
+    },
+    {
+      "name": "smoke_anchor_context",
+      "scope": "smoke",
+      "completed": true,
+      "requested_cases": 5,
+      "executed_cases": 5,
+      "passed": 5,
+      "model": "x-ai/grok-4.7",
+      "cases_sha256": "02f648f314b1dd0789d02ab95a6a7ea080a4c987ce4ede5e267ddee87a3c178a",
+      "http_attempts": 6,
+      "input_tokens": 17542,
+      "output_tokens": 2638,
+      "reported_cost_usd": 0.031904
+    },
+    {
+      "name": "smoke_initial",
+      "scope": "smoke",
+      "completed": true,
+      "requested_cases": 5,
+      "executed_cases": 5,
+      "passed": 4,
+      "model": "x-ai/grok-4.7",
+      "cases_sha256": "02f648f314b1dd0789d02ab95a6a7ea080a4c987ce4ede5e267ddee87a3c178a",
+      "http_attempts": 6,
+      "input_tokens": 17341,
+      "output_tokens": 1991,
+      "reported_cost_usd": 0.03626
+    },
+    {
+      "name": "targeted_data_scope",
+      "scope": "targeted",
+      "completed": true,
+      "requested_cases": 3,
+      "executed_cases": 3,
+      "passed": 2,
+      "model": "x-ai/grok-4.7",
+      "cases_sha256": "e3310ab655fdb8fe45a553fadf2fe220364f370ec4c7e2be9a2d0c67e7179ef1",
+      "http_attempts": 5,
+      "input_tokens": 15809,
+      "output_tokens": 6436,
+      "reported_cost_usd": 0.061018
+    },
+    {
+      "name": "targeted_executor_guard",
+      "scope": "targeted",
+      "completed": true,
+      "requested_cases": 4,
+      "executed_cases": 4,
+      "passed": 4,
+      "model": "x-ai/grok-4.7",
+      "cases_sha256": "e3310ab655fdb8fe45a553fadf2fe220364f370ec4c7e2be9a2d0c67e7179ef1",
+      "http_attempts": 6,
+      "input_tokens": 19935,
+      "output_tokens": 6845,
+      "reported_cost_usd": 0.06654
+    },
+    {
+      "name": "targeted_metrics_role",
+      "scope": "targeted",
+      "completed": true,
+      "requested_cases": 1,
+      "executed_cases": 1,
+      "passed": 1,
+      "model": "x-ai/grok-4.7",
+      "cases_sha256": "e3310ab655fdb8fe45a553fadf2fe220364f370ec4c7e2be9a2d0c67e7179ef1",
+      "http_attempts": 2,
+      "input_tokens": 6275,
+      "output_tokens": 3065,
+      "reported_cost_usd": 0.025564
+    },
+    {
+      "name": "targeted_plan_refined",
+      "scope": "targeted",
+      "completed": true,
+      "requested_cases": 5,
+      "executed_cases": 5,
+      "passed": 5,
+      "model": "x-ai/grok-4.7",
+      "cases_sha256": "02f648f314b1dd0789d02ab95a6a7ea080a4c987ce4ede5e267ddee87a3c178a",
+      "http_attempts": 10,
+      "input_tokens": 28942,
+      "output_tokens": 6356,
+      "reported_cost_usd": 0.078164
+    },
+    {
+      "name": "targeted_tool_precision",
+      "scope": "targeted",
+      "completed": true,
+      "requested_cases": 3,
+      "executed_cases": 3,
+      "passed": 2,
+      "model": "x-ai/grok-4.7",
+      "cases_sha256": "e3310ab655fdb8fe45a553fadf2fe220364f370ec4c7e2be9a2d0c67e7179ef1",
+      "http_attempts": 5,
+      "input_tokens": 16279,
+      "output_tokens": 5461,
+      "reported_cost_usd": 0.052652
+    }
+  ],
+  "observed_total": {
+    "completed_case_executions": 145,
+    "http_attempts": 222,
+    "input_tokens": 678224,
+    "output_tokens": 136422,
+    "reported_cost_usd": 1.6729
+  },
+  "dataset_revision": {
+    "legacy_sha256": "02f648f314b1dd0789d02ab95a6a7ea080a4c987ce4ede5e267ddee87a3c178a",
+    "clarified_sha256": "e3310ab655fdb8fe45a553fadf2fe220364f370ec4c7e2be9a2d0c67e7179ef1",
+    "changes": [
+      {
+        "id": "mixed_07",
+        "fields": [
+          "question"
+        ]
+      }
+    ],
+    "numeric_labels_unchanged": true
+  },
+  "current_checks": {
+    "pytest_passed": 70,
+    "ruff_lint": "passed",
+    "ruff_format": "passed",
+    "actual_api_key_found_in_publishable_files": false,
+    "private_env_mode": "0o600",
+    "publishable_files_checked": 146,
+    "missing_local_markdown_links": 0,
+    "provider_and_executor_hashes_match_final_image": true,
+    "live_guard_case": {
+      "id": "mixed_05",
+      "proposed_tools": [
+        "search_internal_policy",
+        "find_similar_incidents",
+        "calculate_incident_metrics"
+      ],
+      "executed_tools": [
+        "search_internal_policy",
+        "calculate_incident_metrics"
+      ],
+      "omission_recorded_in_limitations": true
+    }
+  },
+  "current_source_sha256": {
+    "Dockerfile": "805ee305a2d71bfc6e0ef5b8e99b0d4c0317832569a32badc130619e2e4badf7",
+    "compose.yaml": "45b739d227274ab045fa75792601e4f25542e2ba5254877351c4dc84fc5a86ff",
+    "opspilot/__init__.py": "243712c520c70ee27e0ce40117093b65fff0374497dd558d9244d7bd853c401b",
+    "opspilot/api/__init__.py": "a4651641903d00e7ff6de1d28597287aabf90ea22a5721cf58513ba27fa8ea58",
+    "opspilot/api/main.py": "58259b413a243345ce1577140402bacfa5eb7e29903b9a9d701416fcded6e963",
+    "opspilot/cli.py": "d8e40eb5009ba7a77aaf5edf880d8158f387b2b093829c204103291a7d08bdbc",
+    "opspilot/config.py": "57fd373c64754c746b3e740bd560637dfa2d57c364c6c41698350717de8a8bcd",
+    "opspilot/data/__init__.py": "e7b2bd78f1a31940de6aa44c26d6e31a771091289e29c4c6c85243d5830d0b51",
+    "opspilot/data/repository.py": "9ed49fda4afed30241f93c16e6c1773e901f1e2c8ff116948ac1b66e03dc7d77",
+    "opspilot/data/seed.py": "535580fc506f657c18f9a06348a800f9972e89a686e95ba7693bf9f3d984e9f2",
+    "opspilot/domain/__init__.py": "909810bb22effb7a15a021ed1b7ec36aaf322705fcba163848719c74cc0431d6",
+    "opspilot/domain/models.py": "12b56eb3cd82f6aff4241d7b8c85accc94886528934a5b0e99f4bbd7e256687f",
+    "opspilot/evaluation/__init__.py": "7cab7739de15b8dec41660c1534125beb24d9091a5aaaaf74db825cbcafb266c",
+    "opspilot/evaluation/live.py": "4042d98611afe748436ba1df72ce4fe130d7e860bb7a28318c3090504de3e013",
+    "opspilot/evaluation/runner.py": "dec0e7891293d8f279406508f013ae6825b5e96dbc5af8db86f4f584d9a57d00",
+    "opspilot/orchestration/__init__.py": "3ba2ce964df5f076568ae95ec44250c824413d850ed38a09d715627072b7f47d",
+    "opspilot/orchestration/grounding.py": "96c7814213f1eb482c1f46bda4c4640578efae9826f100e61eb18a50d9f414a7",
+    "opspilot/orchestration/routing.py": "0ef7b995c12f0f6d88bae7e55f8a8cd9b7821bfa52be450c0e3928c1773a2cad",
+    "opspilot/orchestration/service.py": "3e91073ab0c7016f1466c341146d6657c96b48e6488ad23b3f20731e6b0e45fa",
+    "opspilot/providers/__init__.py": "810bdca2a7c6afcc45a2edb9846cfe323aa62439728932a9b315e309b9bec6b5",
+    "opspilot/providers/chat_api.py": "4d2761ca61ab4a2745f168e65ad3e340ec3f134c7fe45305c681ed9c4e7cbb75",
+    "opspilot/providers/embedding_api.py": "544efc061ecfcdcdf634f85a7342ee8781a5ab998f3a64ff6dabcc67d95a461f",
+    "opspilot/providers/embeddings.py": "87bf9ec601926bc1fb5cae1b9a3a6fa76d5c6e7d32e32d4c141ecb01264d8094",
+    "opspilot/rag/__init__.py": "7bbd7654628142d3ce2eea048262860472ac8d1f90dc4d7efd3c5696d0933c98",
+    "opspilot/rag/ingestion.py": "ceb519defb577512ed8301a7cb1fa2b39edf73e5c628dcff0ad0151d544d4105",
+    "opspilot/rag/vectorstore.py": "bd335417ce3516a3db58bc7136baf538c07685cd225a3e4be35716736801eefd",
+    "opspilot/tools/__init__.py": "19427360c35f4bc5375407e3e5c8f9154fbc682a07970a6ca21abb005e62560f",
+    "opspilot/tools/registry.py": "26149bb4f8c1b2b548b69f3aa1cdcd99b72bb82fcdceb62787090cf6ca4d748a",
+    "opspilot/ui/__init__.py": "f8223237f548fc394b591cecb14c6b35212045e1ff71d6f1ed863f1355884945",
+    "pyproject.toml": "fd7d0c85c3628c9492f349d28534efa3a183b56758816341f9d6f70c4d705c2f",
+    "requirements-dev.lock": "1fea494dfc0d9869633ced0fb652f2136d56fe2c641a2672faabf42f5658ef71",
+    "requirements.lock": "fc02816c3c5b41bf0f2e8b0bb6860550b6c7eabb74aa98c945ac0d84d962ac0f"
+  },
+  "limitations": [
+    "Broad revised live result is 49/50 before the final executor guard; post-guard live verification is targeted 4/4, not a new full-suite pass.",
+    "One question was clarified; original questions, labels, failing grades and reports are retained.",
+    "Curated/tuned synthetic English regression, not held-out semantic generalisation.",
+    "Provider-reported cost includes rejected outputs and all preserved trial calls, but excludes purchase fees and unrelated account activity.",
+    "VPS, concurrent live API/UI performance and dense embedding quality remain separate validation."
+  ]
+}

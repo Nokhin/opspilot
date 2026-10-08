@@ -1,0 +1,7 @@
+{
+  "initial_attempt": "interrupted",
+  "cause": "Inherited HTTP proxy routed the temporary loopback readiness request; interruption stack used httpcore.http_proxy. A direct request with trust_env=False returned 200.",
+  "adjustment": "Bypass inherited proxy for loopback-only smoke and bound readiness with a monotonic deadline.",
+  "application_source_changed": false,
+  "llm_calls_affected": false
+}

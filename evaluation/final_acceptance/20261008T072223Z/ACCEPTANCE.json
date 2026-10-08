@@ -1,0 +1,238 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-08T08:31:43.728239+00:00",
+  "scope": "Final local V1 acceptance; actual OpenRouter curated live regression and local CPU-only packaging/API controls",
+  "application_source_changed_during_acceptance": false,
+  "golden_or_corpus_changed_during_acceptance": false,
+  "model": "x-ai/grok-4.7",
+  "live": {
+    "path": "live_full/results.json",
+    "summary": {
+      "cases": 50,
+      "passed": 50,
+      "end_to_end_pass_rate": 1.0,
+      "source_recall_at_k": 1.0,
+      "citation_integrity_rate": 1.0,
+      "refusal_accuracy": 1.0,
+      "tool_selection_accuracy": 1.0,
+      "route_accuracy": 1.0,
+      "argument_schema_accuracy": 1.0,
+      "tool_success_rate": 1.0,
+      "deterministic_result_accuracy": 1.0,
+      "latency_median_ms": 11245.660708460491,
+      "latency_p95_ms": 43433.276124997064,
+      "input_tokens": 240832,
+      "output_tokens": 45883,
+      "estimated_cost_usd": null,
+      "by_category": {
+        "ambiguous": {
+          "cases": 3,
+          "passed": 3
+        },
+        "data": {
+          "cases": 10,
+          "passed": 10
+        },
+        "mixed": {
+          "cases": 7,
+          "passed": 7
+        },
+        "multi_document": {
+          "cases": 3,
+          "passed": 3
+        },
+        "policy": {
+          "cases": 15,
+          "passed": 15
+        },
+        "safety": {
+          "cases": 4,
+          "passed": 4
+        },
+        "unsupported": {
+          "cases": 8,
+          "passed": 8
+        }
+      },
+      "failure_counts": {},
+      "provider_logical_calls": 74,
+      "provider_structured_successes": 74,
+      "provider_http_attempts": 74,
+      "provider_input_tokens": 240832,
+      "provider_output_tokens": 45883,
+      "provider_reported_cost_usd": 0.624674
+    },
+    "safety_zero_provider_calls_and_tools": true,
+    "retained_executor_guard_observed": true,
+    "complete": true
+  },
+  "checks": {
+    "pytest": {
+      "tests": 70,
+      "failures": 0,
+      "errors": 0,
+      "report": "pytest.xml",
+      "known_warning": "Existing Starlette TestClient HTTPX deprecation"
+    },
+    "ruff_lint": {
+      "passed": true,
+      "command": ".venv/bin/ruff check ."
+    },
+    "ruff_format": {
+      "passed": true,
+      "files": 35,
+      "command": ".venv/bin/ruff format --check ."
+    },
+    "pip_check": {
+      "passed": true,
+      "command": ".venv/bin/python -m pip check"
+    },
+    "offline_regressions": {
+      "offline_legacy": {
+        "cases": 50,
+        "passed": 50,
+        "path": "offline_legacy/results.json"
+      },
+      "offline_current": {
+        "cases": 50,
+        "passed": 50,
+        "path": "offline_current/results.json"
+      }
+    },
+    "native_arm64_docker": {
+      "passed": 50,
+      "cases": 50,
+      "network": "none",
+      "uid": 10001,
+      "database_write_denied": true,
+      "root_write_denied": true,
+      "source_matches_repo": true,
+      "report": "docker.json"
+    },
+    "actual_loopback_api": {
+      "mode": "extractive",
+      "journeys": 5,
+      "passed": 5,
+      "request_ids_match": true,
+      "ui_assets_passed": true,
+      "invalid_input_status": 422,
+      "absent_upload_status": 404,
+      "report": "api_runtime.json"
+    },
+    "current_compose_demo": {
+      "url": "http://127.0.0.1:8180",
+      "ready": true,
+      "mode": "extractive",
+      "source_matches_repo": true,
+      "db_and_index_preserved": true,
+      "report": "compose_current.json"
+    },
+    "qualitative_response_spot_checks": {
+      "cases": 12,
+      "passed": 12,
+      "reviewer": "Codex inspection; not independent blinded human review",
+      "report": "response_spot_checks.json"
+    },
+    "hygiene": {
+      "checked_at": "2026-10-08T08:37:29.597281+00:00",
+      "publishable_files_checked": 183,
+      "actual_api_key_found": false,
+      "private_env_mode": "0o600",
+      "broken_local_markdown_links": [],
+      "golden_progress_csv_and_response_records_match": true,
+      "application_and_evidence_hashes_unchanged": true,
+      "scope": "Current source/config/docs/results excluding private env, generated stores, virtual environments, caches and Git metadata; not a full security/history audit.",
+      "report": "hygiene.json"
+    }
+  },
+  "source_sha256": {
+    "Dockerfile": "805ee305a2d71bfc6e0ef5b8e99b0d4c0317832569a32badc130619e2e4badf7",
+    "compose.yaml": "45b739d227274ab045fa75792601e4f25542e2ba5254877351c4dc84fc5a86ff",
+    "opspilot/__init__.py": "243712c520c70ee27e0ce40117093b65fff0374497dd558d9244d7bd853c401b",
+    "opspilot/api/__init__.py": "a4651641903d00e7ff6de1d28597287aabf90ea22a5721cf58513ba27fa8ea58",
+    "opspilot/api/main.py": "58259b413a243345ce1577140402bacfa5eb7e29903b9a9d701416fcded6e963",
+    "opspilot/cli.py": "d8e40eb5009ba7a77aaf5edf880d8158f387b2b093829c204103291a7d08bdbc",
+    "opspilot/config.py": "57fd373c64754c746b3e740bd560637dfa2d57c364c6c41698350717de8a8bcd",
+    "opspilot/data/__init__.py": "e7b2bd78f1a31940de6aa44c26d6e31a771091289e29c4c6c85243d5830d0b51",
+    "opspilot/data/repository.py": "9ed49fda4afed30241f93c16e6c1773e901f1e2c8ff116948ac1b66e03dc7d77",
+    "opspilot/data/seed.py": "535580fc506f657c18f9a06348a800f9972e89a686e95ba7693bf9f3d984e9f2",
+    "opspilot/domain/__init__.py": "909810bb22effb7a15a021ed1b7ec36aaf322705fcba163848719c74cc0431d6",
+    "opspilot/domain/models.py": "12b56eb3cd82f6aff4241d7b8c85accc94886528934a5b0e99f4bbd7e256687f",
+    "opspilot/evaluation/__init__.py": "7cab7739de15b8dec41660c1534125beb24d9091a5aaaaf74db825cbcafb266c",
+    "opspilot/evaluation/live.py": "4042d98611afe748436ba1df72ce4fe130d7e860bb7a28318c3090504de3e013",
+    "opspilot/evaluation/runner.py": "dec0e7891293d8f279406508f013ae6825b5e96dbc5af8db86f4f584d9a57d00",
+    "opspilot/orchestration/__init__.py": "3ba2ce964df5f076568ae95ec44250c824413d850ed38a09d715627072b7f47d",
+    "opspilot/orchestration/grounding.py": "96c7814213f1eb482c1f46bda4c4640578efae9826f100e61eb18a50d9f414a7",
+    "opspilot/orchestration/routing.py": "0ef7b995c12f0f6d88bae7e55f8a8cd9b7821bfa52be450c0e3928c1773a2cad",
+    "opspilot/orchestration/service.py": "3e91073ab0c7016f1466c341146d6657c96b48e6488ad23b3f20731e6b0e45fa",
+    "opspilot/providers/__init__.py": "810bdca2a7c6afcc45a2edb9846cfe323aa62439728932a9b315e309b9bec6b5",
+    "opspilot/providers/chat_api.py": "4d2761ca61ab4a2745f168e65ad3e340ec3f134c7fe45305c681ed9c4e7cbb75",
+    "opspilot/providers/embedding_api.py": "544efc061ecfcdcdf634f85a7342ee8781a5ab998f3a64ff6dabcc67d95a461f",
+    "opspilot/providers/embeddings.py": "87bf9ec601926bc1fb5cae1b9a3a6fa76d5c6e7d32e32d4c141ecb01264d8094",
+    "opspilot/rag/__init__.py": "7bbd7654628142d3ce2eea048262860472ac8d1f90dc4d7efd3c5696d0933c98",
+    "opspilot/rag/ingestion.py": "ceb519defb577512ed8301a7cb1fa2b39edf73e5c628dcff0ad0151d544d4105",
+    "opspilot/rag/vectorstore.py": "bd335417ce3516a3db58bc7136baf538c07685cd225a3e4be35716736801eefd",
+    "opspilot/tools/__init__.py": "19427360c35f4bc5375407e3e5c8f9154fbc682a07970a6ca21abb005e62560f",
+    "opspilot/tools/registry.py": "26149bb4f8c1b2b548b69f3aa1cdcd99b72bb82fcdceb62787090cf6ca4d748a",
+    "opspilot/ui/__init__.py": "f8223237f548fc394b591cecb14c6b35212045e1ff71d6f1ed863f1355884945",
+    "pyproject.toml": "fd7d0c85c3628c9492f349d28534efa3a183b56758816341f9d6f70c4d705c2f",
+    "requirements-dev.lock": "1fea494dfc0d9869633ced0fb652f2136d56fe2c641a2672faabf42f5658ef71",
+    "requirements.lock": "fc02816c3c5b41bf0f2e8b0bb6860550b6c7eabb74aa98c945ac0d84d962ac0f"
+  },
+  "evidence_files_sha256": {
+    "var/incidents.sqlite": "f7f31def02597e265168e0249dc6e4ead70795fdefa12d85c6f388051dd08e2f",
+    "var/policy_index.json": "717da6fe2ed110c04c688443687374f89de7076f4def617e26df7d8375a3db45"
+  },
+  "cases_sha256": {
+    "opspilot/evaluation/cases.json": "02f648f314b1dd0789d02ab95a6a7ea080a4c987ce4ede5e267ddee87a3c178a",
+    "opspilot/evaluation/cases_v1_1.json": "e3310ab655fdb8fe45a553fadf2fe220364f370ec4c7e2be9a2d0c67e7179ef1"
+  },
+  "corpus_sha256": "3f85bfc6498084803df9e537bcb3ad0e43f1cf5b4ce563dbec8bb8ca593df639",
+  "logical_synthetic_data_sha256": "734cb1b898b986bd70a1532a8f042fc97cf594b5a281fcc0c7635ab7d8ed78b8",
+  "all_preserved_live_runs": {
+    "runs": 12,
+    "completed_case_executions": 195,
+    "http_attempts": 296,
+    "input_tokens": 919056,
+    "output_tokens": 182305,
+    "reported_cost_usd": 2.297574,
+    "ledger": "../../live_openrouter/VALIDATION.json"
+  },
+  "limitations": [
+    "Tuned 50-case synthetic English regression, not held-out semantic accuracy or calibrated confidence.",
+    "Citation checks establish paragraph/provenance integrity; spot checks are not a general relevance/completeness score.",
+    "Live latency is sequential CLI/shared-service latency; API smoke is offline, not concurrent live UI or VPS performance.",
+    "Current run and prior failures are preserved; no retry-until-pass loop or golden-label change during this acceptance.",
+    "Other LLMs, optional dense embeddings, load, VPS/HTTPS and production operations remain unverified.",
+    "Public Git release and the original project license are separate publication tasks."
+  ],
+  "completed_at": "2026-10-08T08:36:28.567820+00:00",
+  "public_artifact_metadata": {
+    "normalization": "Machine identifiers removed from JUnit; timezone-aware JUnit timestamps normalized to UTC; descriptive deployment context generalized.",
+    "recorded_case_results_and_application_source_unchanged": true,
+    "new_paid_inference_performed": false
+  },
+  "public_artifacts_sha256": {
+    "PREFLIGHT.json": "48aa1fcb70fdf7fcffd8e3c15fae9a2d8a3a8f4da6c191a29981d9434d01c9e5",
+    "SUMMARY.md": "5ac2fa828031e4c9b7883faf93c84fd2bd2a5b341b140bdefabec22d1d7f81e8",
+    "api_harness_diagnostic.json": "dba418f2a98647a952a40a3153d461410c8b3d05d7abdffdc41799dbdcdde2b9",
+    "api_runtime.json": "a60483656f98c12cea2f35637b190bfce7d7398feda28fa1662fcf149d863cdf",
+    "compose_before_refresh.json": "eb8948e98a016052b54ff73db0b636afe3fd820c5be9c704082d8ba30fdeadd4",
+    "compose_current.json": "ee1fd262fbe3419e80b3165422002348c0cca1e4c7ad00f51da0016e92a3abdb",
+    "docker.json": "402f930055bdd5325f6f30b18ae4fe07cbd1010f6c7bd585756f7c154602eee4",
+    "hygiene.json": "d05d1ff51b6d25723e462fb1fe917d01f4a47de6179dac51e0ee29873228048e",
+    "live_full/SUMMARY.md": "6c0caba04ca17307fe10881493c338c3abbb5ae80f6838da03972299c74fc752",
+    "live_full/cases.csv": "fa0c0f15fe5eaff69555b6a9ddb6107a31e2ad161cb2fccef77e302fb6c1b5a0",
+    "live_full/progress.jsonl": "a101c09ea33f299c58184e5e2f9adbd699c370ce53a3522d054d9b13b6de55da",
+    "live_full/provider.json": "ca854b98c20d4df5d930b0ed85f7b7161cadfc205e37d18d9d2106445400ee8e",
+    "live_full/results.json": "cbd231f4429834b6b7460d1b2f43d5fe555c0e40658672e46c7a3aab7fe4b952",
+    "offline_current/SUMMARY.md": "a84fbdec98d8c72fd3c7fc526ae5c1776070bcc94edebc8f8bf8483a7fb98db2",
+    "offline_current/cases.csv": "dbea68c77fb667988920e1fd6814f3b6bccf9310bbac4225ba6a79ebd744d14a",
+    "offline_current/results.json": "4451b590b1af1e214575367cde1c21dd5e7b40a16b0ede5cd68a3efa9087570f",
+    "offline_legacy/SUMMARY.md": "f05e1ddd54c831bd9862b5f2b151181feb77784f63bfacd5d7374d65fe637b9e",
+    "offline_legacy/cases.csv": "b8d4d4802ccbea1b234ac1c2bf396795c7d0e1ab194b385e0c484baac2da6cf6",
+    "offline_legacy/results.json": "7ac77c6dde8002f63d4a6441e6de5f0e3a0424a8adad6a6340439849c26406a1",
+    "pytest.xml": "e71c6a867e14887504e85bd6e8463d7cf54c8530d456ef3c0dbaaf793f62919e",
+    "response_spot_checks.json": "262bed96a2da2719800c9fc7199c2e70efaef4533ca1b64260b57258233caafc"
+  }
+}

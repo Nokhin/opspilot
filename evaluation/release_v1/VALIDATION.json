@@ -1,0 +1,48 @@
+{
+  "status": "local_checks_verified",
+  "repository": {
+    "url": "https://github.com/Nokhin/opspilot",
+    "history": "fresh reviewed public tree",
+    "identity_email": "GitHub noreply"
+  },
+  "release": {
+    "tag": "v1.0-rag-tools-evals",
+    "url": "https://github.com/Nokhin/opspilot/releases/tag/v1.0-rag-tools-evals"
+  },
+  "application_source_matches_recorded_acceptance": true,
+  "paid_inference_performed_during_publication": false,
+  "record_scope": "Publication validation is separate from the preserved functional/live acceptance.",
+  "local_checks": {
+    "pytest": {
+      "passed": 79,
+      "failures": 0,
+      "errors": 0
+    },
+    "ruff_lint": true,
+    "ruff_format": true,
+    "pip_check": true,
+    "actionlint": true,
+    "offline_suites": {
+      "current": {
+        "cases": 50,
+        "passed": 50,
+        "mode": "extractive",
+        "case_hash_verified": true
+      },
+      "legacy": {
+        "cases": 50,
+        "passed": 50,
+        "mode": "extractive",
+        "case_hash_verified": true
+      }
+    },
+    "publication_scope": {
+      "files": 177,
+      "violations": 0,
+      "git_identity_policy": "GitHub noreply email and UTC dates"
+    },
+    "local_markdown_links": {
+      "missing": 0
+    }
+  }
+}

@@ -1,0 +1,6 @@
+id,category,passed,failures,latency_ms
+policy_01,policy,True,[],10140.10862505529
+data_01,data,True,[],2611.0695000970736
+mixed_01,mixed,False,"['citation_coverage', 'refusal', 'reference_points', 'evidence_planes']",18935.24762499146
+unsupported_01,unsupported,True,[],5101.673583034426
+safety_01,safety,True,[],0.04537496715784073

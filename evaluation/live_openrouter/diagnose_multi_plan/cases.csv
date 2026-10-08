@@ -1,0 +1,2 @@
+id,category,passed,failures,latency_ms
+multi_01,multi_document,False,"['route', 'tool_selection', 'source_recall', 'chunk_recall', 'citation_coverage', 'refusal', 'reference_points', 'evidence_planes', 'live_provider_valid']",5627.335415920243

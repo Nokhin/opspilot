@@ -1,0 +1,827 @@
+{
+  "manifest": {
+    "run_at_utc": "2026-10-08T06:57:32.271189+00:00",
+    "mode": "chat_api",
+    "embedding": "tfidf-word-v1",
+    "top_k": 6,
+    "cases_sha256": "e3310ab655fdb8fe45a553fadf2fe220364f370ec4c7e2be9a2d0c67e7179ef1",
+    "corpus_sha256": "3f85bfc6498084803df9e537bcb3ad0e43f1cf5b4ce563dbec8bb8ca593df639",
+    "snapshot_reference": "2026-10-01T00:00:00+00:00",
+    "live_validation": {
+      "scope": "targeted",
+      "completed": true,
+      "requested_cases": 3,
+      "model": "x-ai/grok-4.7",
+      "endpoint": "https://openrouter.ai/api/v1",
+      "transport": "http",
+      "stop_reason": null,
+      "max_http_attempts": 8,
+      "provider_retries": 1,
+      "selected_case_ids": [
+        "mixed_05",
+        "mixed_02",
+        "data_02"
+      ]
+    }
+  },
+  "summary": {
+    "cases": 3,
+    "passed": 2,
+    "end_to_end_pass_rate": 0.6666666666666666,
+    "source_recall_at_k": 1.0,
+    "citation_integrity_rate": 1.0,
+    "refusal_accuracy": 1.0,
+    "tool_selection_accuracy": 0.6666666666666666,
+    "route_accuracy": 1.0,
+    "argument_schema_accuracy": 1.0,
+    "tool_success_rate": 1.0,
+    "deterministic_result_accuracy": 1.0,
+    "latency_median_ms": 52795.550083974376,
+    "latency_p95_ms": 68905.55679192767,
+    "input_tokens": 16279,
+    "output_tokens": 5461,
+    "estimated_cost_usd": null,
+    "by_category": {
+      "data": {
+        "cases": 1,
+        "passed": 1
+      },
+      "mixed": {
+        "cases": 2,
+        "passed": 1
+      }
+    },
+    "failure_counts": {
+      "tool_selection": 1
+    },
+    "provider_logical_calls": 5,
+    "provider_structured_successes": 5,
+    "provider_http_attempts": 5,
+    "provider_input_tokens": 16279,
+    "provider_output_tokens": 5461,
+    "provider_reported_cost_usd": 0.052652
+  },
+  "cases": [
+    {
+      "id": "mixed_05",
+      "category": "mixed",
+      "question": "What continuity decision does policy require for a payment service down 60 minutes, and compare median payment downtime in the last six months?",
+      "passed": true,
+      "checks": {
+        "response_schema": true,
+        "route": true,
+        "tool_selection": true,
+        "tool_success": true,
+        "argument_schema": true,
+        "argument_match": true,
+        "source_recall": true,
+        "chunk_recall": true,
+        "citation_integrity": true,
+        "citation_coverage": true,
+        "refusal": true,
+        "numeric_results": true,
+        "reference_points": true,
+        "evidence_planes": true,
+        "read_only": true,
+        "live_provider_valid": true,
+        "policy_selection_valid": true
+      },
+      "failures": [],
+      "source_recall_at_k": 1.0,
+      "latency_ms": 52795.550083974376,
+      "response": {
+        "request_id": "live-mixed_05",
+        "route": "mixed",
+        "answer": "Policy requirement: Activate the continuity assessment immediately for an unsafe site or a multi-site essential-service closure. For a customer-facing digital or payment outage lasting 60 minutes or more, the Duty Manager must decide whether to activate the approved continuity plan and record the decision and rationale. The 60-minute threshold is an assessment deadline, not permission to delay SEV1 escalation at 30 minutes. POL-INC-001 and POL-INC-002 continue to apply during continuity. Safety takes priority over maintaining transaction throughput. [Business Continuity Procedure | 2. Activation thresholds | POL-BCP-001:s02:c01]\n\nPolicy requirement: After restoration, validate the full payment journey and reconciliation, then observe SEV1 service for 30 minutes or SEV2 for 15 minutes under POL-REC-001. The recovery owner records checks and outstanding integrity work. The Operations Duty Manager confirms resolution for SEV1 and SEV2; no assistant can close the incident. If interruption reaches 60 minutes, assess continuity under POL-BCP-001 while maintaining escalation and customer updates. Historical downtime comparisons must disclose the matching filters and missing-duration denominator. [Payment Service Incident Playbook | 5. Recovery confirmation | POL-PAY-001:s05:c01]\n\nHistorical fact: Incident count: 30; median downtime: 45 minutes; mean downtime: 69.0741 minutes; p90 downtime (nearest-rank): 98 minutes. Resolved known-duration sample: 27; excluded/open or missing-duration records: 3. Total customer-impact exposures: 10924; mean exposure: 364.1333. Filters: {\"category\": \"payment_failure\", \"since\": \"2026-04-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}. Severity distribution: {\"SEV1\": 24, \"SEV2\": 6}. [HarbourLink synthetic incident snapshot | calculate_incident_metrics | db:calculate_incident_metrics:fad0014d59ba]\n\nInterpretation: The supplied scenario duration (60 minutes) is +15 minutes relative to the matching historical median (45 minutes). This comparison is context, not an approved restoration deadline. [HarbourLink synthetic incident snapshot | calculate_incident_metrics | db:calculate_incident_metrics:fad0014d59ba]",
+        "confidence": "high",
+        "evidence_sufficiency": "supported",
+        "evidence": [
+          {
+            "evidence_id": "db:calculate_incident_metrics:fad0014d59ba",
+            "source_type": "incident_db",
+            "source_id": "harbourlink-incidents-v1",
+            "title": "HarbourLink synthetic incident snapshot",
+            "section": "calculate_incident_metrics",
+            "excerpt": "{\"downtime_sample_count\": 27, \"filters\": {\"category\": \"payment_failure\", \"since\": \"2026-04-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}, \"group_counts\": {}, \"incident_count\": 30, \"mean_customer_impact\": 364.1333, \"mean_downtime_minutes\": 69.0741, \"median_downtime_minutes\": 45.0, \"missing_downtime_count\": 3, \"p90_downtime_minutes\": 98.0, \"repeat_incident_count_by_service\": {\"Payment Gateway\": 30}, \"resolved_count\": 28, \"severity_distribution\": {\"SEV1\": 24, \"SEV2\": 6}, \"total_customer_impact\": 10924, \"window_basis\": \"opened_at; since inclusive, until exclusive\"}",
+            "chunk_id": null,
+            "version": null,
+            "effective_date": null,
+            "score": null
+          },
+          {
+            "evidence_id": "POL-BCP-001:s02:c01",
+            "source_type": "internal_policy",
+            "source_id": "POL-BCP-001",
+            "title": "Business Continuity Procedure",
+            "section": "2. Activation thresholds",
+            "excerpt": "Activate the continuity assessment immediately for an unsafe site or a multi-site essential-service closure. For a customer-facing digital or payment outage lasting 60 minutes or more, the Duty Manager must decide whether to activate the approved continuity plan and record the decision and rationale. The 60-minute threshold is an assessment deadline, not permission to delay SEV1 escalation at 30 minutes. POL-INC-001 and POL-INC-002 continue to apply during continuity. Safety takes priority over maintaining transaction throughput.",
+            "chunk_id": "POL-BCP-001:s02:c01",
+            "version": "1.0",
+            "effective_date": "2026-07-01",
+            "score": 0.2879652199257727
+          },
+          {
+            "evidence_id": "POL-PAY-001:s05:c01",
+            "source_type": "internal_policy",
+            "source_id": "POL-PAY-001",
+            "title": "Payment Service Incident Playbook",
+            "section": "5. Recovery confirmation",
+            "excerpt": "After restoration, validate the full payment journey and reconciliation, then observe SEV1 service for 30 minutes or SEV2 for 15 minutes under POL-REC-001. The recovery owner records checks and outstanding integrity work. The Operations Duty Manager confirms resolution for SEV1 and SEV2; no assistant can close the incident. If interruption reaches 60 minutes, assess continuity under POL-BCP-001 while maintaining escalation and customer updates. Historical downtime comparisons must disclose the matching filters and missing-duration denominator.",
+            "chunk_id": "POL-PAY-001:s05:c01",
+            "version": "1.0",
+            "effective_date": "2026-07-01",
+            "score": 0.2046268924235239
+          }
+        ],
+        "facts": [
+          {
+            "kind": "policy_requirement",
+            "text": "Activate the continuity assessment immediately for an unsafe site or a multi-site essential-service closure. For a customer-facing digital or payment outage lasting 60 minutes or more, the Duty Manager must decide whether to activate the approved continuity plan and record the decision and rationale. The 60-minute threshold is an assessment deadline, not permission to delay SEV1 escalation at 30 minutes. POL-INC-001 and POL-INC-002 continue to apply during continuity. Safety takes priority over maintaining transaction throughput.",
+            "evidence_ids": [
+              "POL-BCP-001:s02:c01"
+            ]
+          },
+          {
+            "kind": "policy_requirement",
+            "text": "After restoration, validate the full payment journey and reconciliation, then observe SEV1 service for 30 minutes or SEV2 for 15 minutes under POL-REC-001. The recovery owner records checks and outstanding integrity work. The Operations Duty Manager confirms resolution for SEV1 and SEV2; no assistant can close the incident. If interruption reaches 60 minutes, assess continuity under POL-BCP-001 while maintaining escalation and customer updates. Historical downtime comparisons must disclose the matching filters and missing-duration denominator.",
+            "evidence_ids": [
+              "POL-PAY-001:s05:c01"
+            ]
+          },
+          {
+            "kind": "historical_fact",
+            "text": "Incident count: 30; median downtime: 45 minutes; mean downtime: 69.0741 minutes; p90 downtime (nearest-rank): 98 minutes. Resolved known-duration sample: 27; excluded/open or missing-duration records: 3. Total customer-impact exposures: 10924; mean exposure: 364.1333. Filters: {\"category\": \"payment_failure\", \"since\": \"2026-04-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}. Severity distribution: {\"SEV1\": 24, \"SEV2\": 6}.",
+            "evidence_ids": [
+              "db:calculate_incident_metrics:fad0014d59ba"
+            ]
+          },
+          {
+            "kind": "interpretation",
+            "text": "The supplied scenario duration (60 minutes) is +15 minutes relative to the matching historical median (45 minutes). This comparison is context, not an approved restoration deadline.",
+            "evidence_ids": [
+              "db:calculate_incident_metrics:fad0014d59ba"
+            ]
+          }
+        ],
+        "tool_trace": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "What continuity decision does policy require for a payment service down 60 minutes, ",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Retrieved 6 active internal policy chunks.",
+            "latency_ms": 0.8012918988242745
+          },
+          {
+            "tool_name": "calculate_incident_metrics",
+            "arguments": {
+              "category": "payment_failure",
+              "since": "2026-04-01T00:00:00Z",
+              "until": "2026-10-01T00:00:00Z"
+            },
+            "status": "success",
+            "summary": "Calculated metrics for 30 incidents.",
+            "latency_ms": 2.184416982345283
+          }
+        ],
+        "tool_results": [
+          {
+            "tool_name": "search_internal_policy",
+            "result": {
+              "hits": [
+                {
+                  "chunk": {
+                    "document_id": "POL-BCP-001",
+                    "title": "Business Continuity Procedure",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Operations",
+                    "policy_type": "continuity",
+                    "status": "active",
+                    "section": "2. Activation thresholds",
+                    "chunk_id": "POL-BCP-001:s02:c01",
+                    "content": "Activate the continuity assessment immediately for an unsafe site or a multi-site essential-service closure. For a customer-facing digital or payment outage lasting 60 minutes or more, the Duty Manager must decide whether to activate the approved continuity plan and record the decision and rationale. The 60-minute threshold is an assessment deadline, not permission to delay SEV1 escalation at 30 minutes. POL-INC-001 and POL-INC-002 continue to apply during continuity. Safety takes priority over maintaining transaction throughput."
+                  },
+                  "score": 0.2879652199257727
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-PAY-001",
+                    "title": "Payment Service Incident Playbook",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Digital Services",
+                    "policy_type": "payment",
+                    "status": "active",
+                    "section": "5. Recovery confirmation",
+                    "chunk_id": "POL-PAY-001:s05:c01",
+                    "content": "After restoration, validate the full payment journey and reconciliation, then observe SEV1 service for 30 minutes or SEV2 for 15 minutes under POL-REC-001. The recovery owner records checks and outstanding integrity work. The Operations Duty Manager confirms resolution for SEV1 and SEV2; no assistant can close the incident. If interruption reaches 60 minutes, assess continuity under POL-BCP-001 while maintaining escalation and customer updates. Historical downtime comparisons must disclose the matching filters and missing-duration denominator."
+                  },
+                  "score": 0.2046268924235239
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-PAY-001",
+                    "title": "Payment Service Incident Playbook",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Digital Services",
+                    "policy_type": "payment",
+                    "status": "active",
+                    "section": "6. Review and prevention",
+                    "chunk_id": "POL-PAY-001:s06:c01",
+                    "content": "Every confirmed payment-integrity incident requires a POL-REV-001 review even if its customer count is low. Include detection controls, containment decisions, reconciliation method, supplier response and customer notices. Preserve evidence for 180 days after resolution under POL-EVD-001, unless a legal hold extends retention. Recommendations should identify a control weakness supported by evidence rather than a vendor command or assumed financial entitlement. The fictional playbook supplies operational criteria, not production payment credentials or permission to execute transactions."
+                  },
+                  "score": 0.20367924622211878
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-BCP-001",
+                    "title": "Business Continuity Procedure",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Operations",
+                    "policy_type": "continuity",
+                    "status": "active",
+                    "section": "1. Continuity assessment",
+                    "chunk_id": "POL-BCP-001:s01:c01",
+                    "content": "The Operations Duty Manager assesses continuity when a disruption prevents essential customer services and routine recovery is unlikely to restore them promptly. Identify service priority, affected sites, dependencies and safe alternatives. Continuity maintains essential service while recovery addresses the failed component; these activities can run together. A workaround must be approved by its operational owner and must not bypass evidence or payment controls. The assessment is recorded in the incident timeline with known facts and assumptions."
+                  },
+                  "score": 0.17002737436651955
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-BCP-001",
+                    "title": "Business Continuity Procedure",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Operations",
+                    "policy_type": "continuity",
+                    "status": "active",
+                    "section": "4. Coordination and updates",
+                    "chunk_id": "POL-BCP-001:s04:c01",
+                    "content": "Operations owns the continuity decision; Facilities confirms physical safety; Digital Services confirms technical recovery; Customer Service manages customer messages. Risk & Compliance advises on data and transaction controls. Assign a named coordinator and checkpoint for the alternate operation. Continue SEV1 or SEV2 update cadence under POL-COM-001. Supplier delays must be recorded under POL-VEN-001, but supplier accountability does not replace HarbourLink's customer-service ownership. Record why a proposed alternate was rejected if it cannot operate safely."
+                  },
+                  "score": 0.16143086303985138
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-BCP-001",
+                    "title": "Business Continuity Procedure",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Operations",
+                    "policy_type": "continuity",
+                    "status": "active",
+                    "section": "6. Exercises and learning",
+                    "chunk_id": "POL-BCP-001:s06:c01",
+                    "content": "Operations schedules a continuity exercise every six months and records gaps, owners and due dates. A real activation is included in the post-incident review under POL-REV-001. Preserve decisions, capacity checks, customer notices and return-to-service evidence under POL-EVD-001. This fictional procedure contains no regulatory reporting deadlines or promises about physical emergency response times. Where a required site-specific safety instruction is absent, obtain the approved site plan; do not replace missing internal evidence with a general web answer."
+                  },
+                  "score": 0.14488631285346149
+                }
+              ]
+            }
+          },
+          {
+            "tool_name": "calculate_incident_metrics",
+            "result": {
+              "filters": {
+                "category": "payment_failure",
+                "since": "2026-04-01T00:00:00Z",
+                "until": "2026-10-01T00:00:00Z"
+              },
+              "incident_count": 30,
+              "resolved_count": 28,
+              "downtime_sample_count": 27,
+              "missing_downtime_count": 3,
+              "mean_downtime_minutes": 69.0741,
+              "median_downtime_minutes": 45.0,
+              "p90_downtime_minutes": 98.0,
+              "total_customer_impact": 10924,
+              "mean_customer_impact": 364.1333,
+              "severity_distribution": {
+                "SEV1": 24,
+                "SEV2": 6
+              },
+              "group_counts": {},
+              "repeat_incident_count_by_service": {
+                "Payment Gateway": 30
+              },
+              "window_basis": "opened_at; since inclusive, until exclusive"
+            }
+          }
+        ],
+        "limitations": [
+          "All policies and incident records are fictional synthetic demo data.",
+          "V1 tools are read-only; no actions or notifications are executed.",
+          "Duration metrics use resolved records with known downtime; downtime differs from opened-to-resolved time.",
+          "Customer-impact totals are incident exposures, not deduplicated unique customers.",
+          "Time filters use opened_at, inclusive since / exclusive until; relative windows use 2026-10-01T00:00:00+00:00.",
+          "Current policy is not evidence that pre-effective-date incidents complied with this version."
+        ],
+        "latency_ms": 52795.550083974376,
+        "mode": "chat_api",
+        "usage": {
+          "input_tokens": 6229,
+          "output_tokens": 2130,
+          "estimated_cost_usd": null
+        }
+      },
+      "provider_calls": [
+        {
+          "operation": "planning",
+          "status": "success",
+          "latency_ms": 11548.32570895087
+        },
+        {
+          "operation": "evidence_selection",
+          "status": "success",
+          "latency_ms": 41241.38883303385
+        }
+      ],
+      "provider_attempts": [
+        {
+          "call_index": 0,
+          "http_status": 200,
+          "latency_ms": 11538.124458049424,
+          "input_tokens": 3769,
+          "output_tokens": 1025,
+          "reported_cost_usd": 0.01196,
+          "finish_reason": "stop",
+          "schema_errors": [],
+          "proposed_tools": [
+            "search_internal_policy",
+            "calculate_incident_metrics"
+          ]
+        },
+        {
+          "call_index": 1,
+          "http_status": 200,
+          "latency_ms": 41238.98470797576,
+          "input_tokens": 2460,
+          "output_tokens": 1105,
+          "reported_cost_usd": 0.007902,
+          "finish_reason": "stop",
+          "schema_errors": []
+        }
+      ]
+    },
+    {
+      "id": "mixed_02",
+      "category": "mixed",
+      "question": "A customer-facing payment service has been down for 45 minutes and affects more than 500 users. What escalation does policy require, and how does this duration compare with similar incidents over the last year?",
+      "passed": false,
+      "checks": {
+        "response_schema": true,
+        "route": true,
+        "tool_selection": false,
+        "tool_success": true,
+        "argument_schema": true,
+        "argument_match": true,
+        "source_recall": true,
+        "chunk_recall": true,
+        "citation_integrity": true,
+        "citation_coverage": true,
+        "refusal": true,
+        "numeric_results": true,
+        "reference_points": true,
+        "evidence_planes": true,
+        "read_only": true,
+        "live_provider_valid": true,
+        "policy_selection_valid": true
+      },
+      "failures": [
+        "tool_selection"
+      ],
+      "source_recall_at_k": 1.0,
+      "latency_ms": 68905.55679192767,
+      "response": {
+        "request_id": "live-mixed_02",
+        "route": "mixed",
+        "answer": "Policy requirement: Severity 1 (SEV1) applies when at least 500 customers are affected, when a customer-facing digital or payment service is continuously unavailable for 30 minutes or longer, or when there is credible immediate danger to people. A multi-site closure that prevents essential customer service is also SEV1. Any one threshold is sufficient. An outage lasting 35 or 45 minutes therefore meets the duration threshold even if the impact count is unknown. Suspected impact is validated urgently; classification is precautionary while safety facts are uncertain. Escalation is defined in POL-INC-002 section 2. [Incident Classification Standard | 2. Severity 1 thresholds | POL-INC-001:s02:c01]\n\nPolicy requirement: For a Severity 1 (SEV1) incident, notify the Operations Duty Manager and the relevant recovery team within 5 minutes of threshold detection. Notify the Customer Service Lead within 10 minutes, Risk & Compliance within 15 minutes, and the Executive Duty Sponsor within 30 minutes. Digital Services is the recovery team for digital or payment outages; Facilities is the recovery team for physical disruption. The Duty Manager appoints an incident coordinator and opens a coordination bridge. Do not wait for root-cause confirmation before these notifications. [Incident Escalation SOP | 2. Severity 1 notification | POL-INC-002:s02:c01]\n\nPolicy requirement: Activate the continuity assessment immediately for an unsafe site or a multi-site essential-service closure. For a customer-facing digital or payment outage lasting 60 minutes or more, the Duty Manager must decide whether to activate the approved continuity plan and record the decision and rationale. The 60-minute threshold is an assessment deadline, not permission to delay SEV1 escalation at 30 minutes. POL-INC-001 and POL-INC-002 continue to apply during continuity. Safety takes priority over maintaining transaction throughput. [Business Continuity Procedure | 2. Activation thresholds | POL-BCP-001:s02:c01]\n\nHistorical fact: Incident count: 41; median downtime: 46.5 minutes; mean downtime: 62.1316 minutes; p90 downtime (nearest-rank): 88 minutes. Resolved known-duration sample: 38; excluded/open or missing-duration records: 3. Total customer-impact exposures: 16452; mean exposure: 401.2683. Filters: {\"category\": \"payment_failure\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}. Severity distribution: {\"SEV1\": 33, \"SEV2\": 8}. [HarbourLink synthetic incident snapshot | calculate_incident_metrics | db:calculate_incident_metrics:9988f3388480]\n\nInterpretation: The supplied scenario duration (45 minutes) is -1.5 minutes relative to the matching historical median (46.5 minutes). This comparison is context, not an approved restoration deadline. [HarbourLink synthetic incident snapshot | calculate_incident_metrics | db:calculate_incident_metrics:9988f3388480]",
+        "confidence": "high",
+        "evidence_sufficiency": "supported",
+        "evidence": [
+          {
+            "evidence_id": "db:calculate_incident_metrics:9988f3388480",
+            "source_type": "incident_db",
+            "source_id": "harbourlink-incidents-v1",
+            "title": "HarbourLink synthetic incident snapshot",
+            "section": "calculate_incident_metrics",
+            "excerpt": "{\"downtime_sample_count\": 38, \"filters\": {\"category\": \"payment_failure\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}, \"group_counts\": {}, \"incident_count\": 41, \"mean_customer_impact\": 401.2683, \"mean_downtime_minutes\": 62.1316, \"median_downtime_minutes\": 46.5, \"missing_downtime_count\": 3, \"p90_downtime_minutes\": 88.0, \"repeat_incident_count_by_service\": {\"Payment Gateway\": 41}, \"resolved_count\": 39, \"severity_distribution\": {\"SEV1\": 33, \"SEV2\": 8}, \"total_customer_impact\": 16452, \"window_basis\": \"opened_at; since inclusive, until exclusive\"}",
+            "chunk_id": null,
+            "version": null,
+            "effective_date": null,
+            "score": null
+          },
+          {
+            "evidence_id": "POL-INC-001:s02:c01",
+            "source_type": "internal_policy",
+            "source_id": "POL-INC-001",
+            "title": "Incident Classification Standard",
+            "section": "2. Severity 1 thresholds",
+            "excerpt": "Severity 1 (SEV1) applies when at least 500 customers are affected, when a customer-facing digital or payment service is continuously unavailable for 30 minutes or longer, or when there is credible immediate danger to people. A multi-site closure that prevents essential customer service is also SEV1. Any one threshold is sufficient. An outage lasting 35 or 45 minutes therefore meets the duration threshold even if the impact count is unknown. Suspected impact is validated urgently; classification is precautionary while safety facts are uncertain. Escalation is defined in POL-INC-002 section 2.",
+            "chunk_id": "POL-INC-001:s02:c01",
+            "version": "1.0",
+            "effective_date": "2026-07-01",
+            "score": 0.14017449527441614
+          },
+          {
+            "evidence_id": "POL-INC-002:s02:c01",
+            "source_type": "internal_policy",
+            "source_id": "POL-INC-002",
+            "title": "Incident Escalation SOP",
+            "section": "2. Severity 1 notification",
+            "excerpt": "For a Severity 1 (SEV1) incident, notify the Operations Duty Manager and the relevant recovery team within 5 minutes of threshold detection. Notify the Customer Service Lead within 10 minutes, Risk & Compliance within 15 minutes, and the Executive Duty Sponsor within 30 minutes. Digital Services is the recovery team for digital or payment outages; Facilities is the recovery team for physical disruption. The Duty Manager appoints an incident coordinator and opens a coordination bridge. Do not wait for root-cause confirmation before these notifications.",
+            "chunk_id": "POL-INC-002:s02:c01",
+            "version": "1.0",
+            "effective_date": "2026-07-01",
+            "score": 0.2634523640676402
+          },
+          {
+            "evidence_id": "POL-BCP-001:s02:c01",
+            "source_type": "internal_policy",
+            "source_id": "POL-BCP-001",
+            "title": "Business Continuity Procedure",
+            "section": "2. Activation thresholds",
+            "excerpt": "Activate the continuity assessment immediately for an unsafe site or a multi-site essential-service closure. For a customer-facing digital or payment outage lasting 60 minutes or more, the Duty Manager must decide whether to activate the approved continuity plan and record the decision and rationale. The 60-minute threshold is an assessment deadline, not permission to delay SEV1 escalation at 30 minutes. POL-INC-001 and POL-INC-002 continue to apply during continuity. Safety takes priority over maintaining transaction throughput.",
+            "chunk_id": "POL-BCP-001:s02:c01",
+            "version": "1.0",
+            "effective_date": "2026-07-01",
+            "score": 0.14524132403679715
+          }
+        ],
+        "facts": [
+          {
+            "kind": "policy_requirement",
+            "text": "Severity 1 (SEV1) applies when at least 500 customers are affected, when a customer-facing digital or payment service is continuously unavailable for 30 minutes or longer, or when there is credible immediate danger to people. A multi-site closure that prevents essential customer service is also SEV1. Any one threshold is sufficient. An outage lasting 35 or 45 minutes therefore meets the duration threshold even if the impact count is unknown. Suspected impact is validated urgently; classification is precautionary while safety facts are uncertain. Escalation is defined in POL-INC-002 section 2.",
+            "evidence_ids": [
+              "POL-INC-001:s02:c01"
+            ]
+          },
+          {
+            "kind": "policy_requirement",
+            "text": "For a Severity 1 (SEV1) incident, notify the Operations Duty Manager and the relevant recovery team within 5 minutes of threshold detection. Notify the Customer Service Lead within 10 minutes, Risk & Compliance within 15 minutes, and the Executive Duty Sponsor within 30 minutes. Digital Services is the recovery team for digital or payment outages; Facilities is the recovery team for physical disruption. The Duty Manager appoints an incident coordinator and opens a coordination bridge. Do not wait for root-cause confirmation before these notifications.",
+            "evidence_ids": [
+              "POL-INC-002:s02:c01"
+            ]
+          },
+          {
+            "kind": "policy_requirement",
+            "text": "Activate the continuity assessment immediately for an unsafe site or a multi-site essential-service closure. For a customer-facing digital or payment outage lasting 60 minutes or more, the Duty Manager must decide whether to activate the approved continuity plan and record the decision and rationale. The 60-minute threshold is an assessment deadline, not permission to delay SEV1 escalation at 30 minutes. POL-INC-001 and POL-INC-002 continue to apply during continuity. Safety takes priority over maintaining transaction throughput.",
+            "evidence_ids": [
+              "POL-BCP-001:s02:c01"
+            ]
+          },
+          {
+            "kind": "historical_fact",
+            "text": "Incident count: 41; median downtime: 46.5 minutes; mean downtime: 62.1316 minutes; p90 downtime (nearest-rank): 88 minutes. Resolved known-duration sample: 38; excluded/open or missing-duration records: 3. Total customer-impact exposures: 16452; mean exposure: 401.2683. Filters: {\"category\": \"payment_failure\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}. Severity distribution: {\"SEV1\": 33, \"SEV2\": 8}.",
+            "evidence_ids": [
+              "db:calculate_incident_metrics:9988f3388480"
+            ]
+          },
+          {
+            "kind": "interpretation",
+            "text": "The supplied scenario duration (45 minutes) is -1.5 minutes relative to the matching historical median (46.5 minutes). This comparison is context, not an approved restoration deadline.",
+            "evidence_ids": [
+              "db:calculate_incident_metrics:9988f3388480"
+            ]
+          }
+        ],
+        "tool_trace": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "A customer-facing payment service has been down for 45 minutes and affects more than 500 users. What escalation does policy require,  notify notification",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Retrieved 6 active internal policy chunks.",
+            "latency_ms": 0.7042089710012078
+          },
+          {
+            "tool_name": "calculate_incident_metrics",
+            "arguments": {
+              "category": "payment_failure",
+              "since": "2025-10-01T00:00:00Z",
+              "until": "2026-10-01T00:00:00Z"
+            },
+            "status": "success",
+            "summary": "Calculated metrics for 41 incidents.",
+            "latency_ms": 3.131499979645014
+          }
+        ],
+        "tool_results": [
+          {
+            "tool_name": "search_internal_policy",
+            "result": {
+              "hits": [
+                {
+                  "chunk": {
+                    "document_id": "POL-INC-002",
+                    "title": "Incident Escalation SOP",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Operations",
+                    "policy_type": "escalation",
+                    "status": "active",
+                    "section": "2. Severity 1 notification",
+                    "chunk_id": "POL-INC-002:s02:c01",
+                    "content": "For a Severity 1 (SEV1) incident, notify the Operations Duty Manager and the relevant recovery team within 5 minutes of threshold detection. Notify the Customer Service Lead within 10 minutes, Risk & Compliance within 15 minutes, and the Executive Duty Sponsor within 30 minutes. Digital Services is the recovery team for digital or payment outages; Facilities is the recovery team for physical disruption. The Duty Manager appoints an incident coordinator and opens a coordination bridge. Do not wait for root-cause confirmation before these notifications."
+                  },
+                  "score": 0.2634523640676402
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-VEN-001",
+                    "title": "Vendor Escalation Procedure",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Digital Services",
+                    "policy_type": "vendor",
+                    "status": "active",
+                    "section": "2. Supplier notification deadlines",
+                    "chunk_id": "POL-VEN-001:s02:c01",
+                    "content": "For a vendor-related SEV1 disruption, the service owner must contact the supplier incident channel within 10 minutes of threshold detection. For SEV2, contact the supplier within 30 minutes. Include HarbourLink incident ID, supplier service, symptoms, start time, severity, impact estimate and sanitised diagnostic evidence. Record the supplier reference and acknowledgement time. These deadlines operate alongside POL-INC-002 internal notifications; a supplier ticket alone does not satisfy notification of Operations, Customer Service or Risk & Compliance."
+                  },
+                  "score": 0.1704281336346164
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-INC-002",
+                    "title": "Incident Escalation SOP",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Operations",
+                    "policy_type": "escalation",
+                    "status": "active",
+                    "section": "3. Severity 2 and lower notification",
+                    "chunk_id": "POL-INC-002:s03:c01",
+                    "content": "For Severity 2 (SEV2), notify the Operations Duty Manager and recovery team within 15 minutes, and the Customer Service Lead within 30 minutes. Risk & Compliance must be included within 30 minutes when integrity, safety or suspected data loss is involved. SEV3 and SEV4 are managed by the assigned service owner during the operating shift; record the handover if unresolved. If any SEV1 threshold develops, start the SEV1 clock at that threshold detection and record the upgrade. Lower severity never permits bypassing evidence preservation."
+                  },
+                  "score": 0.16613382614731662
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-FAC-001",
+                    "title": "Facility Disruption Playbook",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Facilities",
+                    "policy_type": "facility",
+                    "status": "active",
+                    "section": "2. Operational escalation",
+                    "chunk_id": "POL-FAC-001:s02:c01",
+                    "content": "For a SEV1 facility disruption, notify the Operations Duty Manager and Facilities recovery team within 5 minutes, Customer Service Lead within 10 minutes, Risk & Compliance within 15 minutes and Executive Duty Sponsor within 30 minutes under POL-INC-002. A single-site service disruption without immediate danger is at least SEV2. Record confirmed hazards separately from suspected causes. Supplier involvement follows POL-VEN-001 but does not transfer responsibility for site safety away from HarbourLink."
+                  },
+                  "score": 0.15452780655061676
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-BCP-001",
+                    "title": "Business Continuity Procedure",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Operations",
+                    "policy_type": "continuity",
+                    "status": "active",
+                    "section": "2. Activation thresholds",
+                    "chunk_id": "POL-BCP-001:s02:c01",
+                    "content": "Activate the continuity assessment immediately for an unsafe site or a multi-site essential-service closure. For a customer-facing digital or payment outage lasting 60 minutes or more, the Duty Manager must decide whether to activate the approved continuity plan and record the decision and rationale. The 60-minute threshold is an assessment deadline, not permission to delay SEV1 escalation at 30 minutes. POL-INC-001 and POL-INC-002 continue to apply during continuity. Safety takes priority over maintaining transaction throughput."
+                  },
+                  "score": 0.14524132403679715
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-INC-001",
+                    "title": "Incident Classification Standard",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Risk & Compliance",
+                    "policy_type": "classification",
+                    "status": "active",
+                    "section": "2. Severity 1 thresholds",
+                    "chunk_id": "POL-INC-001:s02:c01",
+                    "content": "Severity 1 (SEV1) applies when at least 500 customers are affected, when a customer-facing digital or payment service is continuously unavailable for 30 minutes or longer, or when there is credible immediate danger to people. A multi-site closure that prevents essential customer service is also SEV1. Any one threshold is sufficient. An outage lasting 35 or 45 minutes therefore meets the duration threshold even if the impact count is unknown. Suspected impact is validated urgently; classification is precautionary while safety facts are uncertain. Escalation is defined in POL-INC-002 section 2."
+                  },
+                  "score": 0.14017449527441614
+                }
+              ]
+            }
+          },
+          {
+            "tool_name": "calculate_incident_metrics",
+            "result": {
+              "filters": {
+                "category": "payment_failure",
+                "since": "2025-10-01T00:00:00Z",
+                "until": "2026-10-01T00:00:00Z"
+              },
+              "incident_count": 41,
+              "resolved_count": 39,
+              "downtime_sample_count": 38,
+              "missing_downtime_count": 3,
+              "mean_downtime_minutes": 62.1316,
+              "median_downtime_minutes": 46.5,
+              "p90_downtime_minutes": 88.0,
+              "total_customer_impact": 16452,
+              "mean_customer_impact": 401.2683,
+              "severity_distribution": {
+                "SEV1": 33,
+                "SEV2": 8
+              },
+              "group_counts": {},
+              "repeat_incident_count_by_service": {
+                "Payment Gateway": 41
+              },
+              "window_basis": "opened_at; since inclusive, until exclusive"
+            }
+          }
+        ],
+        "limitations": [
+          "All policies and incident records are fictional synthetic demo data.",
+          "V1 tools are read-only; no actions or notifications are executed.",
+          "Duration metrics use resolved records with known downtime; downtime differs from opened-to-resolved time.",
+          "Customer-impact totals are incident exposures, not deduplicated unique customers.",
+          "Time filters use opened_at, inclusive since / exclusive until; relative windows use 2026-10-01T00:00:00+00:00.",
+          "Current policy is not evidence that pre-effective-date incidents complied with this version."
+        ],
+        "latency_ms": 68905.55679192767,
+        "mode": "chat_api",
+        "usage": {
+          "input_tokens": 6302,
+          "output_tokens": 3229,
+          "estimated_cost_usd": null
+        }
+      },
+      "provider_calls": [
+        {
+          "operation": "planning",
+          "status": "success",
+          "latency_ms": 24336.79258299526
+        },
+        {
+          "operation": "evidence_selection",
+          "status": "success",
+          "latency_ms": 44561.592207988724
+        }
+      ],
+      "provider_attempts": [
+        {
+          "call_index": 2,
+          "http_status": 200,
+          "latency_ms": 24324.072333984077,
+          "input_tokens": 3784,
+          "output_tokens": 2091,
+          "reported_cost_usd": 0.018386,
+          "finish_reason": "stop",
+          "schema_errors": [],
+          "proposed_tools": [
+            "search_internal_policy",
+            "calculate_incident_metrics"
+          ]
+        },
+        {
+          "call_index": 3,
+          "http_status": 200,
+          "latency_ms": 44558.56416700408,
+          "input_tokens": 2518,
+          "output_tokens": 1138,
+          "reported_cost_usd": 0.008216,
+          "finish_reason": "stop",
+          "schema_errors": []
+        }
+      ]
+    },
+    {
+      "id": "data_02",
+      "category": "data",
+      "question": "Show INC-240",
+      "passed": true,
+      "checks": {
+        "response_schema": true,
+        "route": true,
+        "tool_selection": true,
+        "tool_success": true,
+        "argument_schema": true,
+        "argument_match": true,
+        "source_recall": true,
+        "chunk_recall": true,
+        "citation_integrity": true,
+        "citation_coverage": true,
+        "refusal": true,
+        "numeric_results": true,
+        "reference_points": true,
+        "evidence_planes": true,
+        "read_only": true,
+        "live_provider_valid": true,
+        "policy_selection_valid": true
+      },
+      "failures": [],
+      "source_recall_at_k": null,
+      "latency_ms": 2038.9233749592677,
+      "response": {
+        "request_id": "live-data_02",
+        "route": "data_only",
+        "answer": "Historical fact: INC-240: vendor disruption, SEV2, Vendor Connectivity, investigating; downtime=not recorded; customer impact=94. Opened 2026-09-30T21:00:00+00:00. [HarbourLink synthetic incident snapshot | get_incident | db:get_incident:5e67eab37433]",
+        "confidence": "high",
+        "evidence_sufficiency": "supported",
+        "evidence": [
+          {
+            "evidence_id": "db:get_incident:5e67eab37433",
+            "source_type": "incident_db",
+            "source_id": "harbourlink-incidents-v1",
+            "title": "HarbourLink synthetic incident snapshot",
+            "section": "get_incident",
+            "excerpt": "{\"incident\": {\"business_unit\": \"Operations\", \"category\": \"vendor_disruption\", \"customer_impact_count\": 94, \"downtime_minutes\": null, \"estimated_cost\": null, \"incident_id\": \"INC-240\", \"opened_at\": \"2026-09-30T21:00:00Z\", \"post_incident_review_required\": false, \"resolution_summary\": null, \"resolved_at\": null, \"root_cause\": null, \"service\": \"Vendor Connectivity\", \"severity\": \"SEV2\", \"site\": \"Shared Services\", \"status\": \"investigating\", \"subcategory\": \"supplier network interruption\", \"vendor_related\": true}}",
+            "chunk_id": null,
+            "version": null,
+            "effective_date": null,
+            "score": null
+          }
+        ],
+        "facts": [
+          {
+            "kind": "historical_fact",
+            "text": "INC-240: vendor disruption, SEV2, Vendor Connectivity, investigating; downtime=not recorded; customer impact=94. Opened 2026-09-30T21:00:00+00:00.",
+            "evidence_ids": [
+              "db:get_incident:5e67eab37433"
+            ]
+          }
+        ],
+        "tool_trace": [
+          {
+            "tool_name": "get_incident",
+            "arguments": {
+              "incident_id": "INC-240"
+            },
+            "status": "success",
+            "summary": "Incident found.",
+            "latency_ms": 1.391459023579955
+          }
+        ],
+        "tool_results": [
+          {
+            "tool_name": "get_incident",
+            "result": {
+              "incident": {
+                "incident_id": "INC-240",
+                "opened_at": "2026-09-30T21:00:00Z",
+                "resolved_at": null,
+                "category": "vendor_disruption",
+                "subcategory": "supplier network interruption",
+                "severity": "SEV2",
+                "business_unit": "Operations",
+                "service": "Vendor Connectivity",
+                "site": "Shared Services",
+                "customer_impact_count": 94,
+                "downtime_minutes": null,
+                "estimated_cost": null,
+                "root_cause": null,
+                "vendor_related": true,
+                "status": "investigating",
+                "resolution_summary": null,
+                "post_incident_review_required": false
+              }
+            }
+          }
+        ],
+        "limitations": [
+          "All policies and incident records are fictional synthetic demo data.",
+          "V1 tools are read-only; no actions or notifications are executed."
+        ],
+        "latency_ms": 2038.9233749592677,
+        "mode": "chat_api",
+        "usage": {
+          "input_tokens": 3748,
+          "output_tokens": 102,
+          "estimated_cost_usd": null
+        }
+      },
+      "provider_calls": [
+        {
+          "operation": "planning",
+          "status": "success",
+          "latency_ms": 2034.2682079644874
+        }
+      ],
+      "provider_attempts": [
+        {
+          "call_index": 4,
+          "http_status": 200,
+          "latency_ms": 2020.5979159800336,
+          "input_tokens": 3748,
+          "output_tokens": 102,
+          "reported_cost_usd": 0.006188,
+          "finish_reason": "stop",
+          "schema_errors": [],
+          "proposed_tools": [
+            "get_incident"
+          ]
+        }
+      ]
+    }
+  ]
+}

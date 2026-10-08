@@ -1,0 +1,63 @@
+{
+  "live_validation": {
+    "scope": "targeted",
+    "completed": true,
+    "requested_cases": 1,
+    "model": "x-ai/grok-4.7",
+    "endpoint": "https://openrouter.ai/api/v1",
+    "transport": "http",
+    "stop_reason": null,
+    "max_http_attempts": 4,
+    "provider_retries": 1,
+    "selected_case_ids": [
+      "mixed_02"
+    ]
+  },
+  "metrics": {
+    "provider_logical_calls": 2,
+    "provider_structured_successes": 2,
+    "provider_http_attempts": 2,
+    "provider_input_tokens": 6275,
+    "provider_output_tokens": 3065,
+    "provider_reported_cost_usd": 0.025564
+  },
+  "calls": [
+    {
+      "operation": "planning",
+      "status": "success",
+      "latency_ms": 14070.582457934506
+    },
+    {
+      "operation": "evidence_selection",
+      "status": "success",
+      "latency_ms": 22861.67854105588
+    }
+  ],
+  "attempts": [
+    {
+      "call_index": 0,
+      "http_status": 200,
+      "latency_ms": 14062.541916966438,
+      "input_tokens": 3757,
+      "output_tokens": 1194,
+      "reported_cost_usd": 0.01295,
+      "finish_reason": "stop",
+      "schema_errors": [],
+      "proposed_tools": [
+        "search_internal_policy",
+        "find_similar_incidents",
+        "calculate_incident_metrics"
+      ]
+    },
+    {
+      "call_index": 1,
+      "http_status": 200,
+      "latency_ms": 22859.994500060566,
+      "input_tokens": 2518,
+      "output_tokens": 1871,
+      "reported_cost_usd": 0.012614,
+      "finish_reason": "stop",
+      "schema_errors": []
+    }
+  ]
+}

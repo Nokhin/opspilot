@@ -1,0 +1,10 @@
+{
+  "broad_run": "full_final",
+  "provider_source_before_precision_sha256": "4d2761ca61ab4a2745f168e65ad3e340ec3f134c7fe45305c681ed9c4e7cbb75",
+  "broad_result": "49/50",
+  "remaining_failure": "mixed_05 extra find_similar_incidents",
+  "provider_source_current_sha256": "4d2761ca61ab4a2745f168e65ad3e340ec3f134c7fe45305c681ed9c4e7cbb75",
+  "broad_run_prompt_restored": true,
+  "executor_source_sha256": "3e91073ab0c7016f1466c341146d6657c96b48e6488ad23b3f20731e6b0e45fa",
+  "change": "Omit unrequested similarity samples when metrics already cover the aggregate population; keep explicit sample requests."
+}

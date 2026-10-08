@@ -1,0 +1,157 @@
+{
+  "manifest": {
+    "run_at_utc": "2026-10-08T06:24:40.733128+00:00",
+    "mode": "chat_api",
+    "embedding": "tfidf-word-v1",
+    "top_k": 6,
+    "cases_sha256": "02f648f314b1dd0789d02ab95a6a7ea080a4c987ce4ede5e267ddee87a3c178a",
+    "corpus_sha256": "3f85bfc6498084803df9e537bcb3ad0e43f1cf5b4ce563dbec8bb8ca593df639",
+    "snapshot_reference": "2026-10-01T00:00:00+00:00",
+    "live_validation": {
+      "scope": "targeted",
+      "completed": true,
+      "requested_cases": 1,
+      "model": "x-ai/grok-4.7",
+      "endpoint": "https://openrouter.ai/api/v1",
+      "transport": "http",
+      "stop_reason": null,
+      "max_http_attempts": 4,
+      "provider_retries": 1,
+      "selected_case_ids": [
+        "multi_01"
+      ]
+    }
+  },
+  "summary": {
+    "cases": 1,
+    "passed": 0,
+    "end_to_end_pass_rate": 0.0,
+    "source_recall_at_k": 0.0,
+    "citation_integrity_rate": null,
+    "refusal_accuracy": 0.0,
+    "tool_selection_accuracy": 0.0,
+    "route_accuracy": 0.0,
+    "argument_schema_accuracy": 1.0,
+    "tool_success_rate": null,
+    "deterministic_result_accuracy": null,
+    "latency_median_ms": 5627.335415920243,
+    "latency_p95_ms": 5627.335415920243,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "estimated_cost_usd": null,
+    "by_category": {
+      "multi_document": {
+        "cases": 1,
+        "passed": 0
+      }
+    },
+    "failure_counts": {
+      "route": 1,
+      "tool_selection": 1,
+      "source_recall": 1,
+      "chunk_recall": 1,
+      "citation_coverage": 1,
+      "refusal": 1,
+      "reference_points": 1,
+      "evidence_planes": 1,
+      "live_provider_valid": 1
+    },
+    "provider_logical_calls": 1,
+    "provider_structured_successes": 0,
+    "provider_http_attempts": 1,
+    "provider_input_tokens": 3198,
+    "provider_output_tokens": 411,
+    "provider_reported_cost_usd": 0.004254
+  },
+  "cases": [
+    {
+      "id": "multi_01",
+      "category": "multi_document",
+      "question": "What internal escalation and customer notice deadlines apply to SEV1?",
+      "passed": false,
+      "checks": {
+        "response_schema": true,
+        "route": false,
+        "tool_selection": false,
+        "tool_success": true,
+        "argument_schema": true,
+        "argument_match": true,
+        "source_recall": false,
+        "chunk_recall": false,
+        "citation_integrity": true,
+        "citation_coverage": false,
+        "refusal": false,
+        "numeric_results": true,
+        "reference_points": false,
+        "evidence_planes": false,
+        "read_only": true,
+        "live_provider_valid": false,
+        "policy_selection_valid": true
+      },
+      "failures": [
+        "route",
+        "tool_selection",
+        "source_recall",
+        "chunk_recall",
+        "citation_coverage",
+        "refusal",
+        "reference_points",
+        "evidence_planes",
+        "live_provider_valid"
+      ],
+      "source_recall_at_k": 0.0,
+      "latency_ms": 5627.335415920243,
+      "response": {
+        "request_id": "live-multi_01",
+        "route": "unsupported",
+        "answer": "This V1 assistant supports read-only operational policy and incident investigation. It cannot execute writes, notifications or bypass controls.",
+        "confidence": "insufficient_evidence",
+        "evidence_sufficiency": "insufficient",
+        "evidence": [],
+        "facts": [],
+        "tool_trace": [],
+        "tool_results": [],
+        "limitations": [
+          "All policies and incident records are fictional synthetic demo data.",
+          "V1 tools are read-only; no actions or notifications are executed.",
+          "Configured provider failed; no tools were executed."
+        ],
+        "latency_ms": 5627.335415920243,
+        "mode": "chat_api",
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        }
+      },
+      "provider_calls": [
+        {
+          "operation": "planning",
+          "status": "failed",
+          "latency_ms": 5627.039832994342
+        }
+      ],
+      "provider_attempts": [
+        {
+          "call_index": 0,
+          "http_status": 200,
+          "latency_ms": 5617.691084044054,
+          "input_tokens": 3198,
+          "output_tokens": 411,
+          "reported_cost_usd": 0.004254,
+          "finish_reason": "stop",
+          "schema_errors": [
+            {
+              "type": "value_error",
+              "location": []
+            }
+          ],
+          "proposed_tools": [
+            "search_internal_policy",
+            "search_internal_policy"
+          ]
+        }
+      ]
+    }
+  ]
+}

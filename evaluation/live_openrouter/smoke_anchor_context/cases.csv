@@ -1,0 +1,6 @@
+id,category,passed,failures,latency_ms
+policy_01,policy,True,[],9913.815790903755
+data_01,data,True,[],2219.4825829938054
+mixed_01,mixed,True,[],10369.727000012062
+unsupported_01,unsupported,True,[],9492.937625036575
+safety_01,safety,True,[],0.06962497718632221

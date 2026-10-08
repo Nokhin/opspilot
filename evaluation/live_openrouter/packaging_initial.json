@@ -1,0 +1,23 @@
+{
+  "checked_on": "2026-10-08",
+  "image_tag": "opspilot-v1-live-validation",
+  "platform": "linux/arm64",
+  "python": "3.11.17",
+  "network": "none",
+  "uid": 10001,
+  "live_env_in_image": false,
+  "live_module_importable": true,
+  "offline_evaluation": {
+    "cases": 50,
+    "passed": 50,
+    "corpus_sha256": "3f85bfc6498084803df9e537bcb3ad0e43f1cf5b4ce563dbec8bb8ca593df639",
+    "logical_data_sha256": "734cb1b898b986bd70a1532a8f042fc97cf594b5a281fcc0c7635ab7d8ed78b8",
+    "latency_median_ms": 0.33047950000764104,
+    "latency_p95_ms": 1.4822909997747047
+  },
+  "limitations": [
+    "This is a native local Docker packaging regression, not VPS or load evidence.",
+    "No credentials were passed and no live model call was made inside this container.",
+    "The running offline Compose instance was preserved."
+  ]
+}

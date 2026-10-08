@@ -1,0 +1,969 @@
+{
+  "manifest": {
+    "run_at_utc": "2026-10-08T06:42:25.101348+00:00",
+    "mode": "chat_api",
+    "embedding": "tfidf-word-v1",
+    "top_k": 6,
+    "cases_sha256": "e3310ab655fdb8fe45a553fadf2fe220364f370ec4c7e2be9a2d0c67e7179ef1",
+    "corpus_sha256": "3f85bfc6498084803df9e537bcb3ad0e43f1cf5b4ce563dbec8bb8ca593df639",
+    "snapshot_reference": "2026-10-01T00:00:00+00:00",
+    "live_validation": {
+      "scope": "targeted",
+      "completed": true,
+      "requested_cases": 3,
+      "model": "x-ai/grok-4.7",
+      "endpoint": "https://openrouter.ai/api/v1",
+      "transport": "http",
+      "stop_reason": null,
+      "max_http_attempts": 10,
+      "provider_retries": 1,
+      "selected_case_ids": [
+        "data_04",
+        "mixed_02",
+        "mixed_07"
+      ]
+    }
+  },
+  "summary": {
+    "cases": 3,
+    "passed": 2,
+    "end_to_end_pass_rate": 0.6666666666666666,
+    "source_recall_at_k": 1.0,
+    "citation_integrity_rate": 1.0,
+    "refusal_accuracy": 1.0,
+    "tool_selection_accuracy": 0.6666666666666666,
+    "route_accuracy": 1.0,
+    "argument_schema_accuracy": 1.0,
+    "tool_success_rate": 1.0,
+    "deterministic_result_accuracy": 0.6666666666666666,
+    "latency_median_ms": 29253.28945904039,
+    "latency_p95_ms": 29442.765666986816,
+    "input_tokens": 15809,
+    "output_tokens": 6436,
+    "estimated_cost_usd": null,
+    "by_category": {
+      "data": {
+        "cases": 1,
+        "passed": 1
+      },
+      "mixed": {
+        "cases": 2,
+        "passed": 1
+      }
+    },
+    "failure_counts": {
+      "tool_selection": 1,
+      "argument_match": 1,
+      "numeric_results": 1,
+      "reference_points": 1
+    },
+    "provider_logical_calls": 5,
+    "provider_structured_successes": 5,
+    "provider_http_attempts": 5,
+    "provider_input_tokens": 15809,
+    "provider_output_tokens": 6436,
+    "provider_reported_cost_usd": 0.061018
+  },
+  "cases": [
+    {
+      "id": "data_04",
+      "category": "data",
+      "question": "How many payment-service incidents occurred in the last six months, and what was the median downtime?",
+      "passed": true,
+      "checks": {
+        "response_schema": true,
+        "route": true,
+        "tool_selection": true,
+        "tool_success": true,
+        "argument_schema": true,
+        "argument_match": true,
+        "source_recall": true,
+        "chunk_recall": true,
+        "citation_integrity": true,
+        "citation_coverage": true,
+        "refusal": true,
+        "numeric_results": true,
+        "reference_points": true,
+        "evidence_planes": true,
+        "read_only": true,
+        "live_provider_valid": true,
+        "policy_selection_valid": true
+      },
+      "failures": [],
+      "source_recall_at_k": null,
+      "latency_ms": 8352.734790998511,
+      "response": {
+        "request_id": "live-data_04",
+        "route": "data_only",
+        "answer": "Historical fact: Incident count: 30; median downtime: 45 minutes; mean downtime: 69.0741 minutes; p90 downtime (nearest-rank): 98 minutes. Resolved known-duration sample: 27; excluded/open or missing-duration records: 3. Total customer-impact exposures: 10924; mean exposure: 364.1333. Filters: {\"category\": \"payment_failure\", \"since\": \"2026-04-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}. Severity distribution: {\"SEV1\": 24, \"SEV2\": 6}. [HarbourLink synthetic incident snapshot | calculate_incident_metrics | db:calculate_incident_metrics:fad0014d59ba]",
+        "confidence": "high",
+        "evidence_sufficiency": "supported",
+        "evidence": [
+          {
+            "evidence_id": "db:calculate_incident_metrics:fad0014d59ba",
+            "source_type": "incident_db",
+            "source_id": "harbourlink-incidents-v1",
+            "title": "HarbourLink synthetic incident snapshot",
+            "section": "calculate_incident_metrics",
+            "excerpt": "{\"downtime_sample_count\": 27, \"filters\": {\"category\": \"payment_failure\", \"since\": \"2026-04-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}, \"group_counts\": {}, \"incident_count\": 30, \"mean_customer_impact\": 364.1333, \"mean_downtime_minutes\": 69.0741, \"median_downtime_minutes\": 45.0, \"missing_downtime_count\": 3, \"p90_downtime_minutes\": 98.0, \"repeat_incident_count_by_service\": {\"Payment Gateway\": 30}, \"resolved_count\": 28, \"severity_distribution\": {\"SEV1\": 24, \"SEV2\": 6}, \"total_customer_impact\": 10924, \"window_basis\": \"opened_at; since inclusive, until exclusive\"}",
+            "chunk_id": null,
+            "version": null,
+            "effective_date": null,
+            "score": null
+          }
+        ],
+        "facts": [
+          {
+            "kind": "historical_fact",
+            "text": "Incident count: 30; median downtime: 45 minutes; mean downtime: 69.0741 minutes; p90 downtime (nearest-rank): 98 minutes. Resolved known-duration sample: 27; excluded/open or missing-duration records: 3. Total customer-impact exposures: 10924; mean exposure: 364.1333. Filters: {\"category\": \"payment_failure\", \"since\": \"2026-04-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}. Severity distribution: {\"SEV1\": 24, \"SEV2\": 6}.",
+            "evidence_ids": [
+              "db:calculate_incident_metrics:fad0014d59ba"
+            ]
+          }
+        ],
+        "tool_trace": [
+          {
+            "tool_name": "calculate_incident_metrics",
+            "arguments": {
+              "category": "payment_failure",
+              "since": "2026-04-01T00:00:00Z",
+              "until": "2026-10-01T00:00:00Z"
+            },
+            "status": "success",
+            "summary": "Calculated metrics for 30 incidents.",
+            "latency_ms": 4.4260830618441105
+          }
+        ],
+        "tool_results": [
+          {
+            "tool_name": "calculate_incident_metrics",
+            "result": {
+              "filters": {
+                "category": "payment_failure",
+                "since": "2026-04-01T00:00:00Z",
+                "until": "2026-10-01T00:00:00Z"
+              },
+              "incident_count": 30,
+              "resolved_count": 28,
+              "downtime_sample_count": 27,
+              "missing_downtime_count": 3,
+              "mean_downtime_minutes": 69.0741,
+              "median_downtime_minutes": 45.0,
+              "p90_downtime_minutes": 98.0,
+              "total_customer_impact": 10924,
+              "mean_customer_impact": 364.1333,
+              "severity_distribution": {
+                "SEV1": 24,
+                "SEV2": 6
+              },
+              "group_counts": {},
+              "repeat_incident_count_by_service": {
+                "Payment Gateway": 30
+              },
+              "window_basis": "opened_at; since inclusive, until exclusive"
+            }
+          }
+        ],
+        "limitations": [
+          "All policies and incident records are fictional synthetic demo data.",
+          "V1 tools are read-only; no actions or notifications are executed.",
+          "Duration metrics use resolved records with known downtime; downtime differs from opened-to-resolved time.",
+          "Customer-impact totals are incident exposures, not deduplicated unique customers.",
+          "Time filters use opened_at, inclusive since / exclusive until; relative windows use 2026-10-01T00:00:00+00:00."
+        ],
+        "latency_ms": 8352.734790998511,
+        "mode": "chat_api",
+        "usage": {
+          "input_tokens": 3601,
+          "output_tokens": 727,
+          "estimated_cost_usd": null
+        }
+      },
+      "provider_calls": [
+        {
+          "operation": "planning",
+          "status": "success",
+          "latency_ms": 8347.091124975123
+        }
+      ],
+      "provider_attempts": [
+        {
+          "call_index": 0,
+          "http_status": 200,
+          "latency_ms": 8336.448958027177,
+          "input_tokens": 3601,
+          "output_tokens": 727,
+          "reported_cost_usd": 0.009836,
+          "finish_reason": "stop",
+          "schema_errors": [],
+          "proposed_tools": [
+            "calculate_incident_metrics"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mixed_02",
+      "category": "mixed",
+      "question": "A customer-facing payment service has been down for 45 minutes and affects more than 500 users. What escalation does policy require, and how does this duration compare with similar incidents over the last year?",
+      "passed": false,
+      "checks": {
+        "response_schema": true,
+        "route": true,
+        "tool_selection": false,
+        "tool_success": true,
+        "argument_schema": true,
+        "argument_match": false,
+        "source_recall": true,
+        "chunk_recall": true,
+        "citation_integrity": true,
+        "citation_coverage": true,
+        "refusal": true,
+        "numeric_results": false,
+        "reference_points": false,
+        "evidence_planes": true,
+        "read_only": true,
+        "live_provider_valid": true,
+        "policy_selection_valid": true
+      },
+      "failures": [
+        "tool_selection",
+        "argument_match",
+        "numeric_results",
+        "reference_points"
+      ],
+      "source_recall_at_k": 1.0,
+      "latency_ms": 29442.765666986816,
+      "response": {
+        "request_id": "live-mixed_02",
+        "route": "mixed",
+        "answer": "Policy requirement: Severity 1 (SEV1) applies when at least 500 customers are affected, when a customer-facing digital or payment service is continuously unavailable for 30 minutes or longer, or when there is credible immediate danger to people. A multi-site closure that prevents essential customer service is also SEV1. Any one threshold is sufficient. An outage lasting 35 or 45 minutes therefore meets the duration threshold even if the impact count is unknown. Suspected impact is validated urgently; classification is precautionary while safety facts are uncertain. Escalation is defined in POL-INC-002 section 2. [Incident Classification Standard | 2. Severity 1 thresholds | POL-INC-001:s02:c01]\n\nPolicy requirement: For a Severity 1 (SEV1) incident, notify the Operations Duty Manager and the relevant recovery team within 5 minutes of threshold detection. Notify the Customer Service Lead within 10 minutes, Risk & Compliance within 15 minutes, and the Executive Duty Sponsor within 30 minutes. Digital Services is the recovery team for digital or payment outages; Facilities is the recovery team for physical disruption. The Duty Manager appoints an incident coordinator and opens a coordination bridge. Do not wait for root-cause confirmation before these notifications. [Incident Escalation SOP | 2. Severity 1 notification | POL-INC-002:s02:c01]\n\nPolicy requirement: Activate the continuity assessment immediately for an unsafe site or a multi-site essential-service closure. For a customer-facing digital or payment outage lasting 60 minutes or more, the Duty Manager must decide whether to activate the approved continuity plan and record the decision and rationale. The 60-minute threshold is an assessment deadline, not permission to delay SEV1 escalation at 30 minutes. POL-INC-001 and POL-INC-002 continue to apply during continuity. Safety takes priority over maintaining transaction throughput. [Business Continuity Procedure | 2. Activation thresholds | POL-BCP-001:s02:c01]\n\nHistorical fact: Matching incidents: 41; most recent sample: INC-236, INC-230, INC-001, INC-110, INC-182. Filters: {\"category\": \"payment_failure\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}. [HarbourLink synthetic incident snapshot | find_similar_incidents | db:find_similar_incidents:cd788d990521]",
+        "confidence": "high",
+        "evidence_sufficiency": "supported",
+        "evidence": [
+          {
+            "evidence_id": "db:find_similar_incidents:cd788d990521",
+            "source_type": "incident_db",
+            "source_id": "harbourlink-incidents-v1",
+            "title": "HarbourLink synthetic incident snapshot",
+            "section": "find_similar_incidents",
+            "excerpt": "{\"filters\": {\"category\": \"payment_failure\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}, \"incidents\": [{\"business_unit\": \"Digital Services\", \"category\": \"payment_failure\", \"customer_impact_count\": 672, \"downtime_minutes\": null, \"estimated_cost\": null, \"incident_id\": \"INC-236\", \"opened_at\": \"2026-09-30T09:00:00Z\", \"post_incident_review_required\": true, \"resolution_summary\": null, \"resolved_at\": null, \"root_cause\": null, \"service\": \"Payment Gateway\", \"severity\": \"SEV1\", \"site\": \"Online\", \"status\": \"investigating\", \"subcategory\": \"gateway timeout\", \"vendor_related\": true}, {\"business_unit\": \"Digital Services\", \"category\": \"payment_failure\", \"customer_impact_count\": 640, \"downtime_minutes\": null, \"estimated_cost\": null, \"incident_id\": \"INC-230\", \"opened_at\": \"2026-09-29T15:00:00Z\", \"post_incident_review_required\": true, \"resolution_summary\": null, \"resolved_at\": null, \"root_cause\": null, \"service\": \"Payment Gateway\", \"severity\": \"SEV1\", \"site\": \"Online\", \"status\": \"investigating\", \"subcategory\": \"gateway timeout\", \"vendor_related\": false}, {\"business_unit\": \"Digital Services\", \"category\": \"payment_failure\", \"customer_impact_count\": 620, \"downtime_minutes\": 45, \"estimated_cost\": 1116.0, \"incident_id\": \"INC-001\", \"opened_at\": \"2026-09-29T10:00:00Z\", \"post_incident_review_required\": true, \"resolution_summary\": \"Gateway restored; reconciliation verified.\", \"resolved_at\": \"2026-09-29T11:30:00Z\", \"root_cause\": \"supplier connection pool exhaustion\", \"service\": \"Payment Gateway\", \"severity\": \"SEV1\", \"site\": \"Online\", \"status\": \"resolved\", \"subcategory\": \"gateway timeout\", \"vendor_related\": true}, {\"business_unit\": \"Digital Services\", \"category\": \"payment_failure\", \"customer_impact_count\": 388, \"downtime_minutes\": 56, \"estimated_cost\": 698.4, \"incident_id\": \"INC-110\", \"opened_at\": \"2026-09-29T09:39:00Z\", \"post_incident_review_required\": true, \"resolution_summary\": \"Owner validated recovery and handover.\", \"resolved_at\": \"2026-09-29T11:20:00Z\", \"root_cause\": \"gateway timeout\", \"service\": \"Payment Gateway\", \"severity\": \"SEV1\", \"site\": \"Online\", \"status\": \"resolved\", \"subcategory\": \"gateway timeout\", \"vendor_related\": false}, {\"business_unit\": \"Digital Services\", \"category\": \"payment_failure\", \"customer_impact_count\": 320, \"downtime_minutes\": 31, \"estimated_cost\": null, \"incident_id\": \"INC-182\", \"opened_at\": \"2026-09-25T13:27:00Z\", \"post_incident_review_required\": true, \"resolution_summary\": \"Owner validated recovery and handover.\", \"resolved_at\": \"2026-09-25T14:43:00Z\", \"root_cause\": \"gateway timeout\", \"service\": \"Payment Gateway\", \"severity\": \"SEV1\", \"site\": \"Online\", \"status\": \"resolved\", \"subcategory\": \"gateway timeout\", \"vendor_related\": false}], \"total_matches\": 41}",
+            "chunk_id": null,
+            "version": null,
+            "effective_date": null,
+            "score": null
+          },
+          {
+            "evidence_id": "POL-INC-001:s02:c01",
+            "source_type": "internal_policy",
+            "source_id": "POL-INC-001",
+            "title": "Incident Classification Standard",
+            "section": "2. Severity 1 thresholds",
+            "excerpt": "Severity 1 (SEV1) applies when at least 500 customers are affected, when a customer-facing digital or payment service is continuously unavailable for 30 minutes or longer, or when there is credible immediate danger to people. A multi-site closure that prevents essential customer service is also SEV1. Any one threshold is sufficient. An outage lasting 35 or 45 minutes therefore meets the duration threshold even if the impact count is unknown. Suspected impact is validated urgently; classification is precautionary while safety facts are uncertain. Escalation is defined in POL-INC-002 section 2.",
+            "chunk_id": "POL-INC-001:s02:c01",
+            "version": "1.0",
+            "effective_date": "2026-07-01",
+            "score": 0.14017449527441614
+          },
+          {
+            "evidence_id": "POL-INC-002:s02:c01",
+            "source_type": "internal_policy",
+            "source_id": "POL-INC-002",
+            "title": "Incident Escalation SOP",
+            "section": "2. Severity 1 notification",
+            "excerpt": "For a Severity 1 (SEV1) incident, notify the Operations Duty Manager and the relevant recovery team within 5 minutes of threshold detection. Notify the Customer Service Lead within 10 minutes, Risk & Compliance within 15 minutes, and the Executive Duty Sponsor within 30 minutes. Digital Services is the recovery team for digital or payment outages; Facilities is the recovery team for physical disruption. The Duty Manager appoints an incident coordinator and opens a coordination bridge. Do not wait for root-cause confirmation before these notifications.",
+            "chunk_id": "POL-INC-002:s02:c01",
+            "version": "1.0",
+            "effective_date": "2026-07-01",
+            "score": 0.2634523640676402
+          },
+          {
+            "evidence_id": "POL-BCP-001:s02:c01",
+            "source_type": "internal_policy",
+            "source_id": "POL-BCP-001",
+            "title": "Business Continuity Procedure",
+            "section": "2. Activation thresholds",
+            "excerpt": "Activate the continuity assessment immediately for an unsafe site or a multi-site essential-service closure. For a customer-facing digital or payment outage lasting 60 minutes or more, the Duty Manager must decide whether to activate the approved continuity plan and record the decision and rationale. The 60-minute threshold is an assessment deadline, not permission to delay SEV1 escalation at 30 minutes. POL-INC-001 and POL-INC-002 continue to apply during continuity. Safety takes priority over maintaining transaction throughput.",
+            "chunk_id": "POL-BCP-001:s02:c01",
+            "version": "1.0",
+            "effective_date": "2026-07-01",
+            "score": 0.14524132403679715
+          }
+        ],
+        "facts": [
+          {
+            "kind": "policy_requirement",
+            "text": "Severity 1 (SEV1) applies when at least 500 customers are affected, when a customer-facing digital or payment service is continuously unavailable for 30 minutes or longer, or when there is credible immediate danger to people. A multi-site closure that prevents essential customer service is also SEV1. Any one threshold is sufficient. An outage lasting 35 or 45 minutes therefore meets the duration threshold even if the impact count is unknown. Suspected impact is validated urgently; classification is precautionary while safety facts are uncertain. Escalation is defined in POL-INC-002 section 2.",
+            "evidence_ids": [
+              "POL-INC-001:s02:c01"
+            ]
+          },
+          {
+            "kind": "policy_requirement",
+            "text": "For a Severity 1 (SEV1) incident, notify the Operations Duty Manager and the relevant recovery team within 5 minutes of threshold detection. Notify the Customer Service Lead within 10 minutes, Risk & Compliance within 15 minutes, and the Executive Duty Sponsor within 30 minutes. Digital Services is the recovery team for digital or payment outages; Facilities is the recovery team for physical disruption. The Duty Manager appoints an incident coordinator and opens a coordination bridge. Do not wait for root-cause confirmation before these notifications.",
+            "evidence_ids": [
+              "POL-INC-002:s02:c01"
+            ]
+          },
+          {
+            "kind": "policy_requirement",
+            "text": "Activate the continuity assessment immediately for an unsafe site or a multi-site essential-service closure. For a customer-facing digital or payment outage lasting 60 minutes or more, the Duty Manager must decide whether to activate the approved continuity plan and record the decision and rationale. The 60-minute threshold is an assessment deadline, not permission to delay SEV1 escalation at 30 minutes. POL-INC-001 and POL-INC-002 continue to apply during continuity. Safety takes priority over maintaining transaction throughput.",
+            "evidence_ids": [
+              "POL-BCP-001:s02:c01"
+            ]
+          },
+          {
+            "kind": "historical_fact",
+            "text": "Matching incidents: 41; most recent sample: INC-236, INC-230, INC-001, INC-110, INC-182. Filters: {\"category\": \"payment_failure\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}.",
+            "evidence_ids": [
+              "db:find_similar_incidents:cd788d990521"
+            ]
+          }
+        ],
+        "tool_trace": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "A customer-facing payment service has been down for 45 minutes and affects more than 500 users. What escalation does policy require,  notify notification",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Retrieved 6 active internal policy chunks.",
+            "latency_ms": 0.8114170050248504
+          },
+          {
+            "tool_name": "find_similar_incidents",
+            "arguments": {
+              "category": "payment_failure",
+              "since": "2025-10-01T00:00:00Z",
+              "until": "2026-10-01T00:00:00Z",
+              "limit": 5
+            },
+            "status": "success",
+            "summary": "Returned 5 of 41 matching incidents.",
+            "latency_ms": 3.400874906219542
+          }
+        ],
+        "tool_results": [
+          {
+            "tool_name": "search_internal_policy",
+            "result": {
+              "hits": [
+                {
+                  "chunk": {
+                    "document_id": "POL-INC-002",
+                    "title": "Incident Escalation SOP",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Operations",
+                    "policy_type": "escalation",
+                    "status": "active",
+                    "section": "2. Severity 1 notification",
+                    "chunk_id": "POL-INC-002:s02:c01",
+                    "content": "For a Severity 1 (SEV1) incident, notify the Operations Duty Manager and the relevant recovery team within 5 minutes of threshold detection. Notify the Customer Service Lead within 10 minutes, Risk & Compliance within 15 minutes, and the Executive Duty Sponsor within 30 minutes. Digital Services is the recovery team for digital or payment outages; Facilities is the recovery team for physical disruption. The Duty Manager appoints an incident coordinator and opens a coordination bridge. Do not wait for root-cause confirmation before these notifications."
+                  },
+                  "score": 0.2634523640676402
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-VEN-001",
+                    "title": "Vendor Escalation Procedure",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Digital Services",
+                    "policy_type": "vendor",
+                    "status": "active",
+                    "section": "2. Supplier notification deadlines",
+                    "chunk_id": "POL-VEN-001:s02:c01",
+                    "content": "For a vendor-related SEV1 disruption, the service owner must contact the supplier incident channel within 10 minutes of threshold detection. For SEV2, contact the supplier within 30 minutes. Include HarbourLink incident ID, supplier service, symptoms, start time, severity, impact estimate and sanitised diagnostic evidence. Record the supplier reference and acknowledgement time. These deadlines operate alongside POL-INC-002 internal notifications; a supplier ticket alone does not satisfy notification of Operations, Customer Service or Risk & Compliance."
+                  },
+                  "score": 0.1704281336346164
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-INC-002",
+                    "title": "Incident Escalation SOP",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Operations",
+                    "policy_type": "escalation",
+                    "status": "active",
+                    "section": "3. Severity 2 and lower notification",
+                    "chunk_id": "POL-INC-002:s03:c01",
+                    "content": "For Severity 2 (SEV2), notify the Operations Duty Manager and recovery team within 15 minutes, and the Customer Service Lead within 30 minutes. Risk & Compliance must be included within 30 minutes when integrity, safety or suspected data loss is involved. SEV3 and SEV4 are managed by the assigned service owner during the operating shift; record the handover if unresolved. If any SEV1 threshold develops, start the SEV1 clock at that threshold detection and record the upgrade. Lower severity never permits bypassing evidence preservation."
+                  },
+                  "score": 0.16613382614731662
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-FAC-001",
+                    "title": "Facility Disruption Playbook",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Facilities",
+                    "policy_type": "facility",
+                    "status": "active",
+                    "section": "2. Operational escalation",
+                    "chunk_id": "POL-FAC-001:s02:c01",
+                    "content": "For a SEV1 facility disruption, notify the Operations Duty Manager and Facilities recovery team within 5 minutes, Customer Service Lead within 10 minutes, Risk & Compliance within 15 minutes and Executive Duty Sponsor within 30 minutes under POL-INC-002. A single-site service disruption without immediate danger is at least SEV2. Record confirmed hazards separately from suspected causes. Supplier involvement follows POL-VEN-001 but does not transfer responsibility for site safety away from HarbourLink."
+                  },
+                  "score": 0.15452780655061676
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-BCP-001",
+                    "title": "Business Continuity Procedure",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Operations",
+                    "policy_type": "continuity",
+                    "status": "active",
+                    "section": "2. Activation thresholds",
+                    "chunk_id": "POL-BCP-001:s02:c01",
+                    "content": "Activate the continuity assessment immediately for an unsafe site or a multi-site essential-service closure. For a customer-facing digital or payment outage lasting 60 minutes or more, the Duty Manager must decide whether to activate the approved continuity plan and record the decision and rationale. The 60-minute threshold is an assessment deadline, not permission to delay SEV1 escalation at 30 minutes. POL-INC-001 and POL-INC-002 continue to apply during continuity. Safety takes priority over maintaining transaction throughput."
+                  },
+                  "score": 0.14524132403679715
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-INC-001",
+                    "title": "Incident Classification Standard",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Risk & Compliance",
+                    "policy_type": "classification",
+                    "status": "active",
+                    "section": "2. Severity 1 thresholds",
+                    "chunk_id": "POL-INC-001:s02:c01",
+                    "content": "Severity 1 (SEV1) applies when at least 500 customers are affected, when a customer-facing digital or payment service is continuously unavailable for 30 minutes or longer, or when there is credible immediate danger to people. A multi-site closure that prevents essential customer service is also SEV1. Any one threshold is sufficient. An outage lasting 35 or 45 minutes therefore meets the duration threshold even if the impact count is unknown. Suspected impact is validated urgently; classification is precautionary while safety facts are uncertain. Escalation is defined in POL-INC-002 section 2."
+                  },
+                  "score": 0.14017449527441614
+                }
+              ]
+            }
+          },
+          {
+            "tool_name": "find_similar_incidents",
+            "result": {
+              "incidents": [
+                {
+                  "incident_id": "INC-236",
+                  "opened_at": "2026-09-30T09:00:00Z",
+                  "resolved_at": null,
+                  "category": "payment_failure",
+                  "subcategory": "gateway timeout",
+                  "severity": "SEV1",
+                  "business_unit": "Digital Services",
+                  "service": "Payment Gateway",
+                  "site": "Online",
+                  "customer_impact_count": 672,
+                  "downtime_minutes": null,
+                  "estimated_cost": null,
+                  "root_cause": null,
+                  "vendor_related": true,
+                  "status": "investigating",
+                  "resolution_summary": null,
+                  "post_incident_review_required": true
+                },
+                {
+                  "incident_id": "INC-230",
+                  "opened_at": "2026-09-29T15:00:00Z",
+                  "resolved_at": null,
+                  "category": "payment_failure",
+                  "subcategory": "gateway timeout",
+                  "severity": "SEV1",
+                  "business_unit": "Digital Services",
+                  "service": "Payment Gateway",
+                  "site": "Online",
+                  "customer_impact_count": 640,
+                  "downtime_minutes": null,
+                  "estimated_cost": null,
+                  "root_cause": null,
+                  "vendor_related": false,
+                  "status": "investigating",
+                  "resolution_summary": null,
+                  "post_incident_review_required": true
+                },
+                {
+                  "incident_id": "INC-001",
+                  "opened_at": "2026-09-29T10:00:00Z",
+                  "resolved_at": "2026-09-29T11:30:00Z",
+                  "category": "payment_failure",
+                  "subcategory": "gateway timeout",
+                  "severity": "SEV1",
+                  "business_unit": "Digital Services",
+                  "service": "Payment Gateway",
+                  "site": "Online",
+                  "customer_impact_count": 620,
+                  "downtime_minutes": 45,
+                  "estimated_cost": 1116.0,
+                  "root_cause": "supplier connection pool exhaustion",
+                  "vendor_related": true,
+                  "status": "resolved",
+                  "resolution_summary": "Gateway restored; reconciliation verified.",
+                  "post_incident_review_required": true
+                },
+                {
+                  "incident_id": "INC-110",
+                  "opened_at": "2026-09-29T09:39:00Z",
+                  "resolved_at": "2026-09-29T11:20:00Z",
+                  "category": "payment_failure",
+                  "subcategory": "gateway timeout",
+                  "severity": "SEV1",
+                  "business_unit": "Digital Services",
+                  "service": "Payment Gateway",
+                  "site": "Online",
+                  "customer_impact_count": 388,
+                  "downtime_minutes": 56,
+                  "estimated_cost": 698.4,
+                  "root_cause": "gateway timeout",
+                  "vendor_related": false,
+                  "status": "resolved",
+                  "resolution_summary": "Owner validated recovery and handover.",
+                  "post_incident_review_required": true
+                },
+                {
+                  "incident_id": "INC-182",
+                  "opened_at": "2026-09-25T13:27:00Z",
+                  "resolved_at": "2026-09-25T14:43:00Z",
+                  "category": "payment_failure",
+                  "subcategory": "gateway timeout",
+                  "severity": "SEV1",
+                  "business_unit": "Digital Services",
+                  "service": "Payment Gateway",
+                  "site": "Online",
+                  "customer_impact_count": 320,
+                  "downtime_minutes": 31,
+                  "estimated_cost": null,
+                  "root_cause": "gateway timeout",
+                  "vendor_related": false,
+                  "status": "resolved",
+                  "resolution_summary": "Owner validated recovery and handover.",
+                  "post_incident_review_required": true
+                }
+              ],
+              "filters": {
+                "category": "payment_failure",
+                "since": "2025-10-01T00:00:00Z",
+                "until": "2026-10-01T00:00:00Z"
+              },
+              "total_matches": 41
+            }
+          }
+        ],
+        "limitations": [
+          "All policies and incident records are fictional synthetic demo data.",
+          "V1 tools are read-only; no actions or notifications are executed.",
+          "Similar incidents are exact-filter matches, not causal or semantic matches; the displayed list is a bounded sample and may include the reference incident.",
+          "Current policy is not evidence that pre-effective-date incidents complied with this version."
+        ],
+        "latency_ms": 29442.765666986816,
+        "mode": "chat_api",
+        "usage": {
+          "input_tokens": 6140,
+          "output_tokens": 2728,
+          "estimated_cost_usd": null
+        }
+      },
+      "provider_calls": [
+        {
+          "operation": "planning",
+          "status": "success",
+          "latency_ms": 14244.313750066794
+        },
+        {
+          "operation": "evidence_selection",
+          "status": "success",
+          "latency_ms": 15191.767541924492
+        }
+      ],
+      "provider_attempts": [
+        {
+          "call_index": 1,
+          "http_status": 200,
+          "latency_ms": 14232.758458005264,
+          "input_tokens": 3622,
+          "output_tokens": 1473,
+          "reported_cost_usd": 0.014354,
+          "finish_reason": "stop",
+          "schema_errors": [],
+          "proposed_tools": [
+            "search_internal_policy",
+            "find_similar_incidents"
+          ]
+        },
+        {
+          "call_index": 2,
+          "http_status": 200,
+          "latency_ms": 15190.46541606076,
+          "input_tokens": 2518,
+          "output_tokens": 1255,
+          "reported_cost_usd": 0.010262,
+          "finish_reason": "stop",
+          "schema_errors": []
+        }
+      ]
+    },
+    {
+      "id": "mixed_07",
+      "category": "mixed",
+      "question": "What post-incident review policy requires for SEV1, and what is severity distribution of SEV1 incidents in the last year?",
+      "passed": true,
+      "checks": {
+        "response_schema": true,
+        "route": true,
+        "tool_selection": true,
+        "tool_success": true,
+        "argument_schema": true,
+        "argument_match": true,
+        "source_recall": true,
+        "chunk_recall": true,
+        "citation_integrity": true,
+        "citation_coverage": true,
+        "refusal": true,
+        "numeric_results": true,
+        "reference_points": true,
+        "evidence_planes": true,
+        "read_only": true,
+        "live_provider_valid": true,
+        "policy_selection_valid": true
+      },
+      "failures": [],
+      "source_recall_at_k": 1.0,
+      "latency_ms": 29253.28945904039,
+      "response": {
+        "request_id": "live-mixed_07",
+        "route": "mixed",
+        "answer": "Policy requirement: A post-incident review is required for every SEV1 incident, every confirmed payment or data-integrity incident, and a service with three or more similar incidents in a rolling 30-day period. The Operations Duty Manager can also require a review for a lower-severity event with important learning. Similar incidents share a service and failure category; matching a broad business unit alone is insufficient. A review-required flag in the historical database records that dataset's classification and is not proof that the review was completed. [Post-Incident Review Standard | 1. Mandatory review criteria | POL-REV-001:s01:c01]\n\nPolicy requirement: The incident coordinator schedules a SEV1 review within 2 business days of resolution and publishes the draft review within 5 business days. Business days mean Monday to Friday, excluding HarbourLink's approved holiday calendar; the holiday calendar is not included in this corpus. For other mandatory reviews, schedule within 5 business days and publish the draft within 10 business days. Record owner and due date at resolution. If a deadline cannot be met, the Duty Manager records the exception and revised date. [Post-Incident Review Standard | 2. Review timetable | POL-REV-001:s02:c01]\n\nPolicy requirement: The review includes a factual timeline, severity triggers, customer impact, downtime and its measurement basis, escalation and communication performance, confirmed root cause or unresolved hypotheses, recovery decisions and evidence references. Compare against the policies effective at the event date where available. Current policies can support learning but cannot prove past compliance for older events. A historical median is context rather than a target. Include missing values and uncertainty instead of replacing unknown facts with plausible estimates. [Post-Incident Review Standard | 3. Required review content | POL-REV-001:s03:c01]\n\nPolicy requirement: Each corrective action has an accountable owner, target date, verification criterion and status tracked through the existing human-managed process. Separate containment work from long-term prevention. Risk & Compliance checks that evidence supports claims and that actions address confirmed contributing factors. The assistant may recommend candidate actions but cannot create tasks, assign owners in a business system or close actions. Avoid individual blame without evidence; focus the review on controls, dependencies and the conditions that produced the outcome. [Post-Incident Review Standard | 4. Action ownership | POL-REV-001:s04:c01]\n\nPolicy requirement: Retain the approved review, timeline and action references for 180 days under POL-EVD-001, subject to any legal hold. Share a sanitised learning summary with the affected functions; restrict customer-identifying evidence to approved investigators. The coordinator links the final review to the incident record through the existing controlled process. Review completion does not itself permit deletion of underlying logs. This fictional standard contains no compensation schedule or statutory reporting rule; absent legal or commercial requirements must be treated as missing evidence. [Post-Incident Review Standard | 6. Retention and dissemination | POL-REV-001:s06:c01]\n\nHistorical fact: Incident count: 52; median downtime: 47 minutes; mean downtime: 69.1915 minutes; p90 downtime (nearest-rank): 98 minutes. Resolved known-duration sample: 47; excluded/open or missing-duration records: 5. Total customer-impact exposures: 22884; mean exposure: 440.0769. Filters: {\"group_by\": \"severity\", \"severity\": \"SEV1\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}. Group counts: {\"SEV1\": 52}. Severity distribution: {\"SEV1\": 52}. [HarbourLink synthetic incident snapshot | calculate_incident_metrics | db:calculate_incident_metrics:5bf74068f496]",
+        "confidence": "high",
+        "evidence_sufficiency": "supported",
+        "evidence": [
+          {
+            "evidence_id": "db:calculate_incident_metrics:5bf74068f496",
+            "source_type": "incident_db",
+            "source_id": "harbourlink-incidents-v1",
+            "title": "HarbourLink synthetic incident snapshot",
+            "section": "calculate_incident_metrics",
+            "excerpt": "{\"downtime_sample_count\": 47, \"filters\": {\"group_by\": \"severity\", \"severity\": \"SEV1\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}, \"group_counts\": {\"SEV1\": 52}, \"incident_count\": 52, \"mean_customer_impact\": 440.0769, \"mean_downtime_minutes\": 69.1915, \"median_downtime_minutes\": 47.0, \"missing_downtime_count\": 5, \"p90_downtime_minutes\": 98.0, \"repeat_incident_count_by_service\": {\"Booking Portal\": 19, \"Payment Gateway\": 33}, \"resolved_count\": 49, \"severity_distribution\": {\"SEV1\": 52}, \"total_customer_impact\": 22884, \"window_basis\": \"opened_at; since inclusive, until exclusive\"}",
+            "chunk_id": null,
+            "version": null,
+            "effective_date": null,
+            "score": null
+          },
+          {
+            "evidence_id": "POL-REV-001:s01:c01",
+            "source_type": "internal_policy",
+            "source_id": "POL-REV-001",
+            "title": "Post-Incident Review Standard",
+            "section": "1. Mandatory review criteria",
+            "excerpt": "A post-incident review is required for every SEV1 incident, every confirmed payment or data-integrity incident, and a service with three or more similar incidents in a rolling 30-day period. The Operations Duty Manager can also require a review for a lower-severity event with important learning. Similar incidents share a service and failure category; matching a broad business unit alone is insufficient. A review-required flag in the historical database records that dataset's classification and is not proof that the review was completed.",
+            "chunk_id": "POL-REV-001:s01:c01",
+            "version": "1.0",
+            "effective_date": "2026-07-01",
+            "score": 0.2910551676927172
+          },
+          {
+            "evidence_id": "POL-REV-001:s02:c01",
+            "source_type": "internal_policy",
+            "source_id": "POL-REV-001",
+            "title": "Post-Incident Review Standard",
+            "section": "2. Review timetable",
+            "excerpt": "The incident coordinator schedules a SEV1 review within 2 business days of resolution and publishes the draft review within 5 business days. Business days mean Monday to Friday, excluding HarbourLink's approved holiday calendar; the holiday calendar is not included in this corpus. For other mandatory reviews, schedule within 5 business days and publish the draft within 10 business days. Record owner and due date at resolution. If a deadline cannot be met, the Duty Manager records the exception and revised date.",
+            "chunk_id": "POL-REV-001:s02:c01",
+            "version": "1.0",
+            "effective_date": "2026-07-01",
+            "score": 0.13245746489575871
+          },
+          {
+            "evidence_id": "POL-REV-001:s03:c01",
+            "source_type": "internal_policy",
+            "source_id": "POL-REV-001",
+            "title": "Post-Incident Review Standard",
+            "section": "3. Required review content",
+            "excerpt": "The review includes a factual timeline, severity triggers, customer impact, downtime and its measurement basis, escalation and communication performance, confirmed root cause or unresolved hypotheses, recovery decisions and evidence references. Compare against the policies effective at the event date where available. Current policies can support learning but cannot prove past compliance for older events. A historical median is context rather than a target. Include missing values and uncertainty instead of replacing unknown facts with plausible estimates.",
+            "chunk_id": "POL-REV-001:s03:c01",
+            "version": "1.0",
+            "effective_date": "2026-07-01",
+            "score": 0.11318127347788559
+          },
+          {
+            "evidence_id": "POL-REV-001:s04:c01",
+            "source_type": "internal_policy",
+            "source_id": "POL-REV-001",
+            "title": "Post-Incident Review Standard",
+            "section": "4. Action ownership",
+            "excerpt": "Each corrective action has an accountable owner, target date, verification criterion and status tracked through the existing human-managed process. Separate containment work from long-term prevention. Risk & Compliance checks that evidence supports claims and that actions address confirmed contributing factors. The assistant may recommend candidate actions but cannot create tasks, assign owners in a business system or close actions. Avoid individual blame without evidence; focus the review on controls, dependencies and the conditions that produced the outcome.",
+            "chunk_id": "POL-REV-001:s04:c01",
+            "version": "1.0",
+            "effective_date": "2026-07-01",
+            "score": 0.07289888330617393
+          },
+          {
+            "evidence_id": "POL-REV-001:s06:c01",
+            "source_type": "internal_policy",
+            "source_id": "POL-REV-001",
+            "title": "Post-Incident Review Standard",
+            "section": "6. Retention and dissemination",
+            "excerpt": "Retain the approved review, timeline and action references for 180 days under POL-EVD-001, subject to any legal hold. Share a sanitised learning summary with the affected functions; restrict customer-identifying evidence to approved investigators. The coordinator links the final review to the incident record through the existing controlled process. Review completion does not itself permit deletion of underlying logs. This fictional standard contains no compensation schedule or statutory reporting rule; absent legal or commercial requirements must be treated as missing evidence.",
+            "chunk_id": "POL-REV-001:s06:c01",
+            "version": "1.0",
+            "effective_date": "2026-07-01",
+            "score": 0.09997105166423369
+          }
+        ],
+        "facts": [
+          {
+            "kind": "policy_requirement",
+            "text": "A post-incident review is required for every SEV1 incident, every confirmed payment or data-integrity incident, and a service with three or more similar incidents in a rolling 30-day period. The Operations Duty Manager can also require a review for a lower-severity event with important learning. Similar incidents share a service and failure category; matching a broad business unit alone is insufficient. A review-required flag in the historical database records that dataset's classification and is not proof that the review was completed.",
+            "evidence_ids": [
+              "POL-REV-001:s01:c01"
+            ]
+          },
+          {
+            "kind": "policy_requirement",
+            "text": "The incident coordinator schedules a SEV1 review within 2 business days of resolution and publishes the draft review within 5 business days. Business days mean Monday to Friday, excluding HarbourLink's approved holiday calendar; the holiday calendar is not included in this corpus. For other mandatory reviews, schedule within 5 business days and publish the draft within 10 business days. Record owner and due date at resolution. If a deadline cannot be met, the Duty Manager records the exception and revised date.",
+            "evidence_ids": [
+              "POL-REV-001:s02:c01"
+            ]
+          },
+          {
+            "kind": "policy_requirement",
+            "text": "The review includes a factual timeline, severity triggers, customer impact, downtime and its measurement basis, escalation and communication performance, confirmed root cause or unresolved hypotheses, recovery decisions and evidence references. Compare against the policies effective at the event date where available. Current policies can support learning but cannot prove past compliance for older events. A historical median is context rather than a target. Include missing values and uncertainty instead of replacing unknown facts with plausible estimates.",
+            "evidence_ids": [
+              "POL-REV-001:s03:c01"
+            ]
+          },
+          {
+            "kind": "policy_requirement",
+            "text": "Each corrective action has an accountable owner, target date, verification criterion and status tracked through the existing human-managed process. Separate containment work from long-term prevention. Risk & Compliance checks that evidence supports claims and that actions address confirmed contributing factors. The assistant may recommend candidate actions but cannot create tasks, assign owners in a business system or close actions. Avoid individual blame without evidence; focus the review on controls, dependencies and the conditions that produced the outcome.",
+            "evidence_ids": [
+              "POL-REV-001:s04:c01"
+            ]
+          },
+          {
+            "kind": "policy_requirement",
+            "text": "Retain the approved review, timeline and action references for 180 days under POL-EVD-001, subject to any legal hold. Share a sanitised learning summary with the affected functions; restrict customer-identifying evidence to approved investigators. The coordinator links the final review to the incident record through the existing controlled process. Review completion does not itself permit deletion of underlying logs. This fictional standard contains no compensation schedule or statutory reporting rule; absent legal or commercial requirements must be treated as missing evidence.",
+            "evidence_ids": [
+              "POL-REV-001:s06:c01"
+            ]
+          },
+          {
+            "kind": "historical_fact",
+            "text": "Incident count: 52; median downtime: 47 minutes; mean downtime: 69.1915 minutes; p90 downtime (nearest-rank): 98 minutes. Resolved known-duration sample: 47; excluded/open or missing-duration records: 5. Total customer-impact exposures: 22884; mean exposure: 440.0769. Filters: {\"group_by\": \"severity\", \"severity\": \"SEV1\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}. Group counts: {\"SEV1\": 52}. Severity distribution: {\"SEV1\": 52}.",
+            "evidence_ids": [
+              "db:calculate_incident_metrics:5bf74068f496"
+            ]
+          }
+        ],
+        "tool_trace": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "What post-incident review policy requires for SEV1, and what is severity distribution of SEV1 incidents in the last year?",
+              "policy_type": "review",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Retrieved 6 active internal policy chunks.",
+            "latency_ms": 0.43016590643674135
+          },
+          {
+            "tool_name": "calculate_incident_metrics",
+            "arguments": {
+              "severity": "SEV1",
+              "since": "2025-10-01T00:00:00Z",
+              "until": "2026-10-01T00:00:00Z",
+              "group_by": "severity"
+            },
+            "status": "success",
+            "summary": "Calculated metrics for 52 incidents.",
+            "latency_ms": 4.432833986356854
+          }
+        ],
+        "tool_results": [
+          {
+            "tool_name": "search_internal_policy",
+            "result": {
+              "hits": [
+                {
+                  "chunk": {
+                    "document_id": "POL-REV-001",
+                    "title": "Post-Incident Review Standard",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Risk & Compliance",
+                    "policy_type": "review",
+                    "status": "active",
+                    "section": "1. Mandatory review criteria",
+                    "chunk_id": "POL-REV-001:s01:c01",
+                    "content": "A post-incident review is required for every SEV1 incident, every confirmed payment or data-integrity incident, and a service with three or more similar incidents in a rolling 30-day period. The Operations Duty Manager can also require a review for a lower-severity event with important learning. Similar incidents share a service and failure category; matching a broad business unit alone is insufficient. A review-required flag in the historical database records that dataset's classification and is not proof that the review was completed."
+                  },
+                  "score": 0.2910551676927172
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-REV-001",
+                    "title": "Post-Incident Review Standard",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Risk & Compliance",
+                    "policy_type": "review",
+                    "status": "active",
+                    "section": "5. Repeat-incident analysis",
+                    "chunk_id": "POL-REV-001:s05:c01",
+                    "content": "When checking repeat incidents, apply an explicit opened_at time window, service and category filter. Report count and matching record IDs, including whether records are open or resolved. A sampled list is not an exhaustive recurrence count. The rolling 30-day criterion includes the current event only if it is present in the selected dataset. Do not treat a year-wide repeat count as the 30-day review trigger. For V1, the analyst must explicitly select the window and verify those details before concluding the threshold applies."
+                  },
+                  "score": 0.17037507786273748
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-REV-001",
+                    "title": "Post-Incident Review Standard",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Risk & Compliance",
+                    "policy_type": "review",
+                    "status": "active",
+                    "section": "2. Review timetable",
+                    "chunk_id": "POL-REV-001:s02:c01",
+                    "content": "The incident coordinator schedules a SEV1 review within 2 business days of resolution and publishes the draft review within 5 business days. Business days mean Monday to Friday, excluding HarbourLink's approved holiday calendar; the holiday calendar is not included in this corpus. For other mandatory reviews, schedule within 5 business days and publish the draft within 10 business days. Record owner and due date at resolution. If a deadline cannot be met, the Duty Manager records the exception and revised date."
+                  },
+                  "score": 0.13245746489575871
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-REV-001",
+                    "title": "Post-Incident Review Standard",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Risk & Compliance",
+                    "policy_type": "review",
+                    "status": "active",
+                    "section": "3. Required review content",
+                    "chunk_id": "POL-REV-001:s03:c01",
+                    "content": "The review includes a factual timeline, severity triggers, customer impact, downtime and its measurement basis, escalation and communication performance, confirmed root cause or unresolved hypotheses, recovery decisions and evidence references. Compare against the policies effective at the event date where available. Current policies can support learning but cannot prove past compliance for older events. A historical median is context rather than a target. Include missing values and uncertainty instead of replacing unknown facts with plausible estimates."
+                  },
+                  "score": 0.11318127347788559
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-REV-001",
+                    "title": "Post-Incident Review Standard",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Risk & Compliance",
+                    "policy_type": "review",
+                    "status": "active",
+                    "section": "6. Retention and dissemination",
+                    "chunk_id": "POL-REV-001:s06:c01",
+                    "content": "Retain the approved review, timeline and action references for 180 days under POL-EVD-001, subject to any legal hold. Share a sanitised learning summary with the affected functions; restrict customer-identifying evidence to approved investigators. The coordinator links the final review to the incident record through the existing controlled process. Review completion does not itself permit deletion of underlying logs. This fictional standard contains no compensation schedule or statutory reporting rule; absent legal or commercial requirements must be treated as missing evidence."
+                  },
+                  "score": 0.09997105166423369
+                },
+                {
+                  "chunk": {
+                    "document_id": "POL-REV-001",
+                    "title": "Post-Incident Review Standard",
+                    "version": "1.0",
+                    "effective_date": "2026-07-01",
+                    "owner": "Risk & Compliance",
+                    "policy_type": "review",
+                    "status": "active",
+                    "section": "4. Action ownership",
+                    "chunk_id": "POL-REV-001:s04:c01",
+                    "content": "Each corrective action has an accountable owner, target date, verification criterion and status tracked through the existing human-managed process. Separate containment work from long-term prevention. Risk & Compliance checks that evidence supports claims and that actions address confirmed contributing factors. The assistant may recommend candidate actions but cannot create tasks, assign owners in a business system or close actions. Avoid individual blame without evidence; focus the review on controls, dependencies and the conditions that produced the outcome."
+                  },
+                  "score": 0.07289888330617393
+                }
+              ]
+            }
+          },
+          {
+            "tool_name": "calculate_incident_metrics",
+            "result": {
+              "filters": {
+                "severity": "SEV1",
+                "since": "2025-10-01T00:00:00Z",
+                "until": "2026-10-01T00:00:00Z",
+                "group_by": "severity"
+              },
+              "incident_count": 52,
+              "resolved_count": 49,
+              "downtime_sample_count": 47,
+              "missing_downtime_count": 5,
+              "mean_downtime_minutes": 69.1915,
+              "median_downtime_minutes": 47.0,
+              "p90_downtime_minutes": 98.0,
+              "total_customer_impact": 22884,
+              "mean_customer_impact": 440.0769,
+              "severity_distribution": {
+                "SEV1": 52
+              },
+              "group_counts": {
+                "SEV1": 52
+              },
+              "repeat_incident_count_by_service": {
+                "Booking Portal": 19,
+                "Payment Gateway": 33
+              },
+              "window_basis": "opened_at; since inclusive, until exclusive"
+            }
+          }
+        ],
+        "limitations": [
+          "All policies and incident records are fictional synthetic demo data.",
+          "V1 tools are read-only; no actions or notifications are executed.",
+          "Duration metrics use resolved records with known downtime; downtime differs from opened-to-resolved time.",
+          "Customer-impact totals are incident exposures, not deduplicated unique customers.",
+          "Time filters use opened_at, inclusive since / exclusive until; relative windows use 2026-10-01T00:00:00+00:00.",
+          "Current policy is not evidence that pre-effective-date incidents complied with this version."
+        ],
+        "latency_ms": 29253.28945904039,
+        "mode": "chat_api",
+        "usage": {
+          "input_tokens": 6068,
+          "output_tokens": 2981,
+          "estimated_cost_usd": null
+        }
+      },
+      "provider_calls": [
+        {
+          "operation": "planning",
+          "status": "success",
+          "latency_ms": 17605.022834031843
+        },
+        {
+          "operation": "evidence_selection",
+          "status": "success",
+          "latency_ms": 11639.28191701416
+        }
+      ],
+      "provider_attempts": [
+        {
+          "call_index": 3,
+          "http_status": 200,
+          "latency_ms": 17593.37616607081,
+          "input_tokens": 3608,
+          "output_tokens": 1666,
+          "reported_cost_usd": 0.015484,
+          "finish_reason": "stop",
+          "schema_errors": [],
+          "proposed_tools": [
+            "search_internal_policy",
+            "calculate_incident_metrics"
+          ]
+        },
+        {
+          "call_index": 4,
+          "http_status": 200,
+          "latency_ms": 11636.163959046826,
+          "input_tokens": 2460,
+          "output_tokens": 1315,
+          "reported_cost_usd": 0.011082,
+          "finish_reason": "stop",
+          "schema_errors": []
+        }
+      ]
+    }
+  ]
+}

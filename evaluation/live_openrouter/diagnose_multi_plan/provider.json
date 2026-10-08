@@ -1,0 +1,52 @@
+{
+  "live_validation": {
+    "scope": "targeted",
+    "completed": true,
+    "requested_cases": 1,
+    "model": "x-ai/grok-4.7",
+    "endpoint": "https://openrouter.ai/api/v1",
+    "transport": "http",
+    "stop_reason": null,
+    "max_http_attempts": 4,
+    "provider_retries": 1,
+    "selected_case_ids": [
+      "multi_01"
+    ]
+  },
+  "metrics": {
+    "provider_logical_calls": 1,
+    "provider_structured_successes": 0,
+    "provider_http_attempts": 1,
+    "provider_input_tokens": 3198,
+    "provider_output_tokens": 411,
+    "provider_reported_cost_usd": 0.004254
+  },
+  "calls": [
+    {
+      "operation": "planning",
+      "status": "failed",
+      "latency_ms": 5627.039832994342
+    }
+  ],
+  "attempts": [
+    {
+      "call_index": 0,
+      "http_status": 200,
+      "latency_ms": 5617.691084044054,
+      "input_tokens": 3198,
+      "output_tokens": 411,
+      "reported_cost_usd": 0.004254,
+      "finish_reason": "stop",
+      "schema_errors": [
+        {
+          "type": "value_error",
+          "location": []
+        }
+      ],
+      "proposed_tools": [
+        "search_internal_policy",
+        "search_internal_policy"
+      ]
+    }
+  ]
+}

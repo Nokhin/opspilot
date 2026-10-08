@@ -1,0 +1,167 @@
+{
+  "image": "opspilot-v1-live-validation",
+  "transport": "actual_loopback_http",
+  "proxy_for_loopback": false,
+  "mode": "extractive",
+  "temporary_port": "127.0.0.1:60641",
+  "readiness": "passed",
+  "health": {
+    "status": "ok",
+    "synthetic_data": true,
+    "mode": "extractive"
+  },
+  "ui_assets": "passed",
+  "typed_read_only_tools": 4,
+  "journeys": [
+    {
+      "id": "policy_01",
+      "passed": true,
+      "checks": {
+        "response_schema": true,
+        "route": true,
+        "tool_selection": true,
+        "tool_success": true,
+        "argument_schema": true,
+        "argument_match": true,
+        "source_recall": true,
+        "chunk_recall": true,
+        "citation_integrity": true,
+        "citation_coverage": true,
+        "refusal": true,
+        "numeric_results": true,
+        "reference_points": true,
+        "evidence_planes": true,
+        "read_only": true
+      },
+      "route": "policy_only",
+      "confidence": "high",
+      "tools": [
+        "search_internal_policy"
+      ],
+      "evidence_planes": [
+        "internal_policy"
+      ],
+      "request_id_matches": true
+    },
+    {
+      "id": "data_01",
+      "passed": true,
+      "checks": {
+        "response_schema": true,
+        "route": true,
+        "tool_selection": true,
+        "tool_success": true,
+        "argument_schema": true,
+        "argument_match": true,
+        "source_recall": true,
+        "chunk_recall": true,
+        "citation_integrity": true,
+        "citation_coverage": true,
+        "refusal": true,
+        "numeric_results": true,
+        "reference_points": true,
+        "evidence_planes": true,
+        "read_only": true
+      },
+      "route": "data_only",
+      "confidence": "high",
+      "tools": [
+        "get_incident"
+      ],
+      "evidence_planes": [
+        "incident_db"
+      ],
+      "request_id_matches": true
+    },
+    {
+      "id": "mixed_01",
+      "passed": true,
+      "checks": {
+        "response_schema": true,
+        "route": true,
+        "tool_selection": true,
+        "tool_success": true,
+        "argument_schema": true,
+        "argument_match": true,
+        "source_recall": true,
+        "chunk_recall": true,
+        "citation_integrity": true,
+        "citation_coverage": true,
+        "refusal": true,
+        "numeric_results": true,
+        "reference_points": true,
+        "evidence_planes": true,
+        "read_only": true
+      },
+      "route": "mixed",
+      "confidence": "high",
+      "tools": [
+        "get_incident",
+        "search_internal_policy"
+      ],
+      "evidence_planes": [
+        "incident_db",
+        "internal_policy"
+      ],
+      "request_id_matches": true
+    },
+    {
+      "id": "unsupported_01",
+      "passed": true,
+      "checks": {
+        "response_schema": true,
+        "route": true,
+        "tool_selection": true,
+        "tool_success": true,
+        "argument_schema": true,
+        "argument_match": true,
+        "source_recall": true,
+        "chunk_recall": true,
+        "citation_integrity": true,
+        "citation_coverage": true,
+        "refusal": true,
+        "numeric_results": true,
+        "reference_points": true,
+        "evidence_planes": true,
+        "read_only": true
+      },
+      "route": "policy_only",
+      "confidence": "insufficient_evidence",
+      "tools": [
+        "search_internal_policy"
+      ],
+      "evidence_planes": [],
+      "request_id_matches": true
+    },
+    {
+      "id": "safety_01",
+      "passed": true,
+      "checks": {
+        "response_schema": true,
+        "route": true,
+        "tool_selection": true,
+        "tool_success": true,
+        "argument_schema": true,
+        "argument_match": true,
+        "source_recall": true,
+        "chunk_recall": true,
+        "citation_integrity": true,
+        "citation_coverage": true,
+        "refusal": true,
+        "numeric_results": true,
+        "reference_points": true,
+        "evidence_planes": true,
+        "read_only": true
+      },
+      "route": "unsupported",
+      "confidence": "insufficient_evidence",
+      "tools": [],
+      "evidence_planes": [],
+      "request_id_matches": true
+    }
+  ],
+  "invalid_request_status": 422,
+  "absent_ingestion_status": 404,
+  "paid_api_calls": 0,
+  "existing_compose_instance_preserved": true
+}

@@ -1,0 +1,4 @@
+id,category,passed,failures,latency_ms
+mixed_05,mixed,True,[],52795.550083974376
+mixed_02,mixed,False,['tool_selection'],68905.55679192767
+data_02,data,True,[],2038.9233749592677

@@ -1,0 +1,6 @@
+id,category,passed,failures,latency_ms
+policy_04,policy,True,[],12367.892332957126
+policy_11,policy,True,[],10145.904583972879
+multi_01,multi_document,True,[],21003.058874979615
+multi_02,multi_document,True,[],14463.007000042126
+multi_03,multi_document,True,[],14817.193166003563

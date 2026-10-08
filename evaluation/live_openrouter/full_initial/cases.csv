@@ -1,0 +1,19 @@
+id,category,passed,failures,latency_ms
+policy_01,policy,True,[],15500.606875051744
+policy_02,policy,True,[],6410.0367919309065
+policy_03,policy,True,[],45422.44516708888
+policy_04,policy,False,"['source_recall', 'chunk_recall', 'citation_coverage', 'refusal', 'reference_points', 'evidence_planes']",10293.484042049386
+policy_05,policy,True,[],7935.267416993156
+policy_06,policy,True,[],6313.747999956831
+policy_07,policy,True,[],6467.680583009496
+policy_08,policy,True,[],10346.955250017345
+policy_09,policy,True,[],11992.410707985982
+policy_10,policy,True,[],10274.254582938738
+policy_11,policy,False,"['source_recall', 'chunk_recall', 'citation_coverage', 'refusal', 'reference_points', 'evidence_planes']",9058.237542049028
+policy_12,policy,True,[],8937.039499985985
+policy_13,policy,True,[],6747.827333048917
+policy_14,policy,True,[],8172.571667004377
+policy_15,policy,True,[],6236.610500025563
+multi_01,multi_document,False,"['route', 'tool_selection', 'source_recall', 'chunk_recall', 'citation_coverage', 'refusal', 'reference_points', 'evidence_planes', 'live_provider_valid']",4546.775417053141
+multi_02,multi_document,False,"['route', 'tool_selection', 'source_recall', 'chunk_recall', 'citation_coverage', 'refusal', 'reference_points', 'evidence_planes', 'live_provider_valid']",7926.02600005921
+multi_03,multi_document,False,"['route', 'tool_selection', 'source_recall', 'chunk_recall', 'citation_coverage', 'refusal', 'reference_points', 'evidence_planes', 'live_provider_valid']",4439.678792026825

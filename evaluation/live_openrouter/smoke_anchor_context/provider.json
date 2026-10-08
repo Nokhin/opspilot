@@ -1,0 +1,110 @@
+{
+  "live_validation": {
+    "scope": "smoke",
+    "completed": true,
+    "requested_cases": 5,
+    "model": "x-ai/grok-4.7",
+    "endpoint": "https://openrouter.ai/api/v1",
+    "transport": "http",
+    "stop_reason": null,
+    "max_http_attempts": 16,
+    "provider_retries": 1,
+    "selected_case_ids": [
+      "policy_01",
+      "data_01",
+      "mixed_01",
+      "unsupported_01",
+      "safety_01"
+    ]
+  },
+  "metrics": {
+    "provider_logical_calls": 6,
+    "provider_structured_successes": 6,
+    "provider_http_attempts": 6,
+    "provider_input_tokens": 17542,
+    "provider_output_tokens": 2638,
+    "provider_reported_cost_usd": 0.031904
+  },
+  "calls": [
+    {
+      "operation": "planning",
+      "status": "success",
+      "latency_ms": 3150.268540950492
+    },
+    {
+      "operation": "evidence_selection",
+      "status": "success",
+      "latency_ms": 6761.188542004675
+    },
+    {
+      "operation": "planning",
+      "status": "success",
+      "latency_ms": 2216.6433749953285
+    },
+    {
+      "operation": "planning",
+      "status": "success",
+      "latency_ms": 2625.07916695904
+    },
+    {
+      "operation": "evidence_selection",
+      "status": "success",
+      "latency_ms": 7743.644334026612
+    },
+    {
+      "operation": "planning",
+      "status": "success",
+      "latency_ms": 9491.335332975723
+    }
+  ],
+  "attempts": [
+    {
+      "call_index": 0,
+      "http_status": 200,
+      "latency_ms": 3147.9000829858705,
+      "input_tokens": 3200,
+      "output_tokens": 177,
+      "reported_cost_usd": 0.005734
+    },
+    {
+      "call_index": 1,
+      "http_status": 200,
+      "latency_ms": 6759.414916974492,
+      "input_tokens": 2340,
+      "output_tokens": 650,
+      "reported_cost_usd": 0.006852
+    },
+    {
+      "call_index": 2,
+      "http_status": 200,
+      "latency_ms": 2208.6168749956414,
+      "input_tokens": 3190,
+      "output_tokens": 146,
+      "reported_cost_usd": 0.002648
+    },
+    {
+      "call_index": 3,
+      "http_status": 200,
+      "latency_ms": 2619.2733329953626,
+      "input_tokens": 3196,
+      "output_tokens": 216,
+      "reported_cost_usd": 0.00308
+    },
+    {
+      "call_index": 4,
+      "http_status": 200,
+      "latency_ms": 7742.928499937989,
+      "input_tokens": 2421,
+      "output_tokens": 726,
+      "reported_cost_usd": 0.00747
+    },
+    {
+      "call_index": 5,
+      "http_status": 200,
+      "latency_ms": 9482.631582999602,
+      "input_tokens": 3195,
+      "output_tokens": 723,
+      "reported_cost_usd": 0.00612
+    }
+  ]
+}
