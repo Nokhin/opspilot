@@ -71,8 +71,8 @@ raw questions/results/keys. Provider and API errors are sanitised.
 ## Validation boundary
 
 Earlier V1 native ARM64 and emulated AMD64 checks validate that version's CPU-only packaging.
-Fresh V2 image/target-platform validation remains deferred; older container evidence
-does not validate the latest V2 source.
+Fresh V2 image/target-platform validation is excluded from V2 acceptance and has not
+been completed; older container evidence does not validate the latest V2 source.
 They are not an actual VPS deployment, load test or live-model availability
 test. [Final acceptance](FINAL_ACCEPTANCE.md) records evidence and remaining deployment gates.
 

@@ -6,11 +6,12 @@ one targeted retrieval retry, checkpoint-backed clarification/review and structu
 investigation briefs. LangChain supplies reusable prompt/structured-output components.
 The four V1 tools remain read-only, and the V1 `/api/chat` contract is preserved.
 
-**Current status: local V2 review candidate; not published.** The latest recorded
-44-case offline and `gpt-6-luna` live regressions both pass **44/44**. Local closeout
-validation passes **257 tests**, with five Git-history tests intentionally not run
-under the operator's no-Git review boundary. Hosted V2 CI and fresh Docker validation
-are not claimed. These are synthetic regression results, not production accuracy.
+**Current status: V2 development version; no V2 release.** The latest recorded
+44-case offline and `gpt-6-luna` live regressions both pass **44/44**. The final local
+suite passes **264 tests**. [Hosted CI](https://github.com/Nokhin/opspilot/actions/runs/42640287385)
+passes on Python 3.11 and 3.13. Fresh Docker validation is excluded from V2 acceptance;
+the current V2 image has not been validated by a fresh build/run. These are synthetic
+regression results, not production accuracy.
 
 In the UI choose **V2 · Stateful investigation brief**; offline is the default.
 Try `Investigate INC-001` or `Investigate this incident` with human review enabled.
@@ -79,7 +80,8 @@ docker compose down
 One non-root container, one persistent volume, one worker, 1.5 CPU / 2 GiB limits.
 The port binds to loopback; use an HTTPS reverse proxy on the VPS. `down` preserves
 data. Earlier V1 native ARM64/emulated AMD64 evidence is recorded separately; current
-V2 fresh image/target-platform validation remains deferred.
+V2 fresh image/target-platform validation is excluded from V2 acceptance and has not
+been completed. The commands above are the supported run path, not fresh-build evidence.
 See [deployment details](docs/DEPLOYMENT.md) and [acceptance evidence](docs/FINAL_ACCEPTANCE.md).
 
 ## Demo journeys

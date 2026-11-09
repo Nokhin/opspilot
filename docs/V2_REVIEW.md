@@ -59,7 +59,8 @@ processing capability or enterprise identity controls.
 
 ## Holds and known limits
 
-- Fresh Docker/base-image/target-platform validation remains deferred.
+- Fresh Docker/base-image/target-platform validation is excluded from V2 acceptance;
+  no fresh V2 image build/run or new target-platform acceptance is claimed.
 - No Git mutation or read-only Git command, hosted CI, release, remote deployment or
   load test is performed during local review.
 - Ownership is a per-demo investigation capability; checkpoints are not encrypted
@@ -75,3 +76,13 @@ exact-value findings, raw sensitive JSON fields or broken local Markdown links.
 Six retained synthetic screenshots reviewed; 307 original source/corpus/evaluation
 files unchanged. No Git/history inspection or publication performed. Full history
 review remains pending after operator authorization; this is not universal PII assurance.
+
+## Subsequent status — 2026-11-09
+
+The feature branch was subsequently published after authorization and a passing
+complete-history privacy audit. The final local suite passed 264 tests;
+[hosted CI](https://github.com/Nokhin/opspilot/actions/runs/42640287385) passed on
+Python 3.11 and 3.13. Earlier local-review receipts above retain their original scope.
+Fresh Docker validation is excluded from V2 acceptance, rather than a pending task.
+Its absence does not constitute Docker validation. Merge, tag/release and public
+deployment have not been performed.

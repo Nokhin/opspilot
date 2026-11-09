@@ -1,5 +1,11 @@
 # V2 evaluation methodology
 
+Current acceptance scope — 2026-11-09: fresh Docker/base-image/target-platform
+validation is excluded from V2 acceptance and will not be run for V2. Earlier
+deferred-build statements below describe historical decisions. No fresh V2 image
+build/run or new target-platform acceptance is claimed; existing evaluation results
+and historical Docker evidence retain their original scope.
+
 V1 reports, release tag and both 50-case datasets remain unchanged. The current
 working-tree baseline before V2 was 115 passing tests, including both offline
 regressions. Existing subscription-provider work was already present and is not

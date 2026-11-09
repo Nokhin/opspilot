@@ -1,5 +1,11 @@
 # V2 local acceptance — 2026-11-08
 
+Current scope update — 2026-11-09: fresh Docker/base-image/target-platform validation
+is excluded from V2 acceptance. Earlier attempts and pending-build statements below
+are historical receipts, not remaining V2 tasks or fresh-container acceptance.
+The current V2 image has not been validated by a fresh build/run. Local functional,
+offline evaluation and hosted CI evidence remain separate from container validation.
+
 V2's graph, evidence verification, bounded correction, persistent human review and
 additive API/UI are implemented. This receipt distinguishes local functional
 acceptance from paid-model, fresh-base-image and public deployment gates.
