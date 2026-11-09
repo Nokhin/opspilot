@@ -1,0 +1,116 @@
+{
+  "recorded_at_utc": "2026-11-08T13:03:16.390808+00:00",
+  "synthetic": true,
+  "scope": "Local offline V2 functional acceptance; no paid-model or fresh-base-image acceptance",
+  "macos": {
+    "python": "3.13.9",
+    "baseline_tests": 115,
+    "final_tests": 158,
+    "fresh_locked_environment_tests": 158,
+    "ruff": "passed",
+    "pip_check": "passed"
+  },
+  "linux_cached_runtime": {
+    "python": "3.11.17",
+    "architecture": "aarch64",
+    "tests_passed": 149,
+    "git_publication_tests_excluded": 9,
+    "v1_current": [
+      50,
+      50
+    ],
+    "v1_legacy": [
+      50,
+      50
+    ],
+    "v2_development": [
+      22,
+      22
+    ],
+    "v2_reserved_regression": [
+      12,
+      12
+    ],
+    "network": "none",
+    "user_id": 10001,
+    "read_only_root": true,
+    "cpu_limit": 1.5,
+    "memory_limit_gib": 2
+  },
+  "v2_development": {
+    "cases": 22,
+    "executed": 22,
+    "passed": 22,
+    "failure_ids": [],
+    "median_latency_ms": 5.565957981161773,
+    "max_latency_ms": 11.031417176127434,
+    "tool_calls": 38,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "paid_inference_calls": 0,
+    "common_v1_tasks": 9
+  },
+  "v2_reserved_first": {
+    "cases": 12,
+    "executed": 12,
+    "passed": 12,
+    "failure_ids": [],
+    "median_latency_ms": 5.372708546929061,
+    "max_latency_ms": 12.133041163906455,
+    "tool_calls": 16,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "paid_inference_calls": 0,
+    "common_v1_tasks": 0
+  },
+  "browser": {
+    "clarification": true,
+    "review": true,
+    "reload_restore": true,
+    "completed_brief": true,
+    "console_errors": 0,
+    "mode": "offline"
+  },
+  "container_api": "container-api.json",
+  "not_run": [
+    "paid V2 inference",
+    "hosted CI",
+    "actual VPS/HTTPS deployment",
+    "independent semantic benchmark",
+    "fresh Docker base-image build blocked by registry 503"
+  ],
+  "source_sha256": {
+    "opspilot/investigation/service.py": "3d6cee56db748780a0f3ed8d83c5deec823a1c40a19b179d4b7060aa3f16b2a6",
+    "opspilot/investigation/chains.py": "65469644020d407399e338de54288f552ea544686d2eef9d7af68794f0d800a0",
+    "opspilot/investigation/models.py": "a0a28f0c59f0fb289aefeef9c85716d707ee6dff9a52a4ac122e0192bf71ffa1",
+    "opspilot/investigation/graph.py": "286b75484e42d244b346f73dd393dd1c5a31c572a01527998609ae9fe98c964c",
+    "opspilot/investigation/__init__.py": "60bc8637174688a1d5b04cd2b87176cd35b6da510099e0e10eb86ab031983159",
+    "opspilot/investigation/planning.py": "c2aec21d3338a4dce764ecaadc9e1aa64911b9180aacbc8365ff21787b77734c",
+    "opspilot/investigation/evidence.py": "ea89bfdc4eae11aca380ac3a688ced91037534a6619508b1010234fb2c9acba8",
+    "opspilot/api/investigations.py": "e1aff34e3197b6913e789b44f269d99cbd66945efd89256a9496576644dca9f6",
+    "opspilot/ui/app.js": "da9ba9974d208323113a60a5d21cc1677a4eab9f898a173599949eb26b456395",
+    "opspilot/ui/index.html": "98ed99dbcb7261bf663b25365e9873db175ee603c1bf963efed127cb84ecb995",
+    "opspilot/evaluation/investigation.py": "b7c793d6ff55d9739ea325f42f8cf9e075d01553747e70bd7688265ca8f4229b",
+    "opspilot/evaluation/investigation_dev.json": "7a786b09fc849cd6fda39aea361f8b640ff01565248ca35fca32922f1178f9ff",
+    "opspilot/evaluation/investigation_heldout.json": "dd61cecfb7138e72a334e8a5948fa9a9d4f105be225a9432a864855036dced9d",
+    "requirements.lock": "eae18366d2890bc15028723325a4a7e7779527797e72865101990d8db9e1b3cf",
+    "pyproject.toml": "972e6940be2dff910e5304d7c3480db713409bbef473d0efc3a8a7fc006ea82d"
+  },
+  "hygiene": {
+    "reviewed_public_export_files": 221,
+    "publication_scope_violations": 0,
+    "broken_local_markdown_links": 0,
+    "complete_git_object_audit": "passed",
+    "runtime_data_or_tokens_in_evidence": false
+  },
+  "v1_preservation": {
+    "preexisting_component_hashes_unchanged": 11,
+    "original_recorded_evaluation_files_changed": 0,
+    "release_tag_unchanged": true,
+    "common_task_route_agreement": [
+      9,
+      9
+    ],
+    "extra_tools_on_common_mixed_comparison": 1
+  }
+}

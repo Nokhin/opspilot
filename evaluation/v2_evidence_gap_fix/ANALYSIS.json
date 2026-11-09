@@ -1,0 +1,1058 @@
+{
+  "recorded_at_utc": "2026-11-09T08:57:09.872310+00:00",
+  "scope": "Previously inspected synthetic development/reserved regression after scoped evidence fixes; not independent generalisation",
+  "before_live": {
+    "requested_cases": 44,
+    "executed_cases": 44,
+    "passed": 42,
+    "failure_ids": [
+      "res-two-policy",
+      "res-business-date"
+    ],
+    "completed": true,
+    "stop_reason": null,
+    "harness_error_type": null,
+    "model": "gpt-6-luna",
+    "inference_http_attempts": 42,
+    "structured_successes": 42,
+    "logical_provider_calls": 42,
+    "input_tokens": 183606,
+    "output_tokens": 6119,
+    "estimated_cost_usd": null,
+    "tool_calls": 59,
+    "median_latency_ms": 7049.871832947247,
+    "p95_latency_ms": 10998.924875166267,
+    "by_case_file": {
+      "opspilot/evaluation/investigation_completion_dev.json": {
+        "executed": 28,
+        "passed": 28
+      },
+      "opspilot/evaluation/investigation_completion_reserved.json": {
+        "executed": 16,
+        "passed": 14
+      }
+    }
+  },
+  "after_live": {
+    "requested_cases": 44,
+    "executed_cases": 44,
+    "passed": 44,
+    "failure_ids": [],
+    "completed": true,
+    "stop_reason": null,
+    "harness_error_type": null,
+    "model": "gpt-6-luna",
+    "inference_http_attempts": 42,
+    "structured_successes": 42,
+    "logical_provider_calls": 42,
+    "input_tokens": 183606,
+    "output_tokens": 5886,
+    "estimated_cost_usd": null,
+    "tool_calls": 58,
+    "median_latency_ms": 7443.715604022145,
+    "p95_latency_ms": 10700.641625095159,
+    "by_case_file": {
+      "opspilot/evaluation/investigation_completion_dev.json": {
+        "executed": 28,
+        "passed": 28
+      },
+      "opspilot/evaluation/investigation_completion_reserved.json": {
+        "executed": 16,
+        "passed": 16
+      }
+    }
+  },
+  "targets": {
+    "res-two-policy": {
+      "passed": true,
+      "status": "completed",
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "subscription": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true,
+        "model_fixed": true,
+        "live_provider_valid": true,
+        "human_protocol": true,
+        "live_usage_observed": true
+      },
+      "source_ids": [
+        "POL-INC-002:s03:c01",
+        "POL-INC-002:s01:c01",
+        "POL-COM-001:s02:c01",
+        "POL-COM-001:s01:c01"
+      ],
+      "dimensions": [
+        {
+          "dimension_id": "policy:escalation:notifications",
+          "status": "supported",
+          "evidence_ids": [
+            "POL-INC-002:s03:c01",
+            "POL-INC-002:s01:c01"
+          ],
+          "missing_sections": []
+        },
+        {
+          "dimension_id": "policy:communication:timing",
+          "status": "supported",
+          "evidence_ids": [
+            "POL-COM-001:s02:c01",
+            "POL-COM-001:s01:c01"
+          ],
+          "missing_sections": []
+        }
+      ],
+      "gaps": [],
+      "proposals": [
+        {
+          "text": "Proposed for any incident meeting these policy conditions: check or prepare the unsent notification to Operations Duty Manager and recovery team within 15 minutes of threshold detection. Human confirmation required; not executed.",
+          "evidence_ids": [
+            "POL-INC-002:s03:c01",
+            "POL-INC-002:s01:c01"
+          ],
+          "status": "proposed_not_executed",
+          "owner_role": "Responsible employee / incident coordinator",
+          "trigger": "If SEV2 applies to this incident",
+          "deadline_minutes": 15,
+          "deadline_basis": "threshold detection",
+          "due_at": null,
+          "retrospective": false
+        },
+        {
+          "text": "Proposed for any incident meeting these policy conditions: check or prepare the unsent notification to Customer Service Lead within 30 minutes of threshold detection. Human confirmation required; not executed.",
+          "evidence_ids": [
+            "POL-INC-002:s03:c01",
+            "POL-INC-002:s01:c01"
+          ],
+          "status": "proposed_not_executed",
+          "owner_role": "Responsible employee / incident coordinator",
+          "trigger": "If SEV2 applies to this incident",
+          "deadline_minutes": 30,
+          "deadline_basis": "threshold detection",
+          "due_at": null,
+          "retrospective": false
+        },
+        {
+          "text": "Proposed for any incident meeting these policy conditions: prepare the first customer notice within 30 minutes of threshold detection; propose subsequent updates at least every 60 minutes while impact continues. Human confirmation required; not executed.",
+          "evidence_ids": [
+            "POL-COM-001:s01:c01",
+            "POL-COM-001:s02:c01"
+          ],
+          "status": "proposed_not_executed",
+          "owner_role": "Customer Service Lead",
+          "trigger": "If SEV2 customer impact applies and continues",
+          "deadline_minutes": 30,
+          "deadline_basis": "threshold detection",
+          "due_at": null,
+          "retrospective": false
+        }
+      ]
+    },
+    "res-business-date": {
+      "passed": true,
+      "status": "partial",
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "subscription": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true,
+        "model_fixed": true,
+        "live_provider_valid": true,
+        "human_protocol": true,
+        "live_usage_observed": true
+      },
+      "source_ids": [
+        "POL-REV-001:s02:c01",
+        "POL-REV-001:s01:c01"
+      ],
+      "dimensions": [
+        {
+          "dimension_id": "policy:review:criteria",
+          "status": "supported",
+          "evidence_ids": [
+            "POL-REV-001:s01:c01"
+          ],
+          "missing_sections": []
+        },
+        {
+          "dimension_id": "policy:review:timetable",
+          "status": "supported",
+          "evidence_ids": [
+            "POL-REV-001:s02:c01"
+          ],
+          "missing_sections": []
+        }
+      ],
+      "gaps": [
+        {
+          "requirement_id": "input:holiday_calendar",
+          "description": "The approved holiday calendar is absent; business-day review deadlines cannot be converted to exact calendar dates.",
+          "retryable": false
+        },
+        {
+          "requirement_id": "input:resolution_time",
+          "description": "A verified resolution timestamp is absent; review deadlines are relative to resolution, not incident opening or the snapshot date.",
+          "retryable": false
+        }
+      ],
+      "proposals": [
+        {
+          "text": "Proposed for any incident meeting these policy conditions: if review is mandatory, schedule it within 5 business days of resolution and publish the draft within 10 business days. Confirm the absent holiday calendar before calculating calendar dates. Human confirmation required; not executed.",
+          "evidence_ids": [
+            "POL-REV-001:s01:c01",
+            "POL-REV-001:s02:c01"
+          ],
+          "status": "proposed_not_executed",
+          "owner_role": "Incident coordinator",
+          "trigger": "After resolution, if a review is required",
+          "deadline_minutes": null,
+          "deadline_basis": null,
+          "due_at": null,
+          "retrospective": false
+        }
+      ]
+    }
+  },
+  "tests_passed": 253,
+  "new_test_instances": 14,
+  "new_development_first": {
+    "passed": 7,
+    "cases": 8,
+    "reason": "Existing conservative V1 unsafe-request guard rejects a non-leading-question phrase containing update; explicit What-question revision retained original labels and controls"
+  },
+  "new_development_final": {
+    "passed": 8,
+    "cases": 8,
+    "cases_sha256": "6d5a9cb4372011d09adec643783f3a9ce502d7e4730d1560f14f41aec312bf26"
+  },
+  "offline": {
+    "new-development": {
+      "cases": 8,
+      "executed": 8,
+      "passed": 8,
+      "failure_ids": [],
+      "median_latency_ms": 5.467624519951642,
+      "max_latency_ms": 9.646416874602437,
+      "tool_calls": 12,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "paid_inference_calls": 0,
+      "common_v1_tasks": 0,
+      "checks_passed": {
+        "status": 8,
+        "route": 8,
+        "required_dimensions": 8,
+        "required_citations": 8,
+        "citation_integrity": 8,
+        "frozen_reference_points": 8,
+        "tool_efficiency": 8,
+        "retry": 8,
+        "read_only": 8,
+        "human_completion": 8,
+        "offline": 8,
+        "proposed_actions_only": 8,
+        "no_integrity_errors": 8,
+        "proposed_severity": 8,
+        "assessment_status": 8,
+        "recorded_severity": 8,
+        "reported_severity": 8,
+        "dimension_coverage": 8,
+        "missing_dimensions": 8,
+        "explicit_gaps": 8,
+        "context_provenance": 8,
+        "action_contract": 8,
+        "no_forbidden_recommendations": 8,
+        "clock_integrity": 8,
+        "interrupt_sequence": 8,
+        "provider_budget": 8,
+        "recommendation_citations": 8
+      },
+      "expectation_coverage": {
+        "status": {
+          "evaluated": 8,
+          "passed": 8
+        },
+        "route": {
+          "evaluated": 8,
+          "passed": 8
+        },
+        "required_dimensions": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "required_citations": {
+          "evaluated": 6,
+          "passed": 6
+        },
+        "citation_integrity": {
+          "evaluated": 8,
+          "passed": 8
+        },
+        "frozen_reference_points": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "tool_efficiency": {
+          "evaluated": 8,
+          "passed": 8
+        },
+        "retry": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "read_only": {
+          "evaluated": 8,
+          "passed": 8
+        },
+        "human_completion": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "offline": {
+          "evaluated": 8,
+          "passed": 8
+        },
+        "proposed_actions_only": {
+          "evaluated": 7,
+          "passed": 7
+        },
+        "no_integrity_errors": {
+          "evaluated": 8,
+          "passed": 8
+        },
+        "proposed_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "assessment_status": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "recorded_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "reported_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "dimension_coverage": {
+          "evaluated": 6,
+          "passed": 6
+        },
+        "missing_dimensions": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "explicit_gaps": {
+          "evaluated": 3,
+          "passed": 3
+        },
+        "context_provenance": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "action_contract": {
+          "evaluated": 5,
+          "passed": 5
+        },
+        "no_forbidden_recommendations": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "clock_integrity": {
+          "evaluated": 4,
+          "passed": 4
+        },
+        "interrupt_sequence": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "provider_budget": {
+          "evaluated": 8,
+          "passed": 8
+        },
+        "recommendation_citations": {
+          "evaluated": 7,
+          "passed": 7
+        }
+      }
+    },
+    "completion-development": {
+      "cases": 28,
+      "executed": 28,
+      "passed": 28,
+      "failure_ids": [],
+      "median_latency_ms": 5.550750531256199,
+      "max_latency_ms": 11.749250115826726,
+      "tool_calls": 39,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "paid_inference_calls": 0,
+      "common_v1_tasks": 0,
+      "checks_passed": {
+        "status": 28,
+        "route": 28,
+        "required_dimensions": 28,
+        "required_citations": 28,
+        "citation_integrity": 28,
+        "frozen_reference_points": 28,
+        "tool_efficiency": 28,
+        "retry": 28,
+        "read_only": 28,
+        "human_completion": 28,
+        "offline": 28,
+        "proposed_actions_only": 28,
+        "no_integrity_errors": 28,
+        "proposed_severity": 28,
+        "assessment_status": 28,
+        "recorded_severity": 28,
+        "reported_severity": 28,
+        "dimension_coverage": 28,
+        "missing_dimensions": 28,
+        "explicit_gaps": 28,
+        "context_provenance": 28,
+        "action_contract": 28,
+        "no_forbidden_recommendations": 28,
+        "clock_integrity": 28,
+        "interrupt_sequence": 28,
+        "provider_budget": 28,
+        "recommendation_citations": 28
+      },
+      "expectation_coverage": {
+        "status": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "route": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "required_dimensions": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "required_citations": {
+          "evaluated": 13,
+          "passed": 13
+        },
+        "citation_integrity": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "frozen_reference_points": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "tool_efficiency": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "retry": {
+          "evaluated": 3,
+          "passed": 3
+        },
+        "read_only": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "human_completion": {
+          "evaluated": 7,
+          "passed": 7
+        },
+        "offline": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "proposed_actions_only": {
+          "evaluated": 26,
+          "passed": 26
+        },
+        "no_integrity_errors": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "proposed_severity": {
+          "evaluated": 18,
+          "passed": 18
+        },
+        "assessment_status": {
+          "evaluated": 14,
+          "passed": 14
+        },
+        "recorded_severity": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "reported_severity": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "dimension_coverage": {
+          "evaluated": 14,
+          "passed": 14
+        },
+        "missing_dimensions": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "explicit_gaps": {
+          "evaluated": 6,
+          "passed": 6
+        },
+        "context_provenance": {
+          "evaluated": 3,
+          "passed": 3
+        },
+        "action_contract": {
+          "evaluated": 3,
+          "passed": 3
+        },
+        "no_forbidden_recommendations": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "clock_integrity": {
+          "evaluated": 3,
+          "passed": 3
+        },
+        "interrupt_sequence": {
+          "evaluated": 7,
+          "passed": 7
+        },
+        "provider_budget": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "recommendation_citations": {
+          "evaluated": 26,
+          "passed": 26
+        }
+      }
+    },
+    "completion-reserved-regression": {
+      "cases": 16,
+      "executed": 16,
+      "passed": 16,
+      "failure_ids": [],
+      "median_latency_ms": 5.781354964710772,
+      "max_latency_ms": 10.004374198615551,
+      "tool_calls": 19,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "paid_inference_calls": 0,
+      "common_v1_tasks": 0,
+      "checks_passed": {
+        "status": 16,
+        "route": 16,
+        "required_dimensions": 16,
+        "required_citations": 16,
+        "citation_integrity": 16,
+        "frozen_reference_points": 16,
+        "tool_efficiency": 16,
+        "retry": 16,
+        "read_only": 16,
+        "human_completion": 16,
+        "offline": 16,
+        "proposed_actions_only": 16,
+        "no_integrity_errors": 16,
+        "proposed_severity": 16,
+        "assessment_status": 16,
+        "recorded_severity": 16,
+        "reported_severity": 16,
+        "dimension_coverage": 16,
+        "missing_dimensions": 16,
+        "explicit_gaps": 16,
+        "context_provenance": 16,
+        "action_contract": 16,
+        "no_forbidden_recommendations": 16,
+        "clock_integrity": 16,
+        "interrupt_sequence": 16,
+        "provider_budget": 16,
+        "recommendation_citations": 16
+      },
+      "expectation_coverage": {
+        "status": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "route": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "required_dimensions": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "required_citations": {
+          "evaluated": 6,
+          "passed": 6
+        },
+        "citation_integrity": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "frozen_reference_points": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "tool_efficiency": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "retry": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "read_only": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "human_completion": {
+          "evaluated": 4,
+          "passed": 4
+        },
+        "offline": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "proposed_actions_only": {
+          "evaluated": 13,
+          "passed": 13
+        },
+        "no_integrity_errors": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "proposed_severity": {
+          "evaluated": 9,
+          "passed": 9
+        },
+        "assessment_status": {
+          "evaluated": 6,
+          "passed": 6
+        },
+        "recorded_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "reported_severity": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "dimension_coverage": {
+          "evaluated": 7,
+          "passed": 7
+        },
+        "missing_dimensions": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "explicit_gaps": {
+          "evaluated": 4,
+          "passed": 4
+        },
+        "context_provenance": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "action_contract": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "no_forbidden_recommendations": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "clock_integrity": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "interrupt_sequence": {
+          "evaluated": 4,
+          "passed": 4
+        },
+        "provider_budget": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "recommendation_citations": {
+          "evaluated": 13,
+          "passed": 13
+        }
+      }
+    },
+    "legacy-development": {
+      "cases": 22,
+      "executed": 22,
+      "passed": 21,
+      "failure_ids": [
+        "mixed_comparison"
+      ],
+      "median_latency_ms": 5.9697499964386225,
+      "max_latency_ms": 9.91470878943801,
+      "tool_calls": 30,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "paid_inference_calls": 0,
+      "common_v1_tasks": 9,
+      "checks_passed": {
+        "status": 21,
+        "route": 21,
+        "required_dimensions": 22,
+        "required_citations": 22,
+        "citation_integrity": 22,
+        "frozen_reference_points": 21,
+        "tool_efficiency": 22,
+        "retry": 22,
+        "read_only": 22,
+        "human_completion": 22,
+        "offline": 22,
+        "proposed_actions_only": 22,
+        "no_integrity_errors": 22,
+        "proposed_severity": 22,
+        "assessment_status": 22,
+        "recorded_severity": 22,
+        "reported_severity": 22,
+        "dimension_coverage": 22,
+        "missing_dimensions": 22,
+        "explicit_gaps": 22,
+        "context_provenance": 22,
+        "action_contract": 22,
+        "no_forbidden_recommendations": 22,
+        "clock_integrity": 22,
+        "interrupt_sequence": 22,
+        "provider_budget": 22,
+        "recommendation_citations": 22
+      },
+      "expectation_coverage": {
+        "status": {
+          "evaluated": 22,
+          "passed": 21
+        },
+        "route": {
+          "evaluated": 22,
+          "passed": 21
+        },
+        "required_dimensions": {
+          "evaluated": 3,
+          "passed": 3
+        },
+        "required_citations": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "citation_integrity": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "frozen_reference_points": {
+          "evaluated": 5,
+          "passed": 4
+        },
+        "tool_efficiency": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "retry": {
+          "evaluated": 5,
+          "passed": 5
+        },
+        "read_only": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "human_completion": {
+          "evaluated": 4,
+          "passed": 4
+        },
+        "offline": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "proposed_actions_only": {
+          "evaluated": 9,
+          "passed": 9
+        },
+        "no_integrity_errors": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "proposed_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "assessment_status": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "recorded_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "reported_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "dimension_coverage": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "missing_dimensions": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "explicit_gaps": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "context_provenance": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "action_contract": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "no_forbidden_recommendations": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "clock_integrity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "interrupt_sequence": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "provider_budget": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "recommendation_citations": {
+          "evaluated": 9,
+          "passed": 9
+        }
+      }
+    },
+    "legacy-reserved-regression": {
+      "cases": 12,
+      "executed": 12,
+      "passed": 11,
+      "failure_ids": [
+        "reserved_clarify"
+      ],
+      "median_latency_ms": 5.718479631468654,
+      "max_latency_ms": 13.365915976464748,
+      "tool_calls": 15,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "paid_inference_calls": 0,
+      "common_v1_tasks": 0,
+      "checks_passed": {
+        "status": 11,
+        "route": 12,
+        "required_dimensions": 12,
+        "required_citations": 12,
+        "citation_integrity": 12,
+        "frozen_reference_points": 12,
+        "tool_efficiency": 12,
+        "retry": 12,
+        "read_only": 12,
+        "human_completion": 12,
+        "offline": 12,
+        "proposed_actions_only": 12,
+        "no_integrity_errors": 12,
+        "proposed_severity": 12,
+        "assessment_status": 12,
+        "recorded_severity": 12,
+        "reported_severity": 12,
+        "dimension_coverage": 12,
+        "missing_dimensions": 12,
+        "explicit_gaps": 12,
+        "context_provenance": 12,
+        "action_contract": 12,
+        "no_forbidden_recommendations": 12,
+        "clock_integrity": 12,
+        "interrupt_sequence": 12,
+        "provider_budget": 12,
+        "recommendation_citations": 12
+      },
+      "expectation_coverage": {
+        "status": {
+          "evaluated": 12,
+          "passed": 11
+        },
+        "route": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "required_dimensions": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "required_citations": {
+          "evaluated": 6,
+          "passed": 6
+        },
+        "citation_integrity": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "frozen_reference_points": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "tool_efficiency": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "retry": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "read_only": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "human_completion": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "offline": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "proposed_actions_only": {
+          "evaluated": 7,
+          "passed": 7
+        },
+        "no_integrity_errors": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "proposed_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "assessment_status": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "recorded_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "reported_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "dimension_coverage": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "missing_dimensions": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "explicit_gaps": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "context_provenance": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "action_contract": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "no_forbidden_recommendations": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "clock_integrity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "interrupt_sequence": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "provider_budget": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "recommendation_citations": {
+          "evaluated": 7,
+          "passed": 7
+        }
+      }
+    }
+  },
+  "citation_bearing_cases": 39,
+  "citation_integrity_passed": 39,
+  "planning_rejections": 0,
+  "max_planning_calls": 1,
+  "max_tool_calls": 3,
+  "preserved_files": 241,
+  "changed_preserved_files": [],
+  "read_only_store_checks": {
+    "incident_database_unchanged": true,
+    "policy_index_unchanged": true
+  },
+  "input_threshold_overshoot": 3606,
+  "threshold_first_crossed_on_attempt": 42,
+  "attempts_after_crossing": 0,
+  "usd_cost": null,
+  "new_holdout_claim": false,
+  "raw_runtime_exported": false,
+  "metadata_normalization": "Repository-absolute metadata prefixes removed; cases, labels, outputs and metrics unchanged."
+}

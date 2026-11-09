@@ -1,0 +1,44 @@
+{
+  "status": "passed_for_local_source_artifact_scope",
+  "reviewed_at_utc": "2026-11-09T14:15:32.288042+00:00",
+  "review_copy_files": 361,
+  "method": "V1 public-path allow-list, full candidate content scan, local exact-value matches, JUnit sanitization and image metadata checks",
+  "extra_v2_check": "JSON/JSONL artifact keys checked for raw token, ownership and account binding fields",
+  "content_violations": [],
+  "raw_sensitive_fields": [],
+  "json_or_jsonl_files_checked": 156,
+  "local_exact_value_categories_checked": [
+    "absolute_workspace_path",
+    "local_host_identifier",
+    "local_user_identifier"
+  ],
+  "sensitive_values_echoed": false,
+  "symlinks": [],
+  "broken_local_markdown_links": [],
+  "docker_exclusion_contract_passed": true,
+  "manually_reviewed_synthetic_demo_images": 6,
+  "obvious_personal_account_or_credential_text_seen_in_images": false,
+  "image_sha256": {
+    "evaluation/demo.jpg": "671124f6fc75451481a2b537536c262bbfbd24c2cf9f0932b37765d57430095b",
+    "evaluation/mixed-demo.jpg": "36e7bb89dc1b931a2232c2ac19c4dea859dc3955971202b47c469fd8f8da32d7",
+    "evaluation/v2/brief-completed.jpg": "05a91dd368ca848febb3bb1cac474dc1d17cde75da143a27ca0d58073f9cbc70",
+    "evaluation/v2_completion_1_5/brief-completed.jpg": "19b862b930e825bad6ba200065f7de2c714ebe673a170c8dc80112e4423fdee7",
+    "evaluation/v2_completion_6_7/subscription-controls-fixture.jpg": "d352efb20cbeff4d3cc0a3e7e27978548f6df895a8c66a3c44f3413de877c508",
+    "evaluation/v2_completion_6_7/subscription-fixture.jpg": "48d1ce0dcfd8a1a4800da865cc728249c836842ed81a8bfccacd62c1c26dc01d"
+  },
+  "protected_original_files": 307,
+  "changed_original_files": [],
+  "git_commands_performed": 0,
+  "git_history_check": "not_run_this_session_per_no_git_boundary; historical receipts are not a fresh audit",
+  "test_git_history_cases": "five deliberately deselected, not counted as passing",
+  "credentials_or_private_originals_read_for_content": false,
+  "runtime_data_or_checkpoint_exported": false,
+  "published": false,
+  "pending": "operator confirmation before Git; fresh history audit before publication",
+  "limits": [
+    "Pattern and exact-value checks are not universal PII detection",
+    "Manual screenshot inspection is bounded and not automated OCR",
+    "Runtime ingestion/checkpoints are not automatically redacted or encrypted",
+    "Fresh Docker and hosted CI remain unverified in this review"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "readiness": true,
+    "v1_contract": true,
+    "clarification_interrupt": true,
+    "unauthorized_404": true,
+    "review_interrupt": true,
+    "persistent_resume_after_container_restart": true,
+    "tools_not_repeated": true,
+    "both_evidence_planes": true,
+    "no_token_on_resume": true,
+    "incident_database_unchanged": true,
+    "non_root_uid_10001": true,
+    "all_actions_proposed": true
+  },
+  "passed": true,
+  "synthetic": true,
+  "llm_calls": 0,
+  "fresh_dockerfile_build": "blocked_registry_503",
+  "image": "opspilot:v2-offline-validation",
+  "runtime": "cached V1 base plus locked Linux wheels; not a fresh base-image build"
+}

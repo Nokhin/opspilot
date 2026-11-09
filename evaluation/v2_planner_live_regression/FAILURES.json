@@ -1,0 +1,50 @@
+[
+  {
+    "id": "res-two-policy",
+    "failures": [
+      "status",
+      "dimension_coverage"
+    ],
+    "status": "partial",
+    "route": "policy_only",
+    "planning_diagnostic": null,
+    "evidence_gaps": [
+      {
+        "requirement_id": "policy:communication:timing",
+        "description": "Missing evidence for communication ownership first notice update cadence",
+        "retryable": true
+      },
+      {
+        "requirement_id": "policy:communication",
+        "description": "customer communication first notice update cadence",
+        "retryable": true
+      }
+    ]
+  },
+  {
+    "id": "res-business-date",
+    "failures": [
+      "status"
+    ],
+    "status": "insufficient",
+    "route": "policy_only",
+    "planning_diagnostic": null,
+    "evidence_gaps": [
+      {
+        "requirement_id": "policy:review:criteria",
+        "description": "Missing evidence for mandatory review criteria",
+        "retryable": true
+      },
+      {
+        "requirement_id": "policy:review",
+        "description": "post incident review requirements",
+        "retryable": true
+      },
+      {
+        "requirement_id": "input:holiday_calendar",
+        "description": "The approved holiday calendar is absent; business-day review deadlines cannot be converted to exact calendar dates.",
+        "retryable": false
+      }
+    ]
+  }
+]

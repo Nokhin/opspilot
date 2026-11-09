@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "subscription_enabled": false,
+  "cases": [
+    {
+      "case": "communication",
+      "status": "completed",
+      "source_ids": [
+        "POL-COM-001:s01:c01",
+        "POL-COM-001:s02:c01",
+        "POL-INC-002:s01:c01",
+        "POL-INC-002:s03:c01"
+      ],
+      "provider_calls": 0,
+      "owner_get_status": 200,
+      "wrong_owner_status": 404,
+      "proposals": [
+        {
+          "owner_role": "Responsible employee / incident coordinator",
+          "text": "Proposed for any incident meeting these policy conditions: check or prepare the unsent notification to Operations Duty Manager and recovery team within 15 minutes of threshold detection. Human confirmation required; not executed.",
+          "deadline_minutes": 15,
+          "due_at": null
+        },
+        {
+          "owner_role": "Responsible employee / incident coordinator",
+          "text": "Proposed for any incident meeting these policy conditions: check or prepare the unsent notification to Customer Service Lead within 30 minutes of threshold detection. Human confirmation required; not executed.",
+          "deadline_minutes": 30,
+          "due_at": null
+        },
+        {
+          "owner_role": "Customer Service Lead",
+          "text": "Proposed for any incident meeting these policy conditions: prepare the first customer notice within 30 minutes of threshold detection; propose subsequent updates at least every 60 minutes while impact continues. Human confirmation required; not executed.",
+          "deadline_minutes": 30,
+          "due_at": null
+        }
+      ]
+    },
+    {
+      "case": "review",
+      "status": "partial",
+      "source_ids": [
+        "POL-REV-001:s01:c01",
+        "POL-REV-001:s02:c01"
+      ],
+      "provider_calls": 0,
+      "owner_get_status": 200,
+      "wrong_owner_status": 404,
+      "proposals": [
+        {
+          "owner_role": "Incident coordinator",
+          "text": "Proposed for any incident meeting these policy conditions: if review is mandatory, schedule it within 5 business days of resolution and publish the draft within 10 business days. Confirm the absent holiday calendar before calculating calendar dates. Human confirmation required; not executed.",
+          "deadline_minutes": null,
+          "due_at": null
+        }
+      ]
+    }
+  ]
+}

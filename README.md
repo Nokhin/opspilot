@@ -1,6 +1,28 @@
 # OpsPilot — Enterprise Operational Intelligence Copilot
 
-[![CI](https://github.com/Nokhin/opspilot/actions/workflows/ci.yml/badge.svg)](https://github.com/Nokhin/opspilot/actions/workflows/ci.yml)
+V2 investigates operational incidents through a real LangGraph workflow: typed
+planning, policy and incident-data collection, deterministic evidence verification,
+one targeted retrieval retry, checkpoint-backed clarification/review and structured
+investigation briefs. LangChain supplies reusable prompt/structured-output components.
+The four V1 tools remain read-only, and the V1 `/api/chat` contract is preserved.
+
+**Current status: local V2 review candidate; not published.** The latest recorded
+44-case offline and `gpt-6-luna` live regressions both pass **44/44**. Local closeout
+validation passes **257 tests**, with five Git-history tests intentionally not run
+under the operator's no-Git review boundary. Hosted V2 CI and fresh Docker validation
+are not claimed. These are synthetic regression results, not production accuracy.
+
+In the UI choose **V2 · Stateful investigation brief**; offline is the default.
+Try `Investigate INC-001` or `Investigate this incident` with human review enabled.
+Proposed actions are never executed. Communication guidance requires ownership and
+timing citations. Exact review dates remain partial when the approved calendar or
+verified resolution timestamp is absent.
+
+Read the [product scope](docs/V2_PRODUCT_SPEC.md), [architecture](docs/V2_ARCHITECTURE.md),
+[evaluation](docs/V2_EVALUATION.md), [current review](docs/V2_REVIEW.md), [source/artifact privacy receipt](evaluation/v2_closeout_review/PRIVACY_REVIEW.json),
+[draft V2 notes](docs/releases/v2.0-stateful-investigation.md) and
+[recorded live acceptance](evaluation/v2_evidence_gap_fix/VALIDATION.md).
+Historical scores and failed/stopped runs remain in their original evidence folders.
 
 An evidence-grounded incident investigation demo combining internal-policy RAG,
 SQLite incident history, four typed read-only tools, routing and evaluation.
@@ -56,7 +78,8 @@ docker compose down
 
 One non-root container, one persistent volume, one worker, 1.5 CPU / 2 GiB limits.
 The port binds to loopback; use an HTTPS reverse proxy on the VPS. `down` preserves
-data. Native ARM64 and emulated AMD64 packaging are validated separately.
+data. Earlier V1 native ARM64/emulated AMD64 evidence is recorded separately; current
+V2 fresh image/target-platform validation remains deferred.
 See [deployment details](docs/DEPLOYMENT.md) and [acceptance evidence](docs/FINAL_ACCEPTANCE.md).
 
 ## Demo journeys
@@ -117,6 +140,8 @@ Copy `.env.example` to `.env` when changing settings; secrets never belong in Gi
 | `OPSPILOT_REFERENCE_TIME` | `2026-10-01T00:00:00Z`, fixed snapshot reference |
 | `OPSPILOT_TOP_K`, `OPSPILOT_MAX_TOOL_CALLS` | Defaults 6 / 4; caps 8 / 4 |
 | Provider timeout / retries | Defaults 20 seconds / 1 retry; bounded |
+| `OPSPILOT_SUBSCRIPTION_TIMEOUT_SECONDS` | Subscription read timeout: 60 seconds, configurable 1–120; no inference retries |
+| `OPSPILOT_DEFAULT_CHAT_PROVIDER` | Web/API default: `configured` baseline or local `chatgpt_subscription` |
 
 `chat_api` uses configurable JSON Chat Completions-shaped HTTP, following
 [Groq compatibility](https://console.groq.com/docs/openai) and
@@ -143,6 +168,75 @@ make zero model calls. See [live validation](docs/LIVE_LLM_VALIDATION.md) for th
 protocol and preserved measurements. HTTP mocks also cover malformed outputs,
 forbidden calls, retries and budgets. Quote-first generation trades conversational
 fluency for stronger policy-claim integrity.
+
+## Optional local ChatGPT subscription and model picker
+
+For personal use on a native local Python server, enable the subscription controls:
+
+```bash
+OPSPILOT_SUBSCRIPTION_ENABLED=true python -m uvicorn opspilot.api.main:app --host 127.0.0.1 --port 8180 --workers 1
+```
+
+Open `http://127.0.0.1:8180` (use `127.0.0.1`, not `localhost`). Select **ChatGPT plan**,
+then **Continue with ChatGPT**. Complete the official browser sign-in and allow
+ChatGPT plan usage. Choose a model from the account-specific **Available GPT model**
+list before investigating. **Add account** creates a separate registration; the
+account picker and **Refresh models** reload the current model catalog. **Sign out**
+clears local tokens and attempts session revocation. A failed remote revocation is
+reported so it can be completed in ChatGPT settings.
+
+This uses OAuth, not an OpenAI API key or existing Codex credential files. The
+model catalog comes from `/v1/models` using the selected account's token; inference
+uses the public `/v1/responses` with `store=false` and `stream=true`. The existing
+JSON plan/paragraph-selector contracts, typed executor and grounding checks remain.
+Only completed, schema-valid assistant text is accepted; partial streams and
+provider failures never trigger an API-key billing fallback. Selected provider/model
+and token usage appear in the structured answer. Subscription usage has no inferred
+USD cost. Available models and eligibility depend on the signed-in account.
+
+Credentials, account identities and stable host ID are stored atomically under
+ignored `var/chatgpt/` (or the configured data directory), with directories `0700`
+and files `0600`. They are excluded from Docker build contexts and release source.
+Tokens never go to browser storage or API status responses. OAuth callbacks suppress
+query strings in access logs. PKCE, browser-bound state, verified OIDC signature,
+issuer/audience/expiry/nonce and granted plan scopes are checked before activation.
+Refresh operations are serialized across threads/processes. Use one server worker
+so the short-lived callback transaction stays with the listener that created it.
+
+These account controls require loopback client/host and same-origin browser POSTs.
+They are disabled by default and intended for native personal local use, not the
+public Docker/VPS demo. Existing API and offline modes remain available through
+**Configured baseline**. Connecting an account does not consume inference by itself;
+investigations using ChatGPT plan count toward the existing subscription limits.
+Review app limits at [Manage usage](https://chatgpt.com/settings/usage).
+
+Protocol references: [registration](https://developers.openai.com/siwc/token-sharing-open-source/sign-in),
+[models/inference](https://developers.openai.com/siwc/token-sharing-open-source/models-and-inference),
+[preview limits](https://developers.openai.com/siwc/token-sharing-open-source/preview-limitations).
+Mock tests exercise this integration; the separately recorded Grok validation does not
+constitute live validation of ChatGPT subscription access or any selected GPT model.
+
+To use the selected ChatGPT account/model as the local Web/API default, set
+`OPSPILOT_DEFAULT_CHAT_PROVIDER=chatgpt_subscription` alongside
+`OPSPILOT_SUBSCRIPTION_ENABLED=true` in the ignored `.env` and restart the local server.
+The model selection is persisted with its account registration. A request without a
+`provider` then uses that subscription default; an explicit `provider="configured"`
+uses the baseline. Missing authorization/model selection fails closed. The operator
+CLI's `ask`/`evaluate` retain their configured baseline for reproducibility.
+
+After signing in and selecting the model, run one complete subscription evaluation:
+
+```bash
+python -m opspilot.cli evaluate-subscription --model gpt-6-luna
+```
+
+The requested model must exactly match the selected available model. Outputs default
+to a new ignored `var/live_chatgpt/` directory; existing reports are never overwritten.
+The runner uses the same fixed cases, tools and graders as API-provider validation,
+records structured-call success, observed usage, traces and latency, and stops on
+authorization/usage rejection or consecutive provider failures. `--smoke` selects
+five existing cases; `--max-http-attempts` bounds paid requests. There is no API-key
+fallback, and subscription usage is not converted to an inferred USD API cost.
 
 ## Measured evaluation
 
@@ -235,6 +329,9 @@ historical file path against the publication scope, requires noreply commit/tag
 identities and UTC Git dates, and normalizes JUnit metadata before validating uploaded artifacts.
 Local unpublished context, credentials, generated stores and caches are excluded.
 The content checks are bounded deterministic checks, not a universal PII detector.
+Runtime ingestion, local indexes and V2 checkpoints are not automatically redacted
+or anonymized. This publication review concerns source/artifact exposure; current
+data remains fictional/synthetic. The [V2 review](docs/V2_REVIEW.md) records scope and holds.
 
 ```bash
 python scripts/check_publication.py --repository .
@@ -247,6 +344,6 @@ For release details, see [V1 notes](docs/releases/v1.0-rag-tools-evals.md) and t
 The source/evidence archives are generated from the exact released Git tree;
 verify downloaded files with `SHA256SUMS`.
 
-Possible future work includes held-out evaluation, dense retrieval if measured
-failures justify it, governed orchestration and access control. These capabilities
-are not part of this implemented V1.
+Further work includes independent evaluation, retrieval optimisation justified by
+measured gaps, governed MCP adapters and production access control. These are outside
+the current delivered demo; the implemented V2 orchestration is documented above.

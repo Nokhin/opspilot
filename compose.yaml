@@ -9,6 +9,8 @@ services:
     environment:
       OPSPILOT_DATA_DIR: /app/var
       OPSPILOT_CORPUS_DIR: /app/corpus/policies
+      OPSPILOT_SUBSCRIPTION_ENABLED: "false"
+      OPSPILOT_DEFAULT_CHAT_PROVIDER: configured
     volumes:
       - opspilot-data:/app/var
     read_only: true

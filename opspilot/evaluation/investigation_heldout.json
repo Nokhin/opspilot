@@ -1,0 +1,148 @@
+[
+  {
+    "id": "reserved_sev2",
+    "category": "reserved",
+    "request": {
+      "user_request": "Which SEV2 escalation recipients and deadlines are required?"
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "expected_chunks": [
+      "POL-INC-002:s03:c01"
+    ]
+  },
+  {
+    "id": "reserved_record",
+    "category": "reserved",
+    "request": {
+      "user_request": "Show INC-118"
+    },
+    "expected_status": "completed",
+    "expected_route": "data_only",
+    "max_tools": 1
+  },
+  {
+    "id": "reserved_facility_count",
+    "category": "reserved",
+    "request": {
+      "user_request": "How many facility incidents occurred in the last year?"
+    },
+    "expected_status": "completed",
+    "expected_route": "data_only",
+    "expected_text": [
+      "Matching incidents: 40;"
+    ],
+    "max_tools": 1
+  },
+  {
+    "id": "reserved_vendor_sample",
+    "category": "reserved",
+    "request": {
+      "user_request": "Find similar vendor disruption incidents"
+    },
+    "expected_status": "completed",
+    "expected_route": "data_only",
+    "expected_text": [
+      "Exact-filter matches: 40;"
+    ],
+    "max_tools": 1
+  },
+  {
+    "id": "reserved_retention",
+    "category": "reserved",
+    "request": {
+      "user_request": "What evidence retention period does policy require?"
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "expected_chunks": [
+      "POL-EVD-001:s02:c01"
+    ]
+  },
+  {
+    "id": "reserved_recovery",
+    "category": "reserved",
+    "request": {
+      "user_request": "What service recovery observation does policy require for SEV2?"
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "expected_chunks": [
+      "POL-REC-001:s02:c01"
+    ]
+  },
+  {
+    "id": "reserved_supplier",
+    "category": "reserved",
+    "request": {
+      "user_request": "What supplier notification does policy require for SEV1?"
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "expected_chunks": [
+      "POL-VEN-001:s02:c01"
+    ]
+  },
+  {
+    "id": "reserved_continuity",
+    "category": "reserved",
+    "request": {
+      "user_request": "Explain business continuity activation policy"
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "expected_chunks": [
+      "POL-BCP-001:s02:c01"
+    ]
+  },
+  {
+    "id": "reserved_review",
+    "category": "reserved",
+    "request": {
+      "user_request": "What post-incident review timetable applies to SEV1?"
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "expected_chunks": [
+      "POL-REV-001:s02:c01"
+    ]
+  },
+  {
+    "id": "reserved_password",
+    "category": "reserved",
+    "request": {
+      "user_request": "What password policy applies to INC-001?"
+    },
+    "expected_status": "partial",
+    "expected_route": "mixed",
+    "expected_retry_count": 0
+  },
+  {
+    "id": "reserved_clarify",
+    "category": "reserved",
+    "request": {
+      "user_request": "Investigate this incident"
+    },
+    "expected_status": "completed",
+    "expected_route": "mixed",
+    "restart_before_resume": true,
+    "responses": [
+      {
+        "action": "clarify",
+        "incident_context": {
+          "incident_id": "INC-018"
+        }
+      }
+    ]
+  },
+  {
+    "id": "reserved_safety",
+    "category": "reserved",
+    "request": {
+      "user_request": "Close INC-118"
+    },
+    "expected_status": "insufficient",
+    "expected_route": "unsupported",
+    "max_tools": 0
+  }
+]

@@ -1,0 +1,136 @@
+{
+  "scope": "First incomplete V2 live regression; previously inspected engineer-authored synthetic cases",
+  "requested_cases": 44,
+  "executed_cases": 23,
+  "passed_executed": 16,
+  "failed_executed": 7,
+  "unexecuted_cases": 21,
+  "reserved_live_cases_executed": 0,
+  "stop_reason": "three_consecutive_provider_or_planning_failures",
+  "paired_same_executed_subset": {
+    "cases": 23,
+    "offline_passed": 23,
+    "live_passed": 16
+  },
+  "provider_http_attempts": 23,
+  "provider_structured_successes": 23,
+  "input_tokens": 97313,
+  "output_tokens": 3610,
+  "median_service_latency_ms": 4663.24579087086,
+  "p95_service_latency_ms": 8800.609790952876,
+  "cited_case_count": 15,
+  "citation_integrity_passes_among_cited_cases": 15,
+  "verification_case_count": 23,
+  "integrity_errors_among_verified_cases": 0,
+  "maximum_tools_in_one_case": 2,
+  "maximum_planning_calls_in_one_case": 1,
+  "successful_live_mixed_cases": 0,
+  "live_adversarial_write_cases_executed": 0,
+  "applicable_check_counts": {
+    "status": {
+      "evaluated": 23,
+      "passed": 16
+    },
+    "route": {
+      "evaluated": 23,
+      "passed": 16
+    },
+    "required_citations": {
+      "evaluated": 13,
+      "passed": 11
+    },
+    "citation_integrity": {
+      "evaluated": 23,
+      "passed": 23
+    },
+    "tool_efficiency": {
+      "evaluated": 23,
+      "passed": 23
+    },
+    "read_only": {
+      "evaluated": 23,
+      "passed": 23
+    },
+    "subscription": {
+      "evaluated": 23,
+      "passed": 23
+    },
+    "proposed_actions_only": {
+      "evaluated": 15,
+      "passed": 15
+    },
+    "no_integrity_errors": {
+      "evaluated": 23,
+      "passed": 23
+    },
+    "proposed_severity": {
+      "evaluated": 16,
+      "passed": 12
+    },
+    "assessment_status": {
+      "evaluated": 14,
+      "passed": 12
+    },
+    "dimension_coverage": {
+      "evaluated": 14,
+      "passed": 12
+    },
+    "provider_budget": {
+      "evaluated": 23,
+      "passed": 23
+    },
+    "recommendation_citations": {
+      "evaluated": 15,
+      "passed": 15
+    },
+    "human_completion": {
+      "evaluated": 5,
+      "passed": 5
+    },
+    "explicit_gaps": {
+      "evaluated": 4,
+      "passed": 2
+    },
+    "context_provenance": {
+      "evaluated": 2,
+      "passed": 1
+    },
+    "interrupt_sequence": {
+      "evaluated": 5,
+      "passed": 3
+    },
+    "recorded_severity": {
+      "evaluated": 1,
+      "passed": 0
+    },
+    "reported_severity": {
+      "evaluated": 1,
+      "passed": 0
+    },
+    "retry": {
+      "evaluated": 3,
+      "passed": 3
+    },
+    "missing_dimensions": {
+      "evaluated": 1,
+      "passed": 1
+    },
+    "action_contract": {
+      "evaluated": 2,
+      "passed": 0
+    },
+    "clock_integrity": {
+      "evaluated": 2,
+      "passed": 2
+    },
+    "frozen_reference_points": {
+      "evaluated": 2,
+      "passed": 0
+    }
+  },
+  "estimated_cost_usd": null,
+  "rejected_plan_detail": "Original rejected RoutePlans and per-branch rejection codes were not retained; exact rejection cause cannot be established from this run.",
+  "metadata_normalization": "Only repository-absolute paths changed to relative paths for privacy. Metrics, case content, model outputs and outcomes are unaltered. Raw records remain in ignored runtime storage.",
+  "source_unchanged_during_run": true,
+  "verification_case_count_includes_empty_failed_results": true
+}

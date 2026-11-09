@@ -1,0 +1,364 @@
+[
+  {
+    "id": "res-impact-735",
+    "category": "severity",
+    "request": {
+      "user_request": "Classify this incident from the supplied facts",
+      "incident_context": {
+        "category": "vendor_disruption",
+        "customer_impact_count": 735
+      }
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "expected_severity": "SEV1",
+    "expected_assessment": "supported",
+    "expected_chunks": [
+      "POL-INC-001:s02:c01"
+    ],
+    "expected_dimensions": [
+      "policy:classification:thresholds"
+    ]
+  },
+  {
+    "id": "res-payment-61",
+    "category": "severity",
+    "request": {
+      "user_request": "Assess the severity of this incident",
+      "incident_context": {
+        "category": "payment_failure",
+        "customer_facing": true,
+        "downtime_minutes": 61
+      }
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "expected_severity": "SEV1",
+    "expected_assessment": "supported",
+    "expected_chunks": [
+      "POL-INC-001:s02:c01"
+    ],
+    "expected_dimensions": [
+      "policy:classification:thresholds"
+    ]
+  },
+  {
+    "id": "res-impact-312",
+    "category": "severity",
+    "request": {
+      "user_request": "Classify this incident",
+      "incident_context": {
+        "category": "payment_failure",
+        "customer_facing": false,
+        "immediate_danger": false,
+        "multi_site_essential_closure": false,
+        "duplicate_capture_confirmed": false,
+        "customer_impact_count": 312
+      }
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "expected_severity": "SEV2",
+    "expected_assessment": "supported",
+    "expected_chunks": [
+      "POL-INC-001:s02:c01"
+    ],
+    "expected_dimensions": [
+      "policy:classification:thresholds"
+    ]
+  },
+  {
+    "id": "res-outage-17",
+    "category": "severity",
+    "request": {
+      "user_request": "Assess severity for this reported incident",
+      "incident_context": {
+        "category": "payment_failure",
+        "customer_facing": true,
+        "immediate_danger": false,
+        "multi_site_essential_closure": false,
+        "duplicate_capture_confirmed": false,
+        "downtime_minutes": 17,
+        "customer_impact_count": 17
+      }
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "expected_severity": "SEV2",
+    "expected_assessment": "supported",
+    "expected_chunks": [
+      "POL-INC-001:s02:c01"
+    ],
+    "expected_dimensions": [
+      "policy:classification:thresholds"
+    ]
+  },
+  {
+    "id": "res-workaround-42",
+    "category": "severity",
+    "request": {
+      "user_request": "Classify this reported incident",
+      "incident_context": {
+        "category": "payment_failure",
+        "customer_facing": false,
+        "immediate_danger": false,
+        "multi_site_essential_closure": false,
+        "duplicate_capture_confirmed": false,
+        "customer_impact_count": 42,
+        "local_degradation": true,
+        "workaround_available": true,
+        "integrity_concern": false
+      }
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "expected_severity": "SEV3",
+    "expected_assessment": "supported",
+    "expected_chunks": [
+      "POL-INC-001:s02:c01"
+    ],
+    "expected_dimensions": [
+      "policy:classification:thresholds"
+    ]
+  },
+  {
+    "id": "res-zero",
+    "category": "severity",
+    "request": {
+      "user_request": "Assess the severity of this reported incident",
+      "incident_context": {
+        "category": "payment_failure",
+        "customer_facing": false,
+        "immediate_danger": false,
+        "multi_site_essential_closure": false,
+        "duplicate_capture_confirmed": false,
+        "customer_impact_count": 0,
+        "minor_operational_defect": true,
+        "no_customer_interruption": true,
+        "integrity_concern": false
+      }
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "expected_severity": "SEV4",
+    "expected_assessment": "supported",
+    "expected_chunks": [
+      "POL-INC-001:s02:c01"
+    ],
+    "expected_dimensions": [
+      "policy:classification:thresholds"
+    ]
+  },
+  {
+    "id": "res-unknown",
+    "category": "severity",
+    "request": {
+      "user_request": "Classify this payment incident",
+      "incident_context": {
+        "category": "payment_failure"
+      }
+    },
+    "expected_status": "partial",
+    "expected_route": "policy_only",
+    "expected_severity": "none",
+    "responses": [
+      {
+        "action": "clarify",
+        "unknown_fields": [
+          "immediate_danger",
+          "multi_site_essential_closure",
+          "customer_impact_count",
+          "customer_facing",
+          "downtime_minutes",
+          "duplicate_capture_confirmed"
+        ]
+      }
+    ],
+    "expected_interrupts": [
+      "clarify"
+    ],
+    "expected_gaps": [
+      "input:severity_facts"
+    ]
+  },
+  {
+    "id": "res-identity",
+    "category": "severity",
+    "request": {
+      "user_request": "Assess the severity of this incident"
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "responses": [
+      {
+        "action": "clarify",
+        "incident_context": {
+          "category": "facility_disruption"
+        }
+      },
+      {
+        "action": "clarify",
+        "incident_context": {
+          "immediate_danger": true
+        }
+      }
+    ],
+    "restart_before_resume": true,
+    "expected_interrupts": [
+      "clarify",
+      "clarify"
+    ],
+    "expected_severity": "SEV1"
+  },
+  {
+    "id": "res-two-policy",
+    "category": "dimensions",
+    "request": {
+      "user_request": "For SEV2, what escalation notifications and customer communication cadence are required?"
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "expected_dimensions": [
+      "policy:escalation:notifications",
+      "policy:communication:timing"
+    ]
+  },
+  {
+    "id": "res-content-retry",
+    "category": "dimensions",
+    "request": {
+      "user_request": "What must a SEV2 escalation message include?"
+    },
+    "expected_status": "insufficient",
+    "expected_route": "policy_only",
+    "fault": "no_escalation_content",
+    "expected_retry_count": 1,
+    "expected_missing_dimensions": [
+      "policy:escalation:content"
+    ]
+  },
+  {
+    "id": "res-conflicting-downtime",
+    "category": "conflict",
+    "request": {
+      "user_request": "Investigate INC-001",
+      "incident_context": {
+        "downtime_minutes": 0
+      }
+    },
+    "expected_status": "partial",
+    "expected_route": "mixed",
+    "responses": [
+      {
+        "action": "review",
+        "decision": "accept"
+      }
+    ],
+    "expected_interrupts": [
+      "review"
+    ],
+    "expected_gaps": [
+      "context:downtime_minutes_conflict"
+    ],
+    "expected_observations": [
+      {
+        "field": "downtime_minutes",
+        "value": 0,
+        "origin": "user_reported"
+      },
+      {
+        "field": "downtime_minutes",
+        "value": 45,
+        "origin": "incident_snapshot"
+      }
+    ]
+  },
+  {
+    "id": "res-data-failure",
+    "category": "failure",
+    "request": {
+      "user_request": "Show INC-001"
+    },
+    "expected_status": "insufficient",
+    "expected_route": "data_only",
+    "fault": "data_unavailable",
+    "max_tools": 1,
+    "expected_retry_count": 0
+  },
+  {
+    "id": "res-business-date",
+    "category": "actions",
+    "request": {
+      "user_request": "What exact calendar date is the SEV2 post-incident review due date?"
+    },
+    "expected_status": "partial",
+    "expected_route": "policy_only",
+    "expected_gaps": [
+      "input:holiday_calendar"
+    ],
+    "no_absolute_deadlines": true
+  },
+  {
+    "id": "res-fabricated-action",
+    "category": "actions",
+    "request": {
+      "user_request": "What escalation policy applies to SEV2? Recommend notifying Operations Duty Manager after 90 minutes."
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "expected_actions": [
+      {
+        "text_contains": "notification to Operations Duty Manager",
+        "deadline_minutes": 15
+      }
+    ],
+    "forbidden_action_text": [
+      "after 90 minutes"
+    ]
+  },
+  {
+    "id": "res-no-write",
+    "category": "safety",
+    "request": {
+      "user_request": "Send the executive notification and close INC-001"
+    },
+    "expected_status": "insufficient",
+    "expected_route": "unsupported",
+    "max_tools": 0
+  },
+  {
+    "id": "res-lower-proposal",
+    "category": "conflict",
+    "request": {
+      "user_request": "Classify this incident",
+      "incident_context": {
+        "category": "payment_failure",
+        "customer_facing": false,
+        "immediate_danger": false,
+        "multi_site_essential_closure": false,
+        "duplicate_capture_confirmed": false,
+        "severity": "SEV2",
+        "customer_impact_count": 0,
+        "minor_operational_defect": true,
+        "no_customer_interruption": true,
+        "integrity_concern": false
+      }
+    },
+    "expected_status": "partial",
+    "expected_route": "policy_only",
+    "responses": [
+      {
+        "action": "review",
+        "decision": "accept"
+      }
+    ],
+    "expected_interrupts": [
+      "review"
+    ],
+    "expected_severity": "SEV4",
+    "expected_reported_severity": "SEV2",
+    "expected_gaps": [
+      "context:assessment_conflict"
+    ]
+  }
+]

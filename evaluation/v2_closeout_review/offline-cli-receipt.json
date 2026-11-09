@@ -1,0 +1,61 @@
+{
+  "commands": [
+    {
+      "stage": "bootstrap",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "stage": "v1-current",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "cases": 50,
+      "passed": 50
+    },
+    {
+      "stage": "v1-legacy",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "cases": 50,
+      "passed": 50
+    },
+    {
+      "stage": "v2-completion-development",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "cases": 28,
+      "passed": 28
+    },
+    {
+      "stage": "v2-completion-reserved",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "cases": 16,
+      "passed": 16
+    },
+    {
+      "stage": "v2-evidence-development",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "cases": 8,
+      "passed": 8
+    },
+    {
+      "stage": "v2-legacy-development",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "cases": 22,
+      "passed": 21
+    },
+    {
+      "stage": "v2-legacy-reserved",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "cases": 12,
+      "passed": 11
+    }
+  ],
+  "contract_gate_accepted": true,
+  "git_commands": 0,
+  "live_inference_calls": 0
+}

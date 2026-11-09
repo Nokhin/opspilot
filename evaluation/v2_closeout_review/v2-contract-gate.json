@@ -1,0 +1,58 @@
+{
+  "accepted": true,
+  "suites": [
+    {
+      "suite": "v2-completion-development",
+      "cases": 28,
+      "passed": 28,
+      "original_failure_ids": [],
+      "documented_contract_differences": [],
+      "gate_accepted": true,
+      "scores_adjusted": false
+    },
+    {
+      "suite": "v2-completion-reserved",
+      "cases": 16,
+      "passed": 16,
+      "original_failure_ids": [],
+      "documented_contract_differences": [],
+      "gate_accepted": true,
+      "scores_adjusted": false
+    },
+    {
+      "suite": "v2-evidence-development",
+      "cases": 8,
+      "passed": 8,
+      "original_failure_ids": [],
+      "documented_contract_differences": [],
+      "gate_accepted": true,
+      "scores_adjusted": false
+    },
+    {
+      "suite": "v2-legacy-development",
+      "cases": 22,
+      "passed": 21,
+      "original_failure_ids": [
+        "mixed_comparison"
+      ],
+      "documented_contract_differences": [
+        "mixed_comparison"
+      ],
+      "gate_accepted": true,
+      "scores_adjusted": false
+    },
+    {
+      "suite": "v2-legacy-reserved",
+      "cases": 12,
+      "passed": 11,
+      "original_failure_ids": [
+        "reserved_clarify"
+      ],
+      "documented_contract_differences": [
+        "reserved_clarify"
+      ],
+      "gate_accepted": true,
+      "scores_adjusted": false
+    }
+  ]
+}

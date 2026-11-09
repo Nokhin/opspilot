@@ -1,0 +1,6 @@
+{
+  "scope": "New policy-derived development cases; no new held-out claim",
+  "cases": 8,
+  "cases_sha256": "abd00339cba1d473bdad2bd3f99a36f92650176326cf85033fe6b1e07b3dd864",
+  "grading": "Existing deterministic grader unchanged; original case files and expectations preserved"
+}

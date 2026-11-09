@@ -1,0 +1,691 @@
+{
+  "recorded_at_utc": "2026-11-09T08:14:57.909586+00:00",
+  "scope": "Offline planner contract and bounded rejection diagnostics",
+  "starting_tests_passed": 219,
+  "current_tests_passed": 237,
+  "added_test_cases": 18,
+  "live_inference_http_attempts": 0,
+  "model_tokens_spent": 0,
+  "regressions": {
+    "completion-development": {
+      "cases": 28,
+      "executed": 28,
+      "passed": 28,
+      "failure_ids": [],
+      "median_latency_ms": 5.0616879016160965,
+      "max_latency_ms": 12.252582935616374,
+      "tool_calls": 39,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "paid_inference_calls": 0,
+      "common_v1_tasks": 0,
+      "checks_passed": {
+        "status": 28,
+        "route": 28,
+        "required_dimensions": 28,
+        "required_citations": 28,
+        "citation_integrity": 28,
+        "frozen_reference_points": 28,
+        "tool_efficiency": 28,
+        "retry": 28,
+        "read_only": 28,
+        "human_completion": 28,
+        "offline": 28,
+        "proposed_actions_only": 28,
+        "no_integrity_errors": 28,
+        "proposed_severity": 28,
+        "assessment_status": 28,
+        "recorded_severity": 28,
+        "reported_severity": 28,
+        "dimension_coverage": 28,
+        "missing_dimensions": 28,
+        "explicit_gaps": 28,
+        "context_provenance": 28,
+        "action_contract": 28,
+        "no_forbidden_recommendations": 28,
+        "clock_integrity": 28,
+        "interrupt_sequence": 28,
+        "provider_budget": 28,
+        "recommendation_citations": 28
+      },
+      "expectation_coverage": {
+        "status": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "route": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "required_dimensions": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "required_citations": {
+          "evaluated": 13,
+          "passed": 13
+        },
+        "citation_integrity": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "frozen_reference_points": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "tool_efficiency": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "retry": {
+          "evaluated": 3,
+          "passed": 3
+        },
+        "read_only": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "human_completion": {
+          "evaluated": 7,
+          "passed": 7
+        },
+        "offline": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "proposed_actions_only": {
+          "evaluated": 26,
+          "passed": 26
+        },
+        "no_integrity_errors": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "proposed_severity": {
+          "evaluated": 18,
+          "passed": 18
+        },
+        "assessment_status": {
+          "evaluated": 14,
+          "passed": 14
+        },
+        "recorded_severity": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "reported_severity": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "dimension_coverage": {
+          "evaluated": 14,
+          "passed": 14
+        },
+        "missing_dimensions": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "explicit_gaps": {
+          "evaluated": 6,
+          "passed": 6
+        },
+        "context_provenance": {
+          "evaluated": 3,
+          "passed": 3
+        },
+        "action_contract": {
+          "evaluated": 3,
+          "passed": 3
+        },
+        "no_forbidden_recommendations": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "clock_integrity": {
+          "evaluated": 3,
+          "passed": 3
+        },
+        "interrupt_sequence": {
+          "evaluated": 7,
+          "passed": 7
+        },
+        "provider_budget": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "recommendation_citations": {
+          "evaluated": 26,
+          "passed": 26
+        }
+      }
+    },
+    "completion-reserved-regression": {
+      "cases": 16,
+      "executed": 16,
+      "passed": 14,
+      "failure_ids": [
+        "res-two-policy",
+        "res-business-date"
+      ],
+      "median_latency_ms": 5.947937606833875,
+      "max_latency_ms": 10.38191793486476,
+      "tool_calls": 20,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "paid_inference_calls": 0,
+      "common_v1_tasks": 0,
+      "checks_passed": {
+        "status": 14,
+        "route": 16,
+        "required_dimensions": 16,
+        "required_citations": 16,
+        "citation_integrity": 16,
+        "frozen_reference_points": 16,
+        "tool_efficiency": 16,
+        "retry": 16,
+        "read_only": 16,
+        "human_completion": 16,
+        "offline": 16,
+        "proposed_actions_only": 16,
+        "no_integrity_errors": 16,
+        "proposed_severity": 16,
+        "assessment_status": 16,
+        "recorded_severity": 16,
+        "reported_severity": 16,
+        "dimension_coverage": 15,
+        "missing_dimensions": 16,
+        "explicit_gaps": 16,
+        "context_provenance": 16,
+        "action_contract": 16,
+        "no_forbidden_recommendations": 16,
+        "clock_integrity": 16,
+        "interrupt_sequence": 16,
+        "provider_budget": 16,
+        "recommendation_citations": 16
+      },
+      "expectation_coverage": {
+        "status": {
+          "evaluated": 16,
+          "passed": 14
+        },
+        "route": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "required_dimensions": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "required_citations": {
+          "evaluated": 6,
+          "passed": 6
+        },
+        "citation_integrity": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "frozen_reference_points": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "tool_efficiency": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "retry": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "read_only": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "human_completion": {
+          "evaluated": 4,
+          "passed": 4
+        },
+        "offline": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "proposed_actions_only": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "no_integrity_errors": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "proposed_severity": {
+          "evaluated": 9,
+          "passed": 9
+        },
+        "assessment_status": {
+          "evaluated": 6,
+          "passed": 6
+        },
+        "recorded_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "reported_severity": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "dimension_coverage": {
+          "evaluated": 7,
+          "passed": 6
+        },
+        "missing_dimensions": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "explicit_gaps": {
+          "evaluated": 4,
+          "passed": 4
+        },
+        "context_provenance": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "action_contract": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "no_forbidden_recommendations": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "clock_integrity": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "interrupt_sequence": {
+          "evaluated": 4,
+          "passed": 4
+        },
+        "provider_budget": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "recommendation_citations": {
+          "evaluated": 12,
+          "passed": 12
+        }
+      }
+    },
+    "legacy-development": {
+      "cases": 22,
+      "executed": 22,
+      "passed": 21,
+      "failure_ids": [
+        "mixed_comparison"
+      ],
+      "median_latency_ms": 5.54391706828028,
+      "max_latency_ms": 9.282998973503709,
+      "tool_calls": 30,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "paid_inference_calls": 0,
+      "common_v1_tasks": 9,
+      "checks_passed": {
+        "status": 21,
+        "route": 21,
+        "required_dimensions": 22,
+        "required_citations": 22,
+        "citation_integrity": 22,
+        "frozen_reference_points": 21,
+        "tool_efficiency": 22,
+        "retry": 22,
+        "read_only": 22,
+        "human_completion": 22,
+        "offline": 22,
+        "proposed_actions_only": 22,
+        "no_integrity_errors": 22,
+        "proposed_severity": 22,
+        "assessment_status": 22,
+        "recorded_severity": 22,
+        "reported_severity": 22,
+        "dimension_coverage": 22,
+        "missing_dimensions": 22,
+        "explicit_gaps": 22,
+        "context_provenance": 22,
+        "action_contract": 22,
+        "no_forbidden_recommendations": 22,
+        "clock_integrity": 22,
+        "interrupt_sequence": 22,
+        "provider_budget": 22,
+        "recommendation_citations": 22
+      },
+      "expectation_coverage": {
+        "status": {
+          "evaluated": 22,
+          "passed": 21
+        },
+        "route": {
+          "evaluated": 22,
+          "passed": 21
+        },
+        "required_dimensions": {
+          "evaluated": 3,
+          "passed": 3
+        },
+        "required_citations": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "citation_integrity": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "frozen_reference_points": {
+          "evaluated": 5,
+          "passed": 4
+        },
+        "tool_efficiency": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "retry": {
+          "evaluated": 5,
+          "passed": 5
+        },
+        "read_only": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "human_completion": {
+          "evaluated": 4,
+          "passed": 4
+        },
+        "offline": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "proposed_actions_only": {
+          "evaluated": 9,
+          "passed": 9
+        },
+        "no_integrity_errors": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "proposed_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "assessment_status": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "recorded_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "reported_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "dimension_coverage": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "missing_dimensions": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "explicit_gaps": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "context_provenance": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "action_contract": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "no_forbidden_recommendations": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "clock_integrity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "interrupt_sequence": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "provider_budget": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "recommendation_citations": {
+          "evaluated": 9,
+          "passed": 9
+        }
+      }
+    },
+    "legacy-reserved-regression": {
+      "cases": 12,
+      "executed": 12,
+      "passed": 11,
+      "failure_ids": [
+        "reserved_clarify"
+      ],
+      "median_latency_ms": 5.167082999832928,
+      "max_latency_ms": 12.275833170861006,
+      "tool_calls": 15,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "paid_inference_calls": 0,
+      "common_v1_tasks": 0,
+      "checks_passed": {
+        "status": 11,
+        "route": 12,
+        "required_dimensions": 12,
+        "required_citations": 12,
+        "citation_integrity": 12,
+        "frozen_reference_points": 12,
+        "tool_efficiency": 12,
+        "retry": 12,
+        "read_only": 12,
+        "human_completion": 12,
+        "offline": 12,
+        "proposed_actions_only": 12,
+        "no_integrity_errors": 12,
+        "proposed_severity": 12,
+        "assessment_status": 12,
+        "recorded_severity": 12,
+        "reported_severity": 12,
+        "dimension_coverage": 12,
+        "missing_dimensions": 12,
+        "explicit_gaps": 12,
+        "context_provenance": 12,
+        "action_contract": 12,
+        "no_forbidden_recommendations": 12,
+        "clock_integrity": 12,
+        "interrupt_sequence": 12,
+        "provider_budget": 12,
+        "recommendation_citations": 12
+      },
+      "expectation_coverage": {
+        "status": {
+          "evaluated": 12,
+          "passed": 11
+        },
+        "route": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "required_dimensions": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "required_citations": {
+          "evaluated": 6,
+          "passed": 6
+        },
+        "citation_integrity": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "frozen_reference_points": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "tool_efficiency": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "retry": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "read_only": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "human_completion": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "offline": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "proposed_actions_only": {
+          "evaluated": 7,
+          "passed": 7
+        },
+        "no_integrity_errors": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "proposed_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "assessment_status": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "recorded_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "reported_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "dimension_coverage": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "missing_dimensions": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "explicit_gaps": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "context_provenance": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "action_contract": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "no_forbidden_recommendations": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "clock_integrity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "interrupt_sequence": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "provider_budget": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "recommendation_citations": {
+          "evaluated": 7,
+          "passed": 7
+        }
+      }
+    }
+  },
+  "preserved_baseline_file_count": 196,
+  "preserved_baseline_files_changed": [],
+  "source_sha256": {
+    "opspilot/investigation/assessment.py": "539bc71cb6cdf0c03f7c36cb6684b656062aefcab293f74c89a1afedad9d8bb1",
+    "opspilot/investigation/service.py": "3b68718280a2409c6e384ee4749c5e5a816cf97233138217fd666010488dd8d6",
+    "opspilot/investigation/chains.py": "ba4ef6598a68617c287eb1478f48d2ef9538dbfe4b3b95ccf74b69b054103c50",
+    "opspilot/investigation/models.py": "93ad74bb47089cf872a767c434183d45922efe5ba5f46dc9d464bf7b3e6a6100",
+    "opspilot/investigation/graph.py": "ae217211a604d0cad6247979035a5dabe9423b86ccf629845bc6a202909ca3ee",
+    "opspilot/investigation/brief.py": "618814061a01887a2d3625e17f21e68e1ed6c1d43e04aebe264eeaef4508e723",
+    "opspilot/investigation/__init__.py": "60bc8637174688a1d5b04cd2b87176cd35b6da510099e0e10eb86ab031983159",
+    "opspilot/investigation/context.py": "326f84a03abc512c887ede92c7b099752c7a04e2496d904b3924658aed042e6b",
+    "opspilot/investigation/planning.py": "13ee2168e76bbb71ecc88edbbd003d29c53d8e6902f453e0eae94489ab6125c2",
+    "opspilot/investigation/evidence.py": "c65a5efe50c210a846fbd17216cf18fd135af473c168e5bab2a2697b4bc50638",
+    "opspilot/investigation/policy_contracts.json": "db64214173ef16e524324391a230d769ef01935c5f10f1ff4477d5a0971cc09b",
+    "opspilot/evaluation/investigation.py": "e4a561f409629bf00e05fdd578f32a699314d8b2776df08c7cf1675c9c4f84bc",
+    "opspilot/cli.py": "72d014d5e8c21093fc8cb95f7616a32c91320c94281b3cf2f8c8fc003ec17bcd",
+    "opspilot/evaluation/investigation_live.py": "bca499ee551781c77c1a234472b726c059df8b8e7ca9c68a66a1602f394df087",
+    "opspilot/providers/chatgpt.py": "68c427f8fe7c18baafb1cffd20d742e4c7f49ff32489cd9d1ccbe904100c4a1d"
+  },
+  "diagnostic_fields": [
+    "code",
+    "stage",
+    "required_route",
+    "proposed_route",
+    "required_tools",
+    "proposed_tools"
+  ],
+  "diagnostic_excludes": [
+    "raw model plan",
+    "tool arguments",
+    "prompt",
+    "credentials",
+    "profile binding",
+    "exception body"
+  ],
+  "original_live_result": {
+    "executed": 23,
+    "passed": 16,
+    "failed": 7,
+    "unexecuted": 21,
+    "unchanged": true,
+    "exact_rejection_causes": "not recoverable"
+  },
+  "known_limits": [
+    "Live planner improvement remains unmeasured",
+    "Original reserved failures remain",
+    "Task 8 fresh Docker deferred",
+    "Task 10 publication and hosted CI incomplete",
+    "Graph contract 5 rejects older pending snapshots without deletion"
+  ],
+  "development_failures": [
+    "Initial fixture teardown closed the same store twice; fixture close guard corrected",
+    "Initial human review expected completed despite missing severity facts; partial and explicit missing facts now asserted",
+    "Local report-printing wrapper expected a full report instead of returned summary; persisted result reused without overwrite",
+    "Sandbox initially blocked local bind and HTTP; authorized loopback checks passed outside sandbox"
+  ],
+  "new_live_proposal": "NEXT_LIVE_PROPOSAL.json",
+  "hygiene": {
+    "public_scope_files_reviewed": 297,
+    "all_stored_git_objects_reviewed": 491,
+    "reachable_commits": 2,
+    "violations": 0,
+    "broken_local_markdown_links": 0,
+    "proposal_source_drift": []
+  }
+}

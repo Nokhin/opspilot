@@ -2,6 +2,7 @@ FROM python:3.11-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
+    LANGSMITH_TRACING=false \
     OPSPILOT_DATA_DIR=/app/var \
     OPSPILOT_CORPUS_DIR=/app/corpus/policies
 

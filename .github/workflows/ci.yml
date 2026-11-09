@@ -91,6 +91,22 @@ jobs:
                   raise SystemExit(f"{name}: incomplete, failed or non-offline evaluation")
               print(f"{name}: 50/50 offline cases passed")
           PY
+      - name: Evaluate current V2 suites
+        run: |
+          python -m opspilot.cli evaluate-investigations --suite completion --split development --output var/ci/v2-completion-development
+          python -m opspilot.cli evaluate-investigations --suite completion --split heldout --output var/ci/v2-completion-reserved
+          python -m opspilot.cli evaluate-investigations --cases opspilot/evaluation/investigation_evidence_gaps_dev.json --output var/ci/v2-evidence-development
+      - name: Preserve legacy scores and require exact documented differences
+        run: |
+          set +e
+          python -m opspilot.cli evaluate-investigations --suite legacy --split development --output var/ci/v2-legacy-development
+          legacy_dev_exit=$?
+          python -m opspilot.cli evaluate-investigations --suite legacy --split heldout --output var/ci/v2-legacy-reserved
+          legacy_reserved_exit=$?
+          set -e
+          test "$legacy_dev_exit" -eq 1
+          test "$legacy_reserved_exit" -eq 1
+          python scripts/check_v2_reports.py --root var/ci --output var/ci/v2-contract-gate.json
       - name: Normalize and check artifact metadata
         id: artifact_privacy
         if: always()

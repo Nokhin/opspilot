@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "package_version": "2.0.0.dev0",
+  "wheel_name": "opspilot-2.0.0.dev0-py3-none-any.whl",
+  "wheel_sha256": "ea11b1cc5126af3828b4a03396ec24a525a2c0d7f3750e50e1923bbd25cd7b53",
+  "entries_checked": 61,
+  "violations": [],
+  "reviewed_policy_contract_packaged": true,
+  "development_cases_packaged": true,
+  "git_launches_blocked": 0,
+  "git_launches_executed": 0,
+  "network_or_inference_used": false,
+  "published": false
+}

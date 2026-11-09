@@ -67,6 +67,20 @@ Both modes execute the same deterministic tools:
 - `find_similar_incidents`
 - `calculate_incident_metrics`
 
+An optional native local `chatgpt_subscription` adapter reuses the JSON planner and
+paragraph-selector prompts through the public streaming Responses API. A loopback-only
+OAuth controller handles account registrations, PKCE/OIDC verification, protected token
+storage and rotation. The account's live model catalog populates the UI picker; each
+investigation pins its selected account and model so a concurrent account switch cannot
+redirect the in-flight request. Only terminal `response.completed` output is validated;
+no external Codex agent, shell access, hosted tools or billing fallback is introduced.
+These provider account controls are not production application authentication.
+An explicit `default_chat_provider` chooses the local Web/API default independently
+of the reproducible CLI baseline. Each request pins its current selected model.
+The subscription evaluation runner reuses the existing frozen cases and graders,
+records safe Responses transport observations (including rejected-output usage),
+and enforces request budgets and stop conditions without switching billing routes.
+
 Pydantic validates each proposed call. Tool names and arguments are allow-listed;
 there is no arbitrary SQL, shell, filesystem, network-execution or write tool.
 A tool may appear once in a plan. Tool counts, top-K, timeouts and HTTP retries are
@@ -138,3 +152,9 @@ remain available. See [evaluation](EVALUATION.md),
 [live validation](LIVE_LLM_VALIDATION.md) and [acceptance](FINAL_ACCEPTANCE.md).
 Held-out semantic quality, concurrent VPS performance, production authentication
 and multi-tenancy remain unverified or outside this implementation.
+
+## V2 extension
+
+The V1 core above remains independently available. See [V2 architecture](V2_ARCHITECTURE.md)
+for the implemented additive investigation graph, bounded correction, persistence and
+authorized human resume. V1 release measurements do not measure V2.

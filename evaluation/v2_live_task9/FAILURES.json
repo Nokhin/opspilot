@@ -1,0 +1,109 @@
+[
+  {
+    "id": "dev-duration-35",
+    "status": "failed",
+    "stage_error": "Planning failed validation or evidence service was unavailable.",
+    "checks": [
+      "status",
+      "route",
+      "required_citations",
+      "proposed_severity",
+      "assessment_status",
+      "dimension_coverage"
+    ],
+    "parsed_provider_calls": [
+      "success"
+    ]
+  },
+  {
+    "id": "dev-sev2-duration-10",
+    "status": "failed",
+    "stage_error": "Planning failed validation or evidence service was unavailable.",
+    "checks": [
+      "status",
+      "route",
+      "required_citations",
+      "proposed_severity",
+      "assessment_status",
+      "dimension_coverage"
+    ],
+    "parsed_provider_calls": [
+      "success"
+    ]
+  },
+  {
+    "id": "dev-recorded-conflict",
+    "status": "failed",
+    "stage_error": "Planning failed validation or evidence service was unavailable.",
+    "checks": [
+      "status",
+      "route",
+      "proposed_severity",
+      "recorded_severity",
+      "reported_severity",
+      "explicit_gaps",
+      "context_provenance",
+      "interrupt_sequence",
+      "human_protocol"
+    ],
+    "parsed_provider_calls": [
+      "success"
+    ]
+  },
+  {
+    "id": "dev-impact-conflict",
+    "status": "failed",
+    "stage_error": "Planning failed validation or evidence service was unavailable.",
+    "checks": [
+      "status",
+      "route",
+      "explicit_gaps",
+      "interrupt_sequence",
+      "human_protocol"
+    ],
+    "parsed_provider_calls": [
+      "success"
+    ]
+  },
+  {
+    "id": "dev-clock",
+    "status": "failed",
+    "stage_error": "Planning failed validation or evidence service was unavailable.",
+    "checks": [
+      "status",
+      "route",
+      "action_contract"
+    ],
+    "parsed_provider_calls": [
+      "success"
+    ]
+  },
+  {
+    "id": "dev-retrospective",
+    "status": "failed",
+    "stage_error": "Planning failed validation or evidence service was unavailable.",
+    "checks": [
+      "status",
+      "route",
+      "frozen_reference_points",
+      "action_contract"
+    ],
+    "parsed_provider_calls": [
+      "success"
+    ]
+  },
+  {
+    "id": "dev-resume-comparison",
+    "status": "failed",
+    "stage_error": "Planning failed validation or evidence service was unavailable.",
+    "checks": [
+      "status",
+      "route",
+      "frozen_reference_points",
+      "proposed_severity"
+    ],
+    "parsed_provider_calls": [
+      "success"
+    ]
+  }
+]

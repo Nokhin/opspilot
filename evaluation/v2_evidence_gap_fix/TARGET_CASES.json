@@ -1,0 +1,197 @@
+{
+  "res-two-policy": {
+    "passed": true,
+    "status": "completed",
+    "checks": {
+      "status": true,
+      "route": true,
+      "required_dimensions": true,
+      "required_citations": true,
+      "citation_integrity": true,
+      "frozen_reference_points": true,
+      "tool_efficiency": true,
+      "retry": true,
+      "read_only": true,
+      "human_completion": true,
+      "subscription": true,
+      "proposed_actions_only": true,
+      "no_integrity_errors": true,
+      "proposed_severity": true,
+      "assessment_status": true,
+      "recorded_severity": true,
+      "reported_severity": true,
+      "dimension_coverage": true,
+      "missing_dimensions": true,
+      "explicit_gaps": true,
+      "context_provenance": true,
+      "action_contract": true,
+      "no_forbidden_recommendations": true,
+      "clock_integrity": true,
+      "interrupt_sequence": true,
+      "provider_budget": true,
+      "recommendation_citations": true,
+      "model_fixed": true,
+      "live_provider_valid": true,
+      "human_protocol": true,
+      "live_usage_observed": true
+    },
+    "source_ids": [
+      "POL-INC-002:s03:c01",
+      "POL-INC-002:s01:c01",
+      "POL-COM-001:s02:c01",
+      "POL-COM-001:s01:c01"
+    ],
+    "dimensions": [
+      {
+        "dimension_id": "policy:escalation:notifications",
+        "status": "supported",
+        "evidence_ids": [
+          "POL-INC-002:s03:c01",
+          "POL-INC-002:s01:c01"
+        ],
+        "missing_sections": []
+      },
+      {
+        "dimension_id": "policy:communication:timing",
+        "status": "supported",
+        "evidence_ids": [
+          "POL-COM-001:s02:c01",
+          "POL-COM-001:s01:c01"
+        ],
+        "missing_sections": []
+      }
+    ],
+    "gaps": [],
+    "proposals": [
+      {
+        "text": "Proposed for any incident meeting these policy conditions: check or prepare the unsent notification to Operations Duty Manager and recovery team within 15 minutes of threshold detection. Human confirmation required; not executed.",
+        "evidence_ids": [
+          "POL-INC-002:s03:c01",
+          "POL-INC-002:s01:c01"
+        ],
+        "status": "proposed_not_executed",
+        "owner_role": "Responsible employee / incident coordinator",
+        "trigger": "If SEV2 applies to this incident",
+        "deadline_minutes": 15,
+        "deadline_basis": "threshold detection",
+        "due_at": null,
+        "retrospective": false
+      },
+      {
+        "text": "Proposed for any incident meeting these policy conditions: check or prepare the unsent notification to Customer Service Lead within 30 minutes of threshold detection. Human confirmation required; not executed.",
+        "evidence_ids": [
+          "POL-INC-002:s03:c01",
+          "POL-INC-002:s01:c01"
+        ],
+        "status": "proposed_not_executed",
+        "owner_role": "Responsible employee / incident coordinator",
+        "trigger": "If SEV2 applies to this incident",
+        "deadline_minutes": 30,
+        "deadline_basis": "threshold detection",
+        "due_at": null,
+        "retrospective": false
+      },
+      {
+        "text": "Proposed for any incident meeting these policy conditions: prepare the first customer notice within 30 minutes of threshold detection; propose subsequent updates at least every 60 minutes while impact continues. Human confirmation required; not executed.",
+        "evidence_ids": [
+          "POL-COM-001:s01:c01",
+          "POL-COM-001:s02:c01"
+        ],
+        "status": "proposed_not_executed",
+        "owner_role": "Customer Service Lead",
+        "trigger": "If SEV2 customer impact applies and continues",
+        "deadline_minutes": 30,
+        "deadline_basis": "threshold detection",
+        "due_at": null,
+        "retrospective": false
+      }
+    ]
+  },
+  "res-business-date": {
+    "passed": true,
+    "status": "partial",
+    "checks": {
+      "status": true,
+      "route": true,
+      "required_dimensions": true,
+      "required_citations": true,
+      "citation_integrity": true,
+      "frozen_reference_points": true,
+      "tool_efficiency": true,
+      "retry": true,
+      "read_only": true,
+      "human_completion": true,
+      "subscription": true,
+      "proposed_actions_only": true,
+      "no_integrity_errors": true,
+      "proposed_severity": true,
+      "assessment_status": true,
+      "recorded_severity": true,
+      "reported_severity": true,
+      "dimension_coverage": true,
+      "missing_dimensions": true,
+      "explicit_gaps": true,
+      "context_provenance": true,
+      "action_contract": true,
+      "no_forbidden_recommendations": true,
+      "clock_integrity": true,
+      "interrupt_sequence": true,
+      "provider_budget": true,
+      "recommendation_citations": true,
+      "model_fixed": true,
+      "live_provider_valid": true,
+      "human_protocol": true,
+      "live_usage_observed": true
+    },
+    "source_ids": [
+      "POL-REV-001:s02:c01",
+      "POL-REV-001:s01:c01"
+    ],
+    "dimensions": [
+      {
+        "dimension_id": "policy:review:criteria",
+        "status": "supported",
+        "evidence_ids": [
+          "POL-REV-001:s01:c01"
+        ],
+        "missing_sections": []
+      },
+      {
+        "dimension_id": "policy:review:timetable",
+        "status": "supported",
+        "evidence_ids": [
+          "POL-REV-001:s02:c01"
+        ],
+        "missing_sections": []
+      }
+    ],
+    "gaps": [
+      {
+        "requirement_id": "input:holiday_calendar",
+        "description": "The approved holiday calendar is absent; business-day review deadlines cannot be converted to exact calendar dates.",
+        "retryable": false
+      },
+      {
+        "requirement_id": "input:resolution_time",
+        "description": "A verified resolution timestamp is absent; review deadlines are relative to resolution, not incident opening or the snapshot date.",
+        "retryable": false
+      }
+    ],
+    "proposals": [
+      {
+        "text": "Proposed for any incident meeting these policy conditions: if review is mandatory, schedule it within 5 business days of resolution and publish the draft within 10 business days. Confirm the absent holiday calendar before calculating calendar dates. Human confirmation required; not executed.",
+        "evidence_ids": [
+          "POL-REV-001:s01:c01",
+          "POL-REV-001:s02:c01"
+        ],
+        "status": "proposed_not_executed",
+        "owner_role": "Incident coordinator",
+        "trigger": "After resolution, if a review is required",
+        "deadline_minutes": null,
+        "deadline_basis": null,
+        "due_at": null,
+        "retrospective": false
+      }
+    ]
+  }
+}

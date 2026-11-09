@@ -1,0 +1,58 @@
+{
+  "scope": "Full controlled synthetic subscription regression after planner contract",
+  "execution_completed": true,
+  "all_cases_passed": false,
+  "product_or_release_acceptance": false,
+  "tests_passed": 239,
+  "full_live_cases": 44,
+  "full_live_passed": 42,
+  "failed_ids": [
+    "res-two-policy",
+    "res-business-date"
+  ],
+  "full_live_requests": 42,
+  "full_live_tokens": {
+    "input": 183606,
+    "output": 6119
+  },
+  "slice_live_requests": 50,
+  "slice_tokens": {
+    "input": 218653,
+    "output": 7714
+  },
+  "usd_cost": null,
+  "source_and_case_freezes_preserved": true,
+  "original_stopped_runs_unchanged": true,
+  "max_provider_calls_per_investigation": 1,
+  "input_threshold_overshoot_final_call": 3606,
+  "inference_after_crossing": 0,
+  "read_only_store_checks": [
+    {
+      "run": "run-location",
+      "database_unchanged": true,
+      "index_unchanged": true
+    },
+    {
+      "run": "full-location",
+      "database_unchanged": true,
+      "index_unchanged": true
+    },
+    {
+      "run": "safety-location",
+      "database_unchanged": true,
+      "index_unchanged": true
+    }
+  ],
+  "task_8": "deferred",
+  "task_10": "unperformed",
+  "hygiene": {
+    "public_scope_files": 323,
+    "byte_identical_to_prior_passed_review": 288,
+    "new_or_changed_content_reviewed": 35,
+    "all_git_objects_reviewed": 532,
+    "reachable_commits": 2,
+    "violations": 0,
+    "broken_local_markdown_links": 0,
+    "prior_frozen_files_unchanged": 210
+  }
+}

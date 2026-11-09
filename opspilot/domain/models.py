@@ -270,12 +270,14 @@ class OpsPilotResponse(Contract):
     tool_results: list[ToolResult]
     limitations: list[str]
     latency_ms: float
-    mode: Literal["extractive", "chat_api"]
+    mode: Literal["extractive", "chat_api", "chatgpt_subscription"]
+    model: str | None = None
     usage: Usage
 
 
 class ChatRequest(Contract):
     question: str = Field(min_length=2, max_length=3000)
+    provider: Literal["default", "configured", "chatgpt_subscription"] = "default"
 
 
 class PolicyQuote(Contract):

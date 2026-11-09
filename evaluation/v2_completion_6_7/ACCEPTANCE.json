@@ -1,0 +1,940 @@
+{
+  "date": "2026-11-09",
+  "scope": "Tasks 6 and 7 only; no live inference, credentials, Docker, hosted CI or publication",
+  "branch": "codex/v2-stateful-investigation",
+  "baseline_tests": 189,
+  "final_tests": 204,
+  "added_tests": {
+    "subscription_http_fixtures": 6,
+    "grader_negative_mutations": 8,
+    "expanded_development_contract": 1
+  },
+  "v1_current_regression": [
+    50,
+    50
+  ],
+  "v1_legacy_regression": [
+    50,
+    50
+  ],
+  "evaluations": {
+    "development_initial": {
+      "cases": 28,
+      "executed": 28,
+      "passed": 28,
+      "failure_ids": [],
+      "median_latency_ms": 4.98402095399797,
+      "max_latency_ms": 12.683124979957938,
+      "tool_calls": 39,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "paid_inference_calls": 0,
+      "common_v1_tasks": 0,
+      "checks_passed": {
+        "status": 28,
+        "route": 28,
+        "required_dimensions": 28,
+        "required_citations": 28,
+        "citation_integrity": 28,
+        "frozen_reference_points": 28,
+        "tool_efficiency": 28,
+        "retry": 28,
+        "read_only": 28,
+        "human_completion": 28,
+        "offline": 28,
+        "proposed_actions_only": 28,
+        "no_integrity_errors": 28,
+        "proposed_severity": 28,
+        "assessment_status": 28,
+        "recorded_severity": 28,
+        "reported_severity": 28,
+        "dimension_coverage": 28,
+        "missing_dimensions": 28,
+        "explicit_gaps": 28,
+        "context_provenance": 28,
+        "action_contract": 28,
+        "no_forbidden_recommendations": 28,
+        "clock_integrity": 28,
+        "interrupt_sequence": 28,
+        "provider_budget": 28
+      }
+    },
+    "development_final": {
+      "cases": 28,
+      "executed": 28,
+      "passed": 28,
+      "failure_ids": [],
+      "median_latency_ms": 5.637666559778154,
+      "max_latency_ms": 14.154084026813507,
+      "tool_calls": 39,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "paid_inference_calls": 0,
+      "common_v1_tasks": 0,
+      "checks_passed": {
+        "status": 28,
+        "route": 28,
+        "required_dimensions": 28,
+        "required_citations": 28,
+        "citation_integrity": 28,
+        "frozen_reference_points": 28,
+        "tool_efficiency": 28,
+        "retry": 28,
+        "read_only": 28,
+        "human_completion": 28,
+        "offline": 28,
+        "proposed_actions_only": 28,
+        "no_integrity_errors": 28,
+        "proposed_severity": 28,
+        "assessment_status": 28,
+        "recorded_severity": 28,
+        "reported_severity": 28,
+        "dimension_coverage": 28,
+        "missing_dimensions": 28,
+        "explicit_gaps": 28,
+        "context_provenance": 28,
+        "action_contract": 28,
+        "no_forbidden_recommendations": 28,
+        "clock_integrity": 28,
+        "interrupt_sequence": 28,
+        "provider_budget": 28,
+        "recommendation_citations": 28
+      },
+      "expectation_coverage": {
+        "status": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "route": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "required_dimensions": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "required_citations": {
+          "evaluated": 13,
+          "passed": 13
+        },
+        "citation_integrity": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "frozen_reference_points": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "tool_efficiency": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "retry": {
+          "evaluated": 3,
+          "passed": 3
+        },
+        "read_only": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "human_completion": {
+          "evaluated": 7,
+          "passed": 7
+        },
+        "offline": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "proposed_actions_only": {
+          "evaluated": 26,
+          "passed": 26
+        },
+        "no_integrity_errors": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "proposed_severity": {
+          "evaluated": 18,
+          "passed": 18
+        },
+        "assessment_status": {
+          "evaluated": 14,
+          "passed": 14
+        },
+        "recorded_severity": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "reported_severity": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "dimension_coverage": {
+          "evaluated": 14,
+          "passed": 14
+        },
+        "missing_dimensions": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "explicit_gaps": {
+          "evaluated": 6,
+          "passed": 6
+        },
+        "context_provenance": {
+          "evaluated": 3,
+          "passed": 3
+        },
+        "action_contract": {
+          "evaluated": 3,
+          "passed": 3
+        },
+        "no_forbidden_recommendations": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "clock_integrity": {
+          "evaluated": 3,
+          "passed": 3
+        },
+        "interrupt_sequence": {
+          "evaluated": 7,
+          "passed": 7
+        },
+        "provider_budget": {
+          "evaluated": 28,
+          "passed": 28
+        },
+        "recommendation_citations": {
+          "evaluated": 26,
+          "passed": 26
+        }
+      }
+    },
+    "reserved_first": {
+      "cases": 16,
+      "executed": 16,
+      "passed": 14,
+      "failure_ids": [
+        "res-two-policy",
+        "res-business-date"
+      ],
+      "median_latency_ms": 5.842666840180755,
+      "max_latency_ms": 13.141750125214458,
+      "tool_calls": 20,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "paid_inference_calls": 0,
+      "common_v1_tasks": 0,
+      "checks_passed": {
+        "status": 14,
+        "route": 16,
+        "required_dimensions": 16,
+        "required_citations": 16,
+        "citation_integrity": 16,
+        "frozen_reference_points": 16,
+        "tool_efficiency": 16,
+        "retry": 16,
+        "read_only": 16,
+        "human_completion": 16,
+        "offline": 16,
+        "proposed_actions_only": 16,
+        "no_integrity_errors": 16,
+        "proposed_severity": 16,
+        "assessment_status": 16,
+        "recorded_severity": 16,
+        "reported_severity": 16,
+        "dimension_coverage": 15,
+        "missing_dimensions": 16,
+        "explicit_gaps": 16,
+        "context_provenance": 16,
+        "action_contract": 16,
+        "no_forbidden_recommendations": 16,
+        "clock_integrity": 16,
+        "interrupt_sequence": 16,
+        "provider_budget": 16,
+        "recommendation_citations": 16
+      },
+      "expectation_coverage": {
+        "status": {
+          "evaluated": 16,
+          "passed": 14
+        },
+        "route": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "required_dimensions": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "required_citations": {
+          "evaluated": 6,
+          "passed": 6
+        },
+        "citation_integrity": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "frozen_reference_points": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "tool_efficiency": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "retry": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "read_only": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "human_completion": {
+          "evaluated": 4,
+          "passed": 4
+        },
+        "offline": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "proposed_actions_only": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "no_integrity_errors": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "proposed_severity": {
+          "evaluated": 9,
+          "passed": 9
+        },
+        "assessment_status": {
+          "evaluated": 6,
+          "passed": 6
+        },
+        "recorded_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "reported_severity": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "dimension_coverage": {
+          "evaluated": 7,
+          "passed": 6
+        },
+        "missing_dimensions": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "explicit_gaps": {
+          "evaluated": 4,
+          "passed": 4
+        },
+        "context_provenance": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "action_contract": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "no_forbidden_recommendations": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "clock_integrity": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "interrupt_sequence": {
+          "evaluated": 4,
+          "passed": 4
+        },
+        "provider_budget": {
+          "evaluated": 16,
+          "passed": 16
+        },
+        "recommendation_citations": {
+          "evaluated": 12,
+          "passed": 12
+        }
+      }
+    },
+    "legacy_development_regression": {
+      "cases": 22,
+      "executed": 22,
+      "passed": 21,
+      "failure_ids": [
+        "mixed_comparison"
+      ],
+      "median_latency_ms": 5.763937020674348,
+      "max_latency_ms": 9.810208110138774,
+      "tool_calls": 30,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "paid_inference_calls": 0,
+      "common_v1_tasks": 9,
+      "checks_passed": {
+        "status": 21,
+        "route": 21,
+        "required_dimensions": 22,
+        "required_citations": 22,
+        "citation_integrity": 22,
+        "frozen_reference_points": 21,
+        "tool_efficiency": 22,
+        "retry": 22,
+        "read_only": 22,
+        "human_completion": 22,
+        "offline": 22,
+        "proposed_actions_only": 22,
+        "no_integrity_errors": 22,
+        "proposed_severity": 22,
+        "assessment_status": 22,
+        "recorded_severity": 22,
+        "reported_severity": 22,
+        "dimension_coverage": 22,
+        "missing_dimensions": 22,
+        "explicit_gaps": 22,
+        "context_provenance": 22,
+        "action_contract": 22,
+        "no_forbidden_recommendations": 22,
+        "clock_integrity": 22,
+        "interrupt_sequence": 22,
+        "provider_budget": 22,
+        "recommendation_citations": 22
+      },
+      "expectation_coverage": {
+        "status": {
+          "evaluated": 22,
+          "passed": 21
+        },
+        "route": {
+          "evaluated": 22,
+          "passed": 21
+        },
+        "required_dimensions": {
+          "evaluated": 3,
+          "passed": 3
+        },
+        "required_citations": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "citation_integrity": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "frozen_reference_points": {
+          "evaluated": 5,
+          "passed": 4
+        },
+        "tool_efficiency": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "retry": {
+          "evaluated": 5,
+          "passed": 5
+        },
+        "read_only": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "human_completion": {
+          "evaluated": 4,
+          "passed": 4
+        },
+        "offline": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "proposed_actions_only": {
+          "evaluated": 9,
+          "passed": 9
+        },
+        "no_integrity_errors": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "proposed_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "assessment_status": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "recorded_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "reported_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "dimension_coverage": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "missing_dimensions": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "explicit_gaps": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "context_provenance": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "action_contract": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "no_forbidden_recommendations": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "clock_integrity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "interrupt_sequence": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "provider_budget": {
+          "evaluated": 22,
+          "passed": 22
+        },
+        "recommendation_citations": {
+          "evaluated": 9,
+          "passed": 9
+        }
+      }
+    },
+    "legacy_reserved_regression": {
+      "cases": 12,
+      "executed": 12,
+      "passed": 11,
+      "failure_ids": [
+        "reserved_clarify"
+      ],
+      "median_latency_ms": 5.690645892173052,
+      "max_latency_ms": 12.013749917969108,
+      "tool_calls": 15,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "paid_inference_calls": 0,
+      "common_v1_tasks": 0,
+      "checks_passed": {
+        "status": 11,
+        "route": 12,
+        "required_dimensions": 12,
+        "required_citations": 12,
+        "citation_integrity": 12,
+        "frozen_reference_points": 12,
+        "tool_efficiency": 12,
+        "retry": 12,
+        "read_only": 12,
+        "human_completion": 12,
+        "offline": 12,
+        "proposed_actions_only": 12,
+        "no_integrity_errors": 12,
+        "proposed_severity": 12,
+        "assessment_status": 12,
+        "recorded_severity": 12,
+        "reported_severity": 12,
+        "dimension_coverage": 12,
+        "missing_dimensions": 12,
+        "explicit_gaps": 12,
+        "context_provenance": 12,
+        "action_contract": 12,
+        "no_forbidden_recommendations": 12,
+        "clock_integrity": 12,
+        "interrupt_sequence": 12,
+        "provider_budget": 12,
+        "recommendation_citations": 12
+      },
+      "expectation_coverage": {
+        "status": {
+          "evaluated": 12,
+          "passed": 11
+        },
+        "route": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "required_dimensions": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "required_citations": {
+          "evaluated": 6,
+          "passed": 6
+        },
+        "citation_integrity": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "frozen_reference_points": {
+          "evaluated": 2,
+          "passed": 2
+        },
+        "tool_efficiency": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "retry": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "read_only": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "human_completion": {
+          "evaluated": 1,
+          "passed": 1
+        },
+        "offline": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "proposed_actions_only": {
+          "evaluated": 7,
+          "passed": 7
+        },
+        "no_integrity_errors": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "proposed_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "assessment_status": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "recorded_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "reported_severity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "dimension_coverage": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "missing_dimensions": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "explicit_gaps": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "context_provenance": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "action_contract": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "no_forbidden_recommendations": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "clock_integrity": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "interrupt_sequence": {
+          "evaluated": 0,
+          "passed": 0
+        },
+        "provider_budget": {
+          "evaluated": 12,
+          "passed": 12
+        },
+        "recommendation_citations": {
+          "evaluated": 7,
+          "passed": 7
+        }
+      }
+    }
+  },
+  "reserved_policy": "First new 14/16 preserved, no tuning or rerun; original 11/12 is regression against unchanged labels, historical 12/12 unchanged.",
+  "no_source_change_after_reserved_freeze": true,
+  "frozen_baseline_files": 148,
+  "frozen_sha256": {
+    "evaluation/v2/ACCEPTANCE.json": "c5a4d6b106fc004af9fae0aa7af8f0040c70bd3261414aeb5419de4049c7d693",
+    "evaluation/v2/DEVELOPMENT_OBSERVATIONS.md": "51b7fe2a04325321b4e7a0c6754b0d1e25dfaa47cf30892c970634ea51a8ed63",
+    "evaluation/v2/brief-completed.jpg": "05a91dd368ca848febb3bb1cac474dc1d17cde75da143a27ca0d58073f9cbc70",
+    "evaluation/v2/container-api.json": "dd88a005765e948aca2c69c0a32930986243d3bf38d101eb179ee2f2c8a89d14",
+    "evaluation/v2/development_final/SUMMARY.md": "b9d8f88b7fe3d5374c6a61049934f34e506e7a3c6555d22fc35210ae0fe2442d",
+    "evaluation/v2/development_final/progress.jsonl": "fa45f205f1cb71fdda0a6c096af48cb95a549984c3c304ceb3e3c196fadd13e0",
+    "evaluation/v2/development_final/results.json": "c72b8cd28f59ed87e9dfc8654309a2735a6d8295f7236c23f3d4272ff5c98fcb",
+    "evaluation/v2/development_initial/SUMMARY.md": "b3e05e401104ac87fbf9e8e64d594017d78b2a8238ee76b9fcaafd84ef583be3",
+    "evaluation/v2/development_initial/progress.jsonl": "d8be44fe56840616473ce636015510e8b4b9ba9581744afaa4e3c8c8f8d41768",
+    "evaluation/v2/development_initial/results.json": "46aa0378399f0eae1de5f45e1d59031160cb69249bf97ea605a98b49e11efde3",
+    "evaluation/v2/heldout_first/SUMMARY.md": "c9b68e2ad95a781ab3cd3b83a0e0ab85941601575497fd0fc844368d93b0ec43",
+    "evaluation/v2/heldout_first/progress.jsonl": "91059b3d3f967dd918eea79045b5c2f7afa5903dccc4beefa6ed7eea624786c5",
+    "evaluation/v2/heldout_first/results.json": "561279bbfd946f1d387fcf4affb8fb68638a5de88ad68cc5d09d85ea1438368a",
+    "evaluation/v2/pytest-macos.xml": "348939d06c1ce49430da3de6e8f22b5d16cd25f47de580fc39d0321c7271fd39",
+    "evaluation/v2/v1_regression/current/SUMMARY.md": "418409152dd1f1ea950158bd270ff7cff03381c7fa5bda8d047bdb381a1cd936",
+    "evaluation/v2/v1_regression/current/cases.csv": "c683d26168d9f306ec93fae79d2299bce75aacf0504fe40a8553e57a1acf5b6d",
+    "evaluation/v2/v1_regression/current/results.json": "c0d14e8f8ed44dcafe9742f5e57be5b15bdee694d8e7d44504cbd8b10f857050",
+    "evaluation/v2/v1_regression/legacy/SUMMARY.md": "593994a6ec6dbb474099b58d550db54be727ebcdfbeb756774e9028168e2cd99",
+    "evaluation/v2/v1_regression/legacy/cases.csv": "e73afefb62bc1b68b76e839f8a4e3bdb0175be35dba31f181470e0f72742edec",
+    "evaluation/v2/v1_regression/legacy/results.json": "15b85618e472b29ec20d8dad6f03c4eb7dc9e7e4a6965accc5df3240da8b8b57",
+    "evaluation/v2_completion_1_5/ACCEPTANCE.json": "93473c932eab2c40d402972b77b7c9f6caa62328174e6652753f75333a6b9c36",
+    "evaluation/v2_completion_1_5/OBSERVATIONS.md": "64effb6b7341911f86302d187375009921659e8d14ba44e6fae14cad7a2b832b",
+    "evaluation/v2_completion_1_5/brief-completed.jpg": "19b862b930e825bad6ba200065f7de2c714ebe673a170c8dc80112e4423fdee7",
+    "evaluation/v2_completion_1_5/development_final/SUMMARY.md": "30f43038bf83e04af6dbcc1d791c5bfccd42b5770a7f4fced37185c8157c639d",
+    "evaluation/v2_completion_1_5/development_final/progress.jsonl": "b8da6974f9bdd5816dbee50f5f9e6becaccb3ea9ad8e78ad360ac8683120f828",
+    "evaluation/v2_completion_1_5/development_final/results.json": "1e104c29dceff9de32412575126871a718d27f77ee05fbb08c0a2449ae8461af",
+    "evaluation/v2_completion_1_5/development_initial/SUMMARY.md": "a739fecbeee5a5fd87cf72ae63253e2d14085f6a68e0fe98fcba720785216934",
+    "evaluation/v2_completion_1_5/development_initial/progress.jsonl": "51b12e27647cc4e33763a0d095b6e53daca7b967374c70874bb15736481d432a",
+    "evaluation/v2_completion_1_5/development_initial/results.json": "9d990ec1bbc85f6a83284f88072872efae9bf152d27f47ee820d531bac890940",
+    "evaluation/v2_completion_1_5/development_verification/SUMMARY.md": "bde06177360eb5ace0ecb8a79d7ec0ca0ddcef1360977fb891373967596f7a85",
+    "evaluation/v2_completion_1_5/development_verification/progress.jsonl": "ac87bd31617d21d9e91c85bd1d77a5ac692fb92ca5e1c0c6d81cbf2a548fdeee",
+    "evaluation/v2_completion_1_5/development_verification/results.json": "62cc75c53ac925f4a7f734d2753b871725d3e5902ee854b74f282d48e101432d",
+    "evaluation/v2_completion_1_5/pytest.xml": "d5b84eac6349ac71cc84f30ef44d0393d227de6c2f8fd47630097056724ed80f",
+    "opspilot/evaluation/investigation_dev.json": "7a786b09fc849cd6fda39aea361f8b640ff01565248ca35fca32922f1178f9ff",
+    "opspilot/evaluation/investigation_heldout.json": "dd61cecfb7138e72a334e8a5948fa9a9d4f105be225a9432a864855036dced9d",
+    "corpus/policies/business_continuity_procedure.md": "ee379057c570ca0962bb1fc712ada6435db906f016ff319d8260ce35e2965d8a",
+    "corpus/policies/customer_communication_standard.md": "9580c08a786ec5432e33bdad4575860129e327855d852e1d9e9138e4a917265f",
+    "corpus/policies/evidence_and_log_retention_standard.md": "c5ff07c65d844d0943c319a8e28dd6b00e307bb25e07a2ba41d40615723dab29",
+    "corpus/policies/facility_disruption_playbook.md": "d835f8950f2ae7ec1db5dcf3d839a4c66eb303a02bf95b405f74719b74cfe06d",
+    "corpus/policies/incident_classification_standard.md": "300acc4a73c0334b930c27cbb596c185602584ce5bdacadf18b41ddbfd867e68",
+    "corpus/policies/incident_escalation_sop.md": "18cbc050cec662fcbf065ff036fb324d238582928fcc6e08168a2fcec3226962",
+    "corpus/policies/payment_service_incident_playbook.md": "f9e5fca68243fa27d5826771c165b5f5634097d8496d6b045a2ed09fbbe08cd6",
+    "corpus/policies/post_incident_review_standard.md": "03a2c0975a647084a03b2e6d37cb6667190a0ae6bd47c68a9a44146fd798d3d7",
+    "corpus/policies/service_recovery_procedure.md": "c39ed1ff119723a02b475ac799ab0f8bb7e2b9e3238171383e88231ca28cef8d",
+    "corpus/policies/vendor_escalation_procedure.md": "b5932bbf214fb46e7030a75056da0bd8499f8c46316cd5f390968ba3007c6b35",
+    "evaluation/GOLDEN_PROVENANCE.md": "508bab893b58b83d9f25b21d400c00b719bc70db53956392c48f2dfa5fa4a83d",
+    "evaluation/baseline_initial/SUMMARY.md": "2b806d73a790a51a453f53aff7a17045b37a3390346356fa5968187aea3ae296",
+    "evaluation/baseline_initial/cases.csv": "c6c9202b5160a30a53375c9a46822e98f14267775a4587e1eefc3afd6a00a722",
+    "evaluation/baseline_initial/results.json": "b799a4d337dbda11a971f13ea38d291b780df6901346e84507b68b07d56114ef",
+    "evaluation/baseline_refined/SUMMARY.md": "4352d8aee3f3a3bfedee3a8a8a378bdaf18fea08bd415159c3eecddbbc12bcc5",
+    "evaluation/baseline_refined/cases.csv": "81c2f92a3a5707e95c30a68f8f2cba5b65d6932097f1c5c32a067ea360af4282",
+    "evaluation/baseline_refined/results.json": "cbe525e142102db3c3b70a3d6c98ac33c457f246b156adfb0b61fb1e925f9c5f",
+    "evaluation/demo.jpg": "671124f6fc75451481a2b537536c262bbfbd24c2cf9f0932b37765d57430095b",
+    "evaluation/final_acceptance/20261008T072223Z/ACCEPTANCE.json": "c29da740e60d32ef6d05898b6164d668e7ce1d429e6d83667851a8aecb6698eb",
+    "evaluation/final_acceptance/20261008T072223Z/PREFLIGHT.json": "48aa1fcb70fdf7fcffd8e3c15fae9a2d8a3a8f4da6c191a29981d9434d01c9e5",
+    "evaluation/final_acceptance/20261008T072223Z/SUMMARY.md": "5ac2fa828031e4c9b7883faf93c84fd2bd2a5b341b140bdefabec22d1d7f81e8",
+    "evaluation/final_acceptance/20261008T072223Z/api_harness_diagnostic.json": "dba418f2a98647a952a40a3153d461410c8b3d05d7abdffdc41799dbdcdde2b9",
+    "evaluation/final_acceptance/20261008T072223Z/api_runtime.json": "a60483656f98c12cea2f35637b190bfce7d7398feda28fa1662fcf149d863cdf",
+    "evaluation/final_acceptance/20261008T072223Z/compose_before_refresh.json": "eb8948e98a016052b54ff73db0b636afe3fd820c5be9c704082d8ba30fdeadd4",
+    "evaluation/final_acceptance/20261008T072223Z/compose_current.json": "ee1fd262fbe3419e80b3165422002348c0cca1e4c7ad00f51da0016e92a3abdb",
+    "evaluation/final_acceptance/20261008T072223Z/docker.json": "402f930055bdd5325f6f30b18ae4fe07cbd1010f6c7bd585756f7c154602eee4",
+    "evaluation/final_acceptance/20261008T072223Z/hygiene.json": "d05d1ff51b6d25723e462fb1fe917d01f4a47de6179dac51e0ee29873228048e",
+    "evaluation/final_acceptance/20261008T072223Z/live_full/SUMMARY.md": "6c0caba04ca17307fe10881493c338c3abbb5ae80f6838da03972299c74fc752",
+    "evaluation/final_acceptance/20261008T072223Z/live_full/cases.csv": "fa0c0f15fe5eaff69555b6a9ddb6107a31e2ad161cb2fccef77e302fb6c1b5a0",
+    "evaluation/final_acceptance/20261008T072223Z/live_full/progress.jsonl": "a101c09ea33f299c58184e5e2f9adbd699c370ce53a3522d054d9b13b6de55da",
+    "evaluation/final_acceptance/20261008T072223Z/live_full/provider.json": "ca854b98c20d4df5d930b0ed85f7b7161cadfc205e37d18d9d2106445400ee8e",
+    "evaluation/final_acceptance/20261008T072223Z/live_full/results.json": "cbd231f4429834b6b7460d1b2f43d5fe555c0e40658672e46c7a3aab7fe4b952",
+    "evaluation/final_acceptance/20261008T072223Z/offline_current/SUMMARY.md": "a84fbdec98d8c72fd3c7fc526ae5c1776070bcc94edebc8f8bf8483a7fb98db2",
+    "evaluation/final_acceptance/20261008T072223Z/offline_current/cases.csv": "dbea68c77fb667988920e1fd6814f3b6bccf9310bbac4225ba6a79ebd744d14a",
+    "evaluation/final_acceptance/20261008T072223Z/offline_current/results.json": "4451b590b1af1e214575367cde1c21dd5e7b40a16b0ede5cd68a3efa9087570f",
+    "evaluation/final_acceptance/20261008T072223Z/offline_legacy/SUMMARY.md": "f05e1ddd54c831bd9862b5f2b151181feb77784f63bfacd5d7374d65fe637b9e",
+    "evaluation/final_acceptance/20261008T072223Z/offline_legacy/cases.csv": "b8d4d4802ccbea1b234ac1c2bf396795c7d0e1ab194b385e0c484baac2da6cf6",
+    "evaluation/final_acceptance/20261008T072223Z/offline_legacy/results.json": "7ac77c6dde8002f63d4a6441e6de5f0e3a0424a8adad6a6340439849c26406a1",
+    "evaluation/final_acceptance/20261008T072223Z/pytest.xml": "e71c6a867e14887504e85bd6e8463d7cf54c8530d456ef3c0dbaaf793f62919e",
+    "evaluation/final_acceptance/20261008T072223Z/response_spot_checks.json": "262bed96a2da2719800c9fc7199c2e70efaef4533ca1b64260b57258233caafc",
+    "evaluation/live_openrouter/VALIDATION.json": "184c47f8c32db5208915a0ebe532ccb1029aa55f4b66db5b26902603c85cc504",
+    "evaluation/live_openrouter/VALIDATION_before_final_acceptance.json": "e5a9a0651c5f57b4983b03568fcb2f2769f3cc50c008f89e63efd80eed05901d",
+    "evaluation/live_openrouter/contract_versions.json": "739e64660a4bd616b2d55f69d9d90ece6c41ea3879ca7e50e6dd3c82e0fca604",
+    "evaluation/live_openrouter/diagnose_multi_plan/SUMMARY.md": "2172e503e8dc3b97346c6ed5135bfb910df96286f5e25672d3e64b51f9c122d6",
+    "evaluation/live_openrouter/diagnose_multi_plan/cases.csv": "85559c8119cd63df7fca63e5333c1e7a30d57b302ea2c0d7d18615c9c7f90520",
+    "evaluation/live_openrouter/diagnose_multi_plan/progress.jsonl": "8bca6a9b3b839b477632f6ef7e67871b6967cd156d25db941608ee288b7ba3cf",
+    "evaluation/live_openrouter/diagnose_multi_plan/provider.json": "ca6d46b30f3304d490c2bbcc8af8c6f091f4f179964009d558fa6c4c13b1bd70",
+    "evaluation/live_openrouter/diagnose_multi_plan/results.json": "621fa6c8905e398ec9b71cf72757b53b494d948a4f9116eb16e11e7bbc70fb91",
+    "evaluation/live_openrouter/full_final/SUMMARY.md": "89cae016c296b0d2acdd5a7061b4e84802ad5c2ab6a26ea322ce739e62f5481c",
+    "evaluation/live_openrouter/full_final/cases.csv": "e8246a2876fc95e55cbef7b2341f5617121d970239797e89872fe10bfa58fba4",
+    "evaluation/live_openrouter/full_final/progress.jsonl": "2dd36e8e70d0d1754b09e895cb3ca4699791dcc30e903da6246ceb9989994282",
+    "evaluation/live_openrouter/full_final/provider.json": "4f1eab3c65c0b2ba5e97916272866c6066988bfe207101f2b687af2de8449181",
+    "evaluation/live_openrouter/full_final/results.json": "2ef8825002b2c2eb188b438eacc7b5c1a0d2f4791899ac7a373e2cba9af5ce02",
+    "evaluation/live_openrouter/full_initial/SUMMARY.md": "3278492a94dab953bdaac783ee9ba31186d182efe9af0bef3a87051e05b8ea28",
+    "evaluation/live_openrouter/full_initial/cases.csv": "3e8cfc702ebe2bee117fa0197f7fe1cfc2d181f156d16afd964863644831968d",
+    "evaluation/live_openrouter/full_initial/progress.jsonl": "1f64a564b2372254bdab32346943cf7cf449fce4a8fb78e91b1a95c83c39329a",
+    "evaluation/live_openrouter/full_initial/provider.json": "2a424179f6e2052754b5c10f32ad6bd1e72842f7db2c8774bf59e73df2f9bc89",
+    "evaluation/live_openrouter/full_initial/results.json": "3ef3c0dcad24b3c18ddee67a4e7d3f1c0255757e1ed84d680f748d6d2fdef52c",
+    "evaluation/live_openrouter/full_refined/SUMMARY.md": "4faa7a1cd5b1b0ff1d0e9a31856b4706bd04ce2e846ab75ba8a75e50249d6a92",
+    "evaluation/live_openrouter/full_refined/cases.csv": "44d05b221c9367284a9fa6142c94886205e1051a782cc8aeadf1c0213feee0a1",
+    "evaluation/live_openrouter/full_refined/progress.jsonl": "ad29bda7c6a5d0caef022bd96cebc946ed7c0d94879917deb981b88538045e78",
+    "evaluation/live_openrouter/full_refined/provider.json": "5efce0fcbbaa18e8761a188ac6dbe369e3e3b36b2af341c18720e7db8b022871",
+    "evaluation/live_openrouter/full_refined/results.json": "f07e1132dc273a411ebb6a75c7b7c9c032d4bfa8a113c898129ce6cc3a9c28ab",
+    "evaluation/live_openrouter/packaging.json": "ea5e44e77da9b88dd5e78a194bea3231160d31b611a2bc1df38a36fe028972c6",
+    "evaluation/live_openrouter/packaging_before_guard.json": "69319df9d99dd448d2cd408604d02c76fada27fca150504852837d8cc7b45580",
+    "evaluation/live_openrouter/packaging_initial.json": "916c493da99c075be17aece7526ae011ced82663a83a0af28e86388a9a83bdb3",
+    "evaluation/live_openrouter/smoke_anchor_context/SUMMARY.md": "677706415d1ae916b6c22a6269bd1966b3c0987754c110cb6e2e90559d5196d1",
+    "evaluation/live_openrouter/smoke_anchor_context/cases.csv": "c638ad8154773bb1848f3ebdb0687d46eaf0f198609456f5d18ab8a3a55cf8a1",
+    "evaluation/live_openrouter/smoke_anchor_context/progress.jsonl": "0518381c85ed0dea15b26b3a54d6557be502d0249e92f9f6b8ff9e3dceee8f90",
+    "evaluation/live_openrouter/smoke_anchor_context/provider.json": "ec31ab91ecf356166d7bf6896847ee62629f1b53a71e2c3fd24ac68503faa43f",
+    "evaluation/live_openrouter/smoke_anchor_context/results.json": "0afaa730fce00a8b427d59ed47db7e13f43d4ed5ac5db0c9bbf5662602a37474",
+    "evaluation/live_openrouter/smoke_initial/SUMMARY.md": "734b611b827e6aa018ae7dc670daecde859037889552927c6e28027a35489e89",
+    "evaluation/live_openrouter/smoke_initial/cases.csv": "a0c576aff4c3d1d823a662b28d21dcdeeddb2f7836867150e13a81d2e6b53a09",
+    "evaluation/live_openrouter/smoke_initial/progress.jsonl": "f1257d2f30c2f7a71e30c880a38215a259e2f116142e9d18dbad5d81e926456f",
+    "evaluation/live_openrouter/smoke_initial/provider.json": "186ec85cce18cc165d63f5eb40c59cf546ab207d7647bf4a01d135f67f04c459",
+    "evaluation/live_openrouter/smoke_initial/results.json": "99c75ddc5ce520b17e2268c28290f109de4cd910c0f2f6f8735d06c2ec6f9e1f",
+    "evaluation/live_openrouter/targeted_data_scope/SUMMARY.md": "7021111d5923842e057bf7fc50af696885d283ec2aec4f8e6ce54f2df581a5c2",
+    "evaluation/live_openrouter/targeted_data_scope/cases.csv": "65cd37c819e8299180b59fe0acf22f54eb3c5df3f0b891afafc544745a3a6978",
+    "evaluation/live_openrouter/targeted_data_scope/progress.jsonl": "26ebde03ef354bf671a946616f9bb32216c56de57a84d15c40d7c54a29d893b7",
+    "evaluation/live_openrouter/targeted_data_scope/provider.json": "478f6212c29b02b807c52179fc155e24252591cddb9febbc2a0c4d8eefbec017",
+    "evaluation/live_openrouter/targeted_data_scope/results.json": "6951d2588914d63bcefbea503ee6dcbdf55674bd385ce0f50edd46d65fddcf07",
+    "evaluation/live_openrouter/targeted_executor_guard/SUMMARY.md": "2e2dc4a73890e7725ee5d833507240716a13e20413272f24298ebf31c34b0ec2",
+    "evaluation/live_openrouter/targeted_executor_guard/cases.csv": "c7708b3afe359b785c98bd568403d664e54d7cf36283e167644a6d92077a848a",
+    "evaluation/live_openrouter/targeted_executor_guard/progress.jsonl": "ba7c3a62818ff034f6299a37e7fe79b7490a5750ce7debbeebf09e3c2e84ef93",
+    "evaluation/live_openrouter/targeted_executor_guard/provider.json": "df1e5b5d522cbf335f0550a383223811eb5f5bcabd20d6e0ddf8c2c0a394674c",
+    "evaluation/live_openrouter/targeted_executor_guard/results.json": "b0b39d80b486b458036cb0adede05ef5af69f88d438fe9a2b1f1b824f8e57c9e",
+    "evaluation/live_openrouter/targeted_metrics_role/SUMMARY.md": "6bd20ce5bd4b0976aa39403765a42e6e23f6ece1c1ddcabec8f5d35555741c12",
+    "evaluation/live_openrouter/targeted_metrics_role/cases.csv": "0e3bcb27a730f7f966b8bfbf85d6b5c25c815edba2378219a6ea408d4a91e460",
+    "evaluation/live_openrouter/targeted_metrics_role/progress.jsonl": "354511248f4d983cf5b13bb8bd74e2664486159646a600cf7ab05fd45a335258",
+    "evaluation/live_openrouter/targeted_metrics_role/provider.json": "00fd1ebdf66a2a77c2bf920ab0e3fcd1ce654461eee580bd5ef0e379311c734c",
+    "evaluation/live_openrouter/targeted_metrics_role/results.json": "96ac8816cf288427f132d41f8a91c550f3f633d68916683e257759646cd5ec79",
+    "evaluation/live_openrouter/targeted_plan_refined/SUMMARY.md": "64de10fb386e9abf85c35f16d36ce1ef0338f5aca3ca0bfc6d06a28f51c911a7",
+    "evaluation/live_openrouter/targeted_plan_refined/cases.csv": "a3c1a25ea810051d96862b80a16d2a98568a4f1dbebb985107607e5bbffa758f",
+    "evaluation/live_openrouter/targeted_plan_refined/progress.jsonl": "1b6ec6311fafd9bdc986ecb5cb64a92a4267fef9b351807b632d75b2ae8ba979",
+    "evaluation/live_openrouter/targeted_plan_refined/provider.json": "2bd447597bb805131d473c535e9f38ce21516380961a7b07f089d8ea7269127d",
+    "evaluation/live_openrouter/targeted_plan_refined/results.json": "fe6f08fb6739133c5d3b320b0c7a7667e9948433414bba7b99a6b55b4526f21e",
+    "evaluation/live_openrouter/targeted_tool_precision/SUMMARY.md": "d7f71d0fe59443dca86e6a3cdc0404eda6a6eafe0c7ff790ebe9fc4fcd95c6bd",
+    "evaluation/live_openrouter/targeted_tool_precision/cases.csv": "ceea8256e0a2669a866c821be41c601150f7ddd28c424c994a0e6248948f71f1",
+    "evaluation/live_openrouter/targeted_tool_precision/progress.jsonl": "7437fb2ac7f786ad457a4af0ee1cf055f47a9b3e26cc9e5f178a38ceca8f1a2b",
+    "evaluation/live_openrouter/targeted_tool_precision/provider.json": "ff767aeb5225725662f9d609949d09aa311c077fc65752d56750d3e7a4a8d0f9",
+    "evaluation/live_openrouter/targeted_tool_precision/results.json": "0c353d1142d38e05615b2f22304e0c9fafdc2863a2d748c9dc050c74384bd471",
+    "evaluation/mixed-demo.jpg": "36e7bb89dc1b931a2232c2ac19c4dea859dc3955971202b47c469fd8f8da32d7",
+    "evaluation/offline_after_live_fixes/SUMMARY.md": "f7d49c11b33d2bd247e1783b01a16da2685a349da1b01747bcdd1a47e01429b2",
+    "evaluation/offline_after_live_fixes/cases.csv": "eec83d754cfba2276a75200f1ebb638617bafa50641879f48bd650c6b00dfd03",
+    "evaluation/offline_after_live_fixes/results.json": "621ff47a806c3032de9f64ee7cfd92f03212648edb1cb700a43a42c9ab749def",
+    "evaluation/offline_clarified_final/SUMMARY.md": "9457f407aced97cc6559f9d5e13c5d5499193641531319535b0d89c85aee5a47",
+    "evaluation/offline_clarified_final/cases.csv": "99c972b83b50a307b932aa0ea88ce94bf4f8a480d2e7ae8ded91025780cd242d",
+    "evaluation/offline_clarified_final/results.json": "4fb6425dd9c85f666246c8619dff03d23558d8e719e2f3e7ab6a0632a8c2cb0d",
+    "evaluation/release_v1/VALIDATION.json": "1f98d67905a4694c4e318b77717ea32997e8cb077c008ca24f7af9df520a0038",
+    "evaluation/results/SUMMARY.md": "b53a4cce4646ecd37c9e064cb765ce5cb15868d2fa9db89d836278f5a396f4d2",
+    "evaluation/results/cases.csv": "8215e5fd93f79abee5184a056ed13de99b947b8f60b095b4144e03e03360af59",
+    "evaluation/results/results.json": "4a0e371554bad41aee47e74ca26c302b33abf1c1a4b0f33f520d77cc5303a5b3",
+    "evaluation/runtime-validation.json": "5f409079d4b32a2af63d20bc42f7b54bf3dd46e652e51d9033a92289701c1163"
+  },
+  "preexisting_components_preserved": [
+    ".env.example",
+    "opspilot/config.py",
+    "opspilot/domain/models.py",
+    "opspilot/orchestration/service.py",
+    "opspilot/providers/chat_api.py",
+    "opspilot/providers/chatgpt.py",
+    "opspilot/providers/chatgpt_auth.py",
+    "opspilot/api/main.py",
+    "opspilot/api/subscription.py",
+    "opspilot/evaluation/subscription.py",
+    "tests/test_subscription.py",
+    "tests/test_subscription_evaluation.py",
+    "requirements.lock",
+    "pyproject.toml",
+    ".github/workflows/ci.yml"
+  ],
+  "lint_format_node_pip_check": "passed",
+  "browser_fixture": {
+    "synthetic_account": true,
+    "real_transport_over_mock_http": true,
+    "selection": true,
+    "review_reload_restore_completed": true,
+    "planning_calls_before_after_review": [
+      1,
+      1
+    ],
+    "token_counters": [
+      101,
+      19
+    ],
+    "counters_are_fixture_values_not_consumption": true,
+    "console_errors_warnings": 0,
+    "fixture_server_stopped": true,
+    "real_demo_restarted_offline": true
+  },
+  "real_llm_calls": 0,
+  "real_llm_tokens": 0,
+  "subscription_credentials_read_or_changed": false,
+  "live_cost_usd": null,
+  "cost_note": "No inference performed. Fixture usage is synthetic; no subscription USD price inferred.",
+  "remaining": [
+    "Recorded new and legacy evaluation discrepancies; default CLI/CI nonzero",
+    "Strict subscription-side generation token budget not asserted",
+    "Fresh Docker task 8",
+    "Approved live evaluation task 9",
+    "Git and hosted CI closure task 10"
+  ],
+  "source_sha256": {
+    "opspilot/investigation/assessment.py": "539bc71cb6cdf0c03f7c36cb6684b656062aefcab293f74c89a1afedad9d8bb1",
+    "opspilot/investigation/service.py": "b565cc9bb382e2a2dcd6550b6620f7a4880ff8e04c7250d40ca737d9c4a512f0",
+    "opspilot/investigation/chains.py": "0a9f660fb8e075b1bd630aec3872ced21753b1290f65fe2d25621befed5038d1",
+    "opspilot/investigation/models.py": "f881448c82d29d63d4b0f3175f8114166b443c986df91018424062374d1744a6",
+    "opspilot/investigation/graph.py": "ba802999f0f177d6661def83808049fdd07f9afeaa8d9742c062c0ea60a261cc",
+    "opspilot/investigation/brief.py": "618814061a01887a2d3625e17f21e68e1ed6c1d43e04aebe264eeaef4508e723",
+    "opspilot/investigation/__init__.py": "60bc8637174688a1d5b04cd2b87176cd35b6da510099e0e10eb86ab031983159",
+    "opspilot/investigation/context.py": "326f84a03abc512c887ede92c7b099752c7a04e2496d904b3924658aed042e6b",
+    "opspilot/investigation/planning.py": "78d1d25c659850b8358d4d284d505008d5d3e3ad763288982876e640e826fd2d",
+    "opspilot/investigation/evidence.py": "c65a5efe50c210a846fbd17216cf18fd135af473c168e5bab2a2697b4bc50638",
+    "opspilot/api/investigations.py": "df1497564c360199f6788b572cff5cd9b871bff042fce813d870ba31d15f7cad",
+    "opspilot/evaluation/investigation.py": "1b20b643de4b5a1a1e0f079843bbfe816e146c53511adabaa731b597dd295c75",
+    "opspilot/cli.py": "208ae91190cd6fc8ca319bf97dd8c487d5a526b145fe97e0ef77311ee7a938cf",
+    "opspilot/ui/app.js": "490f22c1f806b9a827f6ff50edf383efb00b697cdafb73728de929d31fba96af",
+    "opspilot/ui/index.html": "8c3dc853e8c6bbccf698f2ee8c3e81a62e2bd0e76066e9d3a8558ef0fd2d77a1",
+    "tests/test_investigation_subscription.py": "f6a1b513f30f004e02f865fde553d4d321e15d1f9ee4670dfca447dfd4792fd0",
+    "tests/test_investigation_evaluation.py": "54b52c30d7e0deffbeef63b218bb793643e689c2025ee22c8e09eb60f1fba1ff",
+    "README.md": "15b60560105f20f570b53f04d2c16c2f83153eb8ba482748f6de0046cc30a6cc",
+    "docs/V2_EVALUATION.md": "d5907012d3fba7c51e1ef289817d476a242b22abbc8d457cdf3daf34712cd448",
+    "docs/V2_ACCEPTANCE.md": "d6e83bb3eaa5eeeda3ec54e0a2ee35bcd404e1b64c5c11c0cc5c3d9c19d24ef2",
+    "docs/V2_ARCHITECTURE.md": "97b1d15a732eeac6a351f26198336d5208b8713f94b12e1b747770921118a850",
+    "docs/V2_PRODUCT_SPEC.md": "3c50d162eef015cb3566bb9ebf6fe070cb50037f37779fdce8da4f394517cb07"
+  },
+  "publication_review": {
+    "public_scope_files": 264,
+    "export_passed": true,
+    "git_objects": 404,
+    "git_passed": true,
+    "broken_markdown_links": 0
+  },
+  "offline_wheel_frozen_suites_verified": true,
+  "native_offline_http": {
+    "port": 8192,
+    "status": "completed",
+    "planning_calls": 0,
+    "subscription_enabled": false
+  },
+  "artifact_sha256": {
+    "evaluation/v2_completion_6_7/RESERVED_FREEZE.json": "41da75aa6ffc910e70be623c201c0dabad57e79c36c2bf314d439b34e013d109",
+    "evaluation/v2_completion_6_7/subscription-controls-fixture.jpg": "d352efb20cbeff4d3cc0a3e7e27978548f6df895a8c66a3c44f3413de877c508",
+    "evaluation/v2_completion_6_7/subscription-fixture.jpg": "48d1ce0dcfd8a1a4800da865cc728249c836842ed81a8bfccacd62c1c26dc01d",
+    "evaluation/v2_completion_6_7/pytest.xml": "8b9b07bfde834b1c15745a4d9b485681d6f0990e0c0618d8ba5fbd6170341abe",
+    "evaluation/v2_completion_6_7/PREREGISTRATION.json": "3c3575392ab62e23eb19bd34bff782860fc65fa591dd19dff2960c24be76e7a6",
+    "evaluation/v2_completion_6_7/OBSERVATIONS.md": "fc4bdb96cc3ec0d0b5bf839bd673837f6d930eba356acd1262fbaf92c6b6e3a0",
+    "evaluation/v2_completion_6_7/development_final/SUMMARY.md": "9ba2e9e34a014ff1635e32b41407818c6543fe4d5774ca742b9ab2562e864f16",
+    "evaluation/v2_completion_6_7/development_final/progress.jsonl": "550b2eab577dbea0f3b60cec1ba73d753353d166f74459c1fe0aba8d2e8cb035",
+    "evaluation/v2_completion_6_7/development_final/results.json": "87a3acb1b7dd3fa47f5466f2ae560c1eb269ece1cad815f1c7bea218f68e1b04",
+    "evaluation/v2_completion_6_7/legacy_reserved_regression/SUMMARY.md": "cb98f9d8ae0c5a0bc212e7fe6f1adb7034d6640ee74bb5a395eb5a9bb901127a",
+    "evaluation/v2_completion_6_7/legacy_reserved_regression/progress.jsonl": "aeaee84c30189e3666b1aaa1731b9cb04a23356871496bbc1abb800f39475436",
+    "evaluation/v2_completion_6_7/legacy_reserved_regression/results.json": "daac32544ede4ada557d6285a61ad18f190c8efbb45fa4dbdb8035c1730d4772",
+    "evaluation/v2_completion_6_7/development_initial/SUMMARY.md": "e5006347d3b527b7199a17916dad2f1887205bffc90e29db21c51327c198f3ed",
+    "evaluation/v2_completion_6_7/development_initial/progress.jsonl": "e7c13c32b89c3078ceb1b06672cd9a7faa0f4a3f3876c8b3d5b3838de2ab6f51",
+    "evaluation/v2_completion_6_7/development_initial/results.json": "0d02c477a4dc8c0144e274525d69a5b8dbc4a5eecce924982019a8194d12db2a",
+    "evaluation/v2_completion_6_7/legacy_development_regression/SUMMARY.md": "2d9a5a05045fa9f6ed6a87703d2290e01090520a9e58ffe4d6e5cd6beb04311b",
+    "evaluation/v2_completion_6_7/legacy_development_regression/progress.jsonl": "0696f5314fc367494f33e988c44fc2e683c81a94d39e04e21d635f7673b356f3",
+    "evaluation/v2_completion_6_7/legacy_development_regression/results.json": "9e79eb0373c4aa3bc02aa7484289172fe4d6ff797e66cf445370d9f65e503884",
+    "evaluation/v2_completion_6_7/reserved_first/SUMMARY.md": "85baafa5c8ea89db50a63d920988581e641d1d629bf441ab55f99d95fac68111",
+    "evaluation/v2_completion_6_7/reserved_first/progress.jsonl": "d3eb148ad4e911af1f1906fedaf2f0057cc05a97e2bdb037daeaf2136963e915",
+    "evaluation/v2_completion_6_7/reserved_first/results.json": "fad5259738b3df592fa2789ab208a2869260434609d5ddbfa9ded7de329c2db2"
+  }
+}

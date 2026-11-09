@@ -1,0 +1,9 @@
+{
+  "health_status": 200,
+  "subscription_enabled": false,
+  "offline_status": "completed",
+  "planning_calls": 0,
+  "owner_get_status": 200,
+  "wrong_owner_status": 404,
+  "no_live_inference": true
+}

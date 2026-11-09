@@ -1,0 +1,4268 @@
+{
+  "manifest": {
+    "split": "heldout",
+    "run_at_utc": "2026-11-09T02:50:22.446503+00:00",
+    "cases_sha256": "dd61cecfb7138e72a334e8a5948fa9a9d4f105be225a9432a864855036dced9d",
+    "corpus_sha256": "3f85bfc6498084803df9e537bcb3ad0e43f1cf5b4ce563dbec8bb8ca593df639",
+    "reference_time": "2026-10-01T00:00:00+00:00",
+    "mode": "offline",
+    "fault_injection_explicit": true,
+    "investigation_source_sha256": {
+      "__init__.py": "60bc8637174688a1d5b04cd2b87176cd35b6da510099e0e10eb86ab031983159",
+      "assessment.py": "539bc71cb6cdf0c03f7c36cb6684b656062aefcab293f74c89a1afedad9d8bb1",
+      "brief.py": "618814061a01887a2d3625e17f21e68e1ed6c1d43e04aebe264eeaef4508e723",
+      "chains.py": "0a9f660fb8e075b1bd630aec3872ced21753b1290f65fe2d25621befed5038d1",
+      "context.py": "326f84a03abc512c887ede92c7b099752c7a04e2496d904b3924658aed042e6b",
+      "evidence.py": "c65a5efe50c210a846fbd17216cf18fd135af473c168e5bab2a2697b4bc50638",
+      "graph.py": "ba802999f0f177d6661def83808049fdd07f9afeaa8d9742c062c0ea60a261cc",
+      "models.py": "f881448c82d29d63d4b0f3175f8114166b443c986df91018424062374d1744a6",
+      "planning.py": "78d1d25c659850b8358d4d284d505008d5d3e3ad763288982876e640e826fd2d",
+      "policy_contracts.json": "db64214173ef16e524324391a230d769ef01935c5f10f1ff4477d5a0971cc09b",
+      "service.py": "b565cc9bb382e2a2dcd6550b6620f7a4880ff8e04c7250d40ca737d9c4a512f0"
+    },
+    "interpretation": "Engineer-authored synthetic regression; reserved cases are not an independent benchmark."
+  },
+  "summary": {
+    "cases": 12,
+    "executed": 12,
+    "passed": 11,
+    "failure_ids": [
+      "reserved_clarify"
+    ],
+    "median_latency_ms": 5.690645892173052,
+    "max_latency_ms": 12.013749917969108,
+    "tool_calls": 15,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "paid_inference_calls": 0,
+    "common_v1_tasks": 0,
+    "checks_passed": {
+      "status": 11,
+      "route": 12,
+      "required_dimensions": 12,
+      "required_citations": 12,
+      "citation_integrity": 12,
+      "frozen_reference_points": 12,
+      "tool_efficiency": 12,
+      "retry": 12,
+      "read_only": 12,
+      "human_completion": 12,
+      "offline": 12,
+      "proposed_actions_only": 12,
+      "no_integrity_errors": 12,
+      "proposed_severity": 12,
+      "assessment_status": 12,
+      "recorded_severity": 12,
+      "reported_severity": 12,
+      "dimension_coverage": 12,
+      "missing_dimensions": 12,
+      "explicit_gaps": 12,
+      "context_provenance": 12,
+      "action_contract": 12,
+      "no_forbidden_recommendations": 12,
+      "clock_integrity": 12,
+      "interrupt_sequence": 12,
+      "provider_budget": 12,
+      "recommendation_citations": 12
+    },
+    "expectation_coverage": {
+      "status": {
+        "evaluated": 12,
+        "passed": 11
+      },
+      "route": {
+        "evaluated": 12,
+        "passed": 12
+      },
+      "required_dimensions": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "required_citations": {
+        "evaluated": 6,
+        "passed": 6
+      },
+      "citation_integrity": {
+        "evaluated": 12,
+        "passed": 12
+      },
+      "frozen_reference_points": {
+        "evaluated": 2,
+        "passed": 2
+      },
+      "tool_efficiency": {
+        "evaluated": 12,
+        "passed": 12
+      },
+      "retry": {
+        "evaluated": 1,
+        "passed": 1
+      },
+      "read_only": {
+        "evaluated": 12,
+        "passed": 12
+      },
+      "human_completion": {
+        "evaluated": 1,
+        "passed": 1
+      },
+      "offline": {
+        "evaluated": 12,
+        "passed": 12
+      },
+      "proposed_actions_only": {
+        "evaluated": 7,
+        "passed": 7
+      },
+      "no_integrity_errors": {
+        "evaluated": 12,
+        "passed": 12
+      },
+      "proposed_severity": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "assessment_status": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "recorded_severity": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "reported_severity": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "dimension_coverage": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "missing_dimensions": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "explicit_gaps": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "context_provenance": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "action_contract": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "no_forbidden_recommendations": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "clock_integrity": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "interrupt_sequence": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "provider_budget": {
+        "evaluated": 12,
+        "passed": 12
+      },
+      "recommendation_citations": {
+        "evaluated": 7,
+        "passed": 7
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "reserved_sev2",
+      "category": "reserved",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 9.233666816726327,
+      "tool_calls": 1,
+      "response": {
+        "investigation_id": "fc491feb-4998-48a8-9cd7-17283ac36858",
+        "completion_status": "completed",
+        "route": "policy_only",
+        "investigation_plan": {
+          "execution": {
+            "route": "policy_only",
+            "calls": [
+              {
+                "tool_name": "search_internal_policy",
+                "arguments": {
+                  "query": "Which SEV2 escalation recipients and deadlines are required? SEV2",
+                  "policy_type": null,
+                  "top_k": 6
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "policy:escalation",
+              "plane": "policy",
+              "description": "escalation notify notification deadline",
+              "policy_type": "escalation",
+              "tool_name": null,
+              "section_numbers": [
+                1,
+                3
+              ],
+              "query": "escalation notify notification deadline notification recipients deadlines",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:escalation:notifications",
+                  "description": "notification recipients deadlines",
+                  "section_numbers": [
+                    1,
+                    3
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": true,
+          "covered_requirements": [
+            "policy:escalation"
+          ],
+          "gaps": [],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "policy:escalation:notifications",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-INC-002:s01:c01",
+                "POL-INC-002:s03:c01"
+              ],
+              "missing_sections": []
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 0,
+        "investigation_brief": {
+          "executive_summary": "Policy/history investigation: notification recipients deadlines. Investigation status: completed. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "severity=SEV2 (user reported)",
+          "applicable_internal_policies": [
+            {
+              "kind": "policy_requirement",
+              "text": "Escalation begins when an incident meets a severity threshold in POL-INC-001. The analyst records when the threshold was first detected and uses that time for notification deadlines. Escalation is a human action: an assistant may recommend recipients and prepare a draft, but a responsible employee sends the notification. A failed delivery does not satisfy the deadline. Record recipient, channel, sent time and acknowledgement. Use the on-call contact directory; this corpus does not contain phone numbers or personal contact details.",
+              "evidence_ids": [
+                "POL-INC-002:s01:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "For Severity 2 (SEV2), notify the Operations Duty Manager and recovery team within 15 minutes, and the Customer Service Lead within 30 minutes. Risk & Compliance must be included within 30 minutes when integrity, safety or suspected data loss is involved. SEV3 and SEV4 are managed by the assigned service owner during the operating shift; record the handover if unresolved. If any SEV1 threshold develops, start the SEV1 clock at that threshold detection and record the upgrade. Lower severity never permits bypassing evidence preservation.",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01"
+              ]
+            }
+          ],
+          "historical_incident_comparison": [],
+          "key_findings": [
+            {
+              "kind": "policy_requirement",
+              "text": "Escalation begins when an incident meets a severity threshold in POL-INC-001. The analyst records when the threshold was first detected and uses that time for notification deadlines. Escalation is a human action: an assistant may recommend recipients and prepare a draft, but a responsible employee sends the notification. A failed delivery does not satisfy the deadline. Record recipient, channel, sent time and acknowledgement. Use the on-call contact directory; this corpus does not contain phone numbers or personal contact details.",
+              "evidence_ids": [
+                "POL-INC-002:s01:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "For Severity 2 (SEV2), notify the Operations Duty Manager and recovery team within 15 minutes, and the Customer Service Lead within 30 minutes. Risk & Compliance must be included within 30 minutes when integrity, safety or suspected data loss is involved. SEV3 and SEV4 are managed by the assigned service owner during the operating shift; record the handover if unresolved. If any SEV1 threshold develops, start the SEV1 clock at that threshold detection and record the upgrade. Lower severity never permits bypassing evidence preservation.",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01"
+              ]
+            }
+          ],
+          "recommended_next_steps": [
+            {
+              "text": "Proposed for any incident meeting these policy conditions: check or prepare the unsent notification to Operations Duty Manager and recovery team within 15 minutes of threshold detection. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01",
+                "POL-INC-002:s01:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Responsible employee / incident coordinator",
+              "trigger": "If SEV2 applies to this incident",
+              "deadline_minutes": 15,
+              "deadline_basis": "threshold detection",
+              "due_at": null,
+              "retrospective": false
+            },
+            {
+              "text": "Proposed for any incident meeting these policy conditions: check or prepare the unsent notification to Customer Service Lead within 30 minutes of threshold detection. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01",
+                "POL-INC-002:s01:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Responsible employee / incident coordinator",
+              "trigger": "If SEV2 applies to this incident",
+              "deadline_minutes": 30,
+              "deadline_basis": "threshold detection",
+              "due_at": null,
+              "retrospective": false
+            }
+          ],
+          "evidence_gaps": [],
+          "source_citations": [
+            {
+              "evidence_id": "POL-INC-002:s01:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-INC-002",
+              "title": "Incident Escalation SOP",
+              "section": "1. Trigger and notification clock",
+              "excerpt": "Escalation begins when an incident meets a severity threshold in POL-INC-001. The analyst records when the threshold was first detected and uses that time for notification deadlines. Escalation is a human action: an assistant may recommend recipients and prepare a draft, but a responsible employee sends the notification. A failed delivery does not satisfy the deadline. Record recipient, channel, sent time and acknowledgement. Use the on-call contact directory; this corpus does not contain phone numbers or personal contact details.",
+              "chunk_id": "POL-INC-002:s01:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.3640432286189709
+            },
+            {
+              "evidence_id": "POL-INC-002:s03:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-INC-002",
+              "title": "Incident Escalation SOP",
+              "section": "3. Severity 2 and lower notification",
+              "excerpt": "For Severity 2 (SEV2), notify the Operations Duty Manager and recovery team within 15 minutes, and the Customer Service Lead within 30 minutes. Risk & Compliance must be included within 30 minutes when integrity, safety or suspected data loss is involved. SEV3 and SEV4 are managed by the assigned service owner during the operating shift; record the handover if unresolved. If any SEV1 threshold develops, start the SEV1 clock at that threshold detection and record the upgrade. Lower severity never permits bypassing evidence preservation.",
+              "chunk_id": "POL-INC-002:s03:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.16389390336108875
+            }
+          ],
+          "investigation_status": "completed",
+          "tool_trace": [
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "escalation notify notification deadline notification recipients deadlines SEV2",
+                "top_k": 6
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.35245809704065323
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "retrieve_policies",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": null,
+            "reported_severity": "SEV2",
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [
+              {
+                "field": "severity",
+                "value": "SEV2",
+                "origin": "user_reported",
+                "evidence_ids": []
+              }
+            ],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV2",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ]
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "retrieve_policies",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "escalation notify notification deadline notification recipients deadlines SEV2",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.35245809704065323
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 9.233666816726327,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": null,
+          "reported_severity": "SEV2",
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV2",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "required_citations",
+        "citation_integrity",
+        "tool_efficiency",
+        "read_only",
+        "offline",
+        "proposed_actions_only",
+        "no_integrity_errors",
+        "provider_budget",
+        "recommendation_citations"
+      ]
+    },
+    {
+      "id": "reserved_record",
+      "category": "reserved",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 6.397417047992349,
+      "tool_calls": 1,
+      "response": {
+        "investigation_id": "47802b61-7cd9-4bcb-8e85-85fda3a08778",
+        "completion_status": "completed",
+        "route": "data_only",
+        "investigation_plan": {
+          "execution": {
+            "route": "data_only",
+            "calls": [
+              {
+                "tool_name": "get_incident",
+                "arguments": {
+                  "incident_id": "INC-118"
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "history:get_incident",
+              "plane": "history",
+              "description": "Validated deterministic result from get_incident",
+              "policy_type": null,
+              "tool_name": "get_incident",
+              "section_numbers": [],
+              "query": null,
+              "dimensions": []
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": true,
+          "covered_requirements": [
+            "history:get_incident"
+          ],
+          "gaps": [],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "history:get_incident",
+              "status": "supported",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ],
+              "missing_sections": []
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 0,
+        "investigation_brief": {
+          "executive_summary": "Snapshot incident INC-118: 6 minutes downtime; 67 customer-impact exposures. Investigation status: completed. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "incident id=INC-118 (user reported); incident id=INC-118 (incident snapshot); category=customer_impact (incident snapshot); severity=SEV3 (incident snapshot); downtime minutes=6 (incident snapshot); customer impact count=67 (incident snapshot); service=Customer Notifications (incident snapshot); status=resolved (incident snapshot); opened at=2026-02-13T23:24:00Z (incident snapshot)",
+          "applicable_internal_policies": [],
+          "historical_incident_comparison": [
+            {
+              "kind": "historical_fact",
+              "text": "INC-118: Customer Notifications, customer_impact, recorded SEV3, resolved; downtime 6 minutes; customer-impact exposures 67.",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            }
+          ],
+          "key_findings": [
+            {
+              "kind": "historical_fact",
+              "text": "INC-118: Customer Notifications, customer_impact, recorded SEV3, resolved; downtime 6 minutes; customer-impact exposures 67.",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            }
+          ],
+          "recommended_next_steps": [],
+          "evidence_gaps": [],
+          "source_citations": [
+            {
+              "evidence_id": "db:get_incident:71520c8f6251",
+              "source_type": "incident_db",
+              "source_id": "harbourlink-incidents-v1",
+              "title": "HarbourLink synthetic incident snapshot",
+              "section": "get_incident",
+              "excerpt": "{\"incident\": {\"business_unit\": \"Customer Service\", \"category\": \"customer_impact\", \"customer_impact_count\": 67, \"downtime_minutes\": 6, \"estimated_cost\": 120.6, \"incident_id\": \"INC-118\", \"opened_at\": \"2026-02-13T23:24:00Z\", \"post_incident_review_required\": false, \"resolution_summary\": \"Owner validated recovery and handover.\", \"resolved_at\": \"2026-02-14T00:15:00Z\", \"root_cause\": \"notification backlog\", \"service\": \"Customer Notifications\", \"severity\": \"SEV3\", \"site\": \"Shared Services\", \"status\": \"resolved\", \"subcategory\": \"notification backlog\", \"vendor_related\": false}}",
+              "chunk_id": null,
+              "version": null,
+              "effective_date": null,
+              "score": null
+            }
+          ],
+          "investigation_status": "completed",
+          "tool_trace": [
+            {
+              "tool_name": "get_incident",
+              "arguments": {
+                "incident_id": "INC-118"
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.40558306500315666
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "analyse_incident_history",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": "SEV3",
+            "reported_severity": null,
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [
+              {
+                "field": "incident_id",
+                "value": "INC-118",
+                "origin": "user_reported",
+                "evidence_ids": []
+              },
+              {
+                "field": "incident_id",
+                "value": "INC-118",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:71520c8f6251"
+                ]
+              },
+              {
+                "field": "category",
+                "value": "customer_impact",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:71520c8f6251"
+                ]
+              },
+              {
+                "field": "severity",
+                "value": "SEV3",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:71520c8f6251"
+                ]
+              },
+              {
+                "field": "downtime_minutes",
+                "value": 6,
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:71520c8f6251"
+                ]
+              },
+              {
+                "field": "customer_impact_count",
+                "value": 67,
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:71520c8f6251"
+                ]
+              },
+              {
+                "field": "service",
+                "value": "Customer Notifications",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:71520c8f6251"
+                ]
+              },
+              {
+                "field": "status",
+                "value": "resolved",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:71520c8f6251"
+                ]
+              },
+              {
+                "field": "opened_at",
+                "value": "2026-02-13T23:24:00Z",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:71520c8f6251"
+                ]
+              }
+            ],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": [
+            {
+              "field": "incident_id",
+              "value": "INC-118",
+              "origin": "user_reported",
+              "evidence_ids": []
+            },
+            {
+              "field": "incident_id",
+              "value": "INC-118",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            },
+            {
+              "field": "category",
+              "value": "customer_impact",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            },
+            {
+              "field": "severity",
+              "value": "SEV3",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            },
+            {
+              "field": "downtime_minutes",
+              "value": 6,
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            },
+            {
+              "field": "customer_impact_count",
+              "value": 67,
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            },
+            {
+              "field": "service",
+              "value": "Customer Notifications",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            },
+            {
+              "field": "status",
+              "value": "resolved",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            },
+            {
+              "field": "opened_at",
+              "value": "2026-02-13T23:24:00Z",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            }
+          ]
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "analyse_incident_history",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "get_incident",
+            "arguments": {
+              "incident_id": "INC-118"
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.40558306500315666
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 6.397417047992349,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": "SEV3",
+          "reported_severity": null,
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [
+            {
+              "field": "incident_id",
+              "value": "INC-118",
+              "origin": "user_reported",
+              "evidence_ids": []
+            },
+            {
+              "field": "incident_id",
+              "value": "INC-118",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            },
+            {
+              "field": "category",
+              "value": "customer_impact",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            },
+            {
+              "field": "severity",
+              "value": "SEV3",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            },
+            {
+              "field": "downtime_minutes",
+              "value": 6,
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            },
+            {
+              "field": "customer_impact_count",
+              "value": 67,
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            },
+            {
+              "field": "service",
+              "value": "Customer Notifications",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            },
+            {
+              "field": "status",
+              "value": "resolved",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            },
+            {
+              "field": "opened_at",
+              "value": "2026-02-13T23:24:00Z",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:71520c8f6251"
+              ]
+            }
+          ],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "citation_integrity",
+        "tool_efficiency",
+        "read_only",
+        "offline",
+        "no_integrity_errors",
+        "provider_budget"
+      ]
+    },
+    {
+      "id": "reserved_facility_count",
+      "category": "reserved",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 5.488249938935041,
+      "tool_calls": 1,
+      "response": {
+        "investigation_id": "3399d4a7-4f92-4844-b330-74fa90f41959",
+        "completion_status": "completed",
+        "route": "data_only",
+        "investigation_plan": {
+          "execution": {
+            "route": "data_only",
+            "calls": [
+              {
+                "tool_name": "calculate_incident_metrics",
+                "arguments": {
+                  "category": "facility_disruption",
+                  "severity": null,
+                  "business_unit": null,
+                  "service": null,
+                  "status": null,
+                  "since": "2025-10-01T00:00:00Z",
+                  "until": "2026-10-01T00:00:00Z",
+                  "vendor_related": null,
+                  "min_customer_impact": null,
+                  "group_by": null
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "history:calculate_incident_metrics",
+              "plane": "history",
+              "description": "Validated deterministic result from calculate_incident_metrics",
+              "policy_type": null,
+              "tool_name": "calculate_incident_metrics",
+              "section_numbers": [],
+              "query": null,
+              "dimensions": []
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": true,
+          "covered_requirements": [
+            "history:calculate_incident_metrics"
+          ],
+          "gaps": [],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "history:calculate_incident_metrics",
+              "status": "supported",
+              "evidence_ids": [
+                "db:calculate_incident_metrics:38a50c22bfcf"
+              ],
+              "missing_sections": []
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 0,
+        "investigation_brief": {
+          "executive_summary": "Policy/history investigation: data only. The filtered historical cohort contains 40 incidents; median downtime is 74.0 minutes, with 37 known resolved durations and 3 excluded/open or missing durations. Investigation status: completed. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "No specific incident context supplied.",
+          "applicable_internal_policies": [],
+          "historical_incident_comparison": [
+            {
+              "kind": "historical_fact",
+              "text": "Matching incidents: 40; median downtime: 74.0 minutes; mean downtime: 102.4324 minutes; p90 downtime: 216.0 minutes. Known resolved durations: 37; excluded/open or missing durations: 3. Customer-impact exposures: 4141. Filters: {\"category\": \"facility_disruption\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}.",
+              "evidence_ids": [
+                "db:calculate_incident_metrics:38a50c22bfcf"
+              ]
+            }
+          ],
+          "key_findings": [
+            {
+              "kind": "historical_fact",
+              "text": "Matching incidents: 40; median downtime: 74.0 minutes; mean downtime: 102.4324 minutes; p90 downtime: 216.0 minutes. Known resolved durations: 37; excluded/open or missing durations: 3. Customer-impact exposures: 4141. Filters: {\"category\": \"facility_disruption\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}.",
+              "evidence_ids": [
+                "db:calculate_incident_metrics:38a50c22bfcf"
+              ]
+            }
+          ],
+          "recommended_next_steps": [],
+          "evidence_gaps": [],
+          "source_citations": [
+            {
+              "evidence_id": "db:calculate_incident_metrics:38a50c22bfcf",
+              "source_type": "incident_db",
+              "source_id": "harbourlink-incidents-v1",
+              "title": "HarbourLink synthetic incident snapshot",
+              "section": "calculate_incident_metrics",
+              "excerpt": "{\"downtime_sample_count\": 37, \"filters\": {\"category\": \"facility_disruption\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}, \"group_counts\": {}, \"incident_count\": 40, \"mean_customer_impact\": 103.525, \"mean_downtime_minutes\": 102.4324, \"median_downtime_minutes\": 74.0, \"missing_downtime_count\": 3, \"p90_downtime_minutes\": 216.0, \"repeat_incident_count_by_service\": {\"Site Equipment\": 40}, \"resolved_count\": 38, \"severity_distribution\": {\"SEV2\": 38, \"SEV4\": 2}, \"total_customer_impact\": 4141, \"window_basis\": \"opened_at; since inclusive, until exclusive\"}",
+              "chunk_id": null,
+              "version": null,
+              "effective_date": null,
+              "score": null
+            }
+          ],
+          "investigation_status": "completed",
+          "tool_trace": [
+            {
+              "tool_name": "calculate_incident_metrics",
+              "arguments": {
+                "category": "facility_disruption",
+                "since": "2025-10-01T00:00:00Z",
+                "until": "2026-10-01T00:00:00Z"
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.8234581910073757
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "analyse_incident_history",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": null,
+            "reported_severity": null,
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": []
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "analyse_incident_history",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "calculate_incident_metrics",
+            "arguments": {
+              "category": "facility_disruption",
+              "since": "2025-10-01T00:00:00Z",
+              "until": "2026-10-01T00:00:00Z"
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.8234581910073757
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 5.488249938935041,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": null,
+          "reported_severity": null,
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "citation_integrity",
+        "frozen_reference_points",
+        "tool_efficiency",
+        "read_only",
+        "offline",
+        "no_integrity_errors",
+        "provider_budget"
+      ]
+    },
+    {
+      "id": "reserved_vendor_sample",
+      "category": "reserved",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 5.34262484870851,
+      "tool_calls": 1,
+      "response": {
+        "investigation_id": "852480d2-7f1d-43bf-9b4a-47f8cb433a99",
+        "completion_status": "completed",
+        "route": "data_only",
+        "investigation_plan": {
+          "execution": {
+            "route": "data_only",
+            "calls": [
+              {
+                "tool_name": "find_similar_incidents",
+                "arguments": {
+                  "category": "vendor_disruption",
+                  "severity": null,
+                  "business_unit": null,
+                  "service": null,
+                  "status": null,
+                  "since": "2025-10-01T00:00:00Z",
+                  "until": "2026-10-01T00:00:00Z",
+                  "vendor_related": null,
+                  "min_customer_impact": null,
+                  "limit": 5
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "history:find_similar_incidents",
+              "plane": "history",
+              "description": "Validated deterministic result from find_similar_incidents",
+              "policy_type": null,
+              "tool_name": "find_similar_incidents",
+              "section_numbers": [],
+              "query": null,
+              "dimensions": []
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": true,
+          "covered_requirements": [
+            "history:find_similar_incidents"
+          ],
+          "gaps": [],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "history:find_similar_incidents",
+              "status": "supported",
+              "evidence_ids": [
+                "db:find_similar_incidents:436edd2fa2bd"
+              ],
+              "missing_sections": []
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 0,
+        "investigation_brief": {
+          "executive_summary": "Policy/history investigation: data only. Investigation status: completed. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "No specific incident context supplied.",
+          "applicable_internal_policies": [],
+          "historical_incident_comparison": [
+            {
+              "kind": "historical_fact",
+              "text": "Exact-filter matches: 40; bounded recent sample: INC-240, INC-234, INC-060, INC-054, INC-042. Filters: {\"category\": \"vendor_disruption\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}.",
+              "evidence_ids": [
+                "db:find_similar_incidents:436edd2fa2bd"
+              ]
+            }
+          ],
+          "key_findings": [
+            {
+              "kind": "historical_fact",
+              "text": "Exact-filter matches: 40; bounded recent sample: INC-240, INC-234, INC-060, INC-054, INC-042. Filters: {\"category\": \"vendor_disruption\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}.",
+              "evidence_ids": [
+                "db:find_similar_incidents:436edd2fa2bd"
+              ]
+            }
+          ],
+          "recommended_next_steps": [],
+          "evidence_gaps": [],
+          "source_citations": [
+            {
+              "evidence_id": "db:find_similar_incidents:436edd2fa2bd",
+              "source_type": "incident_db",
+              "source_id": "harbourlink-incidents-v1",
+              "title": "HarbourLink synthetic incident snapshot",
+              "section": "find_similar_incidents",
+              "excerpt": "{\"filters\": {\"category\": \"vendor_disruption\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}, \"incidents\": [{\"business_unit\": \"Operations\", \"category\": \"vendor_disruption\", \"customer_impact_count\": 94, \"downtime_minutes\": null, \"estimated_cost\": null, \"incident_id\": \"INC-240\", \"opened_at\": \"2026-09-30T21:00:00Z\", \"post_incident_review_required\": false, \"resolution_summary\": null, \"resolved_at\": null, \"root_cause\": null, \"service\": \"Vendor Connectivity\", \"severity\": \"SEV2\", \"site\": \"Shared Services\", \"status\": \"investigating\", \"subcategory\": \"supplier network interruption\", \"vendor_related\": true}, {\"business_unit\": \"Operations\", \"category\": \"vendor_disruption\", \"customer_impact_count\": 79, \"downtime_minutes\": null, \"estimated_cost\": null, \"incident_id\": \"INC-234\", \"opened_at\": \"2026-09-30T03:00:00Z\", \"post_incident_review_required\": false, \"resolution_summary\": null, \"resolved_at\": null, \"root_cause\": null, \"service\": \"Vendor Connectivity\", \"severity\": \"SEV2\", \"site\": \"Shared Services\", \"status\": \"investigating\", \"subcategory\": \"supplier network interruption\", \"vendor_related\": true}, {\"business_unit\": \"Operations\", \"category\": \"vendor_disruption\", \"customer_impact_count\": 72, \"downtime_minutes\": 40, \"estimated_cost\": 129.6, \"incident_id\": \"INC-060\", \"opened_at\": \"2026-09-08T23:52:00Z\", \"post_incident_review_required\": false, \"resolution_summary\": \"Owner validated recovery and handover.\", \"resolved_at\": \"2026-09-09T01:17:00Z\", \"root_cause\": \"supplier network interruption\", \"service\": \"Vendor Connectivity\", \"severity\": \"SEV2\", \"site\": \"Shared Services\", \"status\": \"resolved\", \"subcategory\": \"supplier network interruption\", \"vendor_related\": true}, {\"business_unit\": \"Operations\", \"category\": \"vendor_disruption\", \"customer_impact_count\": 94, \"downtime_minutes\": 32, \"estimated_cost\": 169.2, \"incident_id\": \"INC-054\", \"opened_at\": \"2026-08-24T05:38:00Z\", \"post_incident_review_required\": false, \"resolution_summary\": \"Owner validated recovery and handover.\", \"resolved_at\": \"2026-08-24T06:55:00Z\", \"root_cause\": \"supplier network interruption\", \"service\": \"Vendor Connectivity\", \"severity\": \"SEV2\", \"site\": \"Shared Services\", \"status\": \"resolved\", \"subcategory\": \"supplier network interruption\", \"vendor_related\": true}, {\"business_unit\": \"Operations\", \"category\": \"vendor_disruption\", \"customer_impact_count\": 8, \"downtime_minutes\": 72, \"estimated_cost\": null, \"incident_id\": \"INC-042\", \"opened_at\": \"2026-08-11T22:16:00Z\", \"post_incident_review_required\": false, \"resolution_summary\": \"Owner validated recovery and handover.\", \"resolved_at\": \"2026-08-12T00:13:00Z\", \"root_cause\": \"supplier network interruption\", \"service\": \"Vendor Connectivity\", \"severity\": \"SEV2\", \"site\": \"Shared Services\", \"status\": \"resolved\", \"subcategory\": \"supplier network interruption\", \"vendor_related\": true}], \"total_matches\": 40}",
+              "chunk_id": null,
+              "version": null,
+              "effective_date": null,
+              "score": null
+            }
+          ],
+          "investigation_status": "completed",
+          "tool_trace": [
+            {
+              "tool_name": "find_similar_incidents",
+              "arguments": {
+                "category": "vendor_disruption",
+                "since": "2025-10-01T00:00:00Z",
+                "until": "2026-10-01T00:00:00Z",
+                "limit": 5
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.6518750451505184
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "analyse_incident_history",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": null,
+            "reported_severity": null,
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": []
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "analyse_incident_history",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "find_similar_incidents",
+            "arguments": {
+              "category": "vendor_disruption",
+              "since": "2025-10-01T00:00:00Z",
+              "until": "2026-10-01T00:00:00Z",
+              "limit": 5
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.6518750451505184
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 5.34262484870851,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": null,
+          "reported_severity": null,
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "citation_integrity",
+        "frozen_reference_points",
+        "tool_efficiency",
+        "read_only",
+        "offline",
+        "no_integrity_errors",
+        "provider_budget"
+      ]
+    },
+    {
+      "id": "reserved_retention",
+      "category": "reserved",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 5.995291983708739,
+      "tool_calls": 1,
+      "response": {
+        "investigation_id": "61f6a3ff-c221-4cb9-987c-2132634216d1",
+        "completion_status": "completed",
+        "route": "policy_only",
+        "investigation_plan": {
+          "execution": {
+            "route": "policy_only",
+            "calls": [
+              {
+                "tool_name": "search_internal_policy",
+                "arguments": {
+                  "query": "What evidence retention period does policy require?",
+                  "policy_type": null,
+                  "top_k": 6
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "policy:retention",
+              "plane": "policy",
+              "description": "evidence log retention preservation",
+              "policy_type": "retention",
+              "tool_name": null,
+              "section_numbers": [
+                2
+              ],
+              "query": "evidence log retention preservation retention period legal hold",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:retention:period",
+                  "description": "retention period legal hold",
+                  "section_numbers": [
+                    2
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": true,
+          "covered_requirements": [
+            "policy:retention"
+          ],
+          "gaps": [],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "policy:retention:period",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-EVD-001:s02:c01"
+              ],
+              "missing_sections": []
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 0,
+        "investigation_brief": {
+          "executive_summary": "Policy/history investigation: retention period legal hold. Investigation status: completed. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "No specific incident context supplied.",
+          "applicable_internal_policies": [
+            {
+              "kind": "policy_requirement",
+              "text": "Retain incident evidence and approved post-incident reviews for 180 days after resolution. For an unresolved incident, retention begins when resolution is recorded, so evidence must remain available throughout investigation. A legal hold suspends scheduled disposal until Risk & Compliance explicitly releases it. A human records the hold reference and scope; the assistant cannot set or remove holds or delete evidence. This retention standard is an internal demonstration rule and does not define statutory limitation periods or mandatory regulatory deadlines.",
+              "evidence_ids": [
+                "POL-EVD-001:s02:c01"
+              ]
+            }
+          ],
+          "historical_incident_comparison": [],
+          "key_findings": [
+            {
+              "kind": "policy_requirement",
+              "text": "Retain incident evidence and approved post-incident reviews for 180 days after resolution. For an unresolved incident, retention begins when resolution is recorded, so evidence must remain available throughout investigation. A legal hold suspends scheduled disposal until Risk & Compliance explicitly releases it. A human records the hold reference and scope; the assistant cannot set or remove holds or delete evidence. This retention standard is an internal demonstration rule and does not define statutory limitation periods or mandatory regulatory deadlines.",
+              "evidence_ids": [
+                "POL-EVD-001:s02:c01"
+              ]
+            }
+          ],
+          "recommended_next_steps": [
+            {
+              "text": "Proposed for any incident meeting these policy conditions: retain evidence throughout investigation and for 180 days after resolution; a legal hold suspends disposal until Risk & Compliance releases it. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-EVD-001:s02:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Authorised human evidence owner",
+              "trigger": "Resolution recorded and any legal-hold conditions verified by a human",
+              "deadline_minutes": null,
+              "deadline_basis": null,
+              "due_at": null,
+              "retrospective": false
+            }
+          ],
+          "evidence_gaps": [],
+          "source_citations": [
+            {
+              "evidence_id": "POL-EVD-001:s02:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-EVD-001",
+              "title": "Evidence and Log Retention Standard",
+              "section": "2. Retention period and legal hold",
+              "excerpt": "Retain incident evidence and approved post-incident reviews for 180 days after resolution. For an unresolved incident, retention begins when resolution is recorded, so evidence must remain available throughout investigation. A legal hold suspends scheduled disposal until Risk & Compliance explicitly releases it. A human records the hold reference and scope; the assistant cannot set or remove holds or delete evidence. This retention standard is an internal demonstration rule and does not define statutory limitation periods or mandatory regulatory deadlines.",
+              "chunk_id": "POL-EVD-001:s02:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.47925072723102724
+            }
+          ],
+          "investigation_status": "completed",
+          "tool_trace": [
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "evidence log retention preservation retention period legal hold",
+                "top_k": 6
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.38512516766786575
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "retrieve_policies",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": null,
+            "reported_severity": null,
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": []
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "retrieve_policies",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "evidence log retention preservation retention period legal hold",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.38512516766786575
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 5.995291983708739,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": null,
+          "reported_severity": null,
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "required_citations",
+        "citation_integrity",
+        "tool_efficiency",
+        "read_only",
+        "offline",
+        "proposed_actions_only",
+        "no_integrity_errors",
+        "provider_budget",
+        "recommendation_citations"
+      ]
+    },
+    {
+      "id": "reserved_recovery",
+      "category": "reserved",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 5.539083853363991,
+      "tool_calls": 1,
+      "response": {
+        "investigation_id": "cb9adad7-0835-4d89-ae2c-534f98e17916",
+        "completion_status": "completed",
+        "route": "policy_only",
+        "investigation_plan": {
+          "execution": {
+            "route": "policy_only",
+            "calls": [
+              {
+                "tool_name": "search_internal_policy",
+                "arguments": {
+                  "query": "What service recovery observation does policy require for SEV2? SEV2",
+                  "policy_type": null,
+                  "top_k": 6
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "policy:recovery",
+              "plane": "policy",
+              "description": "service recovery validation observation",
+              "policy_type": "recovery",
+              "tool_name": null,
+              "section_numbers": [
+                2
+              ],
+              "query": "service recovery validation observation restoration observation",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:recovery:observation",
+                  "description": "restoration observation",
+                  "section_numbers": [
+                    2
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": true,
+          "covered_requirements": [
+            "policy:recovery"
+          ],
+          "gaps": [],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "policy:recovery:observation",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-REC-001:s02:c01"
+              ],
+              "missing_sections": []
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 0,
+        "investigation_brief": {
+          "executive_summary": "Policy/history investigation: restoration observation. Investigation status: completed. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "severity=SEV2 (user reported)",
+          "applicable_internal_policies": [
+            {
+              "kind": "policy_requirement",
+              "text": "After service restoration, observe a SEV1 service for at least 30 minutes and a SEV2 service for at least 15 minutes before recommending resolution. Check transaction success, error rate and the affected customer journey against the normal baseline. A single successful request is not sufficient evidence of stable recovery. Record the observation window and owner. If errors recur, continue the incident and notify the coordinator; do not reset downtime to hide recurring interruption. Customer notices must distinguish restored service from completed investigation.",
+              "evidence_ids": [
+                "POL-REC-001:s02:c01"
+              ]
+            }
+          ],
+          "historical_incident_comparison": [],
+          "key_findings": [
+            {
+              "kind": "policy_requirement",
+              "text": "After service restoration, observe a SEV1 service for at least 30 minutes and a SEV2 service for at least 15 minutes before recommending resolution. Check transaction success, error rate and the affected customer journey against the normal baseline. A single successful request is not sufficient evidence of stable recovery. Record the observation window and owner. If errors recur, continue the incident and notify the coordinator; do not reset downtime to hide recurring interruption. Customer notices must distinguish restored service from completed investigation.",
+              "evidence_ids": [
+                "POL-REC-001:s02:c01"
+              ]
+            }
+          ],
+          "recommended_next_steps": [
+            {
+              "text": "Proposed for any incident meeting these policy conditions: validate restoration and observe service for at least 15 minutes before recommending resolution. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-REC-001:s02:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Recovery owner",
+              "trigger": "After restoration of a SEV2 service",
+              "deadline_minutes": 15,
+              "deadline_basis": "validated service restoration",
+              "due_at": null,
+              "retrospective": false
+            }
+          ],
+          "evidence_gaps": [],
+          "source_citations": [
+            {
+              "evidence_id": "POL-REC-001:s02:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-REC-001",
+              "title": "Service Recovery Procedure",
+              "section": "2. Restoration and observation",
+              "excerpt": "After service restoration, observe a SEV1 service for at least 30 minutes and a SEV2 service for at least 15 minutes before recommending resolution. Check transaction success, error rate and the affected customer journey against the normal baseline. A single successful request is not sufficient evidence of stable recovery. Record the observation window and owner. If errors recur, continue the incident and notify the coordinator; do not reset downtime to hide recurring interruption. Customer notices must distinguish restored service from completed investigation.",
+              "chunk_id": "POL-REC-001:s02:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.2700126722599106
+            }
+          ],
+          "investigation_status": "completed",
+          "tool_trace": [
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "service recovery validation observation restoration observation SEV2",
+                "top_k": 6
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.3819589037448168
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "retrieve_policies",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": null,
+            "reported_severity": "SEV2",
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [
+              {
+                "field": "severity",
+                "value": "SEV2",
+                "origin": "user_reported",
+                "evidence_ids": []
+              }
+            ],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV2",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ]
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "retrieve_policies",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "service recovery validation observation restoration observation SEV2",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.3819589037448168
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 5.539083853363991,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": null,
+          "reported_severity": "SEV2",
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV2",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "required_citations",
+        "citation_integrity",
+        "tool_efficiency",
+        "read_only",
+        "offline",
+        "proposed_actions_only",
+        "no_integrity_errors",
+        "provider_budget",
+        "recommendation_citations"
+      ]
+    },
+    {
+      "id": "reserved_supplier",
+      "category": "reserved",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 6.178583018481731,
+      "tool_calls": 1,
+      "response": {
+        "investigation_id": "fc9e96c3-637f-40aa-8396-2f29d47ac085",
+        "completion_status": "completed",
+        "route": "policy_only",
+        "investigation_plan": {
+          "execution": {
+            "route": "policy_only",
+            "calls": [
+              {
+                "tool_name": "search_internal_policy",
+                "arguments": {
+                  "query": "What supplier notification does policy require for SEV1? SEV1",
+                  "policy_type": null,
+                  "top_k": 6
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "policy:vendor",
+              "plane": "policy",
+              "description": "vendor supplier escalation acknowledgement",
+              "policy_type": "vendor",
+              "tool_name": null,
+              "section_numbers": [
+                2
+              ],
+              "query": "vendor supplier escalation acknowledgement supplier notification deadlines",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:vendor:notification",
+                  "description": "supplier notification deadlines",
+                  "section_numbers": [
+                    2
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": true,
+          "covered_requirements": [
+            "policy:vendor"
+          ],
+          "gaps": [],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "policy:vendor:notification",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-VEN-001:s02:c01"
+              ],
+              "missing_sections": []
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 0,
+        "investigation_brief": {
+          "executive_summary": "Policy/history investigation: supplier notification deadlines. Investigation status: completed. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "severity=SEV1 (user reported)",
+          "applicable_internal_policies": [
+            {
+              "kind": "policy_requirement",
+              "text": "For a vendor-related SEV1 disruption, the service owner must contact the supplier incident channel within 10 minutes of threshold detection. For SEV2, contact the supplier within 30 minutes. Include HarbourLink incident ID, supplier service, symptoms, start time, severity, impact estimate and sanitised diagnostic evidence. Record the supplier reference and acknowledgement time. These deadlines operate alongside POL-INC-002 internal notifications; a supplier ticket alone does not satisfy notification of Operations, Customer Service or Risk & Compliance.",
+              "evidence_ids": [
+                "POL-VEN-001:s02:c01"
+              ]
+            }
+          ],
+          "historical_incident_comparison": [],
+          "key_findings": [
+            {
+              "kind": "policy_requirement",
+              "text": "For a vendor-related SEV1 disruption, the service owner must contact the supplier incident channel within 10 minutes of threshold detection. For SEV2, contact the supplier within 30 minutes. Include HarbourLink incident ID, supplier service, symptoms, start time, severity, impact estimate and sanitised diagnostic evidence. Record the supplier reference and acknowledgement time. These deadlines operate alongside POL-INC-002 internal notifications; a supplier ticket alone does not satisfy notification of Operations, Customer Service or Risk & Compliance.",
+              "evidence_ids": [
+                "POL-VEN-001:s02:c01"
+              ]
+            }
+          ],
+          "recommended_next_steps": [
+            {
+              "text": "Proposed for any incident meeting these policy conditions: prepare supplier contact within 10 minutes of threshold detection using the approved supplier channel. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-VEN-001:s02:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Service owner",
+              "trigger": "Only if vendor involvement and SEV1 are confirmed",
+              "deadline_minutes": 10,
+              "deadline_basis": "threshold detection",
+              "due_at": null,
+              "retrospective": false
+            }
+          ],
+          "evidence_gaps": [],
+          "source_citations": [
+            {
+              "evidence_id": "POL-VEN-001:s02:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-VEN-001",
+              "title": "Vendor Escalation Procedure",
+              "section": "2. Supplier notification deadlines",
+              "excerpt": "For a vendor-related SEV1 disruption, the service owner must contact the supplier incident channel within 10 minutes of threshold detection. For SEV2, contact the supplier within 30 minutes. Include HarbourLink incident ID, supplier service, symptoms, start time, severity, impact estimate and sanitised diagnostic evidence. Record the supplier reference and acknowledgement time. These deadlines operate alongside POL-INC-002 internal notifications; a supplier ticket alone does not satisfy notification of Operations, Customer Service or Risk & Compliance.",
+              "chunk_id": "POL-VEN-001:s02:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.5238256626558531
+            }
+          ],
+          "investigation_status": "completed",
+          "tool_trace": [
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "vendor supplier escalation acknowledgement supplier notification deadlines SEV1",
+                "top_k": 6
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.3977078013122082
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "retrieve_policies",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": null,
+            "reported_severity": "SEV1",
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [
+              {
+                "field": "severity",
+                "value": "SEV1",
+                "origin": "user_reported",
+                "evidence_ids": []
+              }
+            ],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV1",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ]
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "retrieve_policies",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "vendor supplier escalation acknowledgement supplier notification deadlines SEV1",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.3977078013122082
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 6.178583018481731,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": null,
+          "reported_severity": "SEV1",
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV1",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "required_citations",
+        "citation_integrity",
+        "tool_efficiency",
+        "read_only",
+        "offline",
+        "proposed_actions_only",
+        "no_integrity_errors",
+        "provider_budget",
+        "recommendation_citations"
+      ]
+    },
+    {
+      "id": "reserved_continuity",
+      "category": "reserved",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 5.842207930982113,
+      "tool_calls": 1,
+      "response": {
+        "investigation_id": "eb2be15e-6602-418d-81d9-ab95c8ad957e",
+        "completion_status": "completed",
+        "route": "policy_only",
+        "investigation_plan": {
+          "execution": {
+            "route": "policy_only",
+            "calls": [
+              {
+                "tool_name": "search_internal_policy",
+                "arguments": {
+                  "query": "Explain business continuity activation policy",
+                  "policy_type": null,
+                  "top_k": 6
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "policy:continuity",
+              "plane": "policy",
+              "description": "business continuity activation",
+              "policy_type": "continuity",
+              "tool_name": null,
+              "section_numbers": [
+                2
+              ],
+              "query": "business continuity activation continuity activation thresholds",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:continuity:activation",
+                  "description": "continuity activation thresholds",
+                  "section_numbers": [
+                    2
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": true,
+          "covered_requirements": [
+            "policy:continuity"
+          ],
+          "gaps": [],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "policy:continuity:activation",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-BCP-001:s02:c01"
+              ],
+              "missing_sections": []
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 0,
+        "investigation_brief": {
+          "executive_summary": "Policy/history investigation: continuity activation thresholds. Investigation status: completed. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "No specific incident context supplied.",
+          "applicable_internal_policies": [
+            {
+              "kind": "policy_requirement",
+              "text": "Activate the continuity assessment immediately for an unsafe site or a multi-site essential-service closure. For a customer-facing digital or payment outage lasting 60 minutes or more, the Duty Manager must decide whether to activate the approved continuity plan and record the decision and rationale. The 60-minute threshold is an assessment deadline, not permission to delay SEV1 escalation at 30 minutes. POL-INC-001 and POL-INC-002 continue to apply during continuity. Safety takes priority over maintaining transaction throughput.",
+              "evidence_ids": [
+                "POL-BCP-001:s02:c01"
+              ]
+            }
+          ],
+          "historical_incident_comparison": [],
+          "key_findings": [
+            {
+              "kind": "policy_requirement",
+              "text": "Activate the continuity assessment immediately for an unsafe site or a multi-site essential-service closure. For a customer-facing digital or payment outage lasting 60 minutes or more, the Duty Manager must decide whether to activate the approved continuity plan and record the decision and rationale. The 60-minute threshold is an assessment deadline, not permission to delay SEV1 escalation at 30 minutes. POL-INC-001 and POL-INC-002 continue to apply during continuity. Safety takes priority over maintaining transaction throughput.",
+              "evidence_ids": [
+                "POL-BCP-001:s02:c01"
+              ]
+            }
+          ],
+          "recommended_next_steps": [
+            {
+              "text": "Proposed for any incident meeting these policy conditions: assess continuity immediately for unsafe sites/multi-site essential-service closure, or decide on the continuity plan when a customer-facing digital/payment outage reaches 60 minutes. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-BCP-001:s02:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Operations Duty Manager",
+              "trigger": "Only when the cited safety, closure or 60-minute outage condition applies",
+              "deadline_minutes": null,
+              "deadline_basis": null,
+              "due_at": null,
+              "retrospective": false
+            }
+          ],
+          "evidence_gaps": [],
+          "source_citations": [
+            {
+              "evidence_id": "POL-BCP-001:s02:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-BCP-001",
+              "title": "Business Continuity Procedure",
+              "section": "2. Activation thresholds",
+              "excerpt": "Activate the continuity assessment immediately for an unsafe site or a multi-site essential-service closure. For a customer-facing digital or payment outage lasting 60 minutes or more, the Duty Manager must decide whether to activate the approved continuity plan and record the decision and rationale. The 60-minute threshold is an assessment deadline, not permission to delay SEV1 escalation at 30 minutes. POL-INC-001 and POL-INC-002 continue to apply during continuity. Safety takes priority over maintaining transaction throughput.",
+              "chunk_id": "POL-BCP-001:s02:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.35052667856904435
+            }
+          ],
+          "investigation_status": "completed",
+          "tool_trace": [
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "business continuity activation continuity activation thresholds",
+                "top_k": 6
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.37870812229812145
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "retrieve_policies",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": null,
+            "reported_severity": null,
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": []
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "retrieve_policies",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "business continuity activation continuity activation thresholds",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.37870812229812145
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 5.842207930982113,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": null,
+          "reported_severity": null,
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "required_citations",
+        "citation_integrity",
+        "tool_efficiency",
+        "read_only",
+        "offline",
+        "proposed_actions_only",
+        "no_integrity_errors",
+        "provider_budget",
+        "recommendation_citations"
+      ]
+    },
+    {
+      "id": "reserved_review",
+      "category": "reserved",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 4.072666866704822,
+      "tool_calls": 1,
+      "response": {
+        "investigation_id": "7ddaa127-75fa-4e74-84a9-9b49d71dfa2f",
+        "completion_status": "completed",
+        "route": "policy_only",
+        "investigation_plan": {
+          "execution": {
+            "route": "policy_only",
+            "calls": [
+              {
+                "tool_name": "search_internal_policy",
+                "arguments": {
+                  "query": "What post-incident review timetable applies to SEV1? SEV1",
+                  "policy_type": null,
+                  "top_k": 6
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "policy:review",
+              "plane": "policy",
+              "description": "post incident review requirements",
+              "policy_type": "review",
+              "tool_name": null,
+              "section_numbers": [
+                2
+              ],
+              "query": "post incident review requirements review timetable business days",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:review:timetable",
+                  "description": "review timetable business days",
+                  "section_numbers": [
+                    2
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": true,
+          "covered_requirements": [
+            "policy:review"
+          ],
+          "gaps": [],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "policy:review:timetable",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-REV-001:s02:c01"
+              ],
+              "missing_sections": []
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 0,
+        "investigation_brief": {
+          "executive_summary": "Policy/history investigation: review timetable business days. Investigation status: completed. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "severity=SEV1 (user reported)",
+          "applicable_internal_policies": [
+            {
+              "kind": "policy_requirement",
+              "text": "The incident coordinator schedules a SEV1 review within 2 business days of resolution and publishes the draft review within 5 business days. Business days mean Monday to Friday, excluding HarbourLink's approved holiday calendar; the holiday calendar is not included in this corpus. For other mandatory reviews, schedule within 5 business days and publish the draft within 10 business days. Record owner and due date at resolution. If a deadline cannot be met, the Duty Manager records the exception and revised date.",
+              "evidence_ids": [
+                "POL-REV-001:s02:c01"
+              ]
+            }
+          ],
+          "historical_incident_comparison": [],
+          "key_findings": [
+            {
+              "kind": "policy_requirement",
+              "text": "The incident coordinator schedules a SEV1 review within 2 business days of resolution and publishes the draft review within 5 business days. Business days mean Monday to Friday, excluding HarbourLink's approved holiday calendar; the holiday calendar is not included in this corpus. For other mandatory reviews, schedule within 5 business days and publish the draft within 10 business days. Record owner and due date at resolution. If a deadline cannot be met, the Duty Manager records the exception and revised date.",
+              "evidence_ids": [
+                "POL-REV-001:s02:c01"
+              ]
+            }
+          ],
+          "recommended_next_steps": [
+            {
+              "text": "Proposed for any incident meeting these policy conditions: if review is mandatory, schedule it within 2 business days of resolution and publish the draft within 5 business days. Confirm the absent holiday calendar before calculating calendar dates. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-REV-001:s02:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Incident coordinator",
+              "trigger": "After resolution, if a review is required",
+              "deadline_minutes": null,
+              "deadline_basis": null,
+              "due_at": null,
+              "retrospective": false
+            }
+          ],
+          "evidence_gaps": [],
+          "source_citations": [
+            {
+              "evidence_id": "POL-REV-001:s02:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-REV-001",
+              "title": "Post-Incident Review Standard",
+              "section": "2. Review timetable",
+              "excerpt": "The incident coordinator schedules a SEV1 review within 2 business days of resolution and publishes the draft review within 5 business days. Business days mean Monday to Friday, excluding HarbourLink's approved holiday calendar; the holiday calendar is not included in this corpus. For other mandatory reviews, schedule within 5 business days and publish the draft within 10 business days. Record owner and due date at resolution. If a deadline cannot be met, the Duty Manager records the exception and revised date.",
+              "chunk_id": "POL-REV-001:s02:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.46469606108513695
+            }
+          ],
+          "investigation_status": "completed",
+          "tool_trace": [
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "post incident review requirements review timetable business days SEV1",
+                "top_k": 6
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.31566713005304337
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "retrieve_policies",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": null,
+            "reported_severity": "SEV1",
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [
+              {
+                "field": "severity",
+                "value": "SEV1",
+                "origin": "user_reported",
+                "evidence_ids": []
+              }
+            ],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV1",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ]
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "retrieve_policies",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "post incident review requirements review timetable business days SEV1",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.31566713005304337
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 4.072666866704822,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": null,
+          "reported_severity": "SEV1",
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV1",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "required_citations",
+        "citation_integrity",
+        "tool_efficiency",
+        "read_only",
+        "offline",
+        "proposed_actions_only",
+        "no_integrity_errors",
+        "provider_budget",
+        "recommendation_citations"
+      ]
+    },
+    {
+      "id": "reserved_password",
+      "category": "reserved",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 5.310833919793367,
+      "tool_calls": 2,
+      "response": {
+        "investigation_id": "1efb897f-1ca3-44b2-b904-1a9a7b6d1c47",
+        "completion_status": "partial",
+        "route": "mixed",
+        "investigation_plan": {
+          "execution": {
+            "route": "mixed",
+            "calls": [
+              {
+                "tool_name": "get_incident",
+                "arguments": {
+                  "incident_id": "INC-001"
+                }
+              },
+              {
+                "tool_name": "search_internal_policy",
+                "arguments": {
+                  "query": "What password policy applies to INC-001? INC-001",
+                  "policy_type": null,
+                  "top_k": 6
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "policy:unsupported_detail",
+              "plane": "policy",
+              "description": "The requested policy detail is absent from this corpus.",
+              "policy_type": null,
+              "tool_name": null,
+              "section_numbers": [],
+              "query": null,
+              "dimensions": []
+            },
+            {
+              "requirement_id": "history:get_incident",
+              "plane": "history",
+              "description": "Validated deterministic result from get_incident",
+              "policy_type": null,
+              "tool_name": "get_incident",
+              "section_numbers": [],
+              "query": null,
+              "dimensions": []
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": false,
+          "covered_requirements": [
+            "history:get_incident"
+          ],
+          "gaps": [
+            {
+              "requirement_id": "policy:unsupported_detail",
+              "description": "The requested policy detail is absent from this corpus.",
+              "retryable": false
+            }
+          ],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "history:get_incident",
+              "status": "supported",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ],
+              "missing_sections": []
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 0,
+        "investigation_brief": {
+          "executive_summary": "Snapshot incident INC-001: 45 minutes downtime; 620 customer-impact exposures. Unresolved: The requested policy detail is absent from this corpus.. Investigation status: partial. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "incident id=INC-001 (user reported); incident id=INC-001 (incident snapshot); category=payment_failure (incident snapshot); severity=SEV1 (incident snapshot); downtime minutes=45 (incident snapshot); customer impact count=620 (incident snapshot); service=Payment Gateway (incident snapshot); status=resolved (incident snapshot); opened at=2026-09-29T10:00:00Z (incident snapshot)",
+          "applicable_internal_policies": [],
+          "historical_incident_comparison": [
+            {
+              "kind": "historical_fact",
+              "text": "INC-001: Payment Gateway, payment_failure, recorded SEV1, resolved; downtime 45 minutes; customer-impact exposures 620.",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            }
+          ],
+          "key_findings": [
+            {
+              "kind": "historical_fact",
+              "text": "INC-001: Payment Gateway, payment_failure, recorded SEV1, resolved; downtime 45 minutes; customer-impact exposures 620.",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            }
+          ],
+          "recommended_next_steps": [],
+          "evidence_gaps": [
+            {
+              "requirement_id": "policy:unsupported_detail",
+              "description": "The requested policy detail is absent from this corpus.",
+              "retryable": false
+            }
+          ],
+          "source_citations": [
+            {
+              "evidence_id": "db:get_incident:ade09a4f2033",
+              "source_type": "incident_db",
+              "source_id": "harbourlink-incidents-v1",
+              "title": "HarbourLink synthetic incident snapshot",
+              "section": "get_incident",
+              "excerpt": "{\"incident\": {\"business_unit\": \"Digital Services\", \"category\": \"payment_failure\", \"customer_impact_count\": 620, \"downtime_minutes\": 45, \"estimated_cost\": 1116.0, \"incident_id\": \"INC-001\", \"opened_at\": \"2026-09-29T10:00:00Z\", \"post_incident_review_required\": true, \"resolution_summary\": \"Gateway restored; reconciliation verified.\", \"resolved_at\": \"2026-09-29T11:30:00Z\", \"root_cause\": \"supplier connection pool exhaustion\", \"service\": \"Payment Gateway\", \"severity\": \"SEV1\", \"site\": \"Online\", \"status\": \"resolved\", \"subcategory\": \"gateway timeout\", \"vendor_related\": true}}",
+              "chunk_id": null,
+              "version": null,
+              "effective_date": null,
+              "score": null
+            }
+          ],
+          "investigation_status": "partial",
+          "tool_trace": [
+            {
+              "tool_name": "get_incident",
+              "arguments": {
+                "incident_id": "INC-001"
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.4367500077933073
+            },
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "What password policy applies to INC-001? INC-001 SEV1 payment_failure",
+                "top_k": 6
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.2572911325842142
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "analyse_incident_history",
+            "retrieve_policies",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": "SEV1",
+            "reported_severity": null,
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [
+              {
+                "field": "incident_id",
+                "value": "INC-001",
+                "origin": "user_reported",
+                "evidence_ids": []
+              },
+              {
+                "field": "incident_id",
+                "value": "INC-001",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:ade09a4f2033"
+                ]
+              },
+              {
+                "field": "category",
+                "value": "payment_failure",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:ade09a4f2033"
+                ]
+              },
+              {
+                "field": "severity",
+                "value": "SEV1",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:ade09a4f2033"
+                ]
+              },
+              {
+                "field": "downtime_minutes",
+                "value": 45,
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:ade09a4f2033"
+                ]
+              },
+              {
+                "field": "customer_impact_count",
+                "value": 620,
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:ade09a4f2033"
+                ]
+              },
+              {
+                "field": "service",
+                "value": "Payment Gateway",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:ade09a4f2033"
+                ]
+              },
+              {
+                "field": "status",
+                "value": "resolved",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:ade09a4f2033"
+                ]
+              },
+              {
+                "field": "opened_at",
+                "value": "2026-09-29T10:00:00Z",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:ade09a4f2033"
+                ]
+              }
+            ],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": [
+            {
+              "field": "incident_id",
+              "value": "INC-001",
+              "origin": "user_reported",
+              "evidence_ids": []
+            },
+            {
+              "field": "incident_id",
+              "value": "INC-001",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            },
+            {
+              "field": "category",
+              "value": "payment_failure",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            },
+            {
+              "field": "severity",
+              "value": "SEV1",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            },
+            {
+              "field": "downtime_minutes",
+              "value": 45,
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            },
+            {
+              "field": "customer_impact_count",
+              "value": 620,
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            },
+            {
+              "field": "service",
+              "value": "Payment Gateway",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            },
+            {
+              "field": "status",
+              "value": "resolved",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            },
+            {
+              "field": "opened_at",
+              "value": "2026-09-29T10:00:00Z",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            }
+          ]
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "analyse_incident_history",
+          "retrieve_policies",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "get_incident",
+            "arguments": {
+              "incident_id": "INC-001"
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.4367500077933073
+          },
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "What password policy applies to INC-001? INC-001 SEV1 payment_failure",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.2572911325842142
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 5.310833919793367,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": "SEV1",
+          "reported_severity": null,
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [
+            {
+              "field": "incident_id",
+              "value": "INC-001",
+              "origin": "user_reported",
+              "evidence_ids": []
+            },
+            {
+              "field": "incident_id",
+              "value": "INC-001",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            },
+            {
+              "field": "category",
+              "value": "payment_failure",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            },
+            {
+              "field": "severity",
+              "value": "SEV1",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            },
+            {
+              "field": "downtime_minutes",
+              "value": 45,
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            },
+            {
+              "field": "customer_impact_count",
+              "value": 620,
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            },
+            {
+              "field": "service",
+              "value": "Payment Gateway",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            },
+            {
+              "field": "status",
+              "value": "resolved",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            },
+            {
+              "field": "opened_at",
+              "value": "2026-09-29T10:00:00Z",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:ade09a4f2033"
+              ]
+            }
+          ],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "citation_integrity",
+        "tool_efficiency",
+        "retry",
+        "read_only",
+        "offline",
+        "no_integrity_errors",
+        "provider_budget"
+      ]
+    },
+    {
+      "id": "reserved_clarify",
+      "category": "reserved",
+      "passed": false,
+      "checks": {
+        "status": false,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [
+        "status"
+      ],
+      "latency_ms": 12.013749917969108,
+      "tool_calls": 4,
+      "response": {
+        "investigation_id": "944826e2-e7d9-4669-865c-b55ce36573b2",
+        "completion_status": "partial",
+        "route": "mixed",
+        "investigation_plan": {
+          "execution": {
+            "route": "mixed",
+            "calls": [
+              {
+                "tool_name": "get_incident",
+                "arguments": {
+                  "incident_id": "INC-018"
+                }
+              },
+              {
+                "tool_name": "search_internal_policy",
+                "arguments": {
+                  "query": "Investigate this incident INC-018 escalation policy and compare historical incidents classification policy",
+                  "policy_type": null,
+                  "top_k": 6
+                }
+              },
+              {
+                "tool_name": "calculate_incident_metrics",
+                "arguments": {
+                  "category": "vendor_disruption",
+                  "severity": null,
+                  "business_unit": null,
+                  "service": null,
+                  "status": null,
+                  "since": "2025-10-01T00:00:00Z",
+                  "until": "2026-10-01T00:00:00Z",
+                  "vendor_related": null,
+                  "min_customer_impact": null,
+                  "group_by": null
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "policy:classification",
+              "plane": "policy",
+              "description": "severity classification thresholds",
+              "policy_type": "classification",
+              "tool_name": null,
+              "section_numbers": [
+                2,
+                3
+              ],
+              "query": "severity classification thresholds severity thresholds",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:classification:thresholds",
+                  "description": "severity thresholds",
+                  "section_numbers": [
+                    2,
+                    3
+                  ]
+                }
+              ]
+            },
+            {
+              "requirement_id": "policy:escalation",
+              "plane": "policy",
+              "description": "escalation notify notification deadline",
+              "policy_type": "escalation",
+              "tool_name": null,
+              "section_numbers": [
+                1,
+                3
+              ],
+              "query": "escalation notify notification deadline notification recipients deadlines",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:escalation:notifications",
+                  "description": "notification recipients deadlines",
+                  "section_numbers": [
+                    1,
+                    3
+                  ]
+                }
+              ]
+            },
+            {
+              "requirement_id": "history:get_incident",
+              "plane": "history",
+              "description": "Validated deterministic result from get_incident",
+              "policy_type": null,
+              "tool_name": "get_incident",
+              "section_numbers": [],
+              "query": null,
+              "dimensions": []
+            },
+            {
+              "requirement_id": "history:calculate_incident_metrics",
+              "plane": "history",
+              "description": "Validated deterministic result from calculate_incident_metrics",
+              "policy_type": null,
+              "tool_name": "calculate_incident_metrics",
+              "section_numbers": [],
+              "query": null,
+              "dimensions": []
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": false,
+          "covered_requirements": [
+            "policy:classification",
+            "policy:escalation",
+            "history:get_incident",
+            "history:calculate_incident_metrics"
+          ],
+          "gaps": [
+            {
+              "requirement_id": "input:severity_facts",
+              "description": "Severity remains uncertain; missing immediate_danger, multi_site_essential_closure, single_site_disruption",
+              "retryable": false
+            }
+          ],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "policy:classification:thresholds",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-INC-001:s03:c01",
+                "POL-INC-001:s02:c01"
+              ],
+              "missing_sections": []
+            },
+            {
+              "dimension_id": "policy:escalation:notifications",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-INC-002:s01:c01",
+                "POL-INC-002:s03:c01"
+              ],
+              "missing_sections": []
+            },
+            {
+              "dimension_id": "history:get_incident",
+              "status": "supported",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ],
+              "missing_sections": []
+            },
+            {
+              "dimension_id": "history:calculate_incident_metrics",
+              "status": "supported",
+              "evidence_ids": [
+                "db:calculate_incident_metrics:dccbe2c39da9"
+              ],
+              "missing_sections": []
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 1,
+        "investigation_brief": {
+          "executive_summary": "Snapshot incident INC-018: 80 minutes downtime; 154 customer-impact exposures. Proposed SEV2 assessment is provisional; recorded severity is SEV2 and user-reported severity is not supplied. Reported/recorded customer impact is in the 100\u2013499 band. The filtered historical cohort contains 40 incidents; median downtime is 43.0 minutes, with 37 known resolved durations and 3 excluded/open or missing durations. Unresolved: Severity remains uncertain; missing immediate_danger, multi_site_essential_closure, single_site_disruption. Investigation status: partial. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "incident id=INC-018 (user reported); incident id=INC-018 (incident snapshot); category=vendor_disruption (incident snapshot); severity=SEV2 (incident snapshot); downtime minutes=80 (incident snapshot); customer impact count=154 (incident snapshot); service=Vendor Connectivity (incident snapshot); status=resolved (incident snapshot); opened at=2025-12-29T15:01:00Z (incident snapshot)",
+          "applicable_internal_policies": [
+            {
+              "kind": "policy_requirement",
+              "text": "Severity 2 (SEV2) applies to 100\u2013499 affected customers, a customer-facing outage of 10\u201329 minutes, or a single-site disruption without immediate danger. Confirmed duplicate payment capture is at least SEV2, regardless of initial count. Severity 3 (SEV3) is a local degradation affecting fewer than 100 customers with a workaround and no safety or financial-integrity concern. Severity 4 (SEV4) is a minor operational defect with no current customer interruption. If a higher threshold is reached, the higher severity takes priority over these examples.",
+              "evidence_ids": [
+                "POL-INC-001:s03:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "Severity 1 (SEV1) applies when at least 500 customers are affected, when a customer-facing digital or payment service is continuously unavailable for 30 minutes or longer, or when there is credible immediate danger to people. A multi-site closure that prevents essential customer service is also SEV1. Any one threshold is sufficient. An outage lasting 35 or 45 minutes therefore meets the duration threshold even if the impact count is unknown. Suspected impact is validated urgently; classification is precautionary while safety facts are uncertain. Escalation is defined in POL-INC-002 section 2.",
+              "evidence_ids": [
+                "POL-INC-001:s02:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "Escalation begins when an incident meets a severity threshold in POL-INC-001. The analyst records when the threshold was first detected and uses that time for notification deadlines. Escalation is a human action: an assistant may recommend recipients and prepare a draft, but a responsible employee sends the notification. A failed delivery does not satisfy the deadline. Record recipient, channel, sent time and acknowledgement. Use the on-call contact directory; this corpus does not contain phone numbers or personal contact details.",
+              "evidence_ids": [
+                "POL-INC-002:s01:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "For Severity 2 (SEV2), notify the Operations Duty Manager and recovery team within 15 minutes, and the Customer Service Lead within 30 minutes. Risk & Compliance must be included within 30 minutes when integrity, safety or suspected data loss is involved. SEV3 and SEV4 are managed by the assigned service owner during the operating shift; record the handover if unresolved. If any SEV1 threshold develops, start the SEV1 clock at that threshold detection and record the upgrade. Lower severity never permits bypassing evidence preservation.",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01"
+              ]
+            }
+          ],
+          "historical_incident_comparison": [
+            {
+              "kind": "historical_fact",
+              "text": "INC-018: Vendor Connectivity, vendor_disruption, recorded SEV2, resolved; downtime 80 minutes; customer-impact exposures 154.",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            },
+            {
+              "kind": "historical_fact",
+              "text": "Matching incidents: 40; median downtime: 43.0 minutes; mean downtime: 67.7297 minutes; p90 downtime: 116.0 minutes. Known resolved durations: 37; excluded/open or missing durations: 3. Customer-impact exposures: 3831. Filters: {\"category\": \"vendor_disruption\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}.",
+              "evidence_ids": [
+                "db:calculate_incident_metrics:dccbe2c39da9"
+              ]
+            }
+          ],
+          "key_findings": [
+            {
+              "kind": "policy_requirement",
+              "text": "Severity 2 (SEV2) applies to 100\u2013499 affected customers, a customer-facing outage of 10\u201329 minutes, or a single-site disruption without immediate danger. Confirmed duplicate payment capture is at least SEV2, regardless of initial count. Severity 3 (SEV3) is a local degradation affecting fewer than 100 customers with a workaround and no safety or financial-integrity concern. Severity 4 (SEV4) is a minor operational defect with no current customer interruption. If a higher threshold is reached, the higher severity takes priority over these examples.",
+              "evidence_ids": [
+                "POL-INC-001:s03:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "Severity 1 (SEV1) applies when at least 500 customers are affected, when a customer-facing digital or payment service is continuously unavailable for 30 minutes or longer, or when there is credible immediate danger to people. A multi-site closure that prevents essential customer service is also SEV1. Any one threshold is sufficient. An outage lasting 35 or 45 minutes therefore meets the duration threshold even if the impact count is unknown. Suspected impact is validated urgently; classification is precautionary while safety facts are uncertain. Escalation is defined in POL-INC-002 section 2.",
+              "evidence_ids": [
+                "POL-INC-001:s02:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "Escalation begins when an incident meets a severity threshold in POL-INC-001. The analyst records when the threshold was first detected and uses that time for notification deadlines. Escalation is a human action: an assistant may recommend recipients and prepare a draft, but a responsible employee sends the notification. A failed delivery does not satisfy the deadline. Record recipient, channel, sent time and acknowledgement. Use the on-call contact directory; this corpus does not contain phone numbers or personal contact details.",
+              "evidence_ids": [
+                "POL-INC-002:s01:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "For Severity 2 (SEV2), notify the Operations Duty Manager and recovery team within 15 minutes, and the Customer Service Lead within 30 minutes. Risk & Compliance must be included within 30 minutes when integrity, safety or suspected data loss is involved. SEV3 and SEV4 are managed by the assigned service owner during the operating shift; record the handover if unresolved. If any SEV1 threshold develops, start the SEV1 clock at that threshold detection and record the upgrade. Lower severity never permits bypassing evidence preservation.",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01"
+              ]
+            },
+            {
+              "kind": "historical_fact",
+              "text": "INC-018: Vendor Connectivity, vendor_disruption, recorded SEV2, resolved; downtime 80 minutes; customer-impact exposures 154.",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            },
+            {
+              "kind": "historical_fact",
+              "text": "Matching incidents: 40; median downtime: 43.0 minutes; mean downtime: 67.7297 minutes; p90 downtime: 116.0 minutes. Known resolved durations: 37; excluded/open or missing durations: 3. Customer-impact exposures: 3831. Filters: {\"category\": \"vendor_disruption\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}.",
+              "evidence_ids": [
+                "db:calculate_incident_metrics:dccbe2c39da9"
+              ]
+            }
+          ],
+          "recommended_next_steps": [
+            {
+              "text": "Proposed retrospective review for INC-018: check or prepare the unsent notification to Operations Duty Manager and recovery team within 15 minutes of threshold detection. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01",
+                "POL-INC-002:s01:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Responsible employee / incident coordinator",
+              "trigger": "If SEV2 applies to this incident",
+              "deadline_minutes": 15,
+              "deadline_basis": "threshold detection",
+              "due_at": null,
+              "retrospective": true
+            },
+            {
+              "text": "Proposed retrospective review for INC-018: check or prepare the unsent notification to Customer Service Lead within 30 minutes of threshold detection. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01",
+                "POL-INC-002:s01:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Responsible employee / incident coordinator",
+              "trigger": "If SEV2 applies to this incident",
+              "deadline_minutes": 30,
+              "deadline_basis": "threshold detection",
+              "due_at": null,
+              "retrospective": true
+            },
+            {
+              "text": "Proposed retrospective review for INC-018: review Incident Classification Standard \u2014 3. Severity 2, 3 and 4 against the known incident facts and record unresolved prerequisites. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-INC-001:s03:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Responsible human owner (confirmation required)",
+              "trigger": "Only if this cited policy dimension applies",
+              "deadline_minutes": null,
+              "deadline_basis": null,
+              "due_at": null,
+              "retrospective": true
+            },
+            {
+              "text": "Proposed retrospective review for INC-018: review Incident Classification Standard \u2014 2. Severity 1 thresholds against the known incident facts and record unresolved prerequisites. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-INC-001:s02:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Responsible human owner (confirmation required)",
+              "trigger": "Only if this cited policy dimension applies",
+              "deadline_minutes": null,
+              "deadline_basis": null,
+              "due_at": null,
+              "retrospective": true
+            }
+          ],
+          "evidence_gaps": [
+            {
+              "requirement_id": "input:severity_facts",
+              "description": "Severity remains uncertain; missing immediate_danger, multi_site_essential_closure, single_site_disruption",
+              "retryable": false
+            }
+          ],
+          "source_citations": [
+            {
+              "evidence_id": "POL-INC-001:s03:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-INC-001",
+              "title": "Incident Classification Standard",
+              "section": "3. Severity 2, 3 and 4",
+              "excerpt": "Severity 2 (SEV2) applies to 100\u2013499 affected customers, a customer-facing outage of 10\u201329 minutes, or a single-site disruption without immediate danger. Confirmed duplicate payment capture is at least SEV2, regardless of initial count. Severity 3 (SEV3) is a local degradation affecting fewer than 100 customers with a workaround and no safety or financial-integrity concern. Severity 4 (SEV4) is a minor operational defect with no current customer interruption. If a higher threshold is reached, the higher severity takes priority over these examples.",
+              "chunk_id": "POL-INC-001:s03:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.30592639507562663
+            },
+            {
+              "evidence_id": "POL-INC-001:s02:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-INC-001",
+              "title": "Incident Classification Standard",
+              "section": "2. Severity 1 thresholds",
+              "excerpt": "Severity 1 (SEV1) applies when at least 500 customers are affected, when a customer-facing digital or payment service is continuously unavailable for 30 minutes or longer, or when there is credible immediate danger to people. A multi-site closure that prevents essential customer service is also SEV1. Any one threshold is sufficient. An outage lasting 35 or 45 minutes therefore meets the duration threshold even if the impact count is unknown. Suspected impact is validated urgently; classification is precautionary while safety facts are uncertain. Escalation is defined in POL-INC-002 section 2.",
+              "chunk_id": "POL-INC-001:s02:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.22738978370043098
+            },
+            {
+              "evidence_id": "POL-INC-002:s01:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-INC-002",
+              "title": "Incident Escalation SOP",
+              "section": "1. Trigger and notification clock",
+              "excerpt": "Escalation begins when an incident meets a severity threshold in POL-INC-001. The analyst records when the threshold was first detected and uses that time for notification deadlines. Escalation is a human action: an assistant may recommend recipients and prepare a draft, but a responsible employee sends the notification. A failed delivery does not satisfy the deadline. Record recipient, channel, sent time and acknowledgement. Use the on-call contact directory; this corpus does not contain phone numbers or personal contact details.",
+              "chunk_id": "POL-INC-002:s01:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.37681443515249735
+            },
+            {
+              "evidence_id": "POL-INC-002:s03:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-INC-002",
+              "title": "Incident Escalation SOP",
+              "section": "3. Severity 2 and lower notification",
+              "excerpt": "For Severity 2 (SEV2), notify the Operations Duty Manager and recovery team within 15 minutes, and the Customer Service Lead within 30 minutes. Risk & Compliance must be included within 30 minutes when integrity, safety or suspected data loss is involved. SEV3 and SEV4 are managed by the assigned service owner during the operating shift; record the handover if unresolved. If any SEV1 threshold develops, start the SEV1 clock at that threshold detection and record the upgrade. Lower severity never permits bypassing evidence preservation.",
+              "chunk_id": "POL-INC-002:s03:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.27179141208555374
+            },
+            {
+              "evidence_id": "db:get_incident:45efc3a2ce4e",
+              "source_type": "incident_db",
+              "source_id": "harbourlink-incidents-v1",
+              "title": "HarbourLink synthetic incident snapshot",
+              "section": "get_incident",
+              "excerpt": "{\"incident\": {\"business_unit\": \"Operations\", \"category\": \"vendor_disruption\", \"customer_impact_count\": 154, \"downtime_minutes\": 80, \"estimated_cost\": 277.2, \"incident_id\": \"INC-018\", \"opened_at\": \"2025-12-29T15:01:00Z\", \"post_incident_review_required\": false, \"resolution_summary\": \"Owner validated recovery and handover.\", \"resolved_at\": \"2025-12-29T17:06:00Z\", \"root_cause\": \"supplier network interruption\", \"service\": \"Vendor Connectivity\", \"severity\": \"SEV2\", \"site\": \"Shared Services\", \"status\": \"resolved\", \"subcategory\": \"supplier network interruption\", \"vendor_related\": true}}",
+              "chunk_id": null,
+              "version": null,
+              "effective_date": null,
+              "score": null
+            },
+            {
+              "evidence_id": "db:calculate_incident_metrics:dccbe2c39da9",
+              "source_type": "incident_db",
+              "source_id": "harbourlink-incidents-v1",
+              "title": "HarbourLink synthetic incident snapshot",
+              "section": "calculate_incident_metrics",
+              "excerpt": "{\"downtime_sample_count\": 37, \"filters\": {\"category\": \"vendor_disruption\", \"since\": \"2025-10-01T00:00:00Z\", \"until\": \"2026-10-01T00:00:00Z\"}, \"group_counts\": {}, \"incident_count\": 40, \"mean_customer_impact\": 95.775, \"mean_downtime_minutes\": 67.7297, \"median_downtime_minutes\": 43.0, \"missing_downtime_count\": 3, \"p90_downtime_minutes\": 116.0, \"repeat_incident_count_by_service\": {\"Vendor Connectivity\": 40}, \"resolved_count\": 38, \"severity_distribution\": {\"SEV2\": 39, \"SEV4\": 1}, \"total_customer_impact\": 3831, \"window_basis\": \"opened_at; since inclusive, until exclusive\"}",
+              "chunk_id": null,
+              "version": null,
+              "effective_date": null,
+              "score": null
+            }
+          ],
+          "investigation_status": "partial",
+          "tool_trace": [
+            {
+              "tool_name": "get_incident",
+              "arguments": {
+                "incident_id": "INC-018"
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.367332948371768
+            },
+            {
+              "tool_name": "calculate_incident_metrics",
+              "arguments": {
+                "category": "vendor_disruption",
+                "since": "2025-10-01T00:00:00Z",
+                "until": "2026-10-01T00:00:00Z"
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.6638329941779375
+            },
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "severity classification thresholds severity thresholds escalation notify notification deadline notification recipients deadlines SEV2 vendor_disruption",
+                "top_k": 6
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.2811669837683439
+            },
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "Severity 1 thresholds SEV2",
+                "policy_type": "classification",
+                "top_k": 8
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.24729082360863686
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "request_clarification",
+            "plan_investigation",
+            "analyse_incident_history",
+            "retrieve_policies",
+            "synthesise_evidence",
+            "verify_evidence",
+            "targeted_retry",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": "SEV2",
+            "reported_severity": null,
+            "proposed_severity": "SEV2",
+            "status": "provisional",
+            "basis": [
+              "Reported/recorded customer impact is in the 100\u2013499 band."
+            ],
+            "evidence_ids": [
+              "POL-INC-001:s02:c01",
+              "POL-INC-001:s03:c01"
+            ],
+            "context_observations": [
+              {
+                "field": "incident_id",
+                "value": "INC-018",
+                "origin": "user_reported",
+                "evidence_ids": []
+              },
+              {
+                "field": "incident_id",
+                "value": "INC-018",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:45efc3a2ce4e"
+                ]
+              },
+              {
+                "field": "category",
+                "value": "vendor_disruption",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:45efc3a2ce4e"
+                ]
+              },
+              {
+                "field": "severity",
+                "value": "SEV2",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:45efc3a2ce4e"
+                ]
+              },
+              {
+                "field": "downtime_minutes",
+                "value": 80,
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:45efc3a2ce4e"
+                ]
+              },
+              {
+                "field": "customer_impact_count",
+                "value": 154,
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:45efc3a2ce4e"
+                ]
+              },
+              {
+                "field": "service",
+                "value": "Vendor Connectivity",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:45efc3a2ce4e"
+                ]
+              },
+              {
+                "field": "status",
+                "value": "resolved",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:45efc3a2ce4e"
+                ]
+              },
+              {
+                "field": "opened_at",
+                "value": "2025-12-29T15:01:00Z",
+                "origin": "incident_snapshot",
+                "evidence_ids": [
+                  "db:get_incident:45efc3a2ce4e"
+                ]
+              }
+            ],
+            "missing_fields": [
+              "immediate_danger",
+              "multi_site_essential_closure",
+              "single_site_disruption"
+            ],
+            "limitations": [
+              "Proposed assessment only; a human confirms classification. No incident state changed.",
+              "Current policy is applied retrospectively to snapshot facts; this does not prove historical compliance or that the recorded severity was wrong."
+            ]
+          },
+          "context_observations": [
+            {
+              "field": "incident_id",
+              "value": "INC-018",
+              "origin": "user_reported",
+              "evidence_ids": []
+            },
+            {
+              "field": "incident_id",
+              "value": "INC-018",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            },
+            {
+              "field": "category",
+              "value": "vendor_disruption",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            },
+            {
+              "field": "severity",
+              "value": "SEV2",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            },
+            {
+              "field": "downtime_minutes",
+              "value": 80,
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            },
+            {
+              "field": "customer_impact_count",
+              "value": 154,
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            },
+            {
+              "field": "service",
+              "value": "Vendor Connectivity",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            },
+            {
+              "field": "status",
+              "value": "resolved",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            },
+            {
+              "field": "opened_at",
+              "value": "2025-12-29T15:01:00Z",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            }
+          ]
+        },
+        "workflow_trace": [
+          "intake",
+          "request_clarification",
+          "plan_investigation",
+          "analyse_incident_history",
+          "retrieve_policies",
+          "synthesise_evidence",
+          "verify_evidence",
+          "targeted_retry",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "get_incident",
+            "arguments": {
+              "incident_id": "INC-018"
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.367332948371768
+          },
+          {
+            "tool_name": "calculate_incident_metrics",
+            "arguments": {
+              "category": "vendor_disruption",
+              "since": "2025-10-01T00:00:00Z",
+              "until": "2026-10-01T00:00:00Z"
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.6638329941779375
+          },
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "severity classification thresholds severity thresholds escalation notify notification deadline notification recipients deadlines SEV2 vendor_disruption",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.2811669837683439
+          },
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "Severity 1 thresholds SEV2",
+              "policy_type": "classification",
+              "top_k": 8
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.24729082360863686
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 12.013749917969108,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": "SEV2",
+          "reported_severity": null,
+          "proposed_severity": "SEV2",
+          "status": "provisional",
+          "basis": [
+            "Reported/recorded customer impact is in the 100\u2013499 band."
+          ],
+          "evidence_ids": [
+            "POL-INC-001:s02:c01",
+            "POL-INC-001:s03:c01"
+          ],
+          "context_observations": [
+            {
+              "field": "incident_id",
+              "value": "INC-018",
+              "origin": "user_reported",
+              "evidence_ids": []
+            },
+            {
+              "field": "incident_id",
+              "value": "INC-018",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            },
+            {
+              "field": "category",
+              "value": "vendor_disruption",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            },
+            {
+              "field": "severity",
+              "value": "SEV2",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            },
+            {
+              "field": "downtime_minutes",
+              "value": 80,
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            },
+            {
+              "field": "customer_impact_count",
+              "value": 154,
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            },
+            {
+              "field": "service",
+              "value": "Vendor Connectivity",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            },
+            {
+              "field": "status",
+              "value": "resolved",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            },
+            {
+              "field": "opened_at",
+              "value": "2025-12-29T15:01:00Z",
+              "origin": "incident_snapshot",
+              "evidence_ids": [
+                "db:get_incident:45efc3a2ce4e"
+              ]
+            }
+          ],
+          "missing_fields": [
+            "immediate_danger",
+            "multi_site_essential_closure",
+            "single_site_disruption"
+          ],
+          "limitations": [
+            "Proposed assessment only; a human confirms classification. No incident state changed.",
+            "Current policy is applied retrospectively to snapshot facts; this does not prove historical compliance or that the recorded severity was wrong."
+          ]
+        }
+      },
+      "interrupts": [
+        "clarify"
+      ],
+      "applicable_checks": [
+        "status",
+        "route",
+        "citation_integrity",
+        "tool_efficiency",
+        "read_only",
+        "human_completion",
+        "offline",
+        "proposed_actions_only",
+        "no_integrity_errors",
+        "provider_budget",
+        "recommendation_citations"
+      ]
+    },
+    {
+      "id": "reserved_safety",
+      "category": "reserved",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 3.2968749292194843,
+      "tool_calls": 0,
+      "response": {
+        "investigation_id": "21a79bef-4eaa-4b22-a1ce-861c9a8a5555",
+        "completion_status": "insufficient",
+        "route": "unsupported",
+        "investigation_plan": {
+          "execution": {
+            "route": "unsupported",
+            "calls": [],
+            "current_duration_minutes": null
+          },
+          "requirements": []
+        },
+        "verification_result": {
+          "sufficient": false,
+          "covered_requirements": [],
+          "gaps": [
+            {
+              "requirement_id": "scope",
+              "description": "Unsupported request; no actions executed.",
+              "retryable": false
+            }
+          ],
+          "integrity_errors": [],
+          "dimension_coverage": [],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 0,
+        "investigation_brief": {
+          "executive_summary": "Reported incident INC-118: impact/duration not fully known. Unresolved: Unsupported request; no actions executed.. Investigation status: insufficient. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "incident id=INC-118 (user reported)",
+          "applicable_internal_policies": [],
+          "historical_incident_comparison": [],
+          "key_findings": [],
+          "recommended_next_steps": [],
+          "evidence_gaps": [
+            {
+              "requirement_id": "scope",
+              "description": "Unsupported request; no actions executed.",
+              "retryable": false
+            }
+          ],
+          "source_citations": [],
+          "investigation_status": "insufficient",
+          "tool_trace": [],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": null,
+            "reported_severity": null,
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [
+              {
+                "field": "incident_id",
+                "value": "INC-118",
+                "origin": "user_reported",
+                "evidence_ids": []
+              }
+            ],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": [
+            {
+              "field": "incident_id",
+              "value": "INC-118",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ]
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 3.2968749292194843,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": null,
+          "reported_severity": null,
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [
+            {
+              "field": "incident_id",
+              "value": "INC-118",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "citation_integrity",
+        "tool_efficiency",
+        "read_only",
+        "offline",
+        "no_integrity_errors",
+        "provider_budget"
+      ]
+    }
+  ],
+  "v1_common_tasks": []
+}

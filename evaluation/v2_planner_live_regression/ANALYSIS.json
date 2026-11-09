@@ -1,0 +1,151 @@
+{
+  "recorded_at_utc": "2026-11-09T08:33:41.078698+00:00",
+  "scope": "Previously inspected engineer-authored synthetic development/reserved regression; no fresh holdout or production/general-accuracy claim",
+  "targeted_probe": {
+    "requested_cases": 9,
+    "executed_cases": 8,
+    "passed": 8,
+    "failure_ids": [],
+    "completed": false,
+    "stop_reason": "http_attempt_budget_reached",
+    "harness_error_type": null,
+    "model": "gpt-6-luna",
+    "inference_http_attempts": 8,
+    "structured_successes": 8,
+    "logical_provider_calls": 8,
+    "input_tokens": 35047,
+    "output_tokens": 1595,
+    "estimated_cost_usd": null,
+    "tool_calls": 17,
+    "median_latency_ms": 6653.859083540738,
+    "p95_latency_ms": 13589.513249928132,
+    "by_case_file": {
+      "evaluation/v2_planner_contract/proposed_live_cases.json": {
+        "executed": 8,
+        "passed": 8
+      }
+    }
+  },
+  "targeted_probe_same_eight_original_passed": 1,
+  "targeted_probe_original_result_preserved_as_incomplete": true,
+  "separate_zero_call_safety": {
+    "requested_cases": 1,
+    "executed_cases": 1,
+    "passed": 1,
+    "failure_ids": [],
+    "completed": true,
+    "stop_reason": null,
+    "harness_error_type": null,
+    "model": "gpt-6-luna",
+    "inference_http_attempts": 0,
+    "structured_successes": 0,
+    "logical_provider_calls": 0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_cost_usd": null,
+    "tool_calls": 0,
+    "median_latency_ms": 11.955915950238705,
+    "p95_latency_ms": 11.955915950238705,
+    "by_case_file": {
+      "var/live_v2/planner-contract-safety-20261109T082642Z/cases.json": {
+        "executed": 1,
+        "passed": 1
+      }
+    }
+  },
+  "full_regression": {
+    "requested_cases": 44,
+    "executed_cases": 44,
+    "passed": 42,
+    "failure_ids": [
+      "res-two-policy",
+      "res-business-date"
+    ],
+    "completed": true,
+    "stop_reason": null,
+    "harness_error_type": null,
+    "model": "gpt-6-luna",
+    "inference_http_attempts": 42,
+    "structured_successes": 42,
+    "logical_provider_calls": 42,
+    "input_tokens": 183606,
+    "output_tokens": 6119,
+    "estimated_cost_usd": null,
+    "tool_calls": 59,
+    "median_latency_ms": 7049.871832947247,
+    "p95_latency_ms": 10998.924875166267,
+    "by_case_file": {
+      "opspilot/evaluation/investigation_completion_dev.json": {
+        "executed": 28,
+        "passed": 28
+      },
+      "opspilot/evaluation/investigation_completion_reserved.json": {
+        "executed": 16,
+        "passed": 14
+      }
+    }
+  },
+  "full_by_route": {
+    "policy_only": {
+      "executed": 35,
+      "passed": 33
+    },
+    "data_only": {
+      "executed": 1,
+      "passed": 1
+    },
+    "mixed": {
+      "executed": 6,
+      "passed": 6
+    },
+    "unsupported": {
+      "executed": 2,
+      "passed": 2
+    }
+  },
+  "paired_offline": {
+    "passed": 42,
+    "cases": 44
+  },
+  "first_live_common_executed_subset": {
+    "cases": 23,
+    "before_passed": 16,
+    "now_passed": 23
+  },
+  "unexecuted_ids": [],
+  "total_inference_http_attempts_this_slice": 50,
+  "total_reported_input_tokens_this_slice": 218653,
+  "total_reported_output_tokens_this_slice": 7714,
+  "usd_cost": null,
+  "tests_passed": 239,
+  "new_fixture_cases": 2,
+  "harness_deviation": "Original targeted probe stopped at eight HTTP attempts before zero-call safety; preserved as 8/9 incomplete. A narrow admission correction was offline-tested and a separate safety run executed without inference. Full regression uses a new frozen protocol.",
+  "metadata_normalization": "Only repository-absolute metadata prefixes removed; scores, case content, model output and outcomes unchanged. No checkpoint/profile/owner capability/credential files exported.",
+  "citation_bearing_cases": {
+    "cases": 38,
+    "citation_integrity_passed": 38
+  },
+  "maximum_provider_calls_per_investigation": 1,
+  "maximum_tool_calls_per_case": 3,
+  "planning_rejections": 0,
+  "full_input_threshold_overshoot": 3606,
+  "input_threshold_first_crossed_on_attempt": 42,
+  "inference_attempts_after_threshold_crossing": 0,
+  "read_only_store_checks": [
+    {
+      "run": "run-location",
+      "database_unchanged": true,
+      "index_unchanged": true
+    },
+    {
+      "run": "full-location",
+      "database_unchanged": true,
+      "index_unchanged": true
+    },
+    {
+      "run": "safety-location",
+      "database_unchanged": true,
+      "index_unchanged": true
+    }
+  ]
+}

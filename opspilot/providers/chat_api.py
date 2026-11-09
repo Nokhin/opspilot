@@ -15,6 +15,10 @@ class ProviderError(RuntimeError):
     """Sanitised provider failure; raw HTTP bodies and credentials never escape."""
 
 
+class UserFacingProviderError(ProviderError):
+    """An adapter supplies a safe message that can be shown with answer limitations."""
+
+
 class ChatAPI:
     """JSON chat transport compatible with Groq and similarly shaped provider APIs."""
 

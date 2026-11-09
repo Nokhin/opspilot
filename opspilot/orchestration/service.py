@@ -30,7 +30,7 @@ from opspilot.orchestration.grounding import (
     validate_selection,
 )
 from opspilot.orchestration.routing import DeterministicPlanner, shift_months, unsafe_request
-from opspilot.providers.chat_api import ChatAPI, ProviderError
+from opspilot.providers.chat_api import ChatAPI, ProviderError, UserFacingProviderError
 from opspilot.providers.embedding_api import APIEmbeddings
 from opspilot.providers.embeddings import TfidfEmbeddings
 from opspilot.rag.vectorstore import JsonVectorStore
@@ -85,6 +85,9 @@ class OpsPilotService:
                 )
                 usage.input_tokens += current_usage.input_tokens
                 usage.output_tokens += current_usage.output_tokens
+            except UserFacingProviderError as error:
+                plan, provider_failed = RoutePlan(route="unsupported"), True
+                limitations.append(str(error))
             except (ProviderError, ValueError, sqlite3.Error):
                 plan, provider_failed = RoutePlan(route="unsupported"), True
                 limitations.append(
@@ -339,6 +342,9 @@ class OpsPilotService:
                 elif not self.provider:
                     selection = select_extractive(question, policy_hits)
                 validate_selection(selection, policy_hits)
+            except UserFacingProviderError as error:
+                selection = PolicySelection(sufficient=False)
+                limitations.append(str(error))
             except (ProviderError, ValueError):
                 selection = PolicySelection(sufficient=False)
                 limitations.append(
@@ -460,6 +466,7 @@ class OpsPilotService:
             limitations=list(dict.fromkeys(limitations)),
             latency_ms=(time.perf_counter() - start) * 1000,
             mode=self.settings.llm_provider,
+            model=self.settings.llm_model if self.provider else None,
             usage=usage,
         )
         logger.info(

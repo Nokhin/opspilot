@@ -1,0 +1,3165 @@
+{
+  "manifest": {
+    "split": "development",
+    "run_at_utc": "2026-11-09T08:49:58.135078+00:00",
+    "cases_sha256": "6d5a9cb4372011d09adec643783f3a9ce502d7e4730d1560f14f41aec312bf26",
+    "corpus_sha256": "3f85bfc6498084803df9e537bcb3ad0e43f1cf5b4ce563dbec8bb8ca593df639",
+    "reference_time": "2026-10-01T00:00:00+00:00",
+    "mode": "offline",
+    "fault_injection_explicit": true,
+    "investigation_source_sha256": {
+      "__init__.py": "60bc8637174688a1d5b04cd2b87176cd35b6da510099e0e10eb86ab031983159",
+      "assessment.py": "539bc71cb6cdf0c03f7c36cb6684b656062aefcab293f74c89a1afedad9d8bb1",
+      "brief.py": "b2348393d22c40ac1b2973876606588aeb4bc016fc476c59409fae178af6a7e7",
+      "chains.py": "ba4ef6598a68617c287eb1478f48d2ef9538dbfe4b3b95ccf74b69b054103c50",
+      "context.py": "326f84a03abc512c887ede92c7b099752c7a04e2496d904b3924658aed042e6b",
+      "evidence.py": "f1ec81ef6a7af4aac73f96380f2326b312c3e6d71f9d203136a13ceae1fc6732",
+      "graph.py": "84f41c5385fdaf87cff3db6459a50a285403d748f4ae3ef060a9cba234e87290",
+      "models.py": "93ad74bb47089cf872a767c434183d45922efe5ba5f46dc9d464bf7b3e6a6100",
+      "planning.py": "edc6a44f22f47ea032eaca06b31860477b71bf7e6e984c4c941d1fcfad71a61f",
+      "policy_contracts.json": "db64214173ef16e524324391a230d769ef01935c5f10f1ff4477d5a0971cc09b",
+      "service.py": "3b68718280a2409c6e384ee4749c5e5a816cf97233138217fd666010488dd8d6"
+    },
+    "interpretation": "Engineer-authored synthetic regression; reserved cases are not an independent benchmark."
+  },
+  "summary": {
+    "cases": 8,
+    "executed": 8,
+    "passed": 8,
+    "failure_ids": [],
+    "median_latency_ms": 5.467624519951642,
+    "max_latency_ms": 9.646416874602437,
+    "tool_calls": 12,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "paid_inference_calls": 0,
+    "common_v1_tasks": 0,
+    "checks_passed": {
+      "status": 8,
+      "route": 8,
+      "required_dimensions": 8,
+      "required_citations": 8,
+      "citation_integrity": 8,
+      "frozen_reference_points": 8,
+      "tool_efficiency": 8,
+      "retry": 8,
+      "read_only": 8,
+      "human_completion": 8,
+      "offline": 8,
+      "proposed_actions_only": 8,
+      "no_integrity_errors": 8,
+      "proposed_severity": 8,
+      "assessment_status": 8,
+      "recorded_severity": 8,
+      "reported_severity": 8,
+      "dimension_coverage": 8,
+      "missing_dimensions": 8,
+      "explicit_gaps": 8,
+      "context_provenance": 8,
+      "action_contract": 8,
+      "no_forbidden_recommendations": 8,
+      "clock_integrity": 8,
+      "interrupt_sequence": 8,
+      "provider_budget": 8,
+      "recommendation_citations": 8
+    },
+    "expectation_coverage": {
+      "status": {
+        "evaluated": 8,
+        "passed": 8
+      },
+      "route": {
+        "evaluated": 8,
+        "passed": 8
+      },
+      "required_dimensions": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "required_citations": {
+        "evaluated": 6,
+        "passed": 6
+      },
+      "citation_integrity": {
+        "evaluated": 8,
+        "passed": 8
+      },
+      "frozen_reference_points": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "tool_efficiency": {
+        "evaluated": 8,
+        "passed": 8
+      },
+      "retry": {
+        "evaluated": 2,
+        "passed": 2
+      },
+      "read_only": {
+        "evaluated": 8,
+        "passed": 8
+      },
+      "human_completion": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "offline": {
+        "evaluated": 8,
+        "passed": 8
+      },
+      "proposed_actions_only": {
+        "evaluated": 7,
+        "passed": 7
+      },
+      "no_integrity_errors": {
+        "evaluated": 8,
+        "passed": 8
+      },
+      "proposed_severity": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "assessment_status": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "recorded_severity": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "reported_severity": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "dimension_coverage": {
+        "evaluated": 6,
+        "passed": 6
+      },
+      "missing_dimensions": {
+        "evaluated": 1,
+        "passed": 1
+      },
+      "explicit_gaps": {
+        "evaluated": 3,
+        "passed": 3
+      },
+      "context_provenance": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "action_contract": {
+        "evaluated": 5,
+        "passed": 5
+      },
+      "no_forbidden_recommendations": {
+        "evaluated": 2,
+        "passed": 2
+      },
+      "clock_integrity": {
+        "evaluated": 4,
+        "passed": 4
+      },
+      "interrupt_sequence": {
+        "evaluated": 0,
+        "passed": 0
+      },
+      "provider_budget": {
+        "evaluated": 8,
+        "passed": 8
+      },
+      "recommendation_citations": {
+        "evaluated": 7,
+        "passed": 7
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "gap-sev2-notice",
+      "category": "evidence_gap_development",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 9.646416874602437,
+      "tool_calls": 1,
+      "response": {
+        "investigation_id": "6f39992c-9570-43ba-8fe6-5aea02eb4d1f",
+        "completion_status": "completed",
+        "route": "policy_only",
+        "investigation_plan": {
+          "execution": {
+            "route": "policy_only",
+            "calls": [
+              {
+                "tool_name": "search_internal_policy",
+                "arguments": {
+                  "query": "What are the SEV2 customer first notice and update frequency requirements? SEV2",
+                  "policy_type": null,
+                  "top_k": 6
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "policy:communication",
+              "plane": "policy",
+              "description": "customer communication first notice update cadence",
+              "policy_type": "communication",
+              "tool_name": null,
+              "section_numbers": [
+                1,
+                2
+              ],
+              "query": "customer communication first notice update cadence communication ownership first notice update cadence",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:communication:timing",
+                  "description": "communication ownership first notice update cadence",
+                  "section_numbers": [
+                    1,
+                    2
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": true,
+          "covered_requirements": [
+            "policy:communication"
+          ],
+          "gaps": [],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "policy:communication:timing",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-COM-001:s02:c01",
+                "POL-COM-001:s01:c01"
+              ],
+              "missing_sections": []
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 0,
+        "investigation_brief": {
+          "executive_summary": "Policy/history investigation: communication ownership first notice update cadence. Investigation status: completed. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "severity=SEV2 (user reported)",
+          "applicable_internal_policies": [
+            {
+              "kind": "policy_requirement",
+              "text": "For SEV1 customer-impact incidents, issue the first customer notice within 15 minutes of threshold detection and subsequent updates at least every 30 minutes while impact continues. For SEV2, issue the first notice within 30 minutes and update at least every 60 minutes. If no new facts are available, say investigation continues and give the next update time. A restoration notice does not replace a missing earlier update. Record any missed deadline and its reason in the timeline for review.",
+              "evidence_ids": [
+                "POL-COM-001:s02:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "The Customer Service Lead owns customer-facing incident messages and coordinates with the incident coordinator. The recovery owner confirms technical facts; Risk & Compliance reviews sensitive integrity statements. Use approved service channels and the status page rather than an analyst's personal account. The message log records author, approval, audience, channel and publication time. An assistant may propose wording, but a human publishes and approves it. Internal escalation under POL-INC-002 and public customer updates are distinct activities with distinct clocks.",
+              "evidence_ids": [
+                "POL-COM-001:s01:c01"
+              ]
+            }
+          ],
+          "historical_incident_comparison": [],
+          "key_findings": [
+            {
+              "kind": "policy_requirement",
+              "text": "For SEV1 customer-impact incidents, issue the first customer notice within 15 minutes of threshold detection and subsequent updates at least every 30 minutes while impact continues. For SEV2, issue the first notice within 30 minutes and update at least every 60 minutes. If no new facts are available, say investigation continues and give the next update time. A restoration notice does not replace a missing earlier update. Record any missed deadline and its reason in the timeline for review.",
+              "evidence_ids": [
+                "POL-COM-001:s02:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "The Customer Service Lead owns customer-facing incident messages and coordinates with the incident coordinator. The recovery owner confirms technical facts; Risk & Compliance reviews sensitive integrity statements. Use approved service channels and the status page rather than an analyst's personal account. The message log records author, approval, audience, channel and publication time. An assistant may propose wording, but a human publishes and approves it. Internal escalation under POL-INC-002 and public customer updates are distinct activities with distinct clocks.",
+              "evidence_ids": [
+                "POL-COM-001:s01:c01"
+              ]
+            }
+          ],
+          "recommended_next_steps": [
+            {
+              "text": "Proposed for any incident meeting these policy conditions: prepare the first customer notice within 30 minutes of threshold detection; propose subsequent updates at least every 60 minutes while impact continues. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-COM-001:s01:c01",
+                "POL-COM-001:s02:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Customer Service Lead",
+              "trigger": "If SEV2 customer impact applies and continues",
+              "deadline_minutes": 30,
+              "deadline_basis": "threshold detection",
+              "due_at": null,
+              "retrospective": false
+            }
+          ],
+          "evidence_gaps": [],
+          "source_citations": [
+            {
+              "evidence_id": "POL-COM-001:s02:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-COM-001",
+              "title": "Customer Communication Standard",
+              "section": "2. First notice and update cadence",
+              "excerpt": "For SEV1 customer-impact incidents, issue the first customer notice within 15 minutes of threshold detection and subsequent updates at least every 30 minutes while impact continues. For SEV2, issue the first notice within 30 minutes and update at least every 60 minutes. If no new facts are available, say investigation continues and give the next update time. A restoration notice does not replace a missing earlier update. Record any missed deadline and its reason in the timeline for review.",
+              "chunk_id": "POL-COM-001:s02:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.4788232405334879
+            },
+            {
+              "evidence_id": "POL-COM-001:s01:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-COM-001",
+              "title": "Customer Communication Standard",
+              "section": "1. Communication ownership",
+              "excerpt": "The Customer Service Lead owns customer-facing incident messages and coordinates with the incident coordinator. The recovery owner confirms technical facts; Risk & Compliance reviews sensitive integrity statements. Use approved service channels and the status page rather than an analyst's personal account. The message log records author, approval, audience, channel and publication time. An assistant may propose wording, but a human publishes and approves it. Internal escalation under POL-INC-002 and public customer updates are distinct activities with distinct clocks.",
+              "chunk_id": "POL-COM-001:s01:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.15553251672406096
+            }
+          ],
+          "investigation_status": "completed",
+          "tool_trace": [
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "customer communication first notice update cadence communication ownership first notice update cadence SEV2",
+                "top_k": 6
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.3404170274734497
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "retrieve_policies",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": null,
+            "reported_severity": "SEV2",
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [
+              {
+                "field": "severity",
+                "value": "SEV2",
+                "origin": "user_reported",
+                "evidence_ids": []
+              }
+            ],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV2",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ]
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "retrieve_policies",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "customer communication first notice update cadence communication ownership first notice update cadence SEV2",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.3404170274734497
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 9.646416874602437,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "planning_diagnostic": null,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": null,
+          "reported_severity": "SEV2",
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV2",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "required_citations",
+        "citation_integrity",
+        "tool_efficiency",
+        "read_only",
+        "offline",
+        "proposed_actions_only",
+        "no_integrity_errors",
+        "dimension_coverage",
+        "action_contract",
+        "provider_budget",
+        "recommendation_citations"
+      ]
+    },
+    {
+      "id": "gap-sev2-cross-policy",
+      "category": "evidence_gap_development",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 8.107417030259967,
+      "tool_calls": 2,
+      "response": {
+        "investigation_id": "9f8de892-27fa-4f26-bb20-f157aa9d324c",
+        "completion_status": "completed",
+        "route": "policy_only",
+        "investigation_plan": {
+          "execution": {
+            "route": "policy_only",
+            "calls": [
+              {
+                "tool_name": "search_internal_policy",
+                "arguments": {
+                  "query": "For SEV2, give escalation notifications and customer communication cadence. SEV2",
+                  "policy_type": null,
+                  "top_k": 6
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "policy:escalation",
+              "plane": "policy",
+              "description": "escalation notify notification deadline",
+              "policy_type": "escalation",
+              "tool_name": null,
+              "section_numbers": [
+                1,
+                3
+              ],
+              "query": "escalation notify notification deadline notification recipients deadlines",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:escalation:notifications",
+                  "description": "notification recipients deadlines",
+                  "section_numbers": [
+                    1,
+                    3
+                  ]
+                }
+              ]
+            },
+            {
+              "requirement_id": "policy:communication",
+              "plane": "policy",
+              "description": "customer communication first notice update cadence",
+              "policy_type": "communication",
+              "tool_name": null,
+              "section_numbers": [
+                1,
+                2
+              ],
+              "query": "customer communication first notice update cadence communication ownership first notice update cadence",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:communication:timing",
+                  "description": "communication ownership first notice update cadence",
+                  "section_numbers": [
+                    1,
+                    2
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": true,
+          "covered_requirements": [
+            "policy:escalation",
+            "policy:communication"
+          ],
+          "gaps": [],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "policy:escalation:notifications",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01",
+                "POL-INC-002:s01:c01"
+              ],
+              "missing_sections": []
+            },
+            {
+              "dimension_id": "policy:communication:timing",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-COM-001:s02:c01",
+                "POL-COM-001:s01:c01"
+              ],
+              "missing_sections": []
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 1,
+        "investigation_brief": {
+          "executive_summary": "Policy/history investigation: notification recipients deadlines, communication ownership first notice update cadence. Investigation status: completed. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "severity=SEV2 (user reported)",
+          "applicable_internal_policies": [
+            {
+              "kind": "policy_requirement",
+              "text": "For Severity 2 (SEV2), notify the Operations Duty Manager and recovery team within 15 minutes, and the Customer Service Lead within 30 minutes. Risk & Compliance must be included within 30 minutes when integrity, safety or suspected data loss is involved. SEV3 and SEV4 are managed by the assigned service owner during the operating shift; record the handover if unresolved. If any SEV1 threshold develops, start the SEV1 clock at that threshold detection and record the upgrade. Lower severity never permits bypassing evidence preservation.",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "Escalation begins when an incident meets a severity threshold in POL-INC-001. The analyst records when the threshold was first detected and uses that time for notification deadlines. Escalation is a human action: an assistant may recommend recipients and prepare a draft, but a responsible employee sends the notification. A failed delivery does not satisfy the deadline. Record recipient, channel, sent time and acknowledgement. Use the on-call contact directory; this corpus does not contain phone numbers or personal contact details.",
+              "evidence_ids": [
+                "POL-INC-002:s01:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "For SEV1 customer-impact incidents, issue the first customer notice within 15 minutes of threshold detection and subsequent updates at least every 30 minutes while impact continues. For SEV2, issue the first notice within 30 minutes and update at least every 60 minutes. If no new facts are available, say investigation continues and give the next update time. A restoration notice does not replace a missing earlier update. Record any missed deadline and its reason in the timeline for review.",
+              "evidence_ids": [
+                "POL-COM-001:s02:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "The Customer Service Lead owns customer-facing incident messages and coordinates with the incident coordinator. The recovery owner confirms technical facts; Risk & Compliance reviews sensitive integrity statements. Use approved service channels and the status page rather than an analyst's personal account. The message log records author, approval, audience, channel and publication time. An assistant may propose wording, but a human publishes and approves it. Internal escalation under POL-INC-002 and public customer updates are distinct activities with distinct clocks.",
+              "evidence_ids": [
+                "POL-COM-001:s01:c01"
+              ]
+            }
+          ],
+          "historical_incident_comparison": [],
+          "key_findings": [
+            {
+              "kind": "policy_requirement",
+              "text": "For Severity 2 (SEV2), notify the Operations Duty Manager and recovery team within 15 minutes, and the Customer Service Lead within 30 minutes. Risk & Compliance must be included within 30 minutes when integrity, safety or suspected data loss is involved. SEV3 and SEV4 are managed by the assigned service owner during the operating shift; record the handover if unresolved. If any SEV1 threshold develops, start the SEV1 clock at that threshold detection and record the upgrade. Lower severity never permits bypassing evidence preservation.",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "Escalation begins when an incident meets a severity threshold in POL-INC-001. The analyst records when the threshold was first detected and uses that time for notification deadlines. Escalation is a human action: an assistant may recommend recipients and prepare a draft, but a responsible employee sends the notification. A failed delivery does not satisfy the deadline. Record recipient, channel, sent time and acknowledgement. Use the on-call contact directory; this corpus does not contain phone numbers or personal contact details.",
+              "evidence_ids": [
+                "POL-INC-002:s01:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "For SEV1 customer-impact incidents, issue the first customer notice within 15 minutes of threshold detection and subsequent updates at least every 30 minutes while impact continues. For SEV2, issue the first notice within 30 minutes and update at least every 60 minutes. If no new facts are available, say investigation continues and give the next update time. A restoration notice does not replace a missing earlier update. Record any missed deadline and its reason in the timeline for review.",
+              "evidence_ids": [
+                "POL-COM-001:s02:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "The Customer Service Lead owns customer-facing incident messages and coordinates with the incident coordinator. The recovery owner confirms technical facts; Risk & Compliance reviews sensitive integrity statements. Use approved service channels and the status page rather than an analyst's personal account. The message log records author, approval, audience, channel and publication time. An assistant may propose wording, but a human publishes and approves it. Internal escalation under POL-INC-002 and public customer updates are distinct activities with distinct clocks.",
+              "evidence_ids": [
+                "POL-COM-001:s01:c01"
+              ]
+            }
+          ],
+          "recommended_next_steps": [
+            {
+              "text": "Proposed for any incident meeting these policy conditions: check or prepare the unsent notification to Operations Duty Manager and recovery team within 15 minutes of threshold detection. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01",
+                "POL-INC-002:s01:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Responsible employee / incident coordinator",
+              "trigger": "If SEV2 applies to this incident",
+              "deadline_minutes": 15,
+              "deadline_basis": "threshold detection",
+              "due_at": null,
+              "retrospective": false
+            },
+            {
+              "text": "Proposed for any incident meeting these policy conditions: check or prepare the unsent notification to Customer Service Lead within 30 minutes of threshold detection. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01",
+                "POL-INC-002:s01:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Responsible employee / incident coordinator",
+              "trigger": "If SEV2 applies to this incident",
+              "deadline_minutes": 30,
+              "deadline_basis": "threshold detection",
+              "due_at": null,
+              "retrospective": false
+            },
+            {
+              "text": "Proposed for any incident meeting these policy conditions: prepare the first customer notice within 30 minutes of threshold detection; propose subsequent updates at least every 60 minutes while impact continues. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-COM-001:s01:c01",
+                "POL-COM-001:s02:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Customer Service Lead",
+              "trigger": "If SEV2 customer impact applies and continues",
+              "deadline_minutes": 30,
+              "deadline_basis": "threshold detection",
+              "due_at": null,
+              "retrospective": false
+            }
+          ],
+          "evidence_gaps": [],
+          "source_citations": [
+            {
+              "evidence_id": "POL-INC-002:s03:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-INC-002",
+              "title": "Incident Escalation SOP",
+              "section": "3. Severity 2 and lower notification",
+              "excerpt": "For Severity 2 (SEV2), notify the Operations Duty Manager and recovery team within 15 minutes, and the Customer Service Lead within 30 minutes. Risk & Compliance must be included within 30 minutes when integrity, safety or suspected data loss is involved. SEV3 and SEV4 are managed by the assigned service owner during the operating shift; record the handover if unresolved. If any SEV1 threshold develops, start the SEV1 clock at that threshold detection and record the upgrade. Lower severity never permits bypassing evidence preservation.",
+              "chunk_id": "POL-INC-002:s03:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.2632324253503649
+            },
+            {
+              "evidence_id": "POL-INC-002:s01:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-INC-002",
+              "title": "Incident Escalation SOP",
+              "section": "1. Trigger and notification clock",
+              "excerpt": "Escalation begins when an incident meets a severity threshold in POL-INC-001. The analyst records when the threshold was first detected and uses that time for notification deadlines. Escalation is a human action: an assistant may recommend recipients and prepare a draft, but a responsible employee sends the notification. A failed delivery does not satisfy the deadline. Record recipient, channel, sent time and acknowledgement. Use the on-call contact directory; this corpus does not contain phone numbers or personal contact details.",
+              "chunk_id": "POL-INC-002:s01:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.17219516945863897
+            },
+            {
+              "evidence_id": "POL-COM-001:s02:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-COM-001",
+              "title": "Customer Communication Standard",
+              "section": "2. First notice and update cadence",
+              "excerpt": "For SEV1 customer-impact incidents, issue the first customer notice within 15 minutes of threshold detection and subsequent updates at least every 30 minutes while impact continues. For SEV2, issue the first notice within 30 minutes and update at least every 60 minutes. If no new facts are available, say investigation continues and give the next update time. A restoration notice does not replace a missing earlier update. Record any missed deadline and its reason in the timeline for review.",
+              "chunk_id": "POL-COM-001:s02:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.42249473568960305
+            },
+            {
+              "evidence_id": "POL-COM-001:s01:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-COM-001",
+              "title": "Customer Communication Standard",
+              "section": "1. Communication ownership",
+              "excerpt": "The Customer Service Lead owns customer-facing incident messages and coordinates with the incident coordinator. The recovery owner confirms technical facts; Risk & Compliance reviews sensitive integrity statements. Use approved service channels and the status page rather than an analyst's personal account. The message log records author, approval, audience, channel and publication time. An assistant may propose wording, but a human publishes and approves it. Internal escalation under POL-INC-002 and public customer updates are distinct activities with distinct clocks.",
+              "chunk_id": "POL-COM-001:s01:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.2138132641762363
+            }
+          ],
+          "investigation_status": "completed",
+          "tool_trace": [
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "escalation notify notification deadline notification recipients deadlines customer communication first notice update cadence communication ownership first notice update cadence SEV2",
+                "top_k": 6
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.32429187558591366
+            },
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "Incident Escalation SOP Severity 2 and lower notification Customer Communication Standard Communication ownership",
+                "top_k": 8
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.2785830292850733
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "retrieve_policies",
+            "synthesise_evidence",
+            "verify_evidence",
+            "targeted_retry",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": null,
+            "reported_severity": "SEV2",
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [
+              {
+                "field": "severity",
+                "value": "SEV2",
+                "origin": "user_reported",
+                "evidence_ids": []
+              }
+            ],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV2",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ]
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "retrieve_policies",
+          "synthesise_evidence",
+          "verify_evidence",
+          "targeted_retry",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "escalation notify notification deadline notification recipients deadlines customer communication first notice update cadence communication ownership first notice update cadence SEV2",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.32429187558591366
+          },
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "Incident Escalation SOP Severity 2 and lower notification Customer Communication Standard Communication ownership",
+              "top_k": 8
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.2785830292850733
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 8.107417030259967,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "planning_diagnostic": null,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": null,
+          "reported_severity": "SEV2",
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV2",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "required_citations",
+        "citation_integrity",
+        "tool_efficiency",
+        "read_only",
+        "offline",
+        "proposed_actions_only",
+        "no_integrity_errors",
+        "dimension_coverage",
+        "action_contract",
+        "provider_budget",
+        "recommendation_citations"
+      ]
+    },
+    {
+      "id": "gap-sev1-cross-policy",
+      "category": "evidence_gap_development",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 8.966041030362248,
+      "tool_calls": 2,
+      "response": {
+        "investigation_id": "7143a948-8f27-48d1-b3e6-0786f66123b0",
+        "completion_status": "completed",
+        "route": "policy_only",
+        "investigation_plan": {
+          "execution": {
+            "route": "policy_only",
+            "calls": [
+              {
+                "tool_name": "search_internal_policy",
+                "arguments": {
+                  "query": "Explain SEV1 escalation recipients and the first customer notice update frequency. SEV1",
+                  "policy_type": null,
+                  "top_k": 6
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "policy:escalation",
+              "plane": "policy",
+              "description": "escalation notify notification deadline",
+              "policy_type": "escalation",
+              "tool_name": null,
+              "section_numbers": [
+                1,
+                2
+              ],
+              "query": "escalation notify notification deadline notification recipients deadlines",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:escalation:notifications",
+                  "description": "notification recipients deadlines",
+                  "section_numbers": [
+                    1,
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "requirement_id": "policy:communication",
+              "plane": "policy",
+              "description": "customer communication first notice update cadence",
+              "policy_type": "communication",
+              "tool_name": null,
+              "section_numbers": [
+                1,
+                2
+              ],
+              "query": "customer communication first notice update cadence communication ownership first notice update cadence",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:communication:timing",
+                  "description": "communication ownership first notice update cadence",
+                  "section_numbers": [
+                    1,
+                    2
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": true,
+          "covered_requirements": [
+            "policy:escalation",
+            "policy:communication"
+          ],
+          "gaps": [],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "policy:escalation:notifications",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-INC-002:s02:c01",
+                "POL-INC-002:s01:c01"
+              ],
+              "missing_sections": []
+            },
+            {
+              "dimension_id": "policy:communication:timing",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-COM-001:s02:c01",
+                "POL-COM-001:s01:c01"
+              ],
+              "missing_sections": []
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 1,
+        "investigation_brief": {
+          "executive_summary": "Policy/history investigation: notification recipients deadlines, communication ownership first notice update cadence. Investigation status: completed. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "severity=SEV1 (user reported)",
+          "applicable_internal_policies": [
+            {
+              "kind": "policy_requirement",
+              "text": "For a Severity 1 (SEV1) incident, notify the Operations Duty Manager and the relevant recovery team within 5 minutes of threshold detection. Notify the Customer Service Lead within 10 minutes, Risk & Compliance within 15 minutes, and the Executive Duty Sponsor within 30 minutes. Digital Services is the recovery team for digital or payment outages; Facilities is the recovery team for physical disruption. The Duty Manager appoints an incident coordinator and opens a coordination bridge. Do not wait for root-cause confirmation before these notifications.",
+              "evidence_ids": [
+                "POL-INC-002:s02:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "Escalation begins when an incident meets a severity threshold in POL-INC-001. The analyst records when the threshold was first detected and uses that time for notification deadlines. Escalation is a human action: an assistant may recommend recipients and prepare a draft, but a responsible employee sends the notification. A failed delivery does not satisfy the deadline. Record recipient, channel, sent time and acknowledgement. Use the on-call contact directory; this corpus does not contain phone numbers or personal contact details.",
+              "evidence_ids": [
+                "POL-INC-002:s01:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "For SEV1 customer-impact incidents, issue the first customer notice within 15 minutes of threshold detection and subsequent updates at least every 30 minutes while impact continues. For SEV2, issue the first notice within 30 minutes and update at least every 60 minutes. If no new facts are available, say investigation continues and give the next update time. A restoration notice does not replace a missing earlier update. Record any missed deadline and its reason in the timeline for review.",
+              "evidence_ids": [
+                "POL-COM-001:s02:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "The Customer Service Lead owns customer-facing incident messages and coordinates with the incident coordinator. The recovery owner confirms technical facts; Risk & Compliance reviews sensitive integrity statements. Use approved service channels and the status page rather than an analyst's personal account. The message log records author, approval, audience, channel and publication time. An assistant may propose wording, but a human publishes and approves it. Internal escalation under POL-INC-002 and public customer updates are distinct activities with distinct clocks.",
+              "evidence_ids": [
+                "POL-COM-001:s01:c01"
+              ]
+            }
+          ],
+          "historical_incident_comparison": [],
+          "key_findings": [
+            {
+              "kind": "policy_requirement",
+              "text": "For a Severity 1 (SEV1) incident, notify the Operations Duty Manager and the relevant recovery team within 5 minutes of threshold detection. Notify the Customer Service Lead within 10 minutes, Risk & Compliance within 15 minutes, and the Executive Duty Sponsor within 30 minutes. Digital Services is the recovery team for digital or payment outages; Facilities is the recovery team for physical disruption. The Duty Manager appoints an incident coordinator and opens a coordination bridge. Do not wait for root-cause confirmation before these notifications.",
+              "evidence_ids": [
+                "POL-INC-002:s02:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "Escalation begins when an incident meets a severity threshold in POL-INC-001. The analyst records when the threshold was first detected and uses that time for notification deadlines. Escalation is a human action: an assistant may recommend recipients and prepare a draft, but a responsible employee sends the notification. A failed delivery does not satisfy the deadline. Record recipient, channel, sent time and acknowledgement. Use the on-call contact directory; this corpus does not contain phone numbers or personal contact details.",
+              "evidence_ids": [
+                "POL-INC-002:s01:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "For SEV1 customer-impact incidents, issue the first customer notice within 15 minutes of threshold detection and subsequent updates at least every 30 minutes while impact continues. For SEV2, issue the first notice within 30 minutes and update at least every 60 minutes. If no new facts are available, say investigation continues and give the next update time. A restoration notice does not replace a missing earlier update. Record any missed deadline and its reason in the timeline for review.",
+              "evidence_ids": [
+                "POL-COM-001:s02:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "The Customer Service Lead owns customer-facing incident messages and coordinates with the incident coordinator. The recovery owner confirms technical facts; Risk & Compliance reviews sensitive integrity statements. Use approved service channels and the status page rather than an analyst's personal account. The message log records author, approval, audience, channel and publication time. An assistant may propose wording, but a human publishes and approves it. Internal escalation under POL-INC-002 and public customer updates are distinct activities with distinct clocks.",
+              "evidence_ids": [
+                "POL-COM-001:s01:c01"
+              ]
+            }
+          ],
+          "recommended_next_steps": [
+            {
+              "text": "Proposed for any incident meeting these policy conditions: check or prepare the unsent notification to Operations Duty Manager and relevant recovery team within 5 minutes of threshold detection. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-INC-002:s02:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Responsible employee / incident coordinator",
+              "trigger": "If SEV1 applies to this incident",
+              "deadline_minutes": 5,
+              "deadline_basis": "threshold detection",
+              "due_at": null,
+              "retrospective": false
+            },
+            {
+              "text": "Proposed for any incident meeting these policy conditions: check or prepare the unsent notification to Customer Service Lead within 10 minutes of threshold detection. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-INC-002:s02:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Responsible employee / incident coordinator",
+              "trigger": "If SEV1 applies to this incident",
+              "deadline_minutes": 10,
+              "deadline_basis": "threshold detection",
+              "due_at": null,
+              "retrospective": false
+            },
+            {
+              "text": "Proposed for any incident meeting these policy conditions: check or prepare the unsent notification to Risk & Compliance within 15 minutes of threshold detection. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-INC-002:s02:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Responsible employee / incident coordinator",
+              "trigger": "If SEV1 applies to this incident",
+              "deadline_minutes": 15,
+              "deadline_basis": "threshold detection",
+              "due_at": null,
+              "retrospective": false
+            },
+            {
+              "text": "Proposed for any incident meeting these policy conditions: check or prepare the unsent notification to Executive Duty Sponsor within 30 minutes of threshold detection. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-INC-002:s02:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Responsible employee / incident coordinator",
+              "trigger": "If SEV1 applies to this incident",
+              "deadline_minutes": 30,
+              "deadline_basis": "threshold detection",
+              "due_at": null,
+              "retrospective": false
+            },
+            {
+              "text": "Proposed for any incident meeting these policy conditions: prepare the first customer notice within 15 minutes of threshold detection; propose subsequent updates at least every 30 minutes while impact continues. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-COM-001:s01:c01",
+                "POL-COM-001:s02:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Customer Service Lead",
+              "trigger": "If SEV1 customer impact applies and continues",
+              "deadline_minutes": 15,
+              "deadline_basis": "threshold detection",
+              "due_at": null,
+              "retrospective": false
+            },
+            {
+              "text": "Proposed for any incident meeting these policy conditions: review Incident Escalation SOP \u2014 1. Trigger and notification clock against the known incident facts and record unresolved prerequisites. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-INC-002:s01:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Responsible human owner (confirmation required)",
+              "trigger": "Only if this cited policy dimension applies",
+              "deadline_minutes": null,
+              "deadline_basis": null,
+              "due_at": null,
+              "retrospective": false
+            }
+          ],
+          "evidence_gaps": [],
+          "source_citations": [
+            {
+              "evidence_id": "POL-INC-002:s02:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-INC-002",
+              "title": "Incident Escalation SOP",
+              "section": "2. Severity 1 notification",
+              "excerpt": "For a Severity 1 (SEV1) incident, notify the Operations Duty Manager and the relevant recovery team within 5 minutes of threshold detection. Notify the Customer Service Lead within 10 minutes, Risk & Compliance within 15 minutes, and the Executive Duty Sponsor within 30 minutes. Digital Services is the recovery team for digital or payment outages; Facilities is the recovery team for physical disruption. The Duty Manager appoints an incident coordinator and opens a coordination bridge. Do not wait for root-cause confirmation before these notifications.",
+              "chunk_id": "POL-INC-002:s02:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.20638857883963155
+            },
+            {
+              "evidence_id": "POL-INC-002:s01:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-INC-002",
+              "title": "Incident Escalation SOP",
+              "section": "1. Trigger and notification clock",
+              "excerpt": "Escalation begins when an incident meets a severity threshold in POL-INC-001. The analyst records when the threshold was first detected and uses that time for notification deadlines. Escalation is a human action: an assistant may recommend recipients and prepare a draft, but a responsible employee sends the notification. A failed delivery does not satisfy the deadline. Record recipient, channel, sent time and acknowledgement. Use the on-call contact directory; this corpus does not contain phone numbers or personal contact details.",
+              "chunk_id": "POL-INC-002:s01:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.19299344561751985
+            },
+            {
+              "evidence_id": "POL-COM-001:s02:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-COM-001",
+              "title": "Customer Communication Standard",
+              "section": "2. First notice and update cadence",
+              "excerpt": "For SEV1 customer-impact incidents, issue the first customer notice within 15 minutes of threshold detection and subsequent updates at least every 30 minutes while impact continues. For SEV2, issue the first notice within 30 minutes and update at least every 60 minutes. If no new facts are available, say investigation continues and give the next update time. A restoration notice does not replace a missing earlier update. Record any missed deadline and its reason in the timeline for review.",
+              "chunk_id": "POL-COM-001:s02:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.4189928469177342
+            },
+            {
+              "evidence_id": "POL-COM-001:s01:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-COM-001",
+              "title": "Customer Communication Standard",
+              "section": "1. Communication ownership",
+              "excerpt": "The Customer Service Lead owns customer-facing incident messages and coordinates with the incident coordinator. The recovery owner confirms technical facts; Risk & Compliance reviews sensitive integrity statements. Use approved service channels and the status page rather than an analyst's personal account. The message log records author, approval, audience, channel and publication time. An assistant may propose wording, but a human publishes and approves it. Internal escalation under POL-INC-002 and public customer updates are distinct activities with distinct clocks.",
+              "chunk_id": "POL-COM-001:s01:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.2396383051965494
+            }
+          ],
+          "investigation_status": "completed",
+          "tool_trace": [
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "escalation notify notification deadline notification recipients deadlines customer communication first notice update cadence communication ownership first notice update cadence SEV1",
+                "top_k": 6
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.32404204830527306
+            },
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "Incident Escalation SOP Severity 1 notification Customer Communication Standard Communication ownership",
+                "top_k": 8
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.2796670887619257
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "retrieve_policies",
+            "synthesise_evidence",
+            "verify_evidence",
+            "targeted_retry",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": null,
+            "reported_severity": "SEV1",
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [
+              {
+                "field": "severity",
+                "value": "SEV1",
+                "origin": "user_reported",
+                "evidence_ids": []
+              }
+            ],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV1",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ]
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "retrieve_policies",
+          "synthesise_evidence",
+          "verify_evidence",
+          "targeted_retry",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "escalation notify notification deadline notification recipients deadlines customer communication first notice update cadence communication ownership first notice update cadence SEV1",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.32404204830527306
+          },
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "Incident Escalation SOP Severity 1 notification Customer Communication Standard Communication ownership",
+              "top_k": 8
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.2796670887619257
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 8.966041030362248,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "planning_diagnostic": null,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": null,
+          "reported_severity": "SEV1",
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV1",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "required_citations",
+        "citation_integrity",
+        "tool_efficiency",
+        "read_only",
+        "offline",
+        "proposed_actions_only",
+        "no_integrity_errors",
+        "dimension_coverage",
+        "provider_budget",
+        "recommendation_citations"
+      ]
+    },
+    {
+      "id": "gap-sev1-review-date",
+      "category": "evidence_gap_development",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 5.012250039726496,
+      "tool_calls": 1,
+      "response": {
+        "investigation_id": "8c39acc8-8ef6-4ff8-aaea-fcb511fb1ca1",
+        "completion_status": "partial",
+        "route": "policy_only",
+        "investigation_plan": {
+          "execution": {
+            "route": "policy_only",
+            "calls": [
+              {
+                "tool_name": "search_internal_policy",
+                "arguments": {
+                  "query": "Which date is the SEV1 post-incident review due? SEV1",
+                  "policy_type": null,
+                  "top_k": 6
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "policy:review",
+              "plane": "policy",
+              "description": "post incident review requirements",
+              "policy_type": "review",
+              "tool_name": null,
+              "section_numbers": [
+                1,
+                2
+              ],
+              "query": "post incident review requirements mandatory review criteria review timetable business days resolution",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:review:criteria",
+                  "description": "mandatory review criteria",
+                  "section_numbers": [
+                    1
+                  ]
+                },
+                {
+                  "dimension_id": "policy:review:timetable",
+                  "description": "review timetable business days resolution",
+                  "section_numbers": [
+                    2
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": false,
+          "covered_requirements": [
+            "policy:review"
+          ],
+          "gaps": [
+            {
+              "requirement_id": "input:holiday_calendar",
+              "description": "The approved holiday calendar is absent; business-day review deadlines cannot be converted to exact calendar dates.",
+              "retryable": false
+            },
+            {
+              "requirement_id": "input:resolution_time",
+              "description": "A verified resolution timestamp is absent; review deadlines are relative to resolution, not incident opening or the snapshot date.",
+              "retryable": false
+            }
+          ],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "policy:review:criteria",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-REV-001:s01:c01"
+              ],
+              "missing_sections": []
+            },
+            {
+              "dimension_id": "policy:review:timetable",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-REV-001:s02:c01"
+              ],
+              "missing_sections": []
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 0,
+        "investigation_brief": {
+          "executive_summary": "Policy/history investigation: mandatory review criteria, review timetable business days resolution. Unresolved: The approved holiday calendar is absent; business-day review deadlines cannot be converted to exact calendar dates.; A verified resolution timestamp is absent; review deadlines are relative to resolution, not incident opening or the snapshot date.. Investigation status: partial. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "severity=SEV1 (user reported)",
+          "applicable_internal_policies": [
+            {
+              "kind": "policy_requirement",
+              "text": "The incident coordinator schedules a SEV1 review within 2 business days of resolution and publishes the draft review within 5 business days. Business days mean Monday to Friday, excluding HarbourLink's approved holiday calendar; the holiday calendar is not included in this corpus. For other mandatory reviews, schedule within 5 business days and publish the draft within 10 business days. Record owner and due date at resolution. If a deadline cannot be met, the Duty Manager records the exception and revised date.",
+              "evidence_ids": [
+                "POL-REV-001:s02:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "A post-incident review is required for every SEV1 incident, every confirmed payment or data-integrity incident, and a service with three or more similar incidents in a rolling 30-day period. The Operations Duty Manager can also require a review for a lower-severity event with important learning. Similar incidents share a service and failure category; matching a broad business unit alone is insufficient. A review-required flag in the historical database records that dataset's classification and is not proof that the review was completed.",
+              "evidence_ids": [
+                "POL-REV-001:s01:c01"
+              ]
+            }
+          ],
+          "historical_incident_comparison": [],
+          "key_findings": [
+            {
+              "kind": "policy_requirement",
+              "text": "The incident coordinator schedules a SEV1 review within 2 business days of resolution and publishes the draft review within 5 business days. Business days mean Monday to Friday, excluding HarbourLink's approved holiday calendar; the holiday calendar is not included in this corpus. For other mandatory reviews, schedule within 5 business days and publish the draft within 10 business days. Record owner and due date at resolution. If a deadline cannot be met, the Duty Manager records the exception and revised date.",
+              "evidence_ids": [
+                "POL-REV-001:s02:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "A post-incident review is required for every SEV1 incident, every confirmed payment or data-integrity incident, and a service with three or more similar incidents in a rolling 30-day period. The Operations Duty Manager can also require a review for a lower-severity event with important learning. Similar incidents share a service and failure category; matching a broad business unit alone is insufficient. A review-required flag in the historical database records that dataset's classification and is not proof that the review was completed.",
+              "evidence_ids": [
+                "POL-REV-001:s01:c01"
+              ]
+            }
+          ],
+          "recommended_next_steps": [
+            {
+              "text": "Proposed for any incident meeting these policy conditions: if review is mandatory, schedule it within 2 business days of resolution and publish the draft within 5 business days. Confirm the absent holiday calendar before calculating calendar dates. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-REV-001:s01:c01",
+                "POL-REV-001:s02:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Incident coordinator",
+              "trigger": "After resolution, if a review is required",
+              "deadline_minutes": null,
+              "deadline_basis": null,
+              "due_at": null,
+              "retrospective": false
+            }
+          ],
+          "evidence_gaps": [
+            {
+              "requirement_id": "input:holiday_calendar",
+              "description": "The approved holiday calendar is absent; business-day review deadlines cannot be converted to exact calendar dates.",
+              "retryable": false
+            },
+            {
+              "requirement_id": "input:resolution_time",
+              "description": "A verified resolution timestamp is absent; review deadlines are relative to resolution, not incident opening or the snapshot date.",
+              "retryable": false
+            }
+          ],
+          "source_citations": [
+            {
+              "evidence_id": "POL-REV-001:s02:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-REV-001",
+              "title": "Post-Incident Review Standard",
+              "section": "2. Review timetable",
+              "excerpt": "The incident coordinator schedules a SEV1 review within 2 business days of resolution and publishes the draft review within 5 business days. Business days mean Monday to Friday, excluding HarbourLink's approved holiday calendar; the holiday calendar is not included in this corpus. For other mandatory reviews, schedule within 5 business days and publish the draft within 10 business days. Record owner and due date at resolution. If a deadline cannot be met, the Duty Manager records the exception and revised date.",
+              "chunk_id": "POL-REV-001:s02:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.47725440170744454
+            },
+            {
+              "evidence_id": "POL-REV-001:s01:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-REV-001",
+              "title": "Post-Incident Review Standard",
+              "section": "1. Mandatory review criteria",
+              "excerpt": "A post-incident review is required for every SEV1 incident, every confirmed payment or data-integrity incident, and a service with three or more similar incidents in a rolling 30-day period. The Operations Duty Manager can also require a review for a lower-severity event with important learning. Similar incidents share a service and failure category; matching a broad business unit alone is insufficient. A review-required flag in the historical database records that dataset's classification and is not proof that the review was completed.",
+              "chunk_id": "POL-REV-001:s01:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.3082197519349053
+            }
+          ],
+          "investigation_status": "partial",
+          "tool_trace": [
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "post incident review requirements mandatory review criteria review timetable business days resolution SEV1",
+                "top_k": 6
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.30229100957512856
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "retrieve_policies",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": null,
+            "reported_severity": "SEV1",
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [
+              {
+                "field": "severity",
+                "value": "SEV1",
+                "origin": "user_reported",
+                "evidence_ids": []
+              }
+            ],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV1",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ]
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "retrieve_policies",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "post incident review requirements mandatory review criteria review timetable business days resolution SEV1",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.30229100957512856
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 5.012250039726496,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "planning_diagnostic": null,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": null,
+          "reported_severity": "SEV1",
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV1",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "required_citations",
+        "citation_integrity",
+        "tool_efficiency",
+        "read_only",
+        "offline",
+        "proposed_actions_only",
+        "no_integrity_errors",
+        "dimension_coverage",
+        "explicit_gaps",
+        "action_contract",
+        "clock_integrity",
+        "provider_budget",
+        "recommendation_citations"
+      ]
+    },
+    {
+      "id": "gap-sev2-review-date",
+      "category": "evidence_gap_development",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 4.908166825771332,
+      "tool_calls": 1,
+      "response": {
+        "investigation_id": "37c23397-f43e-4ec0-9bc5-bd3e9c460b47",
+        "completion_status": "partial",
+        "route": "policy_only",
+        "investigation_plan": {
+          "execution": {
+            "route": "policy_only",
+            "calls": [
+              {
+                "tool_name": "search_internal_policy",
+                "arguments": {
+                  "query": "Which date is the SEV2 post-incident review due? SEV2",
+                  "policy_type": null,
+                  "top_k": 6
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "policy:review",
+              "plane": "policy",
+              "description": "post incident review requirements",
+              "policy_type": "review",
+              "tool_name": null,
+              "section_numbers": [
+                1,
+                2
+              ],
+              "query": "post incident review requirements mandatory review criteria review timetable business days resolution",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:review:criteria",
+                  "description": "mandatory review criteria",
+                  "section_numbers": [
+                    1
+                  ]
+                },
+                {
+                  "dimension_id": "policy:review:timetable",
+                  "description": "review timetable business days resolution",
+                  "section_numbers": [
+                    2
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": false,
+          "covered_requirements": [
+            "policy:review"
+          ],
+          "gaps": [
+            {
+              "requirement_id": "input:holiday_calendar",
+              "description": "The approved holiday calendar is absent; business-day review deadlines cannot be converted to exact calendar dates.",
+              "retryable": false
+            },
+            {
+              "requirement_id": "input:resolution_time",
+              "description": "A verified resolution timestamp is absent; review deadlines are relative to resolution, not incident opening or the snapshot date.",
+              "retryable": false
+            }
+          ],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "policy:review:criteria",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-REV-001:s01:c01"
+              ],
+              "missing_sections": []
+            },
+            {
+              "dimension_id": "policy:review:timetable",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-REV-001:s02:c01"
+              ],
+              "missing_sections": []
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 0,
+        "investigation_brief": {
+          "executive_summary": "Policy/history investigation: mandatory review criteria, review timetable business days resolution. Unresolved: The approved holiday calendar is absent; business-day review deadlines cannot be converted to exact calendar dates.; A verified resolution timestamp is absent; review deadlines are relative to resolution, not incident opening or the snapshot date.. Investigation status: partial. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "severity=SEV2 (user reported)",
+          "applicable_internal_policies": [
+            {
+              "kind": "policy_requirement",
+              "text": "The incident coordinator schedules a SEV1 review within 2 business days of resolution and publishes the draft review within 5 business days. Business days mean Monday to Friday, excluding HarbourLink's approved holiday calendar; the holiday calendar is not included in this corpus. For other mandatory reviews, schedule within 5 business days and publish the draft within 10 business days. Record owner and due date at resolution. If a deadline cannot be met, the Duty Manager records the exception and revised date.",
+              "evidence_ids": [
+                "POL-REV-001:s02:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "A post-incident review is required for every SEV1 incident, every confirmed payment or data-integrity incident, and a service with three or more similar incidents in a rolling 30-day period. The Operations Duty Manager can also require a review for a lower-severity event with important learning. Similar incidents share a service and failure category; matching a broad business unit alone is insufficient. A review-required flag in the historical database records that dataset's classification and is not proof that the review was completed.",
+              "evidence_ids": [
+                "POL-REV-001:s01:c01"
+              ]
+            }
+          ],
+          "historical_incident_comparison": [],
+          "key_findings": [
+            {
+              "kind": "policy_requirement",
+              "text": "The incident coordinator schedules a SEV1 review within 2 business days of resolution and publishes the draft review within 5 business days. Business days mean Monday to Friday, excluding HarbourLink's approved holiday calendar; the holiday calendar is not included in this corpus. For other mandatory reviews, schedule within 5 business days and publish the draft within 10 business days. Record owner and due date at resolution. If a deadline cannot be met, the Duty Manager records the exception and revised date.",
+              "evidence_ids": [
+                "POL-REV-001:s02:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "A post-incident review is required for every SEV1 incident, every confirmed payment or data-integrity incident, and a service with three or more similar incidents in a rolling 30-day period. The Operations Duty Manager can also require a review for a lower-severity event with important learning. Similar incidents share a service and failure category; matching a broad business unit alone is insufficient. A review-required flag in the historical database records that dataset's classification and is not proof that the review was completed.",
+              "evidence_ids": [
+                "POL-REV-001:s01:c01"
+              ]
+            }
+          ],
+          "recommended_next_steps": [
+            {
+              "text": "Proposed for any incident meeting these policy conditions: if review is mandatory, schedule it within 5 business days of resolution and publish the draft within 10 business days. Confirm the absent holiday calendar before calculating calendar dates. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-REV-001:s01:c01",
+                "POL-REV-001:s02:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Incident coordinator",
+              "trigger": "After resolution, if a review is required",
+              "deadline_minutes": null,
+              "deadline_basis": null,
+              "due_at": null,
+              "retrospective": false
+            }
+          ],
+          "evidence_gaps": [
+            {
+              "requirement_id": "input:holiday_calendar",
+              "description": "The approved holiday calendar is absent; business-day review deadlines cannot be converted to exact calendar dates.",
+              "retryable": false
+            },
+            {
+              "requirement_id": "input:resolution_time",
+              "description": "A verified resolution timestamp is absent; review deadlines are relative to resolution, not incident opening or the snapshot date.",
+              "retryable": false
+            }
+          ],
+          "source_citations": [
+            {
+              "evidence_id": "POL-REV-001:s02:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-REV-001",
+              "title": "Post-Incident Review Standard",
+              "section": "2. Review timetable",
+              "excerpt": "The incident coordinator schedules a SEV1 review within 2 business days of resolution and publishes the draft review within 5 business days. Business days mean Monday to Friday, excluding HarbourLink's approved holiday calendar; the holiday calendar is not included in this corpus. For other mandatory reviews, schedule within 5 business days and publish the draft within 10 business days. Record owner and due date at resolution. If a deadline cannot be met, the Duty Manager records the exception and revised date.",
+              "chunk_id": "POL-REV-001:s02:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.4568467905382032
+            },
+            {
+              "evidence_id": "POL-REV-001:s01:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-REV-001",
+              "title": "Post-Incident Review Standard",
+              "section": "1. Mandatory review criteria",
+              "excerpt": "A post-incident review is required for every SEV1 incident, every confirmed payment or data-integrity incident, and a service with three or more similar incidents in a rolling 30-day period. The Operations Duty Manager can also require a review for a lower-severity event with important learning. Similar incidents share a service and failure category; matching a broad business unit alone is insufficient. A review-required flag in the historical database records that dataset's classification and is not proof that the review was completed.",
+              "chunk_id": "POL-REV-001:s01:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.28789396619607827
+            }
+          ],
+          "investigation_status": "partial",
+          "tool_trace": [
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "post incident review requirements mandatory review criteria review timetable business days resolution SEV2",
+                "top_k": 6
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.41154189966619015
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "retrieve_policies",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": null,
+            "reported_severity": "SEV2",
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [
+              {
+                "field": "severity",
+                "value": "SEV2",
+                "origin": "user_reported",
+                "evidence_ids": []
+              }
+            ],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV2",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ]
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "retrieve_policies",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "post incident review requirements mandatory review criteria review timetable business days resolution SEV2",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.41154189966619015
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 4.908166825771332,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "planning_diagnostic": null,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": null,
+          "reported_severity": "SEV2",
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV2",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "required_citations",
+        "citation_integrity",
+        "tool_efficiency",
+        "read_only",
+        "offline",
+        "proposed_actions_only",
+        "no_integrity_errors",
+        "dimension_coverage",
+        "explicit_gaps",
+        "action_contract",
+        "clock_integrity",
+        "provider_budget",
+        "recommendation_citations"
+      ]
+    },
+    {
+      "id": "gap-sev3-relative-review",
+      "category": "evidence_gap_development",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 5.020915996283293,
+      "tool_calls": 1,
+      "response": {
+        "investigation_id": "1df09a88-be0c-4966-b4a8-2eb72c0fbe9d",
+        "completion_status": "completed",
+        "route": "policy_only",
+        "investigation_plan": {
+          "execution": {
+            "route": "policy_only",
+            "calls": [
+              {
+                "tool_name": "search_internal_policy",
+                "arguments": {
+                  "query": "How soon should SEV3 post-incident reviews be scheduled and drafts published? SEV3",
+                  "policy_type": null,
+                  "top_k": 6
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "policy:review",
+              "plane": "policy",
+              "description": "post incident review requirements",
+              "policy_type": "review",
+              "tool_name": null,
+              "section_numbers": [
+                1,
+                2
+              ],
+              "query": "post incident review requirements mandatory review criteria review timetable business days resolution",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:review:criteria",
+                  "description": "mandatory review criteria",
+                  "section_numbers": [
+                    1
+                  ]
+                },
+                {
+                  "dimension_id": "policy:review:timetable",
+                  "description": "review timetable business days resolution",
+                  "section_numbers": [
+                    2
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": true,
+          "covered_requirements": [
+            "policy:review"
+          ],
+          "gaps": [],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "policy:review:criteria",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-REV-001:s01:c01"
+              ],
+              "missing_sections": []
+            },
+            {
+              "dimension_id": "policy:review:timetable",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-REV-001:s02:c01"
+              ],
+              "missing_sections": []
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 0,
+        "investigation_brief": {
+          "executive_summary": "Policy/history investigation: mandatory review criteria, review timetable business days resolution. Investigation status: completed. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "severity=SEV3 (user reported)",
+          "applicable_internal_policies": [
+            {
+              "kind": "policy_requirement",
+              "text": "The incident coordinator schedules a SEV1 review within 2 business days of resolution and publishes the draft review within 5 business days. Business days mean Monday to Friday, excluding HarbourLink's approved holiday calendar; the holiday calendar is not included in this corpus. For other mandatory reviews, schedule within 5 business days and publish the draft within 10 business days. Record owner and due date at resolution. If a deadline cannot be met, the Duty Manager records the exception and revised date.",
+              "evidence_ids": [
+                "POL-REV-001:s02:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "A post-incident review is required for every SEV1 incident, every confirmed payment or data-integrity incident, and a service with three or more similar incidents in a rolling 30-day period. The Operations Duty Manager can also require a review for a lower-severity event with important learning. Similar incidents share a service and failure category; matching a broad business unit alone is insufficient. A review-required flag in the historical database records that dataset's classification and is not proof that the review was completed.",
+              "evidence_ids": [
+                "POL-REV-001:s01:c01"
+              ]
+            }
+          ],
+          "historical_incident_comparison": [],
+          "key_findings": [
+            {
+              "kind": "policy_requirement",
+              "text": "The incident coordinator schedules a SEV1 review within 2 business days of resolution and publishes the draft review within 5 business days. Business days mean Monday to Friday, excluding HarbourLink's approved holiday calendar; the holiday calendar is not included in this corpus. For other mandatory reviews, schedule within 5 business days and publish the draft within 10 business days. Record owner and due date at resolution. If a deadline cannot be met, the Duty Manager records the exception and revised date.",
+              "evidence_ids": [
+                "POL-REV-001:s02:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "A post-incident review is required for every SEV1 incident, every confirmed payment or data-integrity incident, and a service with three or more similar incidents in a rolling 30-day period. The Operations Duty Manager can also require a review for a lower-severity event with important learning. Similar incidents share a service and failure category; matching a broad business unit alone is insufficient. A review-required flag in the historical database records that dataset's classification and is not proof that the review was completed.",
+              "evidence_ids": [
+                "POL-REV-001:s01:c01"
+              ]
+            }
+          ],
+          "recommended_next_steps": [
+            {
+              "text": "Proposed for any incident meeting these policy conditions: if review is mandatory, schedule it within 5 business days of resolution and publish the draft within 10 business days. Confirm the absent holiday calendar before calculating calendar dates. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-REV-001:s01:c01",
+                "POL-REV-001:s02:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Incident coordinator",
+              "trigger": "After resolution, if a review is required",
+              "deadline_minutes": null,
+              "deadline_basis": null,
+              "due_at": null,
+              "retrospective": false
+            }
+          ],
+          "evidence_gaps": [],
+          "source_citations": [
+            {
+              "evidence_id": "POL-REV-001:s02:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-REV-001",
+              "title": "Post-Incident Review Standard",
+              "section": "2. Review timetable",
+              "excerpt": "The incident coordinator schedules a SEV1 review within 2 business days of resolution and publishes the draft review within 5 business days. Business days mean Monday to Friday, excluding HarbourLink's approved holiday calendar; the holiday calendar is not included in this corpus. For other mandatory reviews, schedule within 5 business days and publish the draft within 10 business days. Record owner and due date at resolution. If a deadline cannot be met, the Duty Manager records the exception and revised date.",
+              "chunk_id": "POL-REV-001:s02:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.4356627150205051
+            },
+            {
+              "evidence_id": "POL-REV-001:s01:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-REV-001",
+              "title": "Post-Incident Review Standard",
+              "section": "1. Mandatory review criteria",
+              "excerpt": "A post-incident review is required for every SEV1 incident, every confirmed payment or data-integrity incident, and a service with three or more similar incidents in a rolling 30-day period. The Operations Duty Manager can also require a review for a lower-severity event with important learning. Similar incidents share a service and failure category; matching a broad business unit alone is insufficient. A review-required flag in the historical database records that dataset's classification and is not proof that the review was completed.",
+              "chunk_id": "POL-REV-001:s01:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.2745442663682596
+            }
+          ],
+          "investigation_status": "completed",
+          "tool_trace": [
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "post incident review requirements mandatory review criteria review timetable business days resolution SEV3",
+                "top_k": 6
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.29095797799527645
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "retrieve_policies",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": null,
+            "reported_severity": "SEV3",
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [
+              {
+                "field": "severity",
+                "value": "SEV3",
+                "origin": "user_reported",
+                "evidence_ids": []
+              }
+            ],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV3",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ]
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "retrieve_policies",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "post incident review requirements mandatory review criteria review timetable business days resolution SEV3",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.29095797799527645
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 5.020915996283293,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "planning_diagnostic": null,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": null,
+          "reported_severity": "SEV3",
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV3",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "required_citations",
+        "citation_integrity",
+        "tool_efficiency",
+        "read_only",
+        "offline",
+        "proposed_actions_only",
+        "no_integrity_errors",
+        "dimension_coverage",
+        "action_contract",
+        "clock_integrity",
+        "provider_budget",
+        "recommendation_citations"
+      ]
+    },
+    {
+      "id": "gap-policy-source-empty",
+      "category": "evidence_gap_development",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 4.901750013232231,
+      "tool_calls": 2,
+      "response": {
+        "investigation_id": "c0222d23-1fdb-4e4f-9efa-d7a74604aba7",
+        "completion_status": "insufficient",
+        "route": "policy_only",
+        "investigation_plan": {
+          "execution": {
+            "route": "policy_only",
+            "calls": [
+              {
+                "tool_name": "search_internal_policy",
+                "arguments": {
+                  "query": "What is the SEV2 review due date under the post-incident policy? SEV2",
+                  "policy_type": null,
+                  "top_k": 6
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "policy:review",
+              "plane": "policy",
+              "description": "post incident review requirements",
+              "policy_type": "review",
+              "tool_name": null,
+              "section_numbers": [
+                1,
+                2
+              ],
+              "query": "post incident review requirements mandatory review criteria review timetable business days resolution",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:review:criteria",
+                  "description": "mandatory review criteria",
+                  "section_numbers": [
+                    1
+                  ]
+                },
+                {
+                  "dimension_id": "policy:review:timetable",
+                  "description": "review timetable business days resolution",
+                  "section_numbers": [
+                    2
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": false,
+          "covered_requirements": [],
+          "gaps": [
+            {
+              "requirement_id": "policy:review:criteria",
+              "description": "Missing evidence for mandatory review criteria",
+              "retryable": true
+            },
+            {
+              "requirement_id": "policy:review:timetable",
+              "description": "Missing evidence for review timetable business days resolution",
+              "retryable": true
+            },
+            {
+              "requirement_id": "policy:review",
+              "description": "post incident review requirements",
+              "retryable": true
+            },
+            {
+              "requirement_id": "input:holiday_calendar",
+              "description": "The approved holiday calendar is absent; business-day review deadlines cannot be converted to exact calendar dates.",
+              "retryable": false
+            },
+            {
+              "requirement_id": "input:resolution_time",
+              "description": "A verified resolution timestamp is absent; review deadlines are relative to resolution, not incident opening or the snapshot date.",
+              "retryable": false
+            }
+          ],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "policy:review:criteria",
+              "status": "missing",
+              "evidence_ids": [],
+              "missing_sections": [
+                1
+              ]
+            },
+            {
+              "dimension_id": "policy:review:timetable",
+              "status": "missing",
+              "evidence_ids": [],
+              "missing_sections": [
+                2
+              ]
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 1,
+        "investigation_brief": {
+          "executive_summary": "Policy/history investigation: mandatory review criteria, review timetable business days resolution. Unresolved: Missing evidence for mandatory review criteria; Missing evidence for review timetable business days resolution; post incident review requirements. Investigation status: insufficient. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "severity=SEV2 (user reported)",
+          "applicable_internal_policies": [],
+          "historical_incident_comparison": [],
+          "key_findings": [],
+          "recommended_next_steps": [],
+          "evidence_gaps": [
+            {
+              "requirement_id": "policy:review:criteria",
+              "description": "Missing evidence for mandatory review criteria",
+              "retryable": true
+            },
+            {
+              "requirement_id": "policy:review:timetable",
+              "description": "Missing evidence for review timetable business days resolution",
+              "retryable": true
+            },
+            {
+              "requirement_id": "policy:review",
+              "description": "post incident review requirements",
+              "retryable": true
+            },
+            {
+              "requirement_id": "input:holiday_calendar",
+              "description": "The approved holiday calendar is absent; business-day review deadlines cannot be converted to exact calendar dates.",
+              "retryable": false
+            },
+            {
+              "requirement_id": "input:resolution_time",
+              "description": "A verified resolution timestamp is absent; review deadlines are relative to resolution, not incident opening or the snapshot date.",
+              "retryable": false
+            }
+          ],
+          "source_citations": [],
+          "investigation_status": "insufficient",
+          "tool_trace": [
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "post incident review requirements mandatory review criteria review timetable business days resolution SEV2",
+                "top_k": 6
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.15525007620453835
+            },
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "Post-Incident Review Standard Mandatory review criteria Post-Incident Review Standard Review timetable",
+                "policy_type": "review",
+                "top_k": 8
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.13879197649657726
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "retrieve_policies",
+            "synthesise_evidence",
+            "verify_evidence",
+            "targeted_retry",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": null,
+            "reported_severity": "SEV2",
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [
+              {
+                "field": "severity",
+                "value": "SEV2",
+                "origin": "user_reported",
+                "evidence_ids": []
+              }
+            ],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV2",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ]
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "retrieve_policies",
+          "synthesise_evidence",
+          "verify_evidence",
+          "targeted_retry",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "post incident review requirements mandatory review criteria review timetable business days resolution SEV2",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.15525007620453835
+          },
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "Post-Incident Review Standard Mandatory review criteria Post-Incident Review Standard Review timetable",
+              "policy_type": "review",
+              "top_k": 8
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.13879197649657726
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 4.901750013232231,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "planning_diagnostic": null,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": null,
+          "reported_severity": "SEV2",
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV2",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "citation_integrity",
+        "tool_efficiency",
+        "retry",
+        "read_only",
+        "offline",
+        "no_integrity_errors",
+        "explicit_gaps",
+        "no_forbidden_recommendations",
+        "clock_integrity",
+        "provider_budget"
+      ]
+    },
+    {
+      "id": "gap-communication-unavailable",
+      "category": "evidence_gap_development",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_dimensions": true,
+        "required_citations": true,
+        "citation_integrity": true,
+        "frozen_reference_points": true,
+        "tool_efficiency": true,
+        "retry": true,
+        "read_only": true,
+        "human_completion": true,
+        "offline": true,
+        "proposed_actions_only": true,
+        "no_integrity_errors": true,
+        "proposed_severity": true,
+        "assessment_status": true,
+        "recorded_severity": true,
+        "reported_severity": true,
+        "dimension_coverage": true,
+        "missing_dimensions": true,
+        "explicit_gaps": true,
+        "context_provenance": true,
+        "action_contract": true,
+        "no_forbidden_recommendations": true,
+        "clock_integrity": true,
+        "interrupt_sequence": true,
+        "provider_budget": true,
+        "recommendation_citations": true
+      },
+      "failures": [],
+      "latency_ms": 5.91433304361999,
+      "tool_calls": 2,
+      "response": {
+        "investigation_id": "9d287380-8c42-41e3-b3d8-f0f70b8fa462",
+        "completion_status": "partial",
+        "route": "policy_only",
+        "investigation_plan": {
+          "execution": {
+            "route": "policy_only",
+            "calls": [
+              {
+                "tool_name": "search_internal_policy",
+                "arguments": {
+                  "query": "For SEV2, give escalation notifications and customer communication cadence. SEV2",
+                  "policy_type": null,
+                  "top_k": 6
+                }
+              }
+            ],
+            "current_duration_minutes": null
+          },
+          "requirements": [
+            {
+              "requirement_id": "policy:escalation",
+              "plane": "policy",
+              "description": "escalation notify notification deadline",
+              "policy_type": "escalation",
+              "tool_name": null,
+              "section_numbers": [
+                1,
+                3
+              ],
+              "query": "escalation notify notification deadline notification recipients deadlines",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:escalation:notifications",
+                  "description": "notification recipients deadlines",
+                  "section_numbers": [
+                    1,
+                    3
+                  ]
+                }
+              ]
+            },
+            {
+              "requirement_id": "policy:communication",
+              "plane": "policy",
+              "description": "customer communication first notice update cadence",
+              "policy_type": "communication",
+              "tool_name": null,
+              "section_numbers": [
+                1,
+                2
+              ],
+              "query": "customer communication first notice update cadence communication ownership first notice update cadence",
+              "dimensions": [
+                {
+                  "dimension_id": "policy:communication:timing",
+                  "description": "communication ownership first notice update cadence",
+                  "section_numbers": [
+                    1,
+                    2
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "verification_result": {
+          "sufficient": false,
+          "covered_requirements": [
+            "policy:escalation"
+          ],
+          "gaps": [
+            {
+              "requirement_id": "policy:communication:timing",
+              "description": "Missing evidence for communication ownership first notice update cadence",
+              "retryable": true
+            },
+            {
+              "requirement_id": "policy:communication",
+              "description": "customer communication first notice update cadence",
+              "retryable": true
+            }
+          ],
+          "integrity_errors": [],
+          "dimension_coverage": [
+            {
+              "dimension_id": "policy:escalation:notifications",
+              "status": "supported",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01",
+                "POL-INC-002:s01:c01"
+              ],
+              "missing_sections": []
+            },
+            {
+              "dimension_id": "policy:communication:timing",
+              "status": "missing",
+              "evidence_ids": [],
+              "missing_sections": [
+                1,
+                2
+              ]
+            }
+          ],
+          "advisory": "Deterministic domain checks; semantic completeness is not guaranteed."
+        },
+        "clarification_request": null,
+        "human_review_status": "not_required",
+        "retry_count": 1,
+        "investigation_brief": {
+          "executive_summary": "Policy/history investigation: notification recipients deadlines, communication ownership first notice update cadence. Unresolved: Missing evidence for communication ownership first notice update cadence; customer communication first notice update cadence. Investigation status: partial. Proposed actions require human confirmation and have not been executed.",
+          "incident_context_and_severity": "severity=SEV2 (user reported)",
+          "applicable_internal_policies": [
+            {
+              "kind": "policy_requirement",
+              "text": "For Severity 2 (SEV2), notify the Operations Duty Manager and recovery team within 15 minutes, and the Customer Service Lead within 30 minutes. Risk & Compliance must be included within 30 minutes when integrity, safety or suspected data loss is involved. SEV3 and SEV4 are managed by the assigned service owner during the operating shift; record the handover if unresolved. If any SEV1 threshold develops, start the SEV1 clock at that threshold detection and record the upgrade. Lower severity never permits bypassing evidence preservation.",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "Escalation begins when an incident meets a severity threshold in POL-INC-001. The analyst records when the threshold was first detected and uses that time for notification deadlines. Escalation is a human action: an assistant may recommend recipients and prepare a draft, but a responsible employee sends the notification. A failed delivery does not satisfy the deadline. Record recipient, channel, sent time and acknowledgement. Use the on-call contact directory; this corpus does not contain phone numbers or personal contact details.",
+              "evidence_ids": [
+                "POL-INC-002:s01:c01"
+              ]
+            }
+          ],
+          "historical_incident_comparison": [],
+          "key_findings": [
+            {
+              "kind": "policy_requirement",
+              "text": "For Severity 2 (SEV2), notify the Operations Duty Manager and recovery team within 15 minutes, and the Customer Service Lead within 30 minutes. Risk & Compliance must be included within 30 minutes when integrity, safety or suspected data loss is involved. SEV3 and SEV4 are managed by the assigned service owner during the operating shift; record the handover if unresolved. If any SEV1 threshold develops, start the SEV1 clock at that threshold detection and record the upgrade. Lower severity never permits bypassing evidence preservation.",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01"
+              ]
+            },
+            {
+              "kind": "policy_requirement",
+              "text": "Escalation begins when an incident meets a severity threshold in POL-INC-001. The analyst records when the threshold was first detected and uses that time for notification deadlines. Escalation is a human action: an assistant may recommend recipients and prepare a draft, but a responsible employee sends the notification. A failed delivery does not satisfy the deadline. Record recipient, channel, sent time and acknowledgement. Use the on-call contact directory; this corpus does not contain phone numbers or personal contact details.",
+              "evidence_ids": [
+                "POL-INC-002:s01:c01"
+              ]
+            }
+          ],
+          "recommended_next_steps": [
+            {
+              "text": "Proposed for any incident meeting these policy conditions: check or prepare the unsent notification to Operations Duty Manager and recovery team within 15 minutes of threshold detection. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01",
+                "POL-INC-002:s01:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Responsible employee / incident coordinator",
+              "trigger": "If SEV2 applies to this incident",
+              "deadline_minutes": 15,
+              "deadline_basis": "threshold detection",
+              "due_at": null,
+              "retrospective": false
+            },
+            {
+              "text": "Proposed for any incident meeting these policy conditions: check or prepare the unsent notification to Customer Service Lead within 30 minutes of threshold detection. Human confirmation required; not executed.",
+              "evidence_ids": [
+                "POL-INC-002:s03:c01",
+                "POL-INC-002:s01:c01"
+              ],
+              "status": "proposed_not_executed",
+              "owner_role": "Responsible employee / incident coordinator",
+              "trigger": "If SEV2 applies to this incident",
+              "deadline_minutes": 30,
+              "deadline_basis": "threshold detection",
+              "due_at": null,
+              "retrospective": false
+            }
+          ],
+          "evidence_gaps": [
+            {
+              "requirement_id": "policy:communication:timing",
+              "description": "Missing evidence for communication ownership first notice update cadence",
+              "retryable": true
+            },
+            {
+              "requirement_id": "policy:communication",
+              "description": "customer communication first notice update cadence",
+              "retryable": true
+            }
+          ],
+          "source_citations": [
+            {
+              "evidence_id": "POL-INC-002:s03:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-INC-002",
+              "title": "Incident Escalation SOP",
+              "section": "3. Severity 2 and lower notification",
+              "excerpt": "For Severity 2 (SEV2), notify the Operations Duty Manager and recovery team within 15 minutes, and the Customer Service Lead within 30 minutes. Risk & Compliance must be included within 30 minutes when integrity, safety or suspected data loss is involved. SEV3 and SEV4 are managed by the assigned service owner during the operating shift; record the handover if unresolved. If any SEV1 threshold develops, start the SEV1 clock at that threshold detection and record the upgrade. Lower severity never permits bypassing evidence preservation.",
+              "chunk_id": "POL-INC-002:s03:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.20327496062063247
+            },
+            {
+              "evidence_id": "POL-INC-002:s01:c01",
+              "source_type": "internal_policy",
+              "source_id": "POL-INC-002",
+              "title": "Incident Escalation SOP",
+              "section": "1. Trigger and notification clock",
+              "excerpt": "Escalation begins when an incident meets a severity threshold in POL-INC-001. The analyst records when the threshold was first detected and uses that time for notification deadlines. Escalation is a human action: an assistant may recommend recipients and prepare a draft, but a responsible employee sends the notification. A failed delivery does not satisfy the deadline. Record recipient, channel, sent time and acknowledgement. Use the on-call contact directory; this corpus does not contain phone numbers or personal contact details.",
+              "chunk_id": "POL-INC-002:s01:c01",
+              "version": "1.0",
+              "effective_date": "2026-07-01",
+              "score": 0.16678796426565695
+            }
+          ],
+          "investigation_status": "partial",
+          "tool_trace": [
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "escalation notify notification deadline notification recipients deadlines customer communication first notice update cadence communication ownership first notice update cadence SEV2",
+                "top_k": 6
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.31937495805323124
+            },
+            {
+              "tool_name": "search_internal_policy",
+              "arguments": {
+                "query": "Incident Escalation SOP Severity 2 and lower notification Customer Communication Standard Communication ownership Customer Communication Standard First notice and update cadence",
+                "top_k": 8
+              },
+              "status": "success",
+              "summary": "Validated read-only evidence returned.",
+              "latency_ms": 0.268333125859499
+            }
+          ],
+          "workflow_trace": [
+            "intake",
+            "plan_investigation",
+            "retrieve_policies",
+            "synthesise_evidence",
+            "verify_evidence",
+            "targeted_retry",
+            "synthesise_evidence",
+            "verify_evidence",
+            "generate_investigation_brief",
+            "finalize"
+          ],
+          "limitations": [
+            "All policies and incidents are synthetic; business tools remain read-only.",
+            "Policy establishes process; snapshot history does not prove causality or compliance.",
+            "Topic/severity coverage uses bounded rules; semantic completeness is not guaranteed.",
+            "Samples may include the reference incident; they do not prove root cause.",
+            "Metrics exclude unknown/unresolved durations; customer counts are incident exposures.",
+            "Relative dates use 2026-10-01 UTC; current policy does not prove past compliance."
+          ],
+          "severity_assessment": {
+            "recorded_severity": null,
+            "reported_severity": "SEV2",
+            "proposed_severity": null,
+            "status": "not_requested",
+            "basis": [],
+            "evidence_ids": [],
+            "context_observations": [
+              {
+                "field": "severity",
+                "value": "SEV2",
+                "origin": "user_reported",
+                "evidence_ids": []
+              }
+            ],
+            "missing_fields": [],
+            "limitations": []
+          },
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV2",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ]
+        },
+        "workflow_trace": [
+          "intake",
+          "plan_investigation",
+          "retrieve_policies",
+          "synthesise_evidence",
+          "verify_evidence",
+          "targeted_retry",
+          "synthesise_evidence",
+          "verify_evidence",
+          "generate_investigation_brief",
+          "finalize"
+        ],
+        "tool_traces": [
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "escalation notify notification deadline notification recipients deadlines customer communication first notice update cadence communication ownership first notice update cadence SEV2",
+              "top_k": 6
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.31937495805323124
+          },
+          {
+            "tool_name": "search_internal_policy",
+            "arguments": {
+              "query": "Incident Escalation SOP Severity 2 and lower notification Customer Communication Standard Communication ownership Customer Communication Standard First notice and update cadence",
+              "top_k": 8
+            },
+            "status": "success",
+            "summary": "Validated read-only evidence returned.",
+            "latency_ms": 0.268333125859499
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": null
+        },
+        "latency_ms": 5.91433304361999,
+        "usage_complete": true,
+        "mode": "offline",
+        "model": null,
+        "provider_call_count": 0,
+        "planning_diagnostic": null,
+        "error": null,
+        "synthetic_data": true,
+        "severity_assessment": {
+          "recorded_severity": null,
+          "reported_severity": "SEV2",
+          "proposed_severity": null,
+          "status": "not_requested",
+          "basis": [],
+          "evidence_ids": [],
+          "context_observations": [
+            {
+              "field": "severity",
+              "value": "SEV2",
+              "origin": "user_reported",
+              "evidence_ids": []
+            }
+          ],
+          "missing_fields": [],
+          "limitations": []
+        }
+      },
+      "interrupts": [],
+      "applicable_checks": [
+        "status",
+        "route",
+        "citation_integrity",
+        "tool_efficiency",
+        "retry",
+        "read_only",
+        "offline",
+        "proposed_actions_only",
+        "no_integrity_errors",
+        "missing_dimensions",
+        "no_forbidden_recommendations",
+        "provider_budget",
+        "recommendation_citations"
+      ]
+    }
+  ],
+  "v1_common_tasks": []
+}

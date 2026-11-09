@@ -1,0 +1,11 @@
+{
+  "authored_at_utc": "2026-11-09T02:46:37.157402+00:00",
+  "design": "Same engineer-authored synthetic cases; reserved split frozen before execution, not independently authored or representative generalisation.",
+  "development_count": 28,
+  "reserved_count": 16,
+  "cases_sha256": {
+    "investigation_completion_dev.json": "743807dec3f8d149de3d757af51d7099f82636b448223059e5538f88bca637f8",
+    "investigation_completion_reserved.json": "f6135df64cd29aa7a1bfe31b5409edf8dcceac7daf67d593b25334e81d772819"
+  },
+  "reserved_first_run_policy": "Freeze graph/grader before first reserved run; retain failures and do not tune on results in this slice."
+}

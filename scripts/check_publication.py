@@ -35,6 +35,12 @@ PUBLIC_DOCUMENTS = frozenset(
         "docs/FICTIONAL_ENTERPRISE.md",
         "docs/FINAL_ACCEPTANCE.md",
         "docs/LIVE_LLM_VALIDATION.md",
+        "docs/V2_PRODUCT_SPEC.md",
+        "docs/V2_ARCHITECTURE.md",
+        "docs/V2_EVALUATION.md",
+        "docs/V2_ACCEPTANCE.md",
+        "docs/V2_REVIEW.md",
+        "docs/releases/v2.0-stateful-investigation.md",
         "docs/releases/v1.0-rag-tools-evals.md",
     }
 )
@@ -43,6 +49,7 @@ PUBLIC_SCRIPTS = frozenset(
         "scripts/__init__.py",
         "scripts/check_publication.py",
         "scripts/sanitize_junit.py",
+        "scripts/check_v2_reports.py",
     }
 )
 PUBLIC_PREFIXES = ("opspilot/", "corpus/policies/", "tests/", "evaluation/")

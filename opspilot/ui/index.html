@@ -18,7 +18,45 @@
     </section>
     <section class="workspace">
       <div class="investigation">
-        <div class="section-top"><h2>Your investigation</h2><span class="muted">V1</span></div>
+        <div class="section-top"><h2>Your investigation</h2><span class="muted">V1 + V2</span></div>
+        <section id="provider-controls" class="provider-controls" hidden aria-label="Model settings">
+          <label for="provider-choice">Answer provider</label>
+          <select id="provider-choice"><option value="configured">Configured baseline</option><option value="chatgpt_subscription">ChatGPT plan</option></select>
+          <div id="subscription-controls" hidden>
+            <p class="muted">Use your ChatGPT plan for eligible requests. Usage counts toward your existing plan limits.</p>
+            <label for="chatgpt-account">ChatGPT account / registration</label>
+            <select id="chatgpt-account"><option value="">Connect an account</option></select>
+            <div class="provider-actions">
+              <button id="chatgpt-login" type="button" data-oai-siwc-button>Continue with ChatGPT</button>
+              <button id="chatgpt-add" type="button">Add account</button>
+              <button id="chatgpt-logout" type="button">Sign out</button>
+            </div>
+            <label for="chatgpt-model">Available GPT model</label>
+            <select id="chatgpt-model"><option value="">Connect to load available models</option></select>
+            <div class="provider-actions">
+              <button id="chatgpt-refresh" type="button">Refresh models</button>
+              <a href="https://chatgpt.com/settings/usage" target="_blank" rel="noopener noreferrer">Manage usage</a>
+            </div>
+            <p id="subscription-state" class="muted" role="status"></p>
+          </div>
+        </section>
+        <dialog id="chatgpt-welcome">
+          <h2>You’re using your ChatGPT plan</h2>
+          <p>Eligible requests in OpsPilot use your ChatGPT plan. Manage usage and app limits in ChatGPT Settings → Usage.</p>
+          <button id="chatgpt-welcome-ok" type="button">Got it</button>
+        </dialog>
+        <div class="workflow-controls">
+          <label for="workflow-mode">Workflow</label>
+          <select id="workflow-mode"><option value="chat">V1 · Evidence-grounded answer</option><option value="investigation">V2 · Stateful investigation brief</option></select>
+          <div id="v2-options" hidden>
+            <label for="investigation-mode">Investigation provider</label>
+            <select id="investigation-mode"><option value="offline">Offline · deterministic baseline</option><option value="configured">Configured LLM · usage may incur cost</option><option value="chatgpt_subscription" disabled>ChatGPT plan · selected account and model</option></select>
+            <p class="muted">ChatGPT investigations keep the account and model selected at creation. Resume uses that original selection; usage counts toward your plan limits.</p>
+            <label class="check-label"><input id="require-review" type="checkbox"> Pause for human review before finalization</label>
+            <p class="muted">V2 preserves evidence, verifies requested dimensions and can retry retrieval once. Human review never executes business actions.</p>
+          </div>
+          <button id="restore-investigation" type="button" hidden>Restore saved investigation</button>
+        </div>
         <form id="question-form">
           <label for="question">Ask about a procedure, incident, or historical pattern</label>
           <textarea id="question" required minlength="2" maxlength="3000" rows="4" placeholder="What escalation does policy require for a payment outage, and how does its duration compare with incident history?"></textarea>
@@ -33,7 +71,18 @@
         <div id="answer-state" role="status" class="muted initial">Choose an example or start your own investigation.</div>
         <div id="answer" hidden>
           <div class="answer-top"><h2>Findings</h2><span id="outcome" class="badge"></span></div>
+          <section id="investigation-brief" hidden aria-label="Investigation brief"></section>
           <div id="facts"></div>
+          <section id="human-input" hidden aria-label="Human clarification or review">
+            <h3>Human input required</h3><p id="human-message"></p>
+            <form id="clarification-form" hidden>
+              <div id="clarification-fields"></div>
+              <p id="clarification-error" class="form-error" role="alert" tabindex="-1"></p>
+              <button id="clarify-submit" type="submit">Continue investigation</button>
+            </form>
+            <div id="review-actions" hidden><button id="review-accept" type="button">Accept brief for finalization</button><button id="review-decline" type="button">Decline finalization</button></div>
+            <p class="muted">No business record, notification or operational action will be changed.</p>
+          </section>
           <details id="limitations"><summary>Limitations & scope</summary><ul></ul></details>
           <details><summary>Full structured response</summary><pre id="raw-response"></pre></details>
           <p id="request-meta" class="muted"></p>

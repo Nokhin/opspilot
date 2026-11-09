@@ -14,7 +14,10 @@ class Settings(BaseSettings):
     reference_time: AwareDatetime = datetime.fromisoformat("2026-10-01T00:00:00+00:00")
     app_env: Literal["development", "demo", "production"] = "demo"
     log_level: Literal["DEBUG", "INFO", "WARNING", "ERROR"] = "INFO"
-    llm_provider: Literal["extractive", "chat_api"] = "extractive"
+    llm_provider: Literal["extractive", "chat_api", "chatgpt_subscription"] = "extractive"
+    subscription_enabled: bool = False
+    default_chat_provider: Literal["configured", "chatgpt_subscription"] = "configured"
+    subscription_timeout_seconds: float = Field(default=60, ge=1, le=120)
     llm_base_url: str = "https://api.groq.com/openai/v1"
     llm_model: str = ""
     llm_api_key: SecretStr = SecretStr("")
@@ -49,6 +52,10 @@ class Settings(BaseSettings):
 
     @model_validator(mode="after")
     def validate_provider(self):
+        if self.default_chat_provider == "chatgpt_subscription" and not self.subscription_enabled:
+            raise ValueError("Subscription default requires local subscription controls")
+        if self.llm_provider == "chatgpt_subscription":
+            raise ValueError("Select ChatGPT plan and its available model through the local UI")
         if self.llm_provider == "chat_api" and not (
             self.llm_model and self.llm_base_url and self.llm_api_key.get_secret_value()
         ):

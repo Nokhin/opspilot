@@ -1,0 +1,213 @@
+[
+  {
+    "id": "gap-sev2-notice",
+    "category": "evidence_gap_development",
+    "request": {
+      "user_request": "For SEV2, explain the customer first notice and update frequency."
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "max_tools": 2,
+    "expected_chunks": [
+      "POL-COM-001:s01:c01",
+      "POL-COM-001:s02:c01"
+    ],
+    "expected_dimensions": [
+      "policy:communication:timing"
+    ],
+    "expected_actions": [
+      {
+        "text_contains": "every 60 minutes",
+        "owner_contains": "Customer Service Lead",
+        "deadline_minutes": 30,
+        "evidence_ids": [
+          "POL-COM-001:s01:c01",
+          "POL-COM-001:s02:c01"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gap-sev2-cross-policy",
+    "category": "evidence_gap_development",
+    "request": {
+      "user_request": "For SEV2, give escalation notifications and customer communication cadence."
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "max_tools": 2,
+    "expected_chunks": [
+      "POL-COM-001:s01:c01",
+      "POL-COM-001:s02:c01",
+      "POL-INC-002:s01:c01",
+      "POL-INC-002:s03:c01"
+    ],
+    "expected_dimensions": [
+      "policy:escalation:notifications",
+      "policy:communication:timing"
+    ],
+    "expected_actions": [
+      {
+        "text_contains": "first customer notice",
+        "owner_contains": "Customer Service Lead",
+        "deadline_minutes": 30,
+        "evidence_ids": [
+          "POL-COM-001:s01:c01",
+          "POL-COM-001:s02:c01"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gap-sev1-cross-policy",
+    "category": "evidence_gap_development",
+    "request": {
+      "user_request": "Explain SEV1 escalation recipients and the first customer notice update frequency."
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "max_tools": 2,
+    "expected_chunks": [
+      "POL-COM-001:s01:c01",
+      "POL-COM-001:s02:c01",
+      "POL-INC-002:s01:c01",
+      "POL-INC-002:s02:c01"
+    ],
+    "expected_dimensions": [
+      "policy:escalation:notifications",
+      "policy:communication:timing"
+    ]
+  },
+  {
+    "id": "gap-sev1-review-date",
+    "category": "evidence_gap_development",
+    "request": {
+      "user_request": "Which date is the SEV1 post-incident review due?"
+    },
+    "expected_status": "partial",
+    "expected_route": "policy_only",
+    "max_tools": 2,
+    "expected_chunks": [
+      "POL-REV-001:s01:c01",
+      "POL-REV-001:s02:c01"
+    ],
+    "expected_dimensions": [
+      "policy:review:criteria",
+      "policy:review:timetable"
+    ],
+    "expected_gaps": [
+      "input:holiday_calendar",
+      "input:resolution_time"
+    ],
+    "no_absolute_deadlines": true,
+    "expected_actions": [
+      {
+        "text_contains": "schedule it within 2 business days",
+        "owner_contains": "Incident coordinator",
+        "evidence_ids": [
+          "POL-REV-001:s01:c01",
+          "POL-REV-001:s02:c01"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gap-sev2-review-date",
+    "category": "evidence_gap_development",
+    "request": {
+      "user_request": "Which date is the SEV2 post-incident review due?"
+    },
+    "expected_status": "partial",
+    "expected_route": "policy_only",
+    "max_tools": 2,
+    "expected_chunks": [
+      "POL-REV-001:s01:c01",
+      "POL-REV-001:s02:c01"
+    ],
+    "expected_dimensions": [
+      "policy:review:criteria",
+      "policy:review:timetable"
+    ],
+    "expected_gaps": [
+      "input:holiday_calendar",
+      "input:resolution_time"
+    ],
+    "no_absolute_deadlines": true,
+    "expected_actions": [
+      {
+        "text_contains": "schedule it within 5 business days",
+        "owner_contains": "Incident coordinator",
+        "evidence_ids": [
+          "POL-REV-001:s01:c01",
+          "POL-REV-001:s02:c01"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gap-sev3-relative-review",
+    "category": "evidence_gap_development",
+    "request": {
+      "user_request": "How soon should SEV3 post-incident reviews be scheduled and drafts published?"
+    },
+    "expected_status": "completed",
+    "expected_route": "policy_only",
+    "max_tools": 2,
+    "expected_chunks": [
+      "POL-REV-001:s01:c01",
+      "POL-REV-001:s02:c01"
+    ],
+    "expected_dimensions": [
+      "policy:review:criteria",
+      "policy:review:timetable"
+    ],
+    "expected_actions": [
+      {
+        "text_contains": "if review is mandatory, schedule it within 5 business days",
+        "evidence_ids": [
+          "POL-REV-001:s01:c01",
+          "POL-REV-001:s02:c01"
+        ]
+      }
+    ],
+    "no_absolute_deadlines": true
+  },
+  {
+    "id": "gap-policy-source-empty",
+    "category": "evidence_gap_development",
+    "request": {
+      "user_request": "What is the SEV2 review due date under the post-incident policy?"
+    },
+    "expected_status": "insufficient",
+    "expected_route": "policy_only",
+    "max_tools": 2,
+    "fault": "all_policy_empty",
+    "expected_retry_count": 1,
+    "expected_gaps": [
+      "input:holiday_calendar",
+      "input:resolution_time"
+    ],
+    "no_absolute_deadlines": true,
+    "forbidden_action_text": [
+      "schedule it within"
+    ]
+  },
+  {
+    "id": "gap-communication-unavailable",
+    "category": "evidence_gap_development",
+    "request": {
+      "user_request": "For SEV2, give escalation notifications and customer communication cadence."
+    },
+    "expected_status": "partial",
+    "expected_route": "policy_only",
+    "max_tools": 2,
+    "fault": "no_communication",
+    "expected_retry_count": 1,
+    "expected_missing_dimensions": [
+      "policy:communication:timing"
+    ],
+    "forbidden_action_text": [
+      "prepare the first customer notice"
+    ]
+  }
+]

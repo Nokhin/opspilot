@@ -87,3 +87,9 @@ normalized to UTC. Acceptance evidence hashes identify these public artifact byt
 This metadata normalization is not a new model run or a changed evaluation score.
 The publication guard checks complete Git history and artifact contents; CI uploads
 artifacts only after that guard succeeds.
+
+## V2 investigation evaluation
+
+The separate [V2 methodology](V2_EVALUATION.md) preserves these V1 cases/results and
+adds development/reserved graph cases, explicit fault injection, persistent human
+resume and common-task comparison. V1 recorded live scores are not V2 live scores.

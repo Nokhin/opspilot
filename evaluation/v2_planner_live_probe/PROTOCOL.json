@@ -1,0 +1,60 @@
+{
+  "recorded_at_utc": "2026-11-09T08:23:20.102346+00:00",
+  "model": "gpt-6-luna",
+  "scope": "V2 live regression on previously inspected synthetic cases",
+  "cases_sha256": {
+    "evaluation/v2_planner_contract/proposed_live_cases.json": "4f93ae05bf53e84d650631b255f1a09c83848f25840d91dc8b7cb295a0417474"
+  },
+  "case_ids": [
+    "dev-impact-500",
+    "dev-duration-35",
+    "dev-sev2-duration-10",
+    "dev-recorded-conflict",
+    "dev-impact-conflict",
+    "dev-clock",
+    "dev-retrospective",
+    "dev-resume-comparison",
+    "dev-unsafe"
+  ],
+  "source_sha256": {
+    "opspilot/investigation/assessment.py": "539bc71cb6cdf0c03f7c36cb6684b656062aefcab293f74c89a1afedad9d8bb1",
+    "opspilot/investigation/service.py": "3b68718280a2409c6e384ee4749c5e5a816cf97233138217fd666010488dd8d6",
+    "opspilot/investigation/chains.py": "ba4ef6598a68617c287eb1478f48d2ef9538dbfe4b3b95ccf74b69b054103c50",
+    "opspilot/investigation/models.py": "93ad74bb47089cf872a767c434183d45922efe5ba5f46dc9d464bf7b3e6a6100",
+    "opspilot/investigation/graph.py": "ae217211a604d0cad6247979035a5dabe9423b86ccf629845bc6a202909ca3ee",
+    "opspilot/investigation/brief.py": "618814061a01887a2d3625e17f21e68e1ed6c1d43e04aebe264eeaef4508e723",
+    "opspilot/investigation/__init__.py": "60bc8637174688a1d5b04cd2b87176cd35b6da510099e0e10eb86ab031983159",
+    "opspilot/investigation/context.py": "326f84a03abc512c887ede92c7b099752c7a04e2496d904b3924658aed042e6b",
+    "opspilot/investigation/planning.py": "13ee2168e76bbb71ecc88edbbd003d29c53d8e6902f453e0eae94489ab6125c2",
+    "opspilot/investigation/evidence.py": "c65a5efe50c210a846fbd17216cf18fd135af473c168e5bab2a2697b4bc50638",
+    "opspilot/investigation/policy_contracts.json": "db64214173ef16e524324391a230d769ef01935c5f10f1ff4477d5a0971cc09b",
+    "opspilot/evaluation/investigation.py": "e4a561f409629bf00e05fdd578f32a699314d8b2776df08c7cf1675c9c4f84bc",
+    "opspilot/cli.py": "72d014d5e8c21093fc8cb95f7616a32c91320c94281b3cf2f8c8fc003ec17bcd",
+    "opspilot/evaluation/investigation_live.py": "bca499ee551781c77c1a234472b726c059df8b8e7ca9c68a66a1602f394df087",
+    "opspilot/providers/chatgpt.py": "68c427f8fe7c18baafb1cffd20d742e4c7f49ff32489cd9d1ccbe904100c4a1d"
+  },
+  "limits": {
+    "max_inference_http_attempts": 8,
+    "observed_input_token_stop": 50000,
+    "observed_output_token_stop": 8000,
+    "max_request_bytes": 32768,
+    "wall_stop_seconds": 300,
+    "server_side_output_token_cap": false,
+    "token_stop_may_overshoot_by_last_request": true,
+    "provider_retries": 0
+  },
+  "human_inputs": "Scripted typed case responses; not independent human review",
+  "fault_injection": "Explicit source faults retained from frozen cases",
+  "billing": "chatgpt_plan",
+  "account_pinned": true,
+  "transport": "http",
+  "transport_limits": {
+    "read_timeout_seconds": 60.0,
+    "stream_time_check_seconds": 120,
+    "response_line_character_limit": 524288
+  },
+  "corpus_sha256": "3f85bfc6498084803df9e537bcb3ad0e43f1cf5b4ce563dbec8bb8ca593df639",
+  "database_sha256": "f7f31def02597e265168e0249dc6e4ead70795fdefa12d85c6f388051dd08e2f",
+  "index_sha256": "717da6fe2ed110c04c688443687374f89de7076f4def617e26df7d8375a3db45",
+  "reference_time": "2026-10-01T00:00:00+00:00"
+}
