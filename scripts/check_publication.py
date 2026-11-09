@@ -71,6 +71,11 @@ PUBLIC_SUFFIXES = frozenset(
     }
 )
 EMAIL = re.compile(r"[A-Za-z0-9_.+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
+# Consume a whole non-email token after the email alternative fails. Retrying each
+# suffix of a long JUnit identifier without @ is quadratic, and cannot find a match:
+# all suffixes share the same missing/invalid @ domain. Keep matching from the end
+# of each successful email, including adjacent addresses, just like EMAIL.findall.
+EMAIL_OR_TOKEN = re.compile(EMAIL.pattern + r"|[A-Za-z0-9_.+-]+")
 PATTERNS = {
     "academic_or_career_context": re.compile(
         r"\bcourse\s*\d+\b|\bcoursera\b|\bprofessional certificate\b|\bCV[- ]ready\b",
@@ -96,6 +101,13 @@ def public_path(name: str) -> bool:
     return name.startswith(PUBLIC_PREFIXES) and path.suffix in PUBLIC_SUFFIXES
 
 
+def email_addresses(text: str):
+    for match in EMAIL_OR_TOKEN.finditer(text):
+        address = match.group()
+        if "@" in address:
+            yield address
+
+
 def content_violations(
     data: bytes, sensitive_values: dict[str, list[str]] | None = None
 ) -> list[str]:
@@ -117,7 +129,7 @@ def content_violations(
     for label, pattern in PATTERNS.items():
         if pattern.search(text):
             violations.append(label)
-    for address in EMAIL.findall(text):
+    for address in email_addresses(text):
         domain = address.rsplit("@", 1)[1].lower()
         if domain not in {"example.test", "example.com", "example.org", "users.noreply.github.com"}:
             violations.append("non_placeholder_email")

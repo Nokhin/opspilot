@@ -1,14 +1,17 @@
 """Ensure redacting the latest tree cannot hide unsafe historical content."""
 
 import os
+import re
 import subprocess
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from random import Random
 
 from scripts.check_publication import (
     audit_directory,
     audit_repository,
     content_violations,
+    email_addresses,
     public_path,
 )
 from scripts.sanitize_junit import sanitize_junit
@@ -133,3 +136,36 @@ def test_junit_normalization_preserves_test_results(tmp_path: Path) -> None:
     assert suite.attrib["failures"] == "0"
     assert suite.attrib["time"] == "1.5"
     assert suite[0].attrib == {"name": "example", "time": "1.5"}
+
+
+def test_email_token_scanner_preserves_existing_matches() -> None:
+    previous = re.compile(r"[A-Za-z0-9_.+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
+    address = "contact" + "@" + "invalid.test"
+    samples = [
+        address,
+        "prefix+" + address,
+        "(" + address + ")",
+        "é" + address,
+        "invalid_domain" + "@" + "example.test",
+        "first@bad_domain" + "@" + "invalid.test",
+        "first@bad_domain " + address,
+        "a@b " + address,
+        "identifier.without.an.address",
+        "x@a.1",
+        "a" + "@" + "b.cdef+e" + "@" + "invalid.test",
+    ]
+    for sample in samples:
+        assert list(email_addresses(sample)) == previous.findall(sample)
+    rng = Random(42)
+    alphabet = "abcXYZ019._+-@ <>:é"
+    for _ in range(10000):
+        sample = "".join(rng.choices(alphabet, k=rng.randrange(120)))
+        assert list(email_addresses(sample)) == previous.findall(sample)
+
+
+def test_long_junit_identifier_does_not_hide_a_later_sensitive_email() -> None:
+    identifier = "a" * 262154
+    assert content_violations(identifier.encode()) == []
+    address = "contact" + "@" + "invalid.test"
+    assert content_violations((identifier + " " + address).encode()) == ["non_placeholder_email"]
+    assert list(email_addresses(identifier + address)) == [identifier + address]
